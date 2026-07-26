@@ -1,0 +1,7 @@
+name: FichaServerNotify
+version: '1.0'
+main: ru.kotikstasika.fichaservernotify.FichaServerNotify
+api-version: '1.16'
+author:
+  - kotikstasika
+  - Smail

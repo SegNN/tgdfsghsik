@@ -1,0 +1,11 @@
+name: EventZamok
+version: '1.0'
+main: org.dimasik.eventzamok.EventZamok
+api-version: '1.16'
+commands:
+  zerofortress:
+    aliases:
+      - zf
+      - zamok
+    permission:
+      events.admin

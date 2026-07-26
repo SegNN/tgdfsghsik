@@ -1,0 +1,9 @@
+name: EventPosilka
+version: '1.0-SNAPSHOT'
+main: org.dimasik.eventposilka.EventPosilka
+api-version: '1.16'
+depend: [EventManager, LootManager, WorldGuard, WorldEdit, DecentHolograms]
+commands:
+  posilka:
+    permission:
+      events.admin

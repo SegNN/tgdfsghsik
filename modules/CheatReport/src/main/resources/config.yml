@@ -1,0 +1,68 @@
+mysql:
+  host: "localhost"
+  user: "root"
+  password: "[пароль]"
+  database: "reports"
+  port: 3306
+  server: "Анархия #1"
+
+
+gui:
+  rows: 6
+  title: "Список жалоб ({amount} шт.) [{page}/{total_pages}]"
+  buttons:
+    pagesNavs:
+      material: ARROW
+    nextPage:
+      displayName: "&fСледующая страница &6▶"
+      slot: 45
+    exit:
+      material: ARROW
+      displayName: "&x&9&C&0&0&0&0◀ Назад"
+      slot: 53
+    prevPage:
+      displayName: "&6◀ &fПредыдущая страница"
+      slot: 47
+    noActiveReport:
+      displayName: "&x&D&5&2&1&2&3У вас нет активных дел"
+      material: BARRIER
+      slot: 46
+    activeReport:
+      material: ZOMBIE_HEAD
+      slot: 46
+      displayName: "&x&0&E&C&E&F&4❐ Дело игрока {target} ❐"
+      lore:
+        - ""
+        - " &x&0&E&C&E&F&4&n▍&r &fЗаявитель: &x&C&F&A&A&9&8{sender} &f(&x&3&1&D&E&2&AПЖ: {sender_statsSuccess}&f, &x&D&5&2&1&2&3ЛЖ: {sender_statsFailure} &f| &x&3&1&D&E&2&AПП: {sender_statsSuccessCheck}&f, &x&D&5&2&1&2&3ЛП: {sender_statsFailureCheck}&f)"
+        - " &x&0&E&C&E&F&4&n▍&r &fПодозреваемый: &x&C&F&A&A&9&8{target} &x&C&F&A&A&9&8[{online}&x&C&F&A&A&9&8] &f(&x&3&1&D&E&2&AПЖ: {target_statsSuccess}&f, &x&D&5&2&1&2&3ЛЖ: {target_statsFailure} &f| &x&3&1&D&E&2&AПП: {target_statsSuccessCheck}&f, &x&D&5&2&1&2&3ЛП: {target_statsFailureCheck}&f)"
+        - " &x&0&E&C&E&F&4&n▍&r &fЖалоба создана: &x&C&F&A&A&9&8{date} "
+        - " &x&0&E&C&E&F&4&n▍&r &fСервер: &x&C&F&A&A&9&8{mode}"
+        - " &x&0&E&C&E&F&4&n▍&r &fКомментарий:"
+        - " &x&0&E&C&E&F&4▍&r   &x&C&F&A&A&9&8{reason}"
+        - ""
+        - ' &x&0&E&C&E&F&4▶ &x&3&1&D&E&2&A[ЛКМ] &fПринять жалобу'
+        - ' &x&0&E&C&E&F&4▶ &x&3&1&D&E&2&A[ПКМ] &fОтклонить жалобу'
+  reports_format:
+    material: ZOMBIE_HEAD
+    displayName: "&x&0&E&C&E&F&4❐ Дело игрока {target} ❐"
+    lore:
+      - ""
+      - " &x&0&E&C&E&F&4&n▍&r &fЗаявитель: &x&C&F&A&A&9&8{sender} &f(&x&3&1&D&E&2&AПЖ: {sender_statsSuccess}&f, &x&D&5&2&1&2&3ЛЖ: {sender_statsFailure} &f| &x&3&1&D&E&2&AПП: {sender_statsSuccessCheck}&f, &x&D&5&2&1&2&3ЛП: {sender_statsFailureCheck}&f)"
+      - " &x&0&E&C&E&F&4&n▍&r &fПодозреваемый: &x&C&F&A&A&9&8{target} &x&C&F&A&A&9&8[{online}&x&C&F&A&A&9&8] &f(&x&3&1&D&E&2&AПЖ: {target_statsSuccess}&f, &x&D&5&2&1&2&3ЛЖ: {target_statsFailure} &f| &x&3&1&D&E&2&AПП: {target_statsSuccessCheck}&f, &x&D&5&2&1&2&3ЛП: {target_statsFailureCheck}&f)"
+      - " &x&0&E&C&E&F&4&n▍&r &fЖалоба создана: &x&C&F&A&A&9&8{date} "
+      - " &x&0&E&C&E&F&4&n▍&r &fСервер: &x&C&F&A&A&9&8{mode}"
+      - " &x&0&E&C&E&F&4&n▍&r &fКомментарий:"
+      - " &x&0&E&C&E&F&4▍&r   &x&C&F&A&A&9&8{reason}"
+      - ""
+      - ' &x&0&E&C&E&F&4▶ &x&3&1&D&E&2&A[ЛКМ] &fВзять все жалобы на рассмотрение'
+      - " &x&0&E&C&E&F&4&n&l◢&f &x&3&1&D&E&2&A[ПКМ] &fПосмотреть все жалобы"
+      - " &x&0&E&C&E&F&4&l◤&f           Подано &x&0&E&C&E&F&4{amount} жалоб"
+
+
+messages:
+  error: "&cПроизошла внутреняя ошибка обратись к администратору!!"
+  cheatreportusage:
+    - " &x&0&E&C&E&F&4▶ &fИспользование: &x&3&1&D&E&2&A/cheatreport [игрок] [причина]"
+  noPlayer: " &x&0&E&C&E&F&4▶ &fИгрок &x&3&1&D&E&2&Aне найден"
+  cheatreportsend:
+    - " &x&0&E&C&E&F&4▶ &fРепорт успешно &x&3&1&D&E&2&Aотправлен."

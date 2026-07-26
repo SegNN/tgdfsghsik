@@ -1,0 +1,48 @@
+database:
+  type: "sqlite"  #sqlite или mysql
+  mysql:
+    host: ""
+    port: 3306
+    database: ""
+    username: ""
+    password: ""
+    ssl: false
+  sqlite:
+    filename: "custompriv.db"
+
+settings:
+  creation:
+    max-prefix-length: 15
+    max-title-length: 16
+
+tokens:
+  privilege:
+    30d: "&#00ff00▶ &fЖетон на 30 дней"
+    90d: "&#00ff00▶ &fЖетон на 90 дней"
+    infinity: "&#00ff00▶ &fЖетон навсегда"
+  titul: "&#00ff00▶ &fЖетон на титул"
+
+messages:
+  no-permission: "&#00ff00▶ &fУ вас нет прав."
+  only-players: "&#00ff00▶ &fЭта команда доступна только игрокам!"
+  player-not-found: "&#00ff00▶ &fИгрок не найден"
+  no-tokens: "&#00ff00▶ &fУ вас недостаточно жетонов"
+  creation-cancelled: "&#00ff00▶ &fСоздание отменено."
+  success-creation: "&#00ff00▶ &fЗаявка успешно создана, ожидайте рассмотрения"
+  enter-color: "&#FF3636▶ &fВведите код цвета"
+  enter-prefix: "&#FF3636▶ &fВведите текст привилегии"
+  input-cancelled: "&#00ff00▶ &fВвод отменен."
+  info-message: |-
+    &#00D8FF&l&n▍&f Информация и правила создания кастомной привилегии:
+    &#00D8FF&l&n▍&f       &6&nhttps://holyworld.ru/custom-privilege&f
+    &#00D8FF&l▍&f           &7(на ссылку можно нажать)
+  hover: "&#00ff00▶ &fНажмите чтобы открыть инструкцию"
+  title_on_moderation: " &x&F&F&2&7&0&0▶ &fЭтот титул еще на модерации!"
+  error: "Неверное количество. Пожалуйста, введите число."
+  chat: "&x&5&A&D&9&F&B ▶ &fНапишите свой титул в чат"
+  pending: " &x&5&A&D&9&F&B▶ &fВаш титул отправлен на проверку администрации!"
+  admin:
+    approve: "&x&5&A&D&9&F&B ▶ &fТитул &x&5&A&D&9&F&Bодобрен"
+    reject: "&x&5&A&D&9&F&B ▶ &fТитул &x&5&A&D&9&F&Bотклонен"
+  create:
+    chat: " &x&5&A&D&9&F&B▶ &fВведите желаемый титул в чат."

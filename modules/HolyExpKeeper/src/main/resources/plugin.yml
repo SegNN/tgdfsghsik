@@ -1,0 +1,13 @@
+name: HolyExpKeeper
+version: '1.0'
+main: org.dimasik.mantiexpkeeper.MantiExpKeeper
+author: nezxenka
+api-version: '1.16'
+commands:
+  holyexpkeeper:
+    permission: holyexpkeeper.use
+    usage: /holyexpkeeper
+    description: Управление эффектами хранителя опыта
+  expkeeper:
+    usage: /expkeeper
+    description: Меню хранителя опыта

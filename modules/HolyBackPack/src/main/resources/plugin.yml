@@ -1,0 +1,9 @@
+name: HolyBackPack
+version: '1.0'
+main: ru.holybackpack.HolyBackPack
+api-version: '1.16'
+commands:
+  holybackpack:
+    description: Выдает рюкзаки
+    usage: /holybackpack
+    permission: holybackpack.use

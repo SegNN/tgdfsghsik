@@ -1,0 +1,4 @@
+name: ChatBrackets
+version: '1.0-SNAPSHOT'
+main: org.dimasik.chatbrackets.ChatBrackets
+api-version: '1.16'

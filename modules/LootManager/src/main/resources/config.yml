@@ -1,0 +1,5 @@
+mysql:
+  host: localhost
+  user: root
+  password: "сайнес гпт кодер"
+  database: lite_lootmanager

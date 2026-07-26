@@ -1,0 +1,872 @@
+debug: true
+default_armor1:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F699FD","text":"Обычная
+      сфера"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+      I"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_ARMOR:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 1.0
+          name: GENERIC_ARMOR
+          slot: OFF_HAND
+          uuid: 83609abe-d184-4fe1-9d57-01049b91d035
+          operation: 0
+      GENERIC_ARMOR_TOUGHNESS:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 1.0
+          name: GENERIC_ARMOR_TOUGHNESS
+          slot: OFF_HAND
+          uuid: 5fdca588-9a37-4688-abf0-5378022d7b68
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PvU7DMBzE/1QgFcPD5MtBHSsK1KF2aJvEibe2cZUPp1RpAqRi5Fk6VzAz8SY8AjsSHhlOuvvdLYcAEFzOy1aph/pxnSuJAGm3lXWTy9059Bv50rS13CEAOOnDWbRQrYSj7DxDxJmRxp5adcTVOZgbyifF9opsom55TVxS6X48dCfd4N8WNwuOVWJ7mdhM22UVGRN7puR4Zq6q8MnnIWYBwdS6LZKKlewuMRkXmSg0H6W5qKhJA60RdZKC2Izf2AknDg2GDttTg3KCBaeWCKYmtUKH7st8HZsDgAvokVSfOPU/yuzr9f797fPw8/v83QP4A+v/+bgGAQAA
+    PublicBukkitValues:
+      holysfers:armor: 1i
+      holysfers:holysfers: 1i
+      holysfers:rarity: DEFAULT
+default_damage1:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F699FD","text":"Обычная
+      сфера"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Урон
+      I"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_ATTACK_DAMAGE:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 1.0
+          name: GENERIC_ATTACK_DAMAGE
+          slot: OFF_HAND
+          uuid: 68ebbd8a-ee0b-4be7-803e-519898288eef
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PzU7CQBzE/xpNcPUNjPHEwVu/DUciSrdhF4G2211PQJf0Y4uktMTyLJ458wS+g2/kHj1MMvObuQwCQHC3KFul3uvPTa4kAqTdTtZNLvc30GvkV9PWco8A4KIH1/FStRLOsgsMkWRGmgRq3WFP53BhqCkuds94G3erF+zhSvf+0Jt0g39bt1kyV3E7yMR21q6q2JjYcyX9ubmuosOURS4NsUust4JXtKRjblImMlFoPkpzURGThFoj4vAC25S92pxhh4RDhx6JQRh2BSOWCGcmsSKHHMt8k5gDgFu4xKk+cdVvPuD3Yfx44vf9H//7CeAPvHm6hwYBAAA=
+    PublicBukkitValues:
+      holysfers:damage: 1i
+      holysfers:holysfers: 1i
+      holysfers:rarity: DEFAULT
+default_speed1:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F699FD","text":"Обычная
+      сфера"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Скорость
+      I"}],"text":""}'
+      - '{"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+    attribute-modifiers:
+      GENERIC_MOVEMENT_SPEED:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 0.009999999776482582
+          name: GENERIC_MOVEMENT_SPEED
+          slot: OFF_HAND
+          uuid: bf675a50-9956-437f-b85e-4b82d8a636e3
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PS07DMBiEfxBIbag4A0fIy0FlRUWBOqpd2jpx4l3buMrDLlWaINIjsOEqLOEunIINW7xkMdLMN7MZC8CCwbJqlXqqn7eFkhZYxu1l3RTy0IdeI1+btpYHCwBOenAer1Qr4UN2oS2S3M6SUG06HJjMlraa4XJ/jXdxt77DAdamn4yCaTf8t0XNiiOVemEudvN2rWN76i2UnCycjY5eZjxClGFE3Icy1bSij6lDuchFafg4K4QmDmFGY+KnJfYov/dSjn3CRj49EptwjAQnrmBzh7iRT45VsU2cIcAFnOLMnDgLfm7e8svbz/fvwdfVbz8B+AO8f6xoBgEAAA==
+    PublicBukkitValues:
+      holysfers:speed: 1i
+      holysfers:holysfers: 1i
+      holysfers:rarity: DEFAULT
+epic_damage2:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#EA00FD","text":"Эпическая
+      сфера"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Урон
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_ATTACK_DAMAGE:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ATTACK_DAMAGE
+          slot: OFF_HAND
+          uuid: d7f290ba-c1e0-4f93-8d24-e30256f9b11a
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PvVKDQBhFPx2dIeh72FgsQXDiTIqMMGYxLEL4CdslsHGzLJhJwAEaG5/Ap7CzsbT3taS0u2fOaa4KoMLlsmikfDq8bHeSqaAOa88O9Y4dR6DUrK2bAzuqAHCiwHm8lg2Db9Y5iK44yleOzDpsDhwukfSw2N/iKu4299jE5eDnM3PRTf61Rr1ODJnqDqeV32zKGC30QLJ5oGVl9OqGaZ+WhFNBC1ekupf4N9TKCy9xSlLaiPQBJxbnpM+59xAZbpghMrZb13pGaT8zXBGNaeIIz6IiFRnyLLvFlTbZ+tMpwAWc4nw4cnb9+f7x9vV49TPKlN/6TgP4A5F32AoKAQAA
+    PublicBukkitValues:
+      holysfers:damage: 2i
+      holysfers:holysfers: 1i
+      holysfers:rarity: EPIC
+epic_armor2:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#EA00FD","text":"Эпическая
+      сфера"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+      II"}],"text":""}'
+      - '{"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+    attribute-modifiers:
+      GENERIC_ARMOR:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ARMOR
+          slot: OFF_HAND
+          uuid: 6006be91-56af-4026-a32c-352df3532fde
+          operation: 0
+      GENERIC_ARMOR_TOUGHNESS:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ARMOR_TOUGHNESS
+          slot: OFF_HAND
+          uuid: a6d5fb81-3fd8-40ff-a5fd-0f555a96ac9a
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PT06DQBxGf/5LKnoJbzAUQbtoYiPEDimD0AJldi1MnQ4DNhQa4BZ6FNO91/AEJl7CyNLd9/Le5lMAFLieZ7WUz+XrZiuZAkq/dqystmx/CYOKNVVdsr0CACcDuAhXsmZwZK2N6JKjdGnLpMVGz4s5ki4WuztchO36ERs47/10Ysza0b9Wr1aRLmPN5rTw6nUeopnmSzb11SQPDs4i7uKccCpo5ohYcyPvlppp5kZ2TnILkc7nxOScdCl3nwLdWSSIDK3GMV9Q3E10RwRDGtnCNamIRYJc02pwoY423ngMcAWnOO2PnH/fqzdvvw9fR/LzXn98ngH8AcuSX3IKAQAA
+    PublicBukkitValues:
+      holysfers:armor: 2i
+      holysfers:holysfers: 1i
+      holysfers:rarity: EPIC
+epic_speed2:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#EA00FD","text":"Эпическая
+      сфера"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Скорость
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_MOVEMENT_SPEED:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 0.019999999552965164
+          name: GENERIC_MOVEMENT_SPEED
+          slot: OFF_HAND
+          uuid: ac5bd137-6786-4012-b2c4-9c2916ecd13c
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PPVKDQBiGPx2diegdHFurTRCcFCkygTHLBBDCT3atEti4LAvmBxzgClbewSN4CK9h7RFspLR7n3me5lUAFLha5rWUj4eXbSaZAkq/duxQZex4AYOKNVV9YEcFAE4GcB6tZc3gk7UWoiuO0pUlkxbrPQdLJF0sdve4jNrNDOu46P18qi/a8b9Wq9axJolqcVp69aaI0EL1JZv7w6QIX+2AdKRwOBU0twVR3di7o0aau7FVOIWJnM7njsG506XcfQg1O0iQMzIb23hGpJtqtghHNLaEa1BBRIJcw2xwORxvvckE4BJOcdofOct+v94/fmbl2zfcPO1vrwH+APM/cCcKAQAA
+    PublicBukkitValues:
+      holysfers:speed: 2i
+      holysfers:holysfers: 1i
+      holysfers:rarity: EPIC
+epic_armor1_damage1:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#EA00FD","text":"Эпическая
+      сфера"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+      I"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Урон
+      I"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_ARMOR:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 1.0
+          name: GENERIC_ARMOR
+          slot: OFF_HAND
+          uuid: 1174c3ed-2601-4c3f-ac76-751bac8b09ee
+          operation: 0
+      GENERIC_ARMOR_TOUGHNESS:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 1.0
+          name: GENERIC_ARMOR_TOUGHNESS
+          slot: OFF_HAND
+          uuid: a119a0d7-ab27-4bfb-8525-d5a68e6717e1
+          operation: 0
+      GENERIC_ATTACK_DAMAGE:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 1.0
+          name: GENERIC_ATTACK_DAMAGE
+          slot: OFF_HAND
+          uuid: 248a5502-d550-4455-8111-1b4237ea8817
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PT06DQBxGfzaaVHRhPMm0CE0XXRAh7ZACQvnTmV0LU6fDgE0LBriDBzDuPIMLD+HOC3gCzyBLd9/Le5tPAVDgepXXUj4cn3Z7yRRQ+nVgx2rPTpcwrFhT1Ud2UgDgbAgX8UbWDD5YayO65ihb2zJtsd5zuELSw+IwwWXcbu+xjoveLwx92U7/tVq1STRJVJvT0q+3RYyWaiDZIhilRfTshKQjhcupoLkjiOol/h01s9xL7MItLOR2AXdNzt0u49480pwwRe7YahzzEZHO0BwRjWliC8+kgogUeabV4HI03fmzGcAVDHDWHzn/uX37mhvm5PP39WXw/n0D8Ad61nGeCgEAAA==
+    PublicBukkitValues:
+      holysfers:armor: 1i
+      holysfers:damage: 1i
+      holysfers:holysfers: 1i
+      holysfers:rarity: EPIC
+epic_haste2:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#EA00FD","text":"Эпическая
+      сфера"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Спешка
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PP1KDQBxGfzo6E9HeyjtsguBQpIjCmGUCK4Q/YbsENm6WBTMJOMAJPIeVY2PjAXIPKy08h5R235v3mk8BUOBintdSPuye1hvJFFD6tWW7asP2ZzCoWFPVO7ZXAOBoAKfRUtYMPllrI7rgKFvYMm2x3nMwR5Jgsb3BZdSu7rCOi95PJ/qsNf61WrWMNZmoNqelV6+KCM1UX7KpP0yL8NkJki4pXE4FzR2RqCT2rqmZ5SS2C7ewkNv53DU5d7uMk/tQc4IUuSOrccxHlHQTzRHhiMa2ICYViUgRMa0Gl0Nj7Y3HAOdwjLP+yAm5PLwfXm6/P77efl5/rwyAP1e1/GkKAQAA
+    PublicBukkitValues:
+      holysfers:holysfers: 1i
+      holysfers:haste: 2i
+      holysfers:rarity: EPIC
+legendary_damage3:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0082FD","text":"Легендарная
+      сфера"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Урон
+      III"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_ATTACK_DAMAGE:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 3.0
+          name: GENERIC_ATTACK_DAMAGE
+          slot: OFF_HAND
+          uuid: 9e6ab1b0-24d6-43fb-8597-8bced1b1b9b1
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PT1KDMBxGfzo6U9GlW6+gBASny44LGoZEoRAgu/5JB9Kkdih0CDdw4Qm8gguv5S3Enbv35n2bzwKw4Gax65R6bd62tRIWWCMdRNPW4ngFk1b0bdeIowUAZxO4ZEvVCfgWJrR5UdmbIlRrg/3R04WtXrA8POE9M6tn7GM99vnMj8z039Zrl7mnSjes+D7uVprZkZsoMU/QWmcnHhCPDCWiMjblwBUPEsk123HJappnPQ0yU2rikhQj6sQeT5OKDMQhTtwTSSXV5Z8hmtOK61BTHdfbAk0BruEcb8YTF4/ez+fXXcTebx+q2Ye8B/gFK7F70wYBAAA=
+    PublicBukkitValues:
+      holysfers:damage: 3i
+      holysfers:holysfers: 1i
+      holysfers:rarity: LEGENDARY
+legendary_damage2_armor2:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0082FD","text":"Легендарная
+      сфера"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Урон
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_ARMOR:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ARMOR
+          slot: OFF_HAND
+          uuid: 970d9a9e-e244-479e-99f6-d0282498ae43
+          operation: 0
+      GENERIC_ARMOR_TOUGHNESS:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ARMOR_TOUGHNESS
+          slot: OFF_HAND
+          uuid: 657897e0-7513-477c-beb1-4e2319913e89
+          operation: 0
+      GENERIC_ATTACK_DAMAGE:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ATTACK_DAMAGE
+          slot: OFF_HAND
+          uuid: 8df96cbc-9618-45ca-b62c-fb92d082847a
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02Pu07DMBhGfxBIJcDMI7DmogR1YACG1FFtcJqrt15cJa5dQpqgOA/A2qk7vAELA6/AUxE2tnN0vuUzAAy4mG1aKZ/q53UpuQHGQBWvm5LvzmDU8K5pa74zAOBoBKfJXLYcPrkOTJYV5ioL5FIjb/BoZspHJKobtE304gF5SA19cudN9fjf1m3mqStzJyjYlrYLlZhTJ5R8ElpLFb8yH7u4zy0iqM57JpkfCqaSDRNJSdK4I36sc4UdHCGL2NRlUVjgHtvYph0WRBCV/5lFUlIwFSiiaLnOrDHAORyj1XDi5Pvno3o/3F99ve2vb82XS4BfUGVMkAYBAAA=
+    PublicBukkitValues:
+      holysfers:armor: 2i
+      holysfers:damage: 2i
+      holysfers:holysfers: 1i
+      holysfers:rarity: LEGENDARY
+legendary_damage2_armor2_speed2:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#CA0076","text":"-
+      "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#CA0076","text":"С"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#CF0079","text":"ф"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D5007C","text":"е"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DA007F","text":"р"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DF0083","text":"а
+      "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#EA0089","text":"ᴇ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#EF008C","text":"ᴛ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E90088","text":"ᴇ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E30085","text":"ʀ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DD0081","text":"ɴ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D6007D","text":"ɪ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D0007A","text":"ᴛ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#CA0076","text":"ʏ
+      "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#CA0076","text":"-"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Скорость
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Урон
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_ATTACK_DAMAGE:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ATTACK_DAMAGE
+          slot: OFF_HAND
+          uuid: 1191f64d-be58-4930-a1a1-33c30793458c
+          operation: 0
+      GENERIC_MOVEMENT_SPEED:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 0.019999999552965164
+          name: GENERIC_MOVEMENT_SPEED
+          slot: OFF_HAND
+          uuid: 9358eeda-8817-46b7-8852-3538752e5291
+          operation: 0
+      GENERIC_ARMOR:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ARMOR
+          slot: OFF_HAND
+          uuid: 36e8ad53-9c74-42ad-b98e-2428c3d4d6ff
+          operation: 0
+      GENERIC_ARMOR_TOUGHNESS:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ARMOR_TOUGHNESS
+          slot: OFF_HAND
+          uuid: 727e5412-29c6-4bdf-80c0-d5bec92d5bac
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PS07DMBRFHwhQG1hMPkpQhYSEGKSOYhen+XrWj6vEtUuVJiiOWAE7QUwYVGLKIlgCA5ZBmDE7R+dOrgFgwNV820r5UD9uKskNMAba87qp+GEMo4Z3TVvzgwEAJyM4Txey5fDOdWCyvDTXeSBXGnmDx3NTzpDYX6Ndqpf3yENq6NM7L9STf1u3WWSuLJygZDvaLlVqhk4k+TSyVip5Yj52cV9YRFBd9EwyPxJMpVsm0opkSUf8RBcKOzhGFrGpy+KoxD22sU07LIggqvgzi2SkZCpQRNFqk1sTgEs4RevhxNnH58Xbzy26eX0Ov7+OLzOAXyOMdwgGAQAA
+    PublicBukkitValues:
+      holysfers:speed: 2i
+      holysfers:armor: 2i
+      holysfers:damage: 2i
+      holysfers:holysfers: 1i
+      holysfers:rarity: LEGENDARY
+legendary_damage2_armor2_speed1:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#FF0000","text":"-
+      "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0000","text":"С"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0500","text":"ф"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0900","text":"е"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0E00","text":"р"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF1200","text":"а
+      "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF1B00","text":"s"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF1700","text":"ᴛ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF1200","text":"ɪ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0E00","text":"ɴ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0900","text":"ɢ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0500","text":"ᴇ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0000","text":"ʀ
+      "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#FF0000","text":"-"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Скорость
+      I"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Урон
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_MOVEMENT_SPEED:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 0.009999999776482582
+          name: GENERIC_MOVEMENT_SPEED
+          slot: OFF_HAND
+          uuid: d5d8c33b-c1a5-4d14-ad58-990d447f7265
+          operation: 0
+      GENERIC_ARMOR:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ARMOR
+          slot: OFF_HAND
+          uuid: 59c8e88e-1918-4011-a5a8-afdde7496e00
+          operation: 0
+      GENERIC_ARMOR_TOUGHNESS:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ARMOR_TOUGHNESS
+          slot: OFF_HAND
+          uuid: 5bf56ef6-8a75-4e85-8265-63aba76b2d1d
+          operation: 0
+      GENERIC_ATTACK_DAMAGE:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ATTACK_DAMAGE
+          slot: OFF_HAND
+          uuid: d34eb96f-44bd-41f4-913b-164efc0afb86
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PS07DMBRFHwikEhA7QGIJ+SiBDhGDxFHt4jQ/e5a2rhLXLlWaoDg7YRfsgKXAjG0QZszO0bmTawFYcLPa90q9tK+7RgkLrImOou0acbqCWSeGrm/FyQKAsxlc5pXqBXwIE9u8rO1tGauNQcHk6cpWSySPD+iQm/UzCpCeevQULMz839bvqsJXzItrfqD9Wuf2wkuUiBJno7M3HmIfj8whkho2csXDRHKd77nMG1JkAwkzwzT2cIoc4lKfp0mNR+xilw5YEkk0+zOHFKTmOtZE02ZXOnOAazhH2+nEBbt///l6xNWnF33r7u4W4Bc+RsUDBgEAAA==
+    PublicBukkitValues:
+      holysfers:speed: 1i
+      holysfers:armor: 2i
+      holysfers:damage: 2i
+      holysfers:holysfers: 1i
+      holysfers:rarity: LEGENDARY
+legendary_speed3:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0082FD","text":"Легендарная
+      сфера"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Скорость
+      III"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_MOVEMENT_SPEED:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 0.029999999329447746
+          name: GENERIC_MOVEMENT_SPEED
+          slot: OFF_HAND
+          uuid: 68f0a818-00ad-4dc7-910a-8ab0cd5923fb
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02Pu07DMBhGfxBIxTAw8Ry5KEEdoUPqqDZNmqu3Xlwlrl2qNIE46sTGwMLGW/AmvEdfgaVhYztH51s+BIDgZrZppJxWz+tScgSopx2v6pLvr2BQ87ZuKr5HAHA2gMtkLhsO31z7BssKY5X5cqmx23s0M+QTFrt7vE30YoRdrPo+fnAnevhv69Tz1JG57RdsGzQLlRgTO5R8HJpLFb8wjziky00qAp13TDIvFEwlGyaSkqZxS71Y54rYJMImtQKHRWFBOmIRK2iJoIKq/M9MmtKCKV9RFZTrzBwCXMM5XvUnLn5eb3/fDqO7z4/Hr8Px3QA4AY0tVtwGAQAA
+    PublicBukkitValues:
+      holysfers:speed: 3i
+      holysfers:holysfers: 1i
+      holysfers:rarity: LEGENDARY
+legendary_haste3:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0082FD","text":"Легендарная
+      сфера"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Спешка
+      III"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02Pu07DMBhGfxAVJfAoCHJRgrqBOqSOaoPT3GyJoRdXiWuXKk1QHLHzKKy8BSOPwisQNrZzdL7lswAsuFrsWqWe6pdtpYQF1kAHUTeVOF7AuBFd09biaAHAyRhG2VK1Aj6FiWxelPamiNTaoGDwZGGrRyQPd2ifmdUUBUgPffYQzM3k39ZvlrmvmBeVfE/blc7suRcrMYudtU5feYh93DOHSGpYzxUPY8l1tuMyq0iediRMDdPYwwlyiEt9nsQl7rGLXdphSSTR7M8ckpOS60gTTatt4UwALuEUbYYTZ1Py/fX2c//8fqs+RjfX5wC/ITsXWAYBAAA=
+    PublicBukkitValues:
+      holysfers:holysfers: 1i
+      holysfers:haste: 3i
+      holysfers:rarity: LEGENDARY
+mythic_speed2_armor3:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#BF0000","text":"М"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#C70000","text":"и"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#CF0000","text":"ф"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D70000","text":"и"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DF0000","text":"ч"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E70000","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#EF0000","text":"с"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F70000","text":"к"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0000","text":"а"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F60000","text":"я
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E40000","text":"с"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DA0000","text":"ф"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D10000","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#C80000","text":"р"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#BF0000","text":"а"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Скорость
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+      III"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_ARMOR:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 3.0
+          name: GENERIC_ARMOR
+          slot: OFF_HAND
+          uuid: c1b4c20e-cad6-41bc-a5dc-5c245c76d2d7
+          operation: 0
+      GENERIC_ARMOR_TOUGHNESS:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 3.0
+          name: GENERIC_ARMOR_TOUGHNESS
+          slot: OFF_HAND
+          uuid: 296425be-f4f9-40dc-bbf0-b685ef236cb5
+          operation: 0
+      GENERIC_MOVEMENT_SPEED:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 0.019999999552965164
+          name: GENERIC_MOVEMENT_SPEED
+          slot: OFF_HAND
+          uuid: d09279e3-e6fe-4a2a-a296-51000e2458be
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PT07CQBxGfxJNsHoJbzAFW8OChVop0zAtLaUws4MyWNqZSvoH2u4MiUt33sTEE7jjUHbp7nt5b/MpAArczpJSiGn2tt0JroDSrj3Pih3Pr6Fb8KooM54rAHDRhatgJUoO37y2EFtGaLO0RFhjvWV/hoSD4/0DToN6/Yx1LFs/ftQn9eBfqxWrhSZo34pY6pZrGaBJ3xN87KmhnB+YHEkWW4LGruaYc5U2LCKGixzDk8QkGovDe3uBkW28IrsREY1xRXqedPxA0CapiB/2qE+OjvlSETlKmBEecaoOtu5wCHADHbxpj1x+fp3zM3lCH+93Px15+gX4AwCB6NwKAQAA
+    PublicBukkitValues:
+      holysfers:speed: 2i
+      holysfers:armor: 3i
+      holysfers:holysfers: 1i
+      holysfers:rarity: MYTHIC
+mythic_damage3_armor2:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#BF0000","text":"М"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#C70000","text":"и"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#CF0000","text":"ф"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D70000","text":"и"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DF0000","text":"ч"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E70000","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#EF0000","text":"с"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F70000","text":"к"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0000","text":"а"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F60000","text":"я
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E40000","text":"с"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DA0000","text":"ф"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D10000","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#C80000","text":"р"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#BF0000","text":"а"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Урон
+      III"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_ARMOR:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ARMOR
+          slot: OFF_HAND
+          uuid: 9b7f1d2b-ba40-4bfb-9214-efd610401ff0
+          operation: 0
+      GENERIC_ARMOR_TOUGHNESS:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ARMOR_TOUGHNESS
+          slot: OFF_HAND
+          uuid: c314d2a0-8df7-4f22-bdf7-c5e41e21a984
+          operation: 0
+      GENERIC_ATTACK_DAMAGE:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 3.0
+          name: GENERIC_ATTACK_DAMAGE
+          slot: OFF_HAND
+          uuid: fd81223a-6930-4af7-92a3-880bef37e0d9
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PsU6DQByH/xpNKjqpj+FwtILp0MFIS4/0QCilvUscWnqVwh1tKFhgM76Cj+ILuPoaLk6uTiYyuv2+fN/yUwAUOBsnhRD32Wa1FlwBpVlbnuVrvjuBVs7LvMj4TgGAgxYcB3NRcHjjlYXYLELLmSXCCusN+2MkHBxvb3AaVIs7rGPZ+OGtPqq6/1otn081QTtWxFK3WMgAjTqe4ENPDeXkicmBZLElaOxqjjlRac0iYrjIMTxJTKKxOLy2pxjZxiOyaxHRGJek7UnHDwStk5L4YZv6ZO+Y/ZLIQcKMcI9Ttbtyez2AUzjEy+bI0dXX88Xne//y5fv34+fh9RzgDz1GZMIKAQAA
+    PublicBukkitValues:
+      holysfers:armor: 2i
+      holysfers:damage: 3i
+      holysfers:holysfers: 1i
+      holysfers:rarity: MYTHIC
+mythic_damage2_armor3:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#BF0000","text":"М"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#C70000","text":"и"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#CF0000","text":"ф"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D70000","text":"и"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DF0000","text":"ч"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E70000","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#EF0000","text":"с"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F70000","text":"к"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0000","text":"а"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F60000","text":"я
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E40000","text":"с"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DA0000","text":"ф"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D10000","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#C80000","text":"р"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#BF0000","text":"а"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+      III"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Урон
+      II"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_ARMOR:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 3.0
+          name: GENERIC_ARMOR
+          slot: OFF_HAND
+          uuid: 295a9dcd-6ef1-4dc1-bfe1-7e0a874344e1
+          operation: 0
+      GENERIC_ARMOR_TOUGHNESS:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 3.0
+          name: GENERIC_ARMOR_TOUGHNESS
+          slot: OFF_HAND
+          uuid: 87a16d61-e4a3-4c96-ad03-e89d8ba1a36c
+          operation: 0
+      GENERIC_ATTACK_DAMAGE:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 2.0
+          name: GENERIC_ATTACK_DAMAGE
+          slot: OFF_HAND
+          uuid: 4db52e7f-ef69-4640-9ca0-5073afe41a73
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PwVKCQByH/zY5Y9RL+AaLBo4HD00kLuNCIKK7N8U1XHbJEBJ4g471KE2nXqtbpzh2+33zfZefBqDBzSItpXzMn/cHyTXQ2nXkeXHgpyvoFbwqypyfNADo9KAbbWTJ4YvXDmLrBO3WjoxrbLYcLpD0sDiOcBbV23tsYtX62Z05r8f/WqPYrAxJh07CMr/cqgjNh4Hks0CP1fKVqaliwpFU+IZnL3XasIRYPvKsQBGbGEzEt+4KI9d6Qm4jEypwRQaB8sJI0iatSBgPaEjOnv1QETVNmRWfcaaP9/5kAnANF3jXHrn8/ez+jMDuf7x0+tH32zvAH+jfJ78KAQAA
+    PublicBukkitValues:
+      holysfers:armor: 3i
+      holysfers:damage: 2i
+      holysfers:holysfers: 1i
+      holysfers:rarity: MYTHIC
+custom_speed3_armor1:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#90BBC4","text":"С"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#9AC7D1","text":"ф"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#A3D4DE","text":"е"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#ADE0EB","text":"р"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B6EDF8","text":"а
+      "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B9EDF8","text":"Ф"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B4E2EB","text":"л"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#AFD7DE","text":"е"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#AACCD1","text":"ш"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#A5C1C4","text":"а"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Скорость
+      III"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+      I"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_MOVEMENT_SPEED:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 0.029999999329447746
+          name: GENERIC_MOVEMENT_SPEED
+          slot: OFF_HAND
+          uuid: dd7f8af6-ae83-4266-b15a-d49379116f93
+          operation: 0
+      GENERIC_ARMOR:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 1.0
+          name: GENERIC_ARMOR
+          slot: OFF_HAND
+          uuid: 8c56b91f-3bab-463b-b460-b646c40c5a14
+          operation: 0
+      GENERIC_ARMOR_TOUGHNESS:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 1.0
+          name: GENERIC_ARMOR_TOUGHNESS
+          slot: OFF_HAND
+          uuid: 4cf83074-a7f9-4990-bd4a-0837c4bdf72a
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PTU7CQBiGP40mWD3MYH8MCxJ/Rss0zFQKFmZ2UIa005lKoFXbjUfxAiQmxnAID+HOY5jYpbvnzfNuHgvAgrNxXml9v3lcZVpaYLW0lpsyk9sT6JTypaw2cmsBwEEHjuO5riR8yjpAYpai5SzQSU28dk/GSIdErS9IEdeLG+IR0/rBlTese/++bjmfuprbQSqKUbUwMRrakZaDqJuYhyfWJIjia80nt67wgzzEkWFNrGijU4G5QxVLeRNpoRKHGd6EU45CX6iWHYb5M1X0nJk7RZXOQkxthklNim5vNer3AU7hkCzbkKPd5dvr17uf7793H7975wfgD90t9rMKAQAA
+    PublicBukkitValues:
+      holysfers:speed: 3i
+      holysfers:armor: 1i
+      holysfers:holysfers: 1i
+      holysfers:rarity: CUSTOM
+custom_damage5_haste1:
+  ==: org.bukkit.inventory.ItemStack
+  v: 2586
+  type: PLAYER_HEAD
+  meta:
+    ==: ItemMeta
+    meta-type: SKULL
+    display-name: '{"extra":[{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#8D0000","text":"С"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#960000","text":"ф"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#9E0000","text":"е"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#A70000","text":"р"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B00000","text":"а
+      "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B90000","text":"Ц"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B90000","text":"е"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B00000","text":"р"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#A70000","text":"б"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#9E0000","text":"е"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#960000","text":"р"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#8D0000","text":"а"}],"text":""}'
+    lore:
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Спешка
+      I"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+      "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Урон
+      V"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_purple","text":""}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+      предмет в левую руку,"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+      активировать магию."}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+      о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+      - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+      "}],"text":""}'
+    attribute-modifiers:
+      GENERIC_ATTACK_DAMAGE:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 4.0
+          name: GENERIC_ATTACK_DAMAGE
+          slot: OFF_HAND
+          uuid: c2f6f34f-abf6-4280-970f-26a7490f85ca
+          operation: 0
+    ItemFlags:
+      - HIDE_ATTRIBUTES
+    internal: H4sIAAAAAAAA/02PQU6DQBhGf40mlbp17RGkkMF04QKLbYd0RqFAmdnRdiqDM7Wh0Eq9jIdwr2fwAl7EGFm6+17e23wGgAHn06daqYfyeSWVMMBo10aUlRTbM+hU4qWqS7E1AOCoA6dJpmoB76LxTZ7m5jL11aLBTsvR1FT3uNhc43XSzAfYwbr1Y9eZNP1/LaqyGVLM9nO+Duq5TsyJHSoxDnsLHe9Y4SI6u7O5DhAZhTmLhpLp2CYeQ8R7RPQQ7Hnk9rh3K7kmFi0wojpRxCImGSWKHoY5HcV7FjGLRFwS7UvW+P1Vat4AdOEYL9sjJ1cXl8TuDr4+3l5/st/vT4A/zDoM7AoBAAA=
+    PublicBukkitValues:
+      holysfers:damage: 4i
+      holysfers:holysfers: 1i
+      holysfers:haste: 1i
+      holysfers:rarity: CUSTOM

@@ -1,0 +1,65 @@
+#
+#        » Leaked by @FichaDev «
+#        Telegram: t.me/FichaDev
+#
+settings:
+  allowed-worlds:
+    - world
+    - spawn
+  target-world: world
+  spawn-world: spawn
+
+default:
+  enabled: true
+  teleport-delay: 3
+  cooldown: 10
+  min-radius: 100
+  max-radius: 1000
+  bypass-delay-in-spawn: true
+
+long:
+  enabled: true
+  cooldown: 60
+  min-radius: 1000
+  max-radius: 3000
+
+player:
+  enabled: true
+  cooldown: 1200
+  min-players-online: 5
+  ignore-vanished-players: true
+  ignore-invisible-players: false
+  excluded-worlds:
+    - spawn
+    - world_the_end
+
+base:
+  enabled: true
+  cooldown: 1200
+  min-radius-from-region: 250
+  max-radius-from-region: 300
+  use-protectionstones: true
+  use-worldguard: true # времено не роботает
+  excluded-worlds:
+    - spawn
+    - world_the_end
+
+unsafe-blocks:
+  - LAVA
+  - FIRE
+  - CACTUS
+  - MAGMA_BLOCK
+  - SWEET_BERRY_BUSH
+  - CAMPFIRE
+  - SOUL_CAMPFIRE
+
+messages:
+  teleporting: "&x&0&0&D&6&F&B▶§f До телепортации осталось %time% сек. &x&0&0&D&6&F&BНе двигайтесь!"
+  teleport-cancelled: "&x&F&B&0&0&0&0▶ Телепортация отменена &fиз-за движения"
+  teleport-success: "&x&0&0&D&6&F&B▶&f Вы телепортированы на X, Y, Z: &x&0&0&D&6&F&B%x%, %y%, %z%"
+  cooldown-default: "&x&F&B&0&0&0&0▶§f Вы сможете использовать этот вид телепортации &x&F&B&0&0&0&0только через %time% сек."
+  cooldown-custom: "&x&F&B&0&0&0&0▶§f Вы сможете использовать этот вид телепортации &x&F&B&0&0&0&0только через %time% сек."
+  world-not-allowed: "&x&F&B&0&0&0&0▶ &fВ этом мире нельзя телепортироваться."
+  not-enough-players: "&x&F&B&0&0&0&0▶ &fНедостаточно игроков на сервере для телепортации."
+  no-permission: "&x&F&B&0&0&0&0▶ &fНедостаточно прав для использования данного вида телепортации."
+  no-bases-found: "&x&F&B&0&0&0&0▶ &fНе найдено подходящих баз для телепортации."

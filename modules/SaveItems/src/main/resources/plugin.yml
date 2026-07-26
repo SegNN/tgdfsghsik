@@ -1,0 +1,8 @@
+name: SaveItems
+version: '1.0'
+main: ru.extas7y.saveitems.SaveItems
+api-version: '1.16'
+authors: [Extas7y]
+commands:
+  saveitems:
+    aliases: [si]

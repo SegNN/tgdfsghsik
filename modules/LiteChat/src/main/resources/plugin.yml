@@ -1,0 +1,5 @@
+name: LiteChat
+version: '1.0'
+main: ru.litechat.LiteChat
+api-version: '1.16'
+depend: [PlaceholderAPI]

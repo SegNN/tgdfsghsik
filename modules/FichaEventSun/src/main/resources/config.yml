@@ -1,0 +1,36 @@
+core:
+  world: "spawn"
+  x: -121
+  y: 48
+  z: -28
+  radius: 12
+
+rewards:
+  interval-seconds: 5
+  money-min: 8500.0
+  money-max: 9700.0
+  exp-min: 20
+  exp-max: 40
+
+phase:
+  change-minutes: 25 #когда обновиться фаза
+
+loot:
+  drop-interval-seconds: 20
+  source: "both" #lootmanager/custom/both (lootmanager - береться с плагина LootManager, custom - добавленный лут через команду, both - лут береться от lootmanager и custom)
+  lootmanager:
+    level: 1
+    count: 1
+    category: ""
+  custom:
+    count: 1
+
+hologram:
+  title: "&6Ядро Солнца"
+  phase-line: "&fСейчас выдаёт: %phase%"
+  timer-line: "&fЛут через &x&0&0&D&0&F&8%time% сек."
+  y-offset: 1.5
+
+messages:
+  enter: "&b▶ &fВы вошли на территорию &6Ядра Солнца&f. Находитесь в радиусе &b%radius% блоков&f, чтобы получать %reward%&f."
+  money-received: "&6▶ &fВаш баланс пополнен на &6%amount% ¤"

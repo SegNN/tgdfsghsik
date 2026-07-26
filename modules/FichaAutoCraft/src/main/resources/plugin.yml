@@ -1,0 +1,7 @@
+name: FichaAutoCraft
+version: '1.0'
+main: ua.fichadev.fichaautocraft.FichaAutoCraft
+api-version: '1.16'
+authors:
+  - FichaDev
+  - Smail

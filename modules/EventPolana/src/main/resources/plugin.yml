@@ -1,0 +1,12 @@
+name: EventPolana
+version: '1.0.0'
+main: ru.kotikstasika.eventpolana.EventPolana
+api-version: '1.16'
+depend:
+  - WorldEdit
+  - WorldGuard
+  - LootManager
+  - EventManager
+  - DecentHolograms
+commands:
+  polana:

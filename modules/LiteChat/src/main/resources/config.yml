@@ -1,0 +1,23 @@
+messages:
+  already-muted: "&cВы замучены и не можете использовать чат!"
+  block-message-for-player: "&x&1&E&C&D&F&B▶ &fСообщение не было отправлено&x&1&E&C&D&F&B, в нем содержится нецензурный контент!"
+  warning-notify: "&6▶ &fНарушение &6#{warning_count}/{max_warnings}&f. При &6{max_warnings}&f - мут!"
+  mute-message: "&cВы получили мут на 5 минут за нарушения в чате!"
+  cooldown-for-chat: "&6▶ &fЧат будет &6доступен &fчерез &6{sec}"
+  flood-alert: "&x&F&B&0&0&0&0▶ &fИгрок &x&F&B&0&0&0&0{playerName} &fпытается флудить: &7'{msg}'"
+settings:
+  bypass-permissions: "litechat.bypass"
+  color-permissions: "litechat.color"
+  alert-permissions: "litechat.alert"
+  disablechat-permissions: "litechat.disable"
+  max-warnings: 3
+  mute-command: "mute {player} 5m Автоматический мут за нарушения чата -s"
+  cooldown: 1
+  newbie-cooldown-minutes: 5
+  newbie-cooldown-message: "&x&F&B&0&0&0&0▶ &fНужно отыграть &x&1&E&C&D&F&B5м. &fдля того чтобы &#13FB08пользоваться &fчатом. &e(Прошло &x&1&E&C&D&F&B{time_played})"
+admin:
+  block-message-for-admin: "&x&F&B&0&0&0&0▶ &fИгрок &x&F&B&0&0&0&0{player} &fнаписал: &x&F&B&0&0&0&0'{message}' &7(Тип: {block_type})"
+format:
+  local: "&x&0&0&D&A&F&Bʟ &7| %stickhwstar_stars%%chatbrackets_full%&f%player_displayname%{suffix}&3: &7%chatbrackets_color%{message}"
+  global: "&x&f&f&7&0&0&0ɢ &7| %stickhwstar_stars%%chatbrackets_full%&f%player_displayname%{suffix}&6: &f%chatbrackets_color%{message}"
+  radius: 100

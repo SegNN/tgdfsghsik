@@ -1,0 +1,81 @@
+package org.dimasik.liteauction.api.events.market.compile;
+
+import java.util.HashSet;
+import java.util.List;
+import lombok.Generated;
+import org.bukkit.entity.Player;
+import org.dimasik.liteauction.api.events.Cancellable;
+import org.dimasik.liteauction.api.events.Event;
+import org.dimasik.liteauction.backend.enums.CategoryType;
+import org.dimasik.liteauction.backend.enums.MarketSortingType;
+import org.dimasik.liteauction.backend.storage.models.SellItem;
+
+public class PostMarketCompileEvent extends Event implements Cancellable {
+   private boolean cancelled = false;
+   private final Player player;
+   private final List<SellItem> items;
+   private final int page;
+   private final String target;
+   private final MarketSortingType sortingType;
+   private final CategoryType categoryType;
+   private final HashSet<String> filters;
+
+   public PostMarketCompileEvent(
+      Player player, List<SellItem> items, int page, String target, MarketSortingType sortingType, CategoryType categoryType, HashSet<String> filters
+   ) {
+      this.player = player;
+      this.items = items;
+      this.page = page;
+      this.target = target;
+      this.sortingType = sortingType;
+      this.categoryType = categoryType;
+      this.filters = filters;
+   }
+
+   @Generated
+   @Override
+   public boolean isCancelled() {
+      return this.cancelled;
+   }
+
+   @Generated
+   public Player getPlayer() {
+      return this.player;
+   }
+
+   @Generated
+   public List<SellItem> getItems() {
+      return this.items;
+   }
+
+   @Generated
+   public int getPage() {
+      return this.page;
+   }
+
+   @Generated
+   public String getTarget() {
+      return this.target;
+   }
+
+   @Generated
+   public MarketSortingType getSortingType() {
+      return this.sortingType;
+   }
+
+   @Generated
+   public CategoryType getCategoryType() {
+      return this.categoryType;
+   }
+
+   @Generated
+   public HashSet<String> getFilters() {
+      return this.filters;
+   }
+
+   @Generated
+   @Override
+   public void setCancelled(boolean cancelled) {
+      this.cancelled = cancelled;
+   }
+}

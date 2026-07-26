@@ -1,0 +1,15 @@
+name: HolyCustomEgg
+version: 1.0
+author: lolodimo4ka
+main: ru.lolodimo4ka.holycustomegg.HolyCustomEgg
+api-version: 1.16
+
+commands:
+  holycustomegg:
+    usage: /holycustomegg <give> <eggs|spawner|pickaxe> [тип] [количество]
+    permission: holycustomegg.admin
+    aliases: [hce]
+
+permissions:
+  holycustomegg.admin:
+    default: op

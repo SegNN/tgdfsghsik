@@ -1,0 +1,10 @@
+#
+#        » Leaked by @FichaDev «
+#        Telegram: t.me/FichaDev
+#
+#плейсхолдеры создаються в формате %fichaplaceholder_название%, пример ниже
+#%fichaplaceholder_fichadev%
+placeholders:
+  telegram: '&#00C8EDt.me/fichadev'
+  fichadev: '&#FB6108&lF&#FB5808&li&#FB5008&lc&#FB4708&lh&#FB3F08&la&#FB3608&lD&#FB2D08&le&#FB2508&lv'
+  telegram-ficha-bot: '&#00C8EDскоро...'

@@ -1,0 +1,272 @@
+package org.dimasik.liteauction.frontend.menus.bids.listeners;
+
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import org.bukkit.Material;
+import org.bukkit.Sound;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.inventory.Inventory;
+import org.dimasik.liteauction.LiteAuction;
+import org.dimasik.liteauction.backend.config.ConfigManager;
+import org.dimasik.liteauction.backend.enums.AuctionType;
+import org.dimasik.liteauction.backend.enums.BidsSortingType;
+import org.dimasik.liteauction.backend.enums.CategoryType;
+import org.dimasik.liteauction.backend.enums.MarketSortingType;
+import org.dimasik.liteauction.backend.storage.models.BidItem;
+import org.dimasik.liteauction.backend.storage.models.GuiData;
+import org.dimasik.liteauction.backend.utils.format.Parser;
+import org.dimasik.liteauction.frontend.menus.abst.AbstractListener;
+import org.dimasik.liteauction.frontend.menus.bids.menus.ItemBids;
+import org.dimasik.liteauction.frontend.menus.bids.menus.Main;
+import org.dimasik.liteauction.frontend.menus.bids.menus.RemoveItem;
+import org.dimasik.liteauction.frontend.menus.bids.menus.Sell;
+import org.dimasik.liteauction.frontend.menus.market.menus.Unsold;
+
+public class MainListener extends AbstractListener {
+   public MainListener() {
+   }
+
+   @EventHandler
+   @Override
+   public void onClick(InventoryClickEvent event) {
+      Inventory inventory = event.getView().getTopInventory();
+      if (inventory.getHolder() instanceof Main main) {
+         event.setCancelled(true);
+         if (event.getClickedInventory() == null || event.getClickedInventory() != inventory) {
+            return;
+         }
+
+         Player player = (Player)event.getWhoClicked();
+         int slot = event.getSlot();
+         CompletableFuture.runAsync(
+            () -> {
+               try {
+                  if (slot < 45) {
+                     if (event.getCurrentItem() != null && event.getCurrentItem().getType() == Material.BARRIER) {
+                        return;
+                     }
+
+                     BidItem bidItem = main.getItems().get(slot);
+                     if (bidItem != null) {
+                        if (bidItem.getPlayer().equalsIgnoreCase(player.getName())) {
+                           Optional<BidItem> bidItemOptional = LiteAuction.getInstance()
+                              .getDatabaseManager()
+                              .getBidItemsManager()
+                              .getItem(bidItem.getId())
+                              .get();
+                           if (bidItemOptional.isEmpty()) {
+                              player.sendMessage(Parser.color("&x&F&F&2&2&2&2▶ &fНевозможно забрать предмет, так как его уже купили."));
+                              return;
+                           }
+
+                           int bids = LiteAuction.getInstance().getDatabaseManager().getBidsManager().getBidsByItemIdCount(bidItem.getId()).get();
+                           if (bids != 0) {
+                              player.sendMessage(Parser.color("&x&F&F&2&2&2&2▶ &fДанный предмет больше нельзя снять с продажи."));
+                              new ItemBids(bidItem, main).setPlayer(player).compile().open();
+                              return;
+                           }
+
+                           new RemoveItem(bidItem, main).setPlayer(player).compile().open();
+                        } else {
+                           Optional<BidItem> bidItemOptionalx = LiteAuction.getInstance()
+                              .getDatabaseManager()
+                              .getBidItemsManager()
+                              .getItem(bidItem.getId())
+                              .get();
+                           if (bidItemOptionalx.isEmpty()) {
+                              player.sendMessage(Parser.color("&x&F&F&2&2&2&2▶ &fНевозможно забрать предмет, так как его уже купили."));
+                              return;
+                           }
+
+                           new ItemBids(bidItem, main).setPlayer(player).compile().open();
+                        }
+                     }
+                  } else if (slot == ConfigManager.getInt("design/menus/bids/main.yml", "on-sell-items.slot", 45)) {
+                     new Sell(1, main).setPlayer(player).compile().open();
+                  } else if (slot == ConfigManager.getInt("design/menus/bids/main.yml", "unsold-items.slot", 46)) {
+                     new Unsold(1, main).setPlayer(player).compile().open();
+                  } else if (slot == ConfigManager.getInt("design/menus/bids/main.yml", "update.slot", 47)) {
+                     player.sendMessage(
+                        Parser.color(ConfigManager.getString("design/menus/bids/main.yml", "messages.updated", "&#00D4FB▶ &fАукцион обновлен."))
+                     );
+                     if (LiteAuction.getInstance().getDatabaseManager().getSoundsManager().getSoundToggle(player.getName()).get()) {
+                        player.playSound(player.getLocation(), Sound.ENTITY_ENDER_EYE_LAUNCH, 1.0F, 1.0F);
+                     }
+
+                     int newPage = main.getPage();
+                     int items = LiteAuction.getInstance()
+                        .getDatabaseManager()
+                        .getBidItemsManager()
+                        .getItemsCount(main.getPlayer(), main.getSortingType(), main.getFilters(), main.getCategoryType())
+                        .get();
+                     int pages = items / 45 + (items % 45 == 0 ? 0 : 1);
+                     newPage = Math.min(pages, newPage);
+                     newPage = Math.max(1, newPage);
+                     Main newMain = new Main(newPage);
+                     newMain.setTarget(main.getPlayer());
+                     newMain.setFilters(main.getFilters());
+                     newMain.setCategoryType(main.getCategoryType());
+                     newMain.setSortingType(main.getSortingType());
+                     newMain.setPlayer(player).compile().open();
+                  } else if (slot == ConfigManager.getInt("design/menus/bids/main.yml", "prev-page.slot", 48)) {
+                     int newPage = main.getPage() - 1;
+                     int items = LiteAuction.getInstance()
+                        .getDatabaseManager()
+                        .getBidItemsManager()
+                        .getItemsCount(main.getPlayer(), main.getSortingType(), main.getFilters(), main.getCategoryType())
+                        .get();
+                     int pages = items / 45 + (items % 45 == 0 ? 0 : 1);
+                     newPage = Math.min(pages, newPage);
+                     newPage = Math.max(1, newPage);
+                     if (newPage != main.getPage()) {
+                        if (LiteAuction.getInstance().getDatabaseManager().getSoundsManager().getSoundToggle(player.getName()).get()) {
+                           player.playSound(player.getLocation(), Sound.ENTITY_EGG_THROW, 1.0F, 1.0F);
+                        }
+
+                        Main newMain = new Main(newPage);
+                        newMain.setTarget(main.getPlayer());
+                        newMain.setFilters(main.getFilters());
+                        newMain.setCategoryType(main.getCategoryType());
+                        newMain.setSortingType(main.getSortingType());
+                        newMain.setPlayer(player).compile().open();
+                     }
+                  } else if (slot == ConfigManager.getInt("design/menus/bids/main.yml", "switch.slot", 49)) {
+                     GuiData guiData = LiteAuction.getInstance().getDatabaseManager().getGuiDatasManager().getOrDefault(player.getName()).get();
+                     MarketSortingType marketSortingType = guiData.getMarketSortingType();
+                     int newPage = main.getPage();
+                     int items = LiteAuction.getInstance()
+                        .getDatabaseManager()
+                        .getSellItemsManager()
+                        .getItemsCount(main.getPlayer(), marketSortingType, main.getFilters(), main.getCategoryType())
+                        .get();
+                     int pages = items / 45 + (items % 45 == 0 ? 0 : 1);
+                     newPage = Math.min(pages, newPage);
+                     newPage = Math.max(1, newPage);
+                     org.dimasik.liteauction.frontend.menus.market.menus.Main newMain = new org.dimasik.liteauction.frontend.menus.market.menus.Main(
+                        main.getPage()
+                     );
+                     newMain.setTarget(main.getPlayer());
+                     newMain.setFilters(main.getFilters());
+                     newMain.setCategoryType(main.getCategoryType());
+                     newMain.setSortingType(marketSortingType);
+                     newMain.setPlayer(player).compile().open();
+                     player.sendMessage(
+                        Parser.color(
+                           ConfigManager.getString(
+                              "design/menus/bids/main.yml", "messages.switched_to_market", "&#00D4FB▶ &fРежим торговли был обновлен на: &#E7E7E7Торги&f."
+                           )
+                        )
+                     );
+                  } else if (slot == ConfigManager.getInt("design/menus/bids/main.yml", "next-page.slot", 50)) {
+                     int newPage = main.getPage() + 1;
+                     int items = LiteAuction.getInstance()
+                        .getDatabaseManager()
+                        .getBidItemsManager()
+                        .getItemsCount(main.getPlayer(), main.getSortingType(), main.getFilters(), main.getCategoryType())
+                        .get();
+                     int pages = items / 45 + (items % 45 == 0 ? 0 : 1);
+                     newPage = Math.min(pages, newPage);
+                     newPage = Math.max(1, newPage);
+                     if (newPage != main.getPage()) {
+                        if (LiteAuction.getInstance().getDatabaseManager().getSoundsManager().getSoundToggle(player.getName()).get()) {
+                           player.playSound(player.getLocation(), Sound.ENTITY_EGG_THROW, 1.0F, 1.0F);
+                        }
+
+                        Main newMain = new Main(newPage);
+                        newMain.setTarget(main.getPlayer());
+                        newMain.setFilters(main.getFilters());
+                        newMain.setCategoryType(main.getCategoryType());
+                        newMain.setSortingType(main.getSortingType());
+                        newMain.setPlayer(player).compile().open();
+                     }
+                  } else if (slot == ConfigManager.getInt("design/menus/bids/main.yml", "sorting.slot", 52)) {
+                     BidsSortingType newSortingType;
+                     if (event.isLeftClick()) {
+                        newSortingType = main.getSortingType().relative(true);
+                     } else {
+                        if (!event.isRightClick()) {
+                           return;
+                        }
+
+                        newSortingType = main.getSortingType().relative(false);
+                     }
+
+                     int newPage = main.getPage();
+                     int items = LiteAuction.getInstance()
+                        .getDatabaseManager()
+                        .getBidItemsManager()
+                        .getItemsCount(main.getPlayer(), main.getSortingType(), main.getFilters(), main.getCategoryType())
+                        .get();
+                     int pages = items / 45 + (items % 45 == 0 ? 0 : 1);
+                     newPage = Math.min(pages, newPage);
+                     newPage = Math.max(1, newPage);
+                     Main newMain = new Main(newPage);
+                     newMain.setTarget(main.getPlayer());
+                     newMain.setFilters(main.getFilters());
+                     newMain.setCategoryType(main.getCategoryType());
+                     newMain.setSortingType(newSortingType);
+                     newMain.setPlayer(player).compile().open();
+                     if (LiteAuction.getInstance().getDatabaseManager().getSoundsManager().getSoundToggle(player.getName()).get()) {
+                        player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0F, 1.0F);
+                     }
+                  } else if (slot == ConfigManager.getInt("design/menus/bids/main.yml", "category.slot", 53)) {
+                     CategoryType newCategoryType;
+                     if (event.isLeftClick()) {
+                        newCategoryType = main.getCategoryType().relative(true);
+                     } else {
+                        if (!event.isRightClick()) {
+                           return;
+                        }
+
+                        newCategoryType = main.getCategoryType().relative(false);
+                     }
+
+                     int newPage = main.getPage();
+                     int items = LiteAuction.getInstance()
+                        .getDatabaseManager()
+                        .getBidItemsManager()
+                        .getItemsCount(main.getPlayer(), main.getSortingType(), main.getFilters(), main.getCategoryType())
+                        .get();
+                     int pages = items / 45 + (items % 45 == 0 ? 0 : 1);
+                     newPage = Math.min(pages, newPage);
+                     newPage = Math.max(1, newPage);
+                     Main newMain = new Main(newPage);
+                     newMain.setTarget(main.getPlayer());
+                     newMain.setFilters(main.getFilters());
+                     newMain.setSortingType(main.getSortingType());
+                     newMain.setCategoryType(newCategoryType);
+                     newMain.setPlayer(player).compile().open();
+                     if (LiteAuction.getInstance().getDatabaseManager().getSoundsManager().getSoundToggle(player.getName()).get()) {
+                        player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0F, 1.0F);
+                     }
+                  }
+               } catch (Exception var10) {
+                  main.close();
+                  player.sendMessage(Parser.color("&#FB2222▶ &fПроизошла &#FB2222ошибка &fпри выполнении действия."));
+               }
+            }
+         );
+      }
+   }
+
+   @EventHandler
+   public void on(InventoryCloseEvent event) {
+      Inventory inventory = event.getView().getTopInventory();
+      if (inventory.getHolder() instanceof Main main) {
+         Player player = (Player)event.getPlayer();
+
+         try {
+            LiteAuction.getInstance().getDatabaseManager().getGuiDatasManager().getOrDefault(player.getName()).thenAccept(guiData -> {
+               guiData.setCategoryType(main.getCategoryType());
+               guiData.setBidsSortingType(main.getSortingType());
+               guiData.setAuctionType(AuctionType.BIDS);
+               LiteAuction.getInstance().getDatabaseManager().getGuiDatasManager().saveOrUpdateGuiData(guiData);
+            });
+         } catch (Exception var6) {
+         }
+      }
+   }
+}

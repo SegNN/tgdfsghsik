@@ -1,0 +1,51 @@
+dangs:
+  no_rg:
+    pustina:
+      schematic: "dang_norg_pystina.schem"
+      lootlvl: 1
+      biomes:
+        - DESERT
+        #end:
+        #  schematic: "dang_norg_end.schem"
+        # lootlvl: 2
+        #bions:
+        # - END
+  grief:
+    grief_lvl1_1:
+      schematic: "dang_grief_1lvl1.schem"
+      lvlgrief: 1
+      lootlvl: 1
+      biomes:
+        - ALL
+    grief_lvl2_1:
+      schematic: "dang_grief_2lvl1.schem"
+      lvlgrief: 2
+      lootlvl: 2
+      biomes:
+        - ALL
+    grief_lvl3_1:
+      schematic: "dang_grief_3lvl1.schem"
+      lvlgrief: 3
+      lootlvl: 2
+      biomes:
+        - ALL
+    grief_lvl4_1:
+      schematic: "dang_grief_4lvl1.schem"
+      lvlgrief: 4
+      lootlvl: 3
+      biomes:
+        - ALL
+    grief_lvl5_1:
+      schematic: "dang_grief_5lvl1.schem"
+      lvlgrief: 5
+      lootlvl: 3
+      biomes:
+        - ALL
+
+rarities:
+  purple:
+    duration: 60
+    shulker-color: PURPLE
+  red:
+    duration: 90
+    shulker-color: RED

@@ -1,0 +1,11 @@
+name: HolyGoldSpawner
+version: 1.0
+main: ru.lolodimo4ka.holygoldspawner.HolyGoldSpawner
+api-version: 1.16
+depend: [Vault, ProtectionStones, WorldEdit, WorldGuard]
+author: lolodimo4ka
+
+commands:
+  holygoldspawner:
+    permission: holygoldspawner.admin
+    aliases: [hgs, goldspawner]

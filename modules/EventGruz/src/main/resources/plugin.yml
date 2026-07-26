@@ -1,0 +1,9 @@
+name: EventGruz
+version: '1.0-SNAPSHOT'
+main: org.dimasik.eventgruz.EventGruz
+api-version: '1.16'
+depend: [EventManager, LootManager, WorldGuard, WorldEdit, DecentHolograms]
+commands:
+  gruz:
+    permission:
+      events.admin

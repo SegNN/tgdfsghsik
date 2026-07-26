@@ -1,0 +1,6 @@
+name: KotikTotemRune
+version: '1.0-SNAPSHOT'
+main: ru.kotikstasika.kotiktotemrune.KotikTotemRune
+api-version: '1.16'
+commands:
+  kotiktotemrune:

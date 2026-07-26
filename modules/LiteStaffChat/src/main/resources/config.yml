@@ -1,0 +1,13 @@
+chat-format:
+  local: "&b&n&lSC&7 │ &cS &7│ &b&n&l{сервер}&7 │ &r%chatbrackets_full%%player_name% &b▶ %chatbrackets_color%{сообщение}"
+  global: "&b&n&lSC&7 │ &cG &7│ &b&n&l{сервер}&7 │ &r%chatbrackets_full%%player_name% &b▶ %chatbrackets_color%{сообщение}"
+  classic: "&b&n&lSC&7 │ &cC &7│ &b&n&l{сервер}&7 │ &r%chatbrackets_full%%player_name% &b▶ %chatbrackets_color%{сообщение}"
+  lite: "&b&n&lSC&7 │ &cL &7│ &b&n&l{сервер}&7 │ &r%chatbrackets_full%%player_name% &b▶ %chatbrackets_color%{сообщение}"
+
+messages:
+  onlyplayer: "&b&n&lSC&7 │ &cH &7│ &fТолько игрок может использовать эту команду."
+  0args: "&b&n&lSC&7 │ &cH &7│ &fИспользование: &c/{команда} [LOCAL/GLOBAL/LITE/CLASSIC/CURRENT] [сообщение]"
+  senddisabled: "&b&n&lSC&7 │ &cT &7│ &fУ вас выключено получение сообщений."
+  toggle:
+    on: "&b&n&lSC&7 │ &cT &7│ &fПолучение сообщений включено."
+    off: "&b&n&lSC&7 │ &cT &7│ &fПолучение сообщений выключено."

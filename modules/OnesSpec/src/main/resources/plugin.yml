@@ -1,0 +1,19 @@
+name: OnesSpec
+version: '1.0-SNAPSHOT'
+main: me.ones.onesspec.Main
+api-version: '1.16'
+depend: [PlaceholderAPI]
+softdepend: [Essentials]
+commands:
+  spec:
+    description: Войти в режим слежки за игроком
+    usage: /spec <игрок>
+    permission: onesspec.use
+    permission-message: У вас нет прав на использование этой команды!
+  unspec:
+    description: Выйти из режима слежки
+    usage: /unspec
+permissions:
+  onesspec.use:
+    description: Позволяет использовать команды слежки
+    default: op

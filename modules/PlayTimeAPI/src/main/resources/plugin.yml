@@ -1,0 +1,8 @@
+name: PlayTimeAPI
+version: "1.0"
+main: org.dimasik.playtimeapi.Main
+api-version: "1.16"
+authors: [nezxenka, "Dimasik201O (aka sh4dowgirl)"]
+commands:
+  playtime:
+    permission: playtimeapi.command

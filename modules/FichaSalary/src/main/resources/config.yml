@@ -1,0 +1,45 @@
+cooldown:
+  initial-seconds: 3600
+  seconds: 3600
+
+rewards:
+  base: 67000
+  growth-per-claim: 15000
+
+sapphire:
+  chance: 10
+  base-amount: 5
+  growth-per-claim: 2
+
+commands:
+  money: "eco give %player% %amount%"
+  sapphire: "p give %player% %amount%"
+
+ranks:
+  default: 67000
+  griefer: 100000
+  mustang: 150000
+  ghast: 200000
+  wither: 250000
+  kraken: 300000
+  dragon: 350000
+  stinger: 400000
+  eternity: 450000
+  infinity: 500000
+  youtube: 550000
+  stager: 600000
+  mlsotrudnik: 650000
+  sotrudnik: 700000
+  vedsotrudnik: 750000
+  spectator: 800000
+  stsotrudnik: 850000
+  zamkuratora: 900000
+  kurator: 950000
+  texadmin: 1000000
+  admin: 1050000
+
+messages:
+  money-received: "&#FF7000▶&f Вы получили зарплату в размере &#FFC900%amount% &6¤ (монет)"
+  not-ready-money: "&#FF7000▶&f Следующая ваша зарплата через &#FF7000%time%. &fсоставит &#FFC900%amount% &6¤ (монет)"
+  not-ready-sapphire: "&#FF7000▶&f Следующая ваша зарплата через &#FF7000%time%. &fсоставит &#fb0fd4%amount% сапфиров ☀"
+  sapphire-received: "&#FF7000▶&f Вы получили зарплату в размере &#fb0fd4%amount% сапфиров ☀"

@@ -1,0 +1,14 @@
+name: HolyEnchantments
+version: '1.0'
+main: org.dimasik.holyenchantments.HolyEnchantments
+api-version: '1.16'
+authors: [dimasik]
+loadbefore:
+  - StickHWTnT
+depend:
+  - WorldEdit
+  - WorldGuard
+commands:
+  holyenchantments: {}
+  grindstone:
+    permission: essentials.grindstone

@@ -1,0 +1,118 @@
+overworld:
+  pos1:
+    world: spawn
+    x: 65
+    y: 37
+    z: -50
+  pos2:
+    world: spawn
+    x: 45
+    y: 27
+    z: -70
+  update-time: 300
+  rarities:
+    default:
+      displayname: "&x&f&6&9&9&f&dОбычная"
+      chance: 4
+      blocks:
+        - "STONE:0.325"
+        - "COBBLESTONE:0.325"
+        - "DIAMOND_ORE:0.02"
+        - "GOLD_ORE:0.05"
+        - "IRON_ORE:0.05"
+        - "LAPIS_ORE:0.07"
+        - "REDSTONE_ORE:0.08"
+        - "COAL_ORE:0.08"
+    epic:
+      displayname: "&x&e&a&0&0&f&dЭпическая"
+      chance: 2
+      blocks:
+        - "STONE:0.33"
+        - "COBBLESTONE:0.33"
+        - "DIAMOND_ORE:0.05"
+        - "GOLD_ORE:0.08"
+        - "IRON_ORE:0.08"
+        - "LAPIS_ORE:0.05"
+        - "REDSTONE_ORE:0.05"
+        - "COAL_ORE:0.03"
+    legendary:
+      displayname: "&x&0&0&8&2&f&dЛегендарная"
+      chance: 1
+      blocks:
+        - "STONE:0.305"
+        - "COBBLESTONE:0.305"
+        - "ANCIENT_DEBRIS:0.01"
+        - "DIAMOND_ORE:0.08"
+        - "GOLD_ORE:0.10"
+        - "IRON_ORE:0.10"
+        - "LAPIS_ORE:0.04"
+        - "REDSTONE_ORE:0.04"
+        - "COAL_ORE:0.02"
+
+endnether:
+  pos1:
+    world: spawn
+    x: 77
+    y: 37
+    z: -50
+  pos2:
+    world: spawn
+    x: 97
+    y: 30
+    z: -70
+  update-time: 300
+  end:
+    rarities:
+      default:
+        displayname: "&x&f&6&9&9&f&dЭнд - Обычная"
+        chance: 4
+        blocks:
+          - "END_STONE:0.72"
+          - "PURPLE_GLAZED_TERRACOTTA:0.1"
+          - "PURPUR_BLOCK:0.1"
+          - "OBSIDIAN:0.08"
+      epic:
+        displayname: "&x&e&a&0&0&f&dЭнд - Эпическая"
+        chance: 2
+        blocks:
+          - "END_STONE:0.65"
+          - "PURPLE_GLAZED_TERRACOTTA:0.1"
+          - "PURPUR_BLOCK:0.1"
+          - "OBSIDIAN:0.15"
+      legendary:
+        displayname: "&x&0&0&8&2&f&dЭнд - Легендарная"
+        chance: 1
+        blocks:
+          - "END_STONE:0.45"
+          - "PURPLE_GLAZED_TERRACOTTA:0.15"
+          - "PURPUR_BLOCK:0.15"
+          - "OBSIDIAN:0.25"
+  nether:
+    rarities:
+      default:
+        displayname: "&x&f&6&9&9&f&dАд - Обычная"
+        chance: 4
+        blocks:
+          - "NETHERRACK:0.60"
+          - "NETHER_BRICKS:0.14"
+          - "ANCIENT_DEBRIS:0.01"
+          - "NETHER_GOLD_ORE:0.1"
+          - "NETHER_QUARTZ_ORE:0.15"
+      epic:
+        displayname: "&x&e&a&0&0&f&dАд - Эпическая"
+        chance: 2
+        blocks:
+          - "NETHERRACK:0.30"
+          - "NETHER_BRICKS:0.18"
+          - "ANCIENT_DEBRIS:0.02"
+          - "NETHER_GOLD_ORE:0.2"
+          - "NETHER_QUARTZ_ORE:0.3"
+      legendary:
+        displayname: "&x&0&0&8&2&f&dАд - Легендарная"
+        chance: 1
+        blocks:
+          - "NETHERRACK:0.08"
+          - "NETHER_BRICKS:0.08"
+          - "ANCIENT_DEBRIS:0.04"
+          - "NETHER_GOLD_ORE:0.3"
+          - "NETHER_QUARTZ_ORE:0.5"

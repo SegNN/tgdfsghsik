@@ -1,0 +1,25 @@
+# Настройки базы данных
+database:
+  type: "sqlite" # sqlite или mysql
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "litecontainer"
+    username: "root"
+    password: "password"
+    useSSL: false
+  sqlite:
+    file: "database.db"
+  autoconnect: true
+
+# Сообщения
+messages:
+  no_permission: "&cУ вас недостаточно прав"
+  no_keys_message:
+    - "&b▶ &7У вас &6нет ключей &7для контейнера."
+    - "   &7Можете купить их на сайте: &bHoweTime.pro"
+  open_message:
+    - "&#FF4E2E◀&#FE4F2E&m &#FE4F2E&m &#FD502E&m &#FC512D&m &#FB512D&m &#FB522D&m &#FA532D&m &#F9532D&m &#F9542D&m &#F8552D&m &#F7552C&m &#F6562C&m &#F6572C&m &#F5572C&m &#F4582C&m &#F4592C&m &#F3592C&m &#F25A2B&m &#F15B2B&m &#F15B2B&m &#F05C2B&m &#EF5D2B&m &#EF5D2B&m &#EE5E2B&m &#ED5F2A&m &#EC5F2A&m &#EC602A&m &#EB612A&m &#EA612A&m &#EA622A&m &#E9632A&m &#E86329&m &#E76429&m &#E76529&m &#E66529&m &#E56629&m &#E56729&m &#E46729&m &#E36828&m &#E26828&m &#E26928&m &#E16A28&m &#E06A28&m &#E06B28&m &#DF6C28&m &#DE6C27&m &#DD6D27&m &#DD6E27&m &#DC6E27&m &#DB6F27&m &#DB7027&m &#DA7027&m &#D97126&m &#D87226&m &#D87226&m &#D77326&m &#D67426&m &#D67426&m &#D57526&m &#D47625&m &#D37625&m &#D37725&m &#D27825&m &#D17825&m &#D17925&m &#D07A25&m &#CF7A24&m &#CE7B24&m &#CE7C24&m &#CD7C24&m &#CC7D24&m &#CC7E24&m &#CB7E24&m &#CA7F23&m &#C98023&m &#C98023&m &#C88123▶"
+    - "  &f{player} &#d1cfcdполучил вещей на &#fb0fd4{price} ☀ &#d1cfcdиз &#ff2222Контейнера"
+    - "  &#d1cfcdПокупка контейнеров здесь &#00ebffHoweTime.pro"
+    - "&#C88123◀&#C98023&m &#C98023&m &#CA7F23&m &#CB7E24&m &#CC7E24&m &#CC7D24&m &#CD7C24&m &#CE7C24&m &#CE7B24&m &#CF7A24&m &#D07A25&m &#D17925&m &#D17825&m &#D27825&m &#D37725&m &#D37625&m &#D47625&m &#D57526&m &#D67426&m &#D67426&m &#D77326&m &#D87226&m &#D87226&m &#D97126&m &#DA7027&m &#DB7027&m &#DB6F27&m &#DC6E27&m &#DD6E27&m &#DD6D27&m &#DE6C27&m &#DF6C28&m &#E06B28&m &#E06A28&m &#E16A28&m &#E26928&m &#E26828&m &#E36828&m &#E46729&m &#E56729&m &#E56629&m &#E66529&m &#E76529&m &#E76429&m &#E86329&m &#E9632A&m &#EA622A&m &#EA612A&m &#EB612A&m &#EC602A&m &#EC5F2A&m &#ED5F2A&m &#EE5E2B&m &#EF5D2B&m &#EF5D2B&m &#F05C2B&m &#F15B2B&m &#F15B2B&m &#F25A2B&m &#F3592C&m &#F4592C&m &#F4582C&m &#F5572C&m &#F6572C&m &#F6562C&m &#F7552C&m &#F8552D&m &#F9542D&m &#F9532D&m &#FA532D&m &#FB522D&m &#FB512D&m &#FC512D&m &#FD502E&m &#FE4F2E&m &#FE4F2E&m &#FF4E2E▶"

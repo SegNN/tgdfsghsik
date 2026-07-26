@@ -1,0 +1,60 @@
+database:
+  host: ""
+  port: 3306
+  database: ""
+  username: ""
+  password: ""
+
+hologram:
+  points:
+    x: 31000.5
+    y: 5100.0
+    z: 146.5
+
+blocks:
+  STONE: 0.01
+  COBBLESTONE: 0.01
+  DIRT: 0.005
+  GRAVEL: 0.005
+  SAND: 0.005
+
+  COAL_ORE: 0.1
+  IRON_ORE: 0.2
+  GOLD_ORE: 0.3
+  LAPIS_ORE: 0.1
+  REDSTONE_ORE: 0.1
+  DIAMOND_ORE: 0.5
+  EMERALD_ORE: 0.4
+  NETHER_QUARTZ_ORE: 0.1
+  NETHER_GOLD_ORE: 0.2
+  ANCIENT_DEBRIS: 1.0
+
+  NETHERRACK: 0.01
+  NETHER_BRICKS: 0.1
+  BLACKSTONE: 0.05
+  BASALT: 0.05
+
+  END_STONE: 0.01
+  PURPUR_BLOCK: 0.2
+  PURPLE_GLAZED_TERRACOTTA: 0.2
+
+  OBSIDIAN: 0.3
+  CRYING_OBSIDIAN: 0.5
+  GLOWSTONE: 0.1
+  SEA_LANTERN: 0.2
+
+debug: false
+
+# Настройки производительности
+performance:
+  cache_duration: 300000  # 5 минут в миллисекундах
+  hologram_update_interval: 60  # секунды
+  placeholder_cache_duration: 30000  # 30 секунд в миллисекундах
+
+notifications:
+  bonus_unlock: true
+  points_gain: false
+  error_logging: true
+
+# Максимальный уровень
+max-level: 35

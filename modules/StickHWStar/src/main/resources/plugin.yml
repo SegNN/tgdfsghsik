@@ -1,0 +1,15 @@
+#k
+#a     Leaked by ShitPost
+#z      t.me/shitpost_by
+#i
+
+name: StickHWStar
+version: '1.0'
+main: stickdev.siynes.stickhwstar.StickHWStar
+api-version: '1.16'
+depend: [PlaceholderAPI]
+commands:
+  star:
+permissions:
+  stickhwstar.admin:
+    default: op

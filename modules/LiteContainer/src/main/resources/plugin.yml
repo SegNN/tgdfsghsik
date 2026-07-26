@@ -1,0 +1,9 @@
+name: LiteContainer
+version: 1.0
+main: org.nezxenka.litecontainer.LiteContainer
+api-version: 1.16
+author: nezxenka
+depend: [PlaceholderAPI]
+commands:
+  container:
+    usage: /container

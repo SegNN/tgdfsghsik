@@ -1,0 +1,28 @@
+#
+#        » Leaked by @FichaDev «
+#        Telegram: t.me/FichaDev
+#
+name: FichaRTP
+version: 1.0
+main: ua.fichamine.fichartp.FichaRTP
+api-version: 1.16
+soft-depend: [WorldGuard, ProtectionStones]
+authors:
+  - Smail
+  - FichaDev
+commands:
+  rtp:
+
+permissions:
+  rtp.use:
+    default: true
+  rtp.long:
+    default: op
+  rtp.player:
+    default: op
+  rtp.base:
+    default: op
+  rtp.bypass.delay:
+    default: op
+  rtp.bypass.cooldown:
+    default: op

@@ -1,0 +1,36 @@
+messages:
+  prefix:
+    error: "&c&l▶ &f"
+    warn: "&e&l▶ &f"
+    info: "&7&l▶ &f"
+    ok: "&a&l▶ &f"
+  not_started: "&c&l▶ &fСобытие не запущено!"
+  only_players: "&c&l▶ &fЭта команда только для игроков!"
+  bad_update_type: "&c&l▶ &fНеверный тип обновления! Доступные: &6shears, flowers"
+  status_stopped: "&c&l▶ &fСтатус: &6Остановлено"
+  status_searching: "&e&l▶ &fСтатус: &6Поиск локации..."
+  status_unknown: "&7&l▶ &fСтатус: &6Неизвестно"
+  status_running: "&a&l▶ &fСтатус: &6Запущено"
+  event_stopped: "&a&l▶ &fСобытие &6Цветочная поляна&f успешно остановлено!"
+  created: "&a&l▶ &fШахта создана!"
+  removed: "&a&l▶ &fШахта удалена!"
+  teleported: "&a&l▶ &fВы телепортированы к событию!"
+  no_permission: "&c&l▶ &fУ вас нет прав на использование этой команды!"
+  timer_set: "&a&l▶ &fТаймер установлен на &6%minutes% &fмин. &6%seconds% &fсек."
+  timer_minutes_max: "&c&l▶ &fМаксимум &620 &fминут"
+  timer_seconds_max: "&c&l▶ &fМаксимум &660 &fсекунд"
+
+settings:
+  world: "world"
+  scanRadius: 40
+  bossbarRadius: 100
+  maxSpawnAttempts: 50
+  defaultDurationSeconds: 1200
+  schematic: "event_death_mine.schem"
+  cube:
+    size: 50
+    durationSeconds: 600
+  barrier:
+    radius: 135
+
+

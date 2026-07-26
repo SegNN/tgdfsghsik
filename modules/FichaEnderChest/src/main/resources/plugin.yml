@@ -1,0 +1,31 @@
+name: FichaEnderChest
+main: ua.fichadev.fichaenderchest.FichaEnderChest
+version: 1.0
+api-version: 1.16
+author:
+  - FichaDev
+  - Smail
+depend:
+  - PlayerPoints
+commands:
+  ec:
+    permission: fichaenderchest.ec
+    aliases: [enderchest]
+  enderchest:
+    permission: fichaenderchest.ec
+
+permissions:
+  fichaenderchest.ec:
+    description: Разрешает использовать эндер-сундук
+    default: true
+  fichaenderchest.ec.admin:
+    description: Разрешает использовать админские команды
+    default: op
+    children:
+      - fichaenderchest.ec
+  fichaenderchest.ec.view:
+    description: Разрешает просматривать эндер-сундуки других игроков
+    default: op
+  fichaenderchest.ec.take:
+    description: Позволяет забирать предметы из чужого эндер-сундука
+    default: op

@@ -1,0 +1,512 @@
+spawners:
+  PIG:
+    name: "&r#cc6666Р&r#d46666а&r#dd6666с&r#e56666с&r#ee6666а&r#f66666д&r#ff6666н&r#ff6666и&r#ff6666к&r#ff6666:&r#ff6666 &r#ff6666С&r#ff6666в&r#f66666и&r#ee6666н&r#e56666ь&r#dd6666я&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  COW:
+    name: "&r#8B4513Р&r#9A5522а&r#A96631с&r#B87740с&r#C7884Fа&r#D6995Eд&r#E5AA6Dн&r#F4BB7Cи&r#FFCC8Bк&r#FFCC8B:&r#FFCC8B &r#FFCC8BК&r#F4BB7Cо&r#E5AA6Dр&r#D6995Eо&r#C7884Fв&r#B87740а&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  CHICKEN:
+    name: "&r#FFD700Р&r#FFDF11а&r#FFE722с&r#FFEF33с&r#FFF744а&r#FFFF55д&r#FFFF66н&r#FFFF77и&r#FFFF88к&r#FFFF88:&r#FFFF88 &r#FFFF88К&r#FFFF77у&r#FFFF66р&r#FFFF55и&r#FFF744ц&r#FFEF33а&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  SHEEP:
+    name: "&r#F5F5F5Р&r#F0F0F0а&r#EBEBEBс&r#E6E6E6с&r#E1E1E1а&r#DCDCDCд&r#D7D7D7н&r#D2D2D2и&r#CDCDCDк&r#C8C8C8:&r#C8C8C8 &r#C3C3C3О&r#BEBEBEв&r#B9B9B9ц&r#B4B4B4а&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  RABBIT:
+    name: "&r#FFFFFFР&r#F8F8F8а&r#F0F0F0с&r#E9E9E9с&r#E2E2E2а&r#DBDBDBд&r#D4D4D4н&r#CDCDCDи&r#C6C6C6к&r#BFBFBF:&r#BFBFBF &r#B8B8B8К&r#B1B1B1р&r#AAAAAAо&r#A3A3A3л&r#9C9C9Cи&r#959595к&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  HORSE:
+    name: "&r#8B4513Р&r#954B1Eа&r#9F5129с&r#A95734с&r#B35D3Fа&r#BD634Aд&r#C76955н&r#D16F60и&r#DB756Bк&r#E57B76:&r#E57B76 &r#DF817BЛ&r#D98780о&r#D38D85ш&r#CD9390а&r#C79995д&r#C19F9Aь&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  DONKEY:
+    name: "&r#A0522DР&r#AB5D38а&r#B66843с&r#C1734Eс&r#CC7E59а&r#D78964д&r#E2946Fн&r#ED9F7Aи&r#F8AA85к&r#FFB590:&r#FFB590 &r#FFB590О&r#F8AA85с&r#ED9F7Aл&r#E2946Fё&r#D78964л&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  MULE:
+    name: "&r#8B7355Р&r#967D60а&r#A1856Bс&r#AC8D76с&r#B79581а&r#C29D8Cд&r#CDA597н&r#D8ADA2и&r#E3B5ADк&r#EEBDB8:&r#EEBDB8 &r#E3B5ADМ&r#D8ADA2у&r#CDA597л&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  LLAMA:
+    name: "&r#D2691EР&r#DC7328а&r#E67D32с&r#F0873Cс&r#FA9146а&r#FF9B50д&r#FFA55Aн&r#FFAF64и&r#FFB96Eк&r#FFC378:&r#FFC378 &r#FFC378Л&r#FFB96Eа&r#FFAF64м&r#FFA55Aа&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  WOLF:
+    name: "&r#808080Р&r#8A8A8Aа&r#949494с&r#9E9E9Eс&r#A8A8A8а&r#B2B2B2д&r#BCBCBCн&r#C6C6C6и&r#D0D0D0к&r#DADADA:&r#DADADA &r#DADADAВ&r#D0D0D0о&r#C6C6C6л&r#BCBCBCк&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  CAT:
+    name: "&r#FFA500Р&r#FFAF0Fа&r#FFB91Fс&r#FFC32Fс&r#FFCD3Fа&r#FFD74Fд&r#FFE15Fн&r#FFEB6Fи&r#FFF57Fк&r#FFFF8F:&r#FFFF8F &r#FFFF8FК&r#FFF57Fо&r#FFEB6Fт&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  OCELOT:
+    name: "&r#DAA520Р&r#E4AF2Aа&r#EEB934с&r#F8C33Eс&r#FFCD48а&r#FFD752д&r#FFE15Cн&r#FFEB66и&r#FFF570к&r#FFFF7A:&r#FFFF7A &r#FFFF7AО&r#FFF570ц&r#FFEB66е&r#FFE15Cл&r#FFD752о&r#FFCD48т&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  PARROT:
+    name: "&r#00FF00Р&r#0AFF0Aа&r#14FF14с&r#1EFF1Eс&r#28FF28а&r#32FF32д&r#3CFF3Cн&r#46FF46и&r#50FF50к&r#5AFF5A:&r#5AFF5A &r#5AFF5AП&r#50FF50о&r#46FF46п&r#3CFF3Cу&r#32FF32г&r#28FF28а&r#1EFF1Eй&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  BAT:
+    name: "&r#2F4F4FР&r#395959а&r#436363с&r#4D6D6Dс&r#577777а&r#618181д&r#6B8B8Bн&r#759595и&r#7F9F9Fк&r#89A9A9:&r#89A9A9 &r#89A9A9Л&r#7F9F9Fе&r#759595т&r#6B8B8Bу&r#618181ч&r#577777а&r#4D6D6Dя&r#436363 &r#395959м&r#2F4F4Fы&r#254545ш&r#1B3B3Bь&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  SQUID:
+    name: "&r#000080Р&r#0A0A8Aа&r#141494с&r#1E1E9Eс&r#2828A8а&r#3232B2д&r#3C3CBCн&r#4646C6и&r#5050D0к&r#5A5ADA:&r#5A5ADA &r#5A5ADAС&r#5050D0п&r#4646C6р&r#3C3CBCу&r#3232B2т&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  DOLPHIN:
+    name: "&r#1E90FFР&r#289AFFа&r#32A4FFс&r#3CAEFFс&r#46B8FFа&r#50C2FFд&r#5ACCFFн&r#64D6FFи&r#6EE0FFк&r#78EAFF:&r#78EAFF &r#78EAFFД&r#6EE0FFе&r#64D6FFл&r#5ACCFFь&r#50C2FFф&r#46B8FFи&r#3CAEFFн&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  TURTLE:
+    name: "&r#228B22Р&r#2C952Cа&r#369F36с&r#40A940с&r#4AB34Aа&r#54BD54д&r#5EC75Eн&r#68D168и&r#72DB72к&r#7CE57C:&r#7CE57C &r#7CE57CЧ&r#72DB72е&r#68D168р&r#5EC75Eе&r#54BD54п&r#4AB34Aа&r#40A940х&r#369F36а&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  COD:
+    name: "&r#4682B4Р&r#508CBEа&r#5A96C8с&r#64A0D2с&r#6EAADCа&r#78B4E6д&r#82BEF0н&r#8CC8FAи&r#96D2FFк&r#A0DCFF:&r#A0DCFF &r#A0DCFFТ&r#96D2FFр&r#8CC8FAе&r#82BEF0с&r#78B4E6к&r#6EAADCа&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  SALMON:
+    name: "&r#FA8072Р&r#FF8A7Cа&r#FF9486с&r#FF9E90с&r#FFA89Aа&r#FFB2A4д&r#FFBCAEн&r#FFC6B8и&r#FFD0C2к&r#FFDACC:&r#FFDACC &r#FFDACCЛ&r#FFD0C2о&r#FFC6B8с&r#FFBCAEо&r#FFB2A4с&r#FFA89Aь&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  TROPICAL_FISH:
+    name: "&r#FF4500Р&r#FF4F0Aа&r#FF5914с&r#FF631Eс&r#FF6D28а&r#FF7732д&r#FF813Cн&r#FF8B46и&r#FF9550к&r#FF9F5A:&r#FF9F5A &r#FF9F5AТ&r#FF9550р&r#FF8B46о&r#FF813Cп&r#FF7732и&r#FF6D28ч&r#FF631Eе&r#FF5914с&r#FF4F0Aк&r#FF4500а&r#FF3B00я&r#FF3100 &r#FF2700р&r#FF1D00ы&r#FF1300б&r#FF0900а&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  PUFFERFISH:
+    name: "&r#FFD700Р&r#FFE111а&r#FFEB22с&r#FFF533с&r#FFFF44а&r#FFFF55д&r#FFFF66н&r#FFFF77и&r#FFFF88к&r#FFFF99:&r#FFFF99 &r#FFFF99И&r#FFFF88г&r#FFFF77л&r#FFFF66о&r#FFFF55б&r#FFFF44л&r#FFF533ю&r#FFEB22х&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  BEE:
+    name: "&r#FFD700Р&r#FFDF11а&r#FFE722с&r#FFEF33с&r#FFF744а&r#FFFF55д&r#FFFF66н&r#FFFF77и&r#FFFF88к&r#FFFF99:&r#FFFF99 &r#FFFF99П&r#FFFF88ч&r#FFFF77е&r#FFFF66л&r#FFFF55а&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  POLAR_BEAR:
+    name: "&r#F5F5F5Р&r#FFFFFFа&r#FFFFFFс&r#FFFFFFс&r#FFFFFFа&r#FFFFFFд&r#FFFFFFн&r#FFFFFFи&r#FFFFFFк&r#FFFFFF:&r#FFFFFF &r#FFFFFFБ&r#F5F5F5е&r#EBEBEBл&r#E1E1E1ы&r#D7D7D7й&r#CDCDCD &r#C3C3C3м&r#B9B9B9е&r#AFAFAFд&r#A5A5A5в&r#9B9B9Bе&r#919191д&r#878787ь&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  PANDA:
+    name: "&r#000000Р&r#0A0A0Aа&r#141414с&r#1E1E1Eс&r#282828а&r#323232д&r#3C3C3Cн&r#464646и&r#505050к&r#5A5A5A:&r#5A5A5A &r#5A5A5AП&r#505050а&r#464646н&r#3C3C3Cд&r#323232а&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  FOX:
+    name: "&r#FF4500Р&r#FF4F0Aа&r#FF5914с&r#FF631Eс&r#FF6D28а&r#FF7732д&r#FF813Cн&r#FF8B46и&r#FF9550к&r#FF9F5A:&r#FF9F5A &r#FF9F5AЛ&r#FF9550и&r#FF8B46с&r#FF813Cа&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  VILLAGER:
+    name: "&r#8B7355Р&r#957D5Fа&r#9F8569с&r#A98D73с&r#B3957Dа&r#BD9D87д&r#C7A591н&r#D1AD9Bи&r#DBB5A5к&r#E5BDAF:&r#E5BDAF &r#E5BDAFЖ&r#DBB5A5и&r#D1AD9Bт&r#C7A591е&r#BD9D87л&r#B3957Dь&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  WANDERING_TRADER:
+    name: "&r#32CD32Р&r#3CD73Cа&r#46E146с&r#50EB50с&r#5AF55Aа&r#64FF64д&r#6EFF6Eн&r#78FF78и&r#82FF82к&r#8CFF8C:&r#8CFF8C &r#8CFF8CС&r#82FF82т&r#78FF78р&r#6EFF6Eа&r#64FF64н&r#5AF55Aс&r#50EB50т&r#46E146в&r#3CD73Cу&r#32CD32ю&r#28C328щ&r#1EB91Eи&r#14AF14й&r#0AA50A &r#009B00т&r#009100о&r#008700р&r#007D00г&r#007300о&r#006900в&r#005F00е&r#005500ц&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  IRON_GOLEM:
+    name: "&r#C0C0C0Р&r#CACACAа&r#D4D4D4с&r#DEDEDEс&r#E8E8E8а&r#F2F2F2д&r#FCFCFCн&r#FFFFFFи&r#FFFFFFк&r#FFFFFF:&r#FFFFFF &r#FFFFFFЖ&r#FCFCFCе&r#F2F2F2л&r#E8E8E8е&r#DEDEDEз&r#D4D4D4н&r#CACACAы&r#C0C0C0й&r#B6B6B6 &r#ACACACг&r#A2A2A2о&r#989898л&r#8E8E8Eе&r#848484м&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  SNOW_GOLEM:
+    name: "&r#FFFFFFР&r#FFFFFFа&r#FFFFFFс&r#FFFFFFс&r#FFFFFFа&r#FFFFFFд&r#FFFFFFн&r#FFFFFFи&r#FFFFFFк&r#FFFFFF:&r#FFFFFF &r#FFFFFFС&r#F5F5F5н&r#EBEBEBе&r#E1E1E1ж&r#D7D7D7н&r#CDCDCDы&r#C3C3C3й&r#B9B9B9 &r#AFAFAFг&r#A5A5A5о&r#9B9B9Bл&r#919191е&r#878787м&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  ZOMBIE:
+    name: "&r#28a428Р&r#2aac2aа&r#2cb42cс&r#2ebc2eс&r#30c430а&r#32cd32д&r#32cd32н&r#32cd32и&r#32cd32к&r#32cd32:&r#32cd32 &r#30c630З&r#2ebf2eо&r#2db82dм&r#2bb12bб&r#29aa29и&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  ZOMBIE_VILLAGER:
+    name: "&r#28a428Р&r#32ae32а&r#3cb83cс&r#46c246с&r#50cc50а&r#5ad65aд&r#64e064н&r#6eea6eи&r#78f478к&r#82fe82:&r#82fe82 &r#82fe82З&r#78f478о&r#6eea6eм&r#64e064б&r#5ad65aи&r#50cc50-&r#46c246ж&r#3cb83cи&r#32ae32т&r#28a428е&r#1e9a1eл&r#149014ь&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  HUSK:
+    name: "&r#D2B48CР&r#DCBE96а&r#E6C8A0с&r#F0D2AAс&r#FADCB4а&r#FFE6BEд&r#FFF0C8н&r#FFFAD2и&r#FFFFDCк&r#FFFFE6:&r#FFFFE6 &r#FFFFE6К&r#FFFAD2а&r#FFF0C8д&r#FFE6BEа&r#FADCB4в&r#F0D2AAр&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  DROWNED:
+    name: "&r#1E90FFР&r#289AFFа&r#32A4FFс&r#3CAEFFс&r#46B8FFа&r#50C2FFд&r#5ACCFFн&r#64D6FFи&r#6EE0FFк&r#78EAFF:&r#78EAFF &r#78EAFFУ&r#6EE0FFт&r#64D6FFо&r#5ACCFFп&r#50C2FFл&r#46B8FFе&r#3CAEFFн&r#32A4FFн&r#289AFFи&r#1E90FFк&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  SKELETON:
+    name: "&r#ccccccР&r#d6d6d6а&r#e0e0e0с&r#eaeaeaс&r#f4f4f4а&r#ffffffд&r#ffffffн&r#ffffffи&r#ffffffк&r#ffffff:&r#ffffff &r#ffffffС&r#f6f6f6к&r#eeeeeeе&r#e5e5e5л&r#ddddddе&r#d4d4d4т&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  STRAY:
+    name: "&r#ccccccР&r#d4d4d4а&r#ddddddс&r#e5e5e5с&r#eeeeeeа&r#f6f6f6д&r#ffffffн&r#ffffffи&r#ffffffк&r#ffffff:&r#ffffff &r#ffffffЗ&r#ffffffи&r#f6f6f6м&r#eeeeeeо&r#e5e5e5г&r#ddddddо&r#d4d4d4р&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  WITHER_SKELETON:
+    name: "&r#7f7f7fР&r#838383а&r#888888с&r#8c8c8cс&r#919191а&r#959595д&r#9a9a9aн&r#9f9f9fи&r#9f9f9fк&r#9f9f9f:&r#9f9f9f &r#9f9f9fВ&r#9f9f9fи&r#9f9f9fз&r#9f9f9fе&r#9f9f9fр&r#9b9b9b-&r#979797с&r#939393к&r#8f8f8fе&r#8b8b8bл&r#878787е&r#838383т&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  CREEPER:
+    name: "&r#00FF00Р&r#0AFF0Aа&r#14FF14с&r#1EFF1Eс&r#28FF28а&r#32FF32д&r#3CFF3Cн&r#46FF46и&r#50FF50к&r#5AFF5A:&r#5AFF5A &r#5AFF5AК&r#50FF50р&r#46FF46и&r#3CFF3Cп&r#32FF32е&r#28FF28р&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  SPIDER:
+    name: "&r#8c8c8cР&r#939393а&r#9a9a9aс&r#a1a1a1с&r#a8a8a8а&r#b0afafд&r#b0afafн&r#b0afafи&r#b0afafк&r#b0afaf:&r#b0afaf &r#a8a8a8П&r#a1a1a1а&r#9a9a9aу&r#939393к&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  CAVE_SPIDER:
+    name: "&r#8c8c8cР&r#909090а&r#959595с&r#999999с&r#9e9e9eа&r#a2a2a2д&r#a7a7a7н&r#abababи&r#b0b0b0к&r#b0b0b0:&r#b0b0b0 &r#b0b0b0П&r#b0b0b0е&r#b0b0b0щ&r#b0b0b0е&r#b0b0b0р&r#b0b0b0н&r#abababы&r#a7a7a7й&r#a2a2a2 &r#9e9e9eп&r#999999а&r#959595у&r#909090к&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  ENDERMAN:
+    name: "&r#ac00acР&r#b300b3а&r#ba00baс&r#c200c2с&r#c900c9а&r#d000d0д&r#d800d8н&r#d800d8и&r#d800d8к&r#d800d8:&r#d800d8 &r#d800d8Э&r#d800d8н&r#d100d1д&r#cb00cbе&r#c500c5р&r#be00beм&r#b800b8е&r#b200b2н&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  ENDERMITE:
+    name: "&r#ac00acР&r#b60ab6а&r#c014c0с&r#ca1ecaс&r#d428d4а&r#de32deд&r#e83ce8н&r#f246f2и&r#fc50fcк&r#ff5aff:&r#ff5aff &r#ff5affЭ&r#fc50fcн&r#f246f2д&r#e83ce8е&r#de32deр&r#d428d4м&r#ca1ecaи&r#c014c0т&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  SILVERFISH:
+    name: "&r#a8a8a8Р&r#afafafа&r#b6b6b6с&r#bdbdbdс&r#c4c4c4а&r#cbcbcbд&r#d3d3d3н&r#d3d3d3и&r#d3d3d3к&r#d3d3d3:&r#d3d3d3 &r#d3d3d3Ч&r#d3d3d3е&r#d3d3d3ш&r#ccccccу&r#c6c6c6й&r#c0c0c0н&r#bababaи&r#b4b4b4ц&r#aeaeaeа&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  SLIME:
+    name: "&r#cc00Р&r#d400а&r#dd00с&r#e500с&r#ee00а&r#f600д&r#ff00ник: Слизень&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  MAGMA_CUBE:
+    name: "&r#cc3700Р&r#d33900а&r#da3b00с&r#e13d00с&r#e93f00а&r#f04100д&r#f74300н&r#ff4500и&r#ff4500к&r#ff4500:&r#ff4500 &r#ff4500М&r#ff4500а&r#ff4500г&r#ff4500м&r#ff4500о&r#f84300в&r#f24100ы&r#eb3f00й&r#e53e00 &r#df3c00к&r#d83a00у&r#d23800б&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  WITCH:
+    name: "&r#8A2BE2Р&r#9435ECа&r#9E3FF6с&r#A849FFс&r#B253FFа&r#BC5DFFд&r#C667FFн&r#D071FFи&r#DA7BFFк&r#E485FF:&r#E485FF &r#E485FFВ&r#DA7BFFе&r#D071FFд&r#C667FFь&r#BC5DFFм&r#B253FFа&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  BLAZE:
+    name: "&r#FF8C00Р&r#FF960Aа&r#FFA014с&r#FFAA1Eс&r#FFB428а&r#FFBE32д&r#FFC83Cн&r#FFD246и&r#FFDC50к&r#FFE65A:&r#FFE65A &r#FFE65AВ&r#FFDC50с&r#FFD246п&r#FFC83Cы&r#FFBE32л&r#FFB428ь&r#FFAA1Eч&r#FFA014и&r#FF960Aв&r#FF8C00е&r#FF8200ц&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  GHAST:
+    name: "&r#ccccccР&r#d6d6d6а&r#e0e0e0с&r#eaeaeaс&r#f4f4f4а&r#ffffffд&r#ffffffн&r#ffffffи&r#ffffffк&r#ffffff:&r#ffffff &r#f4f4f4Г&r#eaeaeaа&r#e0e0e0с&r#d6d6d6т&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  ZOMBIFIED_PIGLIN:
+    name: "&r#FFB6C1Р&r#FFC0CBа&r#FFCAD5с&r#FFD4DFс&r#FFDEE9а&r#FFE8F3д&r#FFF2FDн&r#FFFCFFи&r#FFFFFFк&r#FFFFFF:&r#FFFFFF &r#FFFFFFЗ&r#FFFCFFо&r#FFF2FDм&r#FFE8F3б&r#FFDEE9и&r#FFD4DF-&r#FFCAD5с&r#FFC0CBв&r#FFB6C1и&r#FFACB7н&r#FFA2ADо&r#FF98A3ч&r#FF8E99е&r#FF848Fл&r#FF7A85о&r#FF707Bв&r#FF6671е&r#FF5C67к&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  PIGLIN:
+    name: "&r#FFC0CBР&r#FFCAD5а&r#FFD4DFс&r#FFDEE9с&r#FFE8F3а&r#FFF2FDд&r#FFFCFFн&r#FFFFFFи&r#FFFFFFк&r#FFFFFF:&r#FFFFFF &r#FFFFFFП&r#FFFCFFи&r#FFF2FDг&r#FFE8F3л&r#FFDEE9и&r#FFD4DFн&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  PIGLIN_BRUTE:
+    name: "&r#FF1493Р&r#FF1E9Dа&r#FF28A7с&r#FF32B1с&r#FF3CBBа&r#FF46C5д&r#FF50CFн&r#FF5AD9и&r#FF64E3к&r#FF6EED:&r#FF6EED &r#FF6EEDБ&r#FF64E3р&r#FF5AD9у&r#FF50CFт&r#FF46C5а&r#FF3CBBл&r#FF32B1ь&r#FF28A7-&r#FF1E9Dп&r#FF1493и&r#FF0A89г&r#FF007Fл&r#FA0075и&r#F5006Bн&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  HOGLIN:
+    name: "&r#8B0000Р&r#950A0Aа&r#9F1414с&r#A91E1Eс&r#B32828а&r#BD3232д&r#C73C3Cн&r#D14646и&r#DB5050к&r#E55A5A:&r#E55A5A &r#E55A5AХ&r#DB5050о&r#D14646г&r#C73C3Cл&r#BD3232и&r#B32828н&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  ZOGLIN:
+    name: "&r#8B4513Р&r#954F1Dа&r#9F5927с&r#A96331с&r#B36D3Bа&r#BD7745д&r#C7814Fн&r#D18B59и&r#DB9563к&r#E59F6D:&r#E59F6D &r#E59F6DЗ&r#DB9563о&r#D18B59г&r#C7814Fл&r#BD7745и&r#B36D3Bн&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  STRIDER:
+    name: "&r#FF4500Р&r#FF4F0Aа&r#FF5914с&r#FF631Eс&r#FF6D28а&r#FF7732д&r#FF813Cн&r#FF8B46и&r#FF9550к&r#FF9F5A:&r#FF9F5A &r#FF9F5AС&r#FF9550т&r#FF8B46р&r#FF813Cа&r#FF7732й&r#FF6D28д&r#FF631Eе&r#FF5914р&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  PHANTOM:
+    name: "&r#4B0082Р&r#550A8Cа&r#5F1496с&r#691EA0с&r#7328AAа&r#7D32B4д&r#873CBEн&r#9146C8и&r#9B50D2к&r#A55ADC:&r#A55ADC &r#A55ADCФ&r#9B50D2а&r#9146C8н&r#873CBEт&r#7D32B4о&r#7328AAм&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  VEX:
+    name: "&r#00CED1Р&r#0AD8DBа&r#14E2E5с&r#1EECEFс&r#28F6F9а&r#32FFFFд&r#3CFFFFн&r#46FFFFи&r#50FFFFк&r#5AFFFF:&r#5AFFFF &r#5AFFFFВ&r#50FFFFе&r#46FFFFк&r#3CFFFFс&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  VINDICATOR:
+    name: "&r#8B0000Р&r#950A0Aа&r#9F1414с&r#A91E1Eс&r#B32828а&r#BD3232д&r#C73C3Cн&r#D14646и&r#DB5050к&r#E55A5A:&r#E55A5A &r#E55A5AП&r#DB5050о&r#D14646б&r#C73C3Cб&r#BD3232о&r#B32828р&r#A91E1Eн&r#9F1414и&r#950A0Aк&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  EVOKER:
+    name: "&r#cc00ccР&r#d300d3а&r#da00daс&r#e100e1с&r#e900e9а&r#f000f0д&r#f700f7н&r#ff00ffи&r#ff00ffк&r#ff00ff:&r#ff00ff &r#ff00ffЗ&r#ff00ffа&r#ff00ffк&r#ff00ffл&r#f800f8и&r#f200f2н&r#eb00ebа&r#e500e5т&r#df00dfе&r#d800d8л&r#d200d2ь&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  PILLAGER:
+    name: "&r#800000Р&r#8A0A0Aа&r#941414с&r#9E1E1Eс&r#A82828а&r#B23232д&r#BC3C3Cн&r#C64646и&r#D05050к&r#DA5A5A:&r#DA5A5A &r#DA5A5AР&r#D05050а&r#C64646з&r#BC3C3Cб&r#B23232о&r#A82828й&r#9E1E1Eн&r#941414и&r#8A0A0Aк&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  RAVAGER:
+    name: "&r#2F4F4FР&r#395959а&r#436363с&r#4D6D6Dс&r#577777а&r#618181д&r#6B8B8Bн&r#759595и&r#7F9F9Fк&r#89A9A9:&r#89A9A9 &r#89A9A9Р&r#7F9F9Fа&r#759595з&r#6B8B8Bо&r#618181р&r#577777и&r#4D6D6Dт&r#436363е&r#395959л&r#2F4F4Fь&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  GUARDIAN:
+    name: "&r#00BFFFР&r#0AC9FFа&r#14D3FFс&r#1EDDFFс&r#28E7FFа&r#32F1FFд&r#3CFBFFн&r#46FFFFи&r#50FFFFк&r#5AFFFF:&r#5AFFFF &r#5AFFFFС&r#50FFFFт&r#46FFFFр&r#3CFBFFа&r#32F1FFж&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  ELDER_GUARDIAN:
+    name: "&r#1E90FFР&r#289AFFа&r#32A4FFс&r#3CAEFFс&r#46B8FFа&r#50C2FFд&r#5ACCFFн&r#64D6FFи&r#6EE0FFк&r#78EAFF:&r#78EAFF &r#78EAFFД&r#6EE0FFр&r#64D6FFе&r#5ACCFFв&r#50C2FFн&r#46B8FFи&r#3CAEFFй&r#32A4FF &r#289AFFс&r#1E90FFт&r#1486FFр&r#0A7CFFа&r#0072FFж&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  SHULKER:
+    name: "&r#9370DBР&r#9D7AE5а&r#A784EFс&r#B18EF9с&r#BB98FFа&r#C5A2FFд&r#CFACFFн&r#D9B6FFи&r#E3C0FFк&r#EDCAFF:&r#EDCAFF &r#EDCAFFШ&r#E3C0FFа&r#D9B6FFл&r#CFACFFк&r#C5A2FFе&r#BB98FFр&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  ENDER_DRAGON:
+    name: "&r#9400D3Р&r#9E0ADDа&r#A814E7с&r#B21EF1с&r#BC28FBа&r#C632FFд&r#D03CFFн&r#DA46FFи&r#E450FFк&r#EE5AFF:&r#EE5AFF &r#EE5AFFД&r#E450FFр&r#DA46FFа&r#D03CFFк&r#C632FFо&r#BC28FBн&r#B21EF1 &r#A814E7К&r#9E0ADDр&r#9400D3а&r#8A00C9я&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""
+
+  WITHER:
+    name: "&r#696969Р&r#737373а&r#7D7D7Dс&r#878787с&r#919191а&r#9B9B9Bд&r#A5A5A5н&r#AFAFAFи&r#B9B9B9к&r#C3C3C3:&r#C3C3C3 &r#C3C3C3И&r#B9B9B9с&r#AFAFAFс&r#A5A5A5у&r#9B9B9Bш&r#919191и&r#878787т&r#7D7D7Dе&r#737373л&r#696969ь&r"
+    lore:
+      - ""
+      - "&8Особенности:"
+      - "&f — автоматически призывает выбранного моба"
+      - ""

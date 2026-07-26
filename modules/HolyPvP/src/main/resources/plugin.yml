@@ -1,0 +1,11 @@
+name: HolyPvP
+version: '1.0'
+main: ru.nezxenka.holypvp.HolyPvP
+api-version: '1.16'
+author: nezxenka
+commands:
+  pvp:
+    usage: /pvp
+    description: Находит соперника для поединка
+    aliases:
+      - holypvp

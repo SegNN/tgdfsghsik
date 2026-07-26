@@ -1,0 +1,13 @@
+#
+#        » Leaked by @FichaDev «
+#        Telegram: t.me/FichaDev
+#
+name: FichaCustomPlaceholder
+version: '1.0'
+main: ua.fichatime.fichacustomplaceholder.FichaCustomPlaceholder
+api-version: '1.16'
+author:
+  - FichaDev
+  - Smail
+depend:
+  - PlaceholderAPI

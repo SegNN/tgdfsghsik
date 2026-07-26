@@ -1,0 +1,20 @@
+name: HolyFreeze
+version: '1.0-SNAPSHOT'
+main: org.dimasik.holyfreeze.HolyFreeze
+api-version: '1.16'
+depend:
+  - PlaceholderAPI
+softdepend:
+  - Multiverse-Core
+loadbefore:
+  - ChatPlaytime
+load: POSTWORLD
+commands:
+  freezing:
+    aliases:
+      - freeze
+    permission: holyfreeze.use
+  afkstaff:
+    permission: holyfreeze.use
+  prova:
+    permission: holyfreeze.use

@@ -1,0 +1,4 @@
+name: Expirytime
+version: '1.0-SNAPSHOT'
+main: org.dimasik.expirytime.Expirytime
+api-version: '1.16'

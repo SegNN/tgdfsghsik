@@ -1,0 +1,4 @@
+name: AntiLagMachine
+version: '1.0-SNAPSHOT'
+main: org.dimasik.antilagmachine.AntiLagMachine
+api-version: '1.16'

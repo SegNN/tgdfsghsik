@@ -1,0 +1,19 @@
+title: 'Стоимость контейнера: {price} сапфиров.'
+rows: 3
+item_ticks: 5
+item_slots: [ 9,10,11,12,13,14,15,16,17]
+rarity_forms:
+  default:
+    material: GRAY_STAINED_GLASS_PANE
+    display_name: "  "
+  rare:
+    material: BLUE_STAINED_GLASS_PANE
+    display_name: "  "
+  mythic:
+    material: ORANGE_STAINED_GLASS_PANE
+    display_name: "  "
+  legendary:
+    material: RED_STAINED_GLASS_PANE
+    display_name: "  "
+decor:
+  BLACK_STAINED_GLASS_PANE: [ 0,1,2,3,4,5,6,7,8,18,19,20,21,22,23,24,25,26 ]

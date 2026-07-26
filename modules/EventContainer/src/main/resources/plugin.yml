@@ -1,0 +1,7 @@
+name: EventContainer
+version: '1.0'
+main: org.dimasik.eventcontainer.EventContainer
+api-version: '1.16'
+commands:
+  econtainer:
+    permission: container.use

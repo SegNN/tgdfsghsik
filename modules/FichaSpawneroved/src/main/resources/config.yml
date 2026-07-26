@@ -1,0 +1,86 @@
+item:
+  Shard-Egg:
+    material: PUFFERFISH_SPAWN_EGG
+    name: "&r&#b27300О&r&#bd7a00с&r&#c98200к&r&#d58a00о&r&#e19100л&r&#ed9900о&r&#f9a100ч&r&#f9a100н&r&#ed9900о&r&#e19100е &r&#d58a00я&r&#c98200й&r&#bd7a00ц&r&#b27300о&r"
+    lore:
+      - '&r'
+      - '&#555555Особенности:&r'
+      - '&r&#e7e7e7 - получайте &r&#f9a100осколочные яйца&r'
+      - '&r&r&#e7e7e7   добывая вещи из посылок;&r'
+      - '&r&#e7e7e7 - можно обменять на &r&#f9a100яйца призыва&r'
+      - '&r&r&#e7e7e7   у специального NPC на спавне.&r'
+      - '&r'
+
+  End-Splinter-Egg:
+    material: ENDERMAN_SPAWN_EGG
+    name: "&x&8&4&3&D&A&7О&x&A&0&4&2&C&Aс&x&C&1&4&B&F&Fк&x&A&7&3&B&C&Cо&x&A&5&3&6&D&3л&x&B&F&2&B&F&Fо&x&A&4&2&9&D&Aч&x&A&C&2&2&E&8н&x&B&4&1&A&F&6о&x&B&7&2&C&F&7е &x&C&1&3&9&F&Bя&x&B&7&4&C&F&Cй&x&B&4&5&D&D&Fц&x&9&F&4&F&D&2о"
+    lore:
+      - "&r"
+      - "&fПолучайте такие &x&9&8&0&A&E&8осколочные яйца"
+      - "&fисследуя &x&9&8&0&A&E&8Эндер-мир"
+      - "&f"
+      - "&7Особенности:"
+      - " &x&9&8&0&A&E&8- вы можете обменять эти яйца "
+      - "   &x&9&8&0&A&E&8на Яйцо Дракона"
+      - "   &x&9&8&0&A&E&8у специального NPC на спавне"
+
+  Ender-eggs:
+    material: ENDERMAN_SPAWN_EGG
+    name: " "
+    amount: 1
+    price: 1
+    change: 0.1
+    category: Ender-Eggs
+    lore:
+      - " &r&#fb0fd4▶&r&f Обменять &r&#fb0fd41&r&f Энд Осколочных Яиц&r"
+      - "  &r&f  на шанс получить &r&#fb0fd4Яйцо дракона&r"
+      - "  &r&#aaaaaa  (шанс выпадения: 0,1%).&r"
+      - " &r"
+
+  eggs-1:
+    material: PUFFERFISH_SPAWN_EGG
+    name: " "
+    amount: 1
+    price: 24
+    category: Default
+    lore:
+      - " &r&#e8ca2a▶&r&#ffffff Обменять &r&#e8ca2a24&r&#ffffff Осколочных яиц&r"
+      - "  &r&#ffffff  на &r&#e8ca2a1&r&#ffffff Случайное яйца призыва&r"
+      - "  &r&#aaaaaa  (из категории: Обычные).&r"
+      - " &r"
+
+  eggs-2:
+    material: PUFFERFISH_SPAWN_EGG
+    name: " "
+    amount: 1
+    price: 48
+    category: Rare
+    lore:
+      - " &r&#e8ca2a▶&r&f Обменять &r&#e8ca2a48&r&f Осколочных яиц&r"
+      - "  &r&f  на &r&#e8ca2a1&r&f Случайное яйца призыва&r"
+      - "  &r&#aaaaaa  (из категории: Редкие).&r"
+      - " &r"
+
+  eggs-3:
+    material: PUFFERFISH_SPAWN_EGG
+    name: " "
+    amount: 1
+    price: 64
+    category: Epic
+    lore:
+      - " &r&#e8ca2a▶&r&f Обменять &r&#e8ca2a64&r&f Осколочных яиц&r"
+      - "  &r&f  на &r&#e8ca2a1&r&f Случайное яйца призыва&r"
+      - "  &r&#aaaaaa  (из категории: Эпические).&r"
+      - " &r"
+
+spawn-eggs:
+  Ender-Eggs:
+    - "give %player dragon_egg 1"
+  Default:
+    - "give %player PIG_SPAWN_EGG 1"
+  Rare:
+    - "give %player CREEPER_SPAWN_EGG 1"
+    - "give %player WITHER_SKELETON_SPAWN_EGG 1"
+  Epic:
+    - "give %player EVOKER_SPAWN_EGG 1"
+    - "give %player ZOMBIFIED_PIGLIN_SPAWN_EGG 1"

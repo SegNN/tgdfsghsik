@@ -1,0 +1,99 @@
+# EventPolana Configuration
+# Конфигурация плагина Цветочная поляна
+
+
+event:
+  # Название мира где будет ивент
+  world: "world"
+  # Название файла схемы
+  schematic_name: "event_polana.schem"
+  # Радиус спавна цветов вокруг поляны
+  flower_spawn_radius: 25
+  # Радиус действия для сбора цветов
+  flower_break_radius: 35
+
+# Настройки садовника (жителя)
+gardener:
+  # Радиус поиска ближайшего игрока
+  player_search_radius: 50.0
+  # Частота обновления направления взгляда (в тиках)
+  look_update_interval: 10
+  # Профессия жителя
+  profession: "FARMER"
+  # Тип жителя
+  villager_type: "PLAINS"
+  # Уровень жителя
+  level: 5
+
+# Настройки ножниц
+shears:
+  # Минимальная прочность ножниц
+  min_durability: 1
+  # Максимальная прочность ножниц
+  max_durability: 10
+  # Название ножниц
+  display_name: "&6Ножницы"
+  # Описание ножниц
+  description:
+    - "&8Прочность: {durability}"
+    - ""
+    - "&7Особенности"
+    - " &f- используется &6на мероприятии «Цветочная поляна»&f,"
+    - "   &6для нахождения драгоценных вещей&f,"
+    - "   &fсрывая цветы в зоне мероприятия."
+    - ""
+
+# Настройки длительности событий (в минутах)
+durations:
+  delete:
+    default: 15
+    epic: 20
+    legendary: 25
+
+# Настройки респауна ножниц (в секундах)
+respawn_shears:
+  default: 60
+  epic: 45
+  legendary: 35
+
+# Настройки спавна цветов (в секундах)
+spawn_flower:
+  default: 20
+  epic: 20
+  legendary: 20
+
+# Настройки лута (уровни)
+loot:
+  default: 1
+  epic: 2
+  legendary: 3
+
+# Настройки сообщений
+messages:
+  # Сообщения при спавне события
+  spawn:
+    title: "&x&4&3&B&C&0&6&lЦветочная поляна"
+    rarity_names:
+      default: "&x&E&2&8&9&8&9&lО&x&E&0&8&D&8&D&lб&x&D&E&9&0&9&0&lы&x&D&C&9&4&9&4&lч&x&D&A&9&8&9&8&lн&x&D&8&9&B&9&B&lа&x&D&6&9&F&9&F&lя"
+      epic: "&x&D&C&1&C&D&E&lЭ&x&D&7&1&9&E&2&lп&x&D&2&1&5&E&6&lи&x&C&D&1&2&E&A&lч&x&C&8&0&E&E&F&lе&x&C&2&0&B&F&3&lс&x&B&D&0&7&F&7&lк&x&B&8&0&4&F&B&lа&x&B&3&0&0&F&F&lя"
+      legendary: "&x&1&C&B&F&D&E&lЛ&x&1&9&C&4&E&1&lе&x&1&6&C&A&E&5&lг&x&1&4&C&F&E&8&lе&x&1&1&D&5&E&B&lн&x&0&E&D&A&E&F&lд&x&0&B&D&F&F&2&lа&x&0&8&E&5&F&5&lр&x&0&6&E&A&F&8&lн&x&0&3&F&0&F&C&lа&x&0&0&F&5&F&F&lя"
+    coordinates_format: "&fX: &x&4&3&B&C&0&6{x} &fY: &x&4&3&B&C&0&6{y} &fZ: &x&4&3&B&C&0&6{z}"
+
+# Настройки звуков
+sounds:
+  # Звук при получении ножниц
+  shears_given: "ENTITY_VILLAGER_YES"
+  # Звук при сборе цветка
+  flower_break: "BLOCK_GRASS_BREAK"
+  # Звук при выпадении лута
+  loot_drop: "ENTITY_ITEM_PICKUP"
+
+# Настройки частиц
+particles:
+  # Частицы при сборе цветка
+  flower_break:
+    type: "VILLAGER_HAPPY"
+    count: 10
+    offset_x: 0.3
+    offset_y: 0.3
+    offset_z: 0.3

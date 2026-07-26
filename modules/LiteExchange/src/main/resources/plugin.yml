@@ -1,0 +1,10 @@
+name: LiteExchange
+version: '1.0'
+main: org.dimasik.liteexchange.LiteExchange
+api-version: '1.16'
+commands:
+  exchange:
+  payment:
+  coins:
+    permission:
+      liteexchange.coins

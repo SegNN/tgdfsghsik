@@ -1,0 +1,9 @@
+name: CheatReport
+version: '1.0-SNAPSHOT'
+main: org.dimasik.cheatreport.CheatReport
+api-version: '1.16'
+commands:
+  cheatreport:
+    description: Отправка репорта на читера.
+    usage: /cheatreport [игрок] [причина]
+    aliases: [cr, report]

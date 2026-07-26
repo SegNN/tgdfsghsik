@@ -1,0 +1,9 @@
+name: FichaPotion
+version: '1.0'
+main: ua.fichadev.fichapotion.FichaPotion
+api-version: '1.16'
+commands:
+  fichapotion:
+    description: "Команда для управления зельями."
+    usage: /fichapotion <save|give> [тип] [ник] [количество]
+    permission: fichapotion.use

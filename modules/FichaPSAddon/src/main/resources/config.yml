@@ -1,0 +1,55 @@
+regions:
+  NETHERITE_BLOCK:
+    name: "&x&F&B&0&0&7&FЗ&x&F&B&0&0&8&7а&x&F&B&0&0&8&Eщ&x&F&B&0&0&9&6и&x&F&C&0&0&9&Eщ&x&F&C&0&0&A&5е&x&F&C&0&0&A&Dн&x&F&C&0&0&B&5н&x&F&C&0&0&B&Dы&x&F&C&0&0&C&4й&x&F&C&0&0&C&C &x&F&C&0&0&D&4п&x&F&D&0&0&D&Bр&x&F&D&0&0&E&3и&x&F&D&0&0&E&Bв&x&F&D&0&0&F&2а&x&F&D&0&0&F&Aт"
+    durability: 2
+    start_durability: 1
+    hologram_offset: 3.0
+    lines:
+      - "Владелец: &x&F&B&0&0&7&F%player%"
+      - "&x&f&b&d&1&d&1Прочность: [ %durability% / %max_durability% ]"
+      - ""
+      - "Этот приват почти &x&F&B&0&0&7&Fневозможно"
+      - "&x&F&B&0&0&7&Fвзорвать, загриферить"
+  ANCIENT_DEBRIS:
+    name: "&x&8&E&1&3&F&BУ&x&9&4&1&1&F&Bн&x&9&A&0&F&F&Bи&x&A&0&0&D&F&Cк&x&A&6&0&B&F&Cа&x&A&B&0&9&F&Cл&x&B&1&0&7&F&Cь&x&B&7&0&5&F&Dн&x&B&D&0&3&F&Dы&x&C&3&0&1&F&Dй &x&8&E&1&3&F&Bп&x&9&9&0&F&F&Bр&x&A&3&0&C&F&Cи&x&A&E&0&8&F&Cв&x&B&8&0&5&F&Dа&x&C&3&0&1&F&Dт"
+    durability: 4
+    start_durability: 4
+    hologram_offset: 3.0
+    lines:
+      - "Владелец: &6%player%"
+      - "&x&f&b&d&1&d&1Прочность: [ %durability% / %max_durability% ]"
+      - ""
+      - "Этот приват почти &x&e&f&3&4&f&fневозможно"
+      - "&x&e&f&3&4&f&fвзорвать, загриферить, найти"
+  EMERALD_ORE:
+    name: "&x&f&c&6&f&0&0Большой приват"
+    durability: 1
+    start_durability: 1
+    hologram_offset: 2.0
+    lines:
+      - "Владелец: &6%player%"
+      - "&x&f&b&d&1&d&1Прочность: [ %durability% / %max_durability% ]"
+  DIAMOND_BLOCK:
+    name: "&x&0&0&d&8&f&fСредний приват"
+    durability: 1
+    start_durability: 1
+    hologram_offset: 2.0
+    lines:
+      - "Владелец: &6%player%"
+      - "&x&f&b&d&1&d&1Прочность: [ %durability% / %max_durability% ]"
+  GOLD_BLOCK:
+    name: "&x&0&0&d&8&f&fМаленький приват"
+    durability: 1
+    start_durability: 1
+    hologram_offset: 2.0
+    lines:
+      - "Владелец: &6%player%"
+      - "&x&f&b&d&1&d&1Прочность: [ %durability% / %max_durability% ]"
+  IRON_BLOCK:
+    name: "&x&0&0&d&8&f&fКрошечный приват"
+    durability: 1
+    start_durability: 1
+    hologram_offset: 2.0
+    lines:
+      - "Владелец: &6%player%"
+      - "&x&f&b&d&1&d&1Прочность: [ %durability% / %max_durability% ]"

@@ -1,0 +1,57 @@
+server-number: "Лайт-1"
+server-number0: "Лайт-0"
+
+database:
+  url: "jdbc:mysql://127.0.0.1:3306/lite_holyend"
+  username: "root"
+  password: "kotikstasika"
+  pool-size: 10
+
+end-event:
+  start-hour: 16
+  start-minute: 0
+  day-of-week: 1
+  timezone: "Europe/Moscow"
+  notification-intervals:
+    - 270
+    - 180
+    - 120
+    - 60
+    - 30
+    - 15
+    - 10
+    - 5
+    - 3
+    - 2
+    - 1
+    - 0.30
+    - 0.1
+
+holograms:
+  timer-location:
+    world: spawn
+    x: 176.5
+    y: 87.25
+    z: 1.5
+  top-location:
+    world: spawn
+    x: 104.5
+    y: 42.3
+    z: 47.5
+
+end-spawn:
+  world: world_the_end
+  x: -10.5
+  y: 58.0
+  z: -82.5
+  yaw: 1.5
+  pitch: -1.5
+
+world-restore:
+  archive-name:
+    - "world_enda1"
+    - "world_enda2"
+    - "world_enda3"
+    - "world_enda4"
+    - "world_enda5"
+  archive-path: .

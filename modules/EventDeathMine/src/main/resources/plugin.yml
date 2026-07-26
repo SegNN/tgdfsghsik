@@ -1,0 +1,22 @@
+name: EventDeathMine
+version: '1.0.0'
+main: ru.kotikstasika.eventdeathmine.EventDeathMine
+api-version: '1.16'
+depend:
+  - WorldEdit
+  - WorldGuard
+  - LootManager
+  - EventManager
+softdepend:
+  - WorldEdit
+  - WorldGuard
+  - LootManager
+  - EventManager
+commands:
+  deathmine:
+    usage: /<command> <spawn|remove|settimer|tp|status>
+    description: Controls Death Mine event
+permissions:
+  eventdeathmine.admin:
+    description: Allow admin tab completion for EventDeathMine
+    default: op

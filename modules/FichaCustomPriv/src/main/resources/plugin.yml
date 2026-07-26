@@ -1,0 +1,18 @@
+name: FichaCustomPriv
+version: '1.0'
+main: ua.fichadev.fichacustompriv.FichaCustomPriv
+api-version: '1.16'
+author:
+  - MantiYT
+  - FichaDev
+  - Smail
+commands:
+  custompriv:
+  privadmin:
+  fichacustompriv:
+  customtitul:
+  tituladmin:
+
+permissions:
+  FichaCustomPriv.admin:
+    default: op

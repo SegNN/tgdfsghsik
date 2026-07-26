@@ -1,0 +1,42 @@
+database:
+  type: #mysql-sqlite
+  host:
+  user:
+  password:
+  database:
+settings:
+  check-interval: 5
+  spawner-radius: 6
+  min-coins: 5900.00
+  max-coins: 6300.99
+
+  spawner-placement:
+    enabled: true
+    sound: "ENTITY.WITHER.SPAWN"
+
+  spawner:
+    material: "SPAWNER"
+    name: "&x&F&F&E&E&0&0З&x&F&F&E&E&0&0о&x&F&F&E&E&0&0л&x&F&F&E&E&0&0о&x&F&F&E&E&0&0т&x&F&F&E&E&0&0о&x&F&F&E&E&0&0й &x&F&F&D&C&0&0С&x&F&F&D&3&0&0п&x&F&F&C&A&0&0а&x&F&F&C&0&0&0в&x&F&F&B&7&0&0н&x&F&F&A&E&0&0е&x&F&F&A&5&0&0р"
+    lore:
+      - "&f"
+      - "&7Особенности эффекта:"
+      - "&x&F&F&C&F&0&0 - каждую секунду в радиусе"
+      - "&x&F&F&C&F&0&0   5 блоков от спавнера игроку"
+      - "&x&F&F&C&F&0&0   начисляются монеты;"
+      - "&x&F&F&C&F&0&0 - сломать спавнер можно"
+      - "&x&F&F&C&F&0&0   только киркой Джейка."
+      - "&f"
+      - "&7Прочность: %durability%"
+
+  durability:
+    max-durability: 5000
+    durability-check-interval: 1000
+    durability-loss-per-check: 1
+    break-chance-multiplier: 0.0001
+
+  neighbor-penalty:
+    enabled: true
+    radius: 10
+    penalty-per-spawner: 1
+    max-penalty: 50
+    check-interval: 1

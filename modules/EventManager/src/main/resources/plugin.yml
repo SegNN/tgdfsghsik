@@ -1,0 +1,7 @@
+name: EventManager
+version: '1.0-SNAPSHOT'
+main: org.dimasik.eventmanager.EventManager
+api-version: '1.16'
+commands:
+  vote:
+  event:

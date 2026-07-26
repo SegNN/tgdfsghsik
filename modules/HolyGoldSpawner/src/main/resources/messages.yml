@@ -1,0 +1,35 @@
+player:
+  wrong-world: "&x&f&f&0&0&0&0▶ &fЗолотые спавнеры можно устанавливать только в мире &cРТП"
+  economy-disabled: "&cПлагин StickEco не найден! Плагин будет отключен."
+  must-use-jackhammer: "&x&f&f&0&0&0&0▶ &fЭтот &6спавнер &fможно сломать только &6киркой Джейка!"
+  placement-disabled: "&x&F&F&C&F&0&0&l▶ &fВ первые &x&F&F&C&F&0&02 дня &fвайпа &x&f&f&0&0&0&0запрещено &fустанавлявать &x&F&F&C&F&0&0золотые спавнера!"
+  coin-received: "&6&l▶&f Ваш баланс пополнен на &6%coins%¤"
+  protection-near-spawner: "&x&F&F&C&F&0&0▶ &6Вы не можете разместить блок привата, так как он перекрывает другой регион."
+  spawner-protected: "&x&F&F&C&F&0&0▶ &6Вы не можете разместить блок привата, так как он перекрывает другой регион."
+  inventory-full: "&x&f&f&0&0&0&0▶ &fИнвентарь полон."
+  no-permission: "&x&f&f&0&0&0&0▶ &fУ вас нет прав на эту команду!"
+  not-found: "&x&f&f&0&0&0&0▶ &fИгрок не найден!"
+  reload-success: "&x&F&F&C&F&0&0&l▶ &fКонфигурация плагина перезагружена!"
+
+
+command:
+  usage-give: "&cИспользование: /holygoldspawner give <spawner|pickaxe> [игрок] [параметры]"
+  usage-give-spawner: "&x&f&f&0&0&0&0▶ &fИспользование: /holygoldspawner give spawner <игрок> [прочность] [количество]"
+  unknown-item: "&x&f&f&0&0&0&0▶ &fНеизвестный предмет: %item%"
+  help-header: "&6=== HolyGoldSpawner Помощь ==="
+  help-give-spawner: "&x&F&F&C&F&0&0&l▶ &f/holygoldspawner give spawner <игрок> [прочность] [количество]"
+  help-footer: "&6============================="
+  usage-give-pickaxe: "&cИспользование: /holygoldspawner give pickaxe <игрок> [количество]"
+
+give:
+  spawner-given: "&x&F&F&C&F&0&0&l▶ &6Золотой Спавнер &fвыдан &x&f&f&0&0&0&0%player% &fв количестве &6%amount% шт."
+  durability-number-error: "&x&f&f&0&0&0&0▶ &fПрочность должна быть числом!"
+  amount-number-error: "&x&f&f&0&0&0&0▶ &fКоличество должно быть числом!"
+  jackhammer-given: "&x&F&F&C&F&0&0&l▶ &6Кирка Джейка выдана игроку &x&f&f&0&0&0&0%player% &fв количестве &6%amount% шт."
+
+coords:
+  message-format: |-
+    &x&F&F&C&F&0&0▍
+    &x&F&F&C&F&0&0▍&fНа координатах: &x&F&F&C&F&0&0X: %x_mask%, Y: %y_mask% 
+    &x&F&F&C&F&0&0▍&fбыл&x&F&F&C&F&0&0 установлен Золотой Спавнер
+    &x&F&F&C&F&0&0▍

@@ -1,0 +1,11 @@
+database:
+  type: SQLITE
+  file: "playtime.db"
+  host: localhost
+  port: 3306
+  user: root
+  password: ""
+  database: "playtimeapi"
+
+server:
+  name: "Lite-1"

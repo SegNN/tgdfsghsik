@@ -1,0 +1,124 @@
+#StickHWCustom | by StickDev
+#t.me/StickDev
+items:
+  particle:
+    name: ' &6{name}'
+    lore:
+      - ' &f'
+      - ' &fЛКМ - применить эффект'
+      - ' &f'
+  sound:
+    name: ' &x&f&f&7&0&0&0{name}'
+    lore:
+      - ' &f'
+      - ' &#00d8ff ▶ &fПКМ - Открыть настройки эффекта'
+      - ' &#ff2222 ▶ &fЛКМ - Отменить эффект'
+      - ' &f'
+    lore2:
+      - ' &f'
+      - ' &x&f&f&7&0&0&0 ▶ &fЛКМ - Применить эффект'
+      - ' &f'
+
+deathme:
+  items:
+    fox_death:
+      material: MUSIC_DISC_STAL
+      slot: 18
+      sound: ENTITY_FOX_DEATH
+      name: Лиса умирает
+    player_death:
+      material: MUSIC_DISC_STAL
+      slot: 19
+      sound: ENTITY_PLAYER_DEATH
+      name: Игрок умирает
+    ocelot_death:
+      material: MUSIC_DISC_STAL
+      slot: 20
+      sound: ENTITY_OCELOT_DEATH
+      name: Оцелот умирает
+
+deathplayer:
+  items:
+    fox_death:
+      material: MUSIC_DISC_STAL
+      slot: 18
+      sound: ENTITY_FOX_DEATH
+      name: Лиса умирает
+    player_death:
+      material: MUSIC_DISC_STAL
+      slot: 19
+      sound: ENTITY_PLAYER_DEATH
+      name: Игрок умирает
+    ocelot_death:
+      material: MUSIC_DISC_STAL
+      slot: 20
+      sound: ENTITY_OCELOT_DEATH
+      name: Оцелот умирает
+
+lowheal:
+  items:
+    bass:
+      material: MUSIC_DISC_STAL
+      slot: 18
+      sound: BLOCK_NOTE_BLOCK_BASS
+      name: Нотный блок
+hitsounds:
+  items:
+    panda:
+      material: MUSIC_DISC_STAL
+      slot: 18
+      sound: ENTITY_PANDA_SNEEZE
+      name: Панда чихает
+particles:
+  items:
+    cloud:
+      material: LIGHT_GRAY_DYE
+      slot: 18
+      particle: CLOUD
+      name: "&7Облако"
+    redstone:
+      material: RED_DYE
+      slot: 19
+      particle: REDSTONE
+      color: RED
+      name: "&cКрасные частицы"
+pearlparticles:
+  items:
+    dragon_breath:
+      slot: 18
+      particle: DRAGON_BREATH
+      name: "&5Дыхание дракона"
+      material: DRAGON_BREATH
+    flame:
+      slot: 19
+      particle: FLAME
+      name: "&cПламя"
+      material: BLAZE_POWDER
+deathparticles:
+  items:
+    dragon_breath:
+      slot: 18
+      particle: DRAGON_BREATH
+      name: "&5Дыхание дракона"
+      material: DRAGON_BREATH
+killparticles:
+  items:
+    dragon_breath:
+      slot: 18
+      particle: DRAGON_BREATH
+      name: "&5Дыхание дракона"
+      material: DRAGON_BREATH
+    soul_fire:
+      slot: 19
+      particle: SOUL_FIRE_FLAME
+      name: "&dПламя душ"
+      material: SOUL_TORCH
+
+messages:
+  acceptparticle: '&fВыбраны частицы: {particle}'
+  acceptsound: '&fВыбран звук: {sound}'
+database:
+  host: " "
+  name: "custom"
+  username: "root"
+  password: " "

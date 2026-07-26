@@ -1,0 +1,17 @@
+name: FichaCases
+version: 1.0
+main: ua.fichadev.fichacases.FichaCases
+api-version: 1.16
+softdepend: [PlaceholderAPI, PlayerPoints]
+authors:
+  - Smail
+  - FichaDev
+  - NBK
+  - itzHiti
+  - KoroLKotov
+commands:
+  fichacases:
+    aliases:
+      - fc
+      - holycases
+      - hc

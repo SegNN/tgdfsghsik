@@ -1,0 +1,48 @@
+menu_bottles:
+  - '15'
+  - '30'
+  - '50'
+
+game-time:
+  required-minutes: 40
+  message-not-enough:
+    - "&x&F&B&0&0&0&0▶ &fОбмен опыта доступен &x&F&B&0&0&0&0{required_minutes} минут&f после начала игры."
+    - "&f Вы отыграли: &x&F&B&0&0&0&0{played_minutes} минут&f."
+  time-format: '&7Игровое время: &e{days}д {hours}ч {minutes}м'
+
+bottles:
+  '15':
+    name: '&r&#05F800&lБутылек с 15 ур. опыта (315)&r'
+    material: EXPERIENCE_BOTTLE
+    lore:
+      - '&r&#ffffff В пузырьке &r&#05F800315 опыта (15)&r'
+      - '&r&#ffffff Киньте пузырек, чтобы получить опыт&r'
+    value: 315
+  '30':
+    name: '&r&l&#ffc900&lБутылек с 30 ур. опыта (1395)&r'
+    material: EXPERIENCE_BOTTLE
+    lore:
+      - '&r&#ffffff В пузырьке &r&#ffc9001395 опыта (30)&r'
+      - '&r&#ffffff Киньте пузырек, чтобы получить опыт&r'
+    value: 1395
+  '50':
+    name: '&r&l&#ff7000&lБутылек с 50 ур. опыта (5345)&r'
+    material: EXPERIENCE_BOTTLE
+    lore:
+      - '&r&#ffffff В пузырьке &r&#ff70005345 опыта (50)&r'
+      - '&r&#ffffff Киньте пузырек, чтобы получить опыт&r'
+    value: 5345
+  '100':
+    name: '&r&#05F800&lБутылек с 100 ур. опыта (30970)&r'
+    material: EXPERIENCE_BOTTLE
+    lore:
+      - '&r&#ffffff В пузырьке &r&#05F80030970 опыта (100)&r'
+      - '&r&#ffffff Киньте пузырек, чтобы получить опыт&r'
+    value: 30971
+  '500':
+    name: '&r&#05F8000&lБутылек с 500 ур. опыта (1045970)&r'
+    material: EXPERIENCE_BOTTLE
+    lore:
+      - '&r&#ffffff В пузырьке &r&#05F8001045970 опыта (500)&r'
+      - '&r&#ffffff Киньте пузырек, чтобы получить опыт&r'
+    value: 1045970

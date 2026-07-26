@@ -1,0 +1,13 @@
+name: Buyer
+version: '1.0'
+main: org.dimasik.buyer.Buyer
+api-version: '1.16'
+depend: [Vault]
+softdepend: [PlaceholderAPI]
+commands:
+  b:
+  buyer:
+permissions:
+  buyer.items:
+    description: Позволяет добавлять предметы в базу данных
+    default: op

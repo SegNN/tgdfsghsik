@@ -1,0 +1,9 @@
+name: FichaSpawneroved
+version: '1.0'
+main: ua.fichatime.fichaspawneroved.FichaSpawneroved
+api-version: '1.16'
+author:
+  - Smail
+  - FichaDev
+commands:
+  eggkeeper:

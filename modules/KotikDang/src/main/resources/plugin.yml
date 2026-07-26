@@ -1,0 +1,7 @@
+name: KotikDang
+version: '1.0'
+main: ru.kotikstasika.kotikdang.KotikDang
+api-version: '1.16'
+depend: [WorldEdit, WorldGuard, LootManager]
+commands:
+  kotikdang:

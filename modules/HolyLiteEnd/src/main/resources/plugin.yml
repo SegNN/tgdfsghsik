@@ -1,0 +1,9 @@
+name: HolyLiteEnd
+version: '1.0'
+main: ru.kotikstasika.holyliteend.HolyLiteEnd
+api-version: '1.16'
+depend: [DecentHolograms, PlaceholderAPI, FichaSpawneroved, LootManager]
+softdepend: [DecentHolograms, PlaceholderAPI, FichaSpawneroved, LootManager]
+commands:
+  holyliteend:
+  egg:

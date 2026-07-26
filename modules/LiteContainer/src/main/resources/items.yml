@@ -1,0 +1,855 @@
+items:
+  '0':
+    rarity: RARE
+    value: 17.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: GOLDEN_APPLE
+      amount: 16
+  '1':
+    rarity: DEFAULT
+    value: 10.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: TOTEM_OF_UNDYING
+  '2':
+    rarity: RARE
+    value: 34.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: FIRE_CHARGE
+      amount: 2
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB3100","text":"В"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB3300","text":"з"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB3500","text":"р"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB3700","text":"ы"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB3900","text":"в"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB3B00","text":"н"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB3D00","text":"а"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB3F00","text":"я
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB4300","text":"ш"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB4500","text":"т"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB4700","text":"у"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB4900","text":"ч"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB4B00","text":"к"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB4D00","text":"а"}],"text":""}'
+        lore:
+          - '{"text":""}'
+          - '{"extra":[{"text":" "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Особенности
+          и применение:"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB624A","text":"
+          - при нажатие ПКМ, вызывает взрыв, с силой"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB624A","text":"   способной
+          убить игрока без брони, на расстоянии"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB624A","text":"   3
+          блоков от точки активации;"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB624A","text":"
+          - урон наносится, в том числе игроку, который"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FB624A","text":"   активировал
+          Взрывную Штучку."}],"text":""}'
+          - '{"text":""}'
+        enchants:
+          LOOT_BONUS_MOBS: 1
+        ItemFlags:
+          - HIDE_ENCHANTS
+        PublicBukkitValues:
+          holyliteitems:item-type: explosive_stuff
+  '3':
+    rarity: DEFAULT
+    value: 25.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: TNT
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#ED4AFB","text":"C"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DE59FA","text":"4"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D068FA","text":"
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#C177F9","text":"В"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B386F8","text":"з"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#A495F8","text":"Р"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#96A5F7","text":"ы"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#87B4F6","text":"В"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#78C3F6","text":"ч"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#6AD2F5","text":"А"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#5BE1F4","text":"т"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#4DF0F4","text":"К"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#3EFFF3","text":"а"}],"text":""}'
+        lore:
+          - '{"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_gray","text":"Особенности:"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"
+          • "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"разрушает
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#3EFFF3","text":"блоки
+          незеритового привата;"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"
+          • "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"взрывает
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#3EFFF3","text":"блоки
+          обсидиана."}],"text":""}'
+          - '{"text":""}'
+        PublicBukkitValues:
+          stickhwtnt:tnt: c4
+  '4':
+    rarity: DEFAULT
+    value: 7.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: ARROW
+      amount: 32
+  '5':
+    rarity: DEFAULT
+    value: 29.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        lore:
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Бур
+          I"}],"text":""}'
+        PublicBukkitValues:
+          lksenchantments:lksenchantments-book-name: boor
+          lksenchantments:lksenchantments-book-lvl: 1i
+  '6':
+    rarity: DEFAULT
+    value: 5.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: COOKED_PORKCHOP
+      amount: 16
+  '7':
+    rarity: DEFAULT
+    value: 3.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: BREAD
+      amount: 32
+  '8':
+    rarity: MYTHIC
+    value: 39.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: ENCHANTED_GOLDEN_APPLE
+  '9':
+    rarity: DEFAULT
+    value: 15.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: FIREWORK_ROCKET
+      amount: 4
+  '10':
+    rarity: RARE
+    value: 30.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: FIREWORK_ROCKET
+      amount: 16
+  '11':
+    rarity: MYTHIC
+    value: 60.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: FIREWORK_ROCKET
+      amount: 32
+  '12':
+    rarity: LEGENDARY
+    value: 150.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: FIREWORK_ROCKET
+      amount: 64
+  '13':
+    rarity: RARE
+    value: 21.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: EXPERIENCE_BOTTLE
+      amount: 32
+  '14':
+    rarity: RARE
+    value: 39.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: EXPERIENCE_BOTTLE
+      amount: 64
+  '15':
+    rarity: MYTHIC
+    value: 300.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: PLAYER_HEAD
+      meta:
+        ==: ItemMeta
+        meta-type: SKULL
+        display-name: '{"extra":[{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#90BBC4","text":"С"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#98C5CE","text":"ф"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#A0CFD9","text":"е"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#A9D9E3","text":"р"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B1E3EE","text":"а
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B5E4EE","text":"Ф"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B1DBE3","text":"л"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#ADD3D9","text":"е"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#A9CACE","text":"ш"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#A5C1C4","text":"а"}],"text":""}'
+        lore:
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Скорость
+          III"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+          I"}],"text":""}'
+          - '{"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+          предмет в левую руку,"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+          активировать магию."}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+          о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+        attribute-modifiers:
+          GENERIC_ARMOR:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 1.0
+              name: GENERIC_ARMOR
+              slot: OFF_HAND
+              uuid: 28ffd497-bfd8-4185-90ed-c837c14d4057
+              operation: 0
+          GENERIC_ARMOR_TOUGHNESS:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 1.0
+              name: GENERIC_ARMOR_TOUGHNESS
+              slot: OFF_HAND
+              uuid: f243670e-f5e8-4049-a34e-55aa7a58fdf5
+              operation: 0
+          GENERIC_MOVEMENT_SPEED:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 0.029999999329447746
+              name: GENERIC_MOVEMENT_SPEED
+              slot: OFF_HAND
+              uuid: 72bf57bb-7842-44e9-9d33-bff9b48cb423
+              operation: 0
+        ItemFlags:
+          - HIDE_ATTRIBUTES
+        internal: H4sIAAAAAAAA/02PP07DMBxGfyCQSmDiGiwp+YM6ZAAMraPapmlJY0+kqavEtUuVJkByAUYkOAF3YOMMnIeVjGzv0/uWZwFYcDJd11rflY+rQksLrI62sqwKuTuCXiVfqrqUOwsA9npwGKe6lvAlm9AWSW4vk1BnDfa7PZvammG1vcCbuFlcYx+bzo8u/XEz+Pf1qnTuae6EudhM6oWJ7bETaTmK+pm5f6JtZhN0pfnsxhPDcM1QZGgbK9LqXCDuEkVz3kZaqMylhrdszm02FKpjlyL+TBQ5p+ZWEaULhohDEW7wpj9YTYIA4Bj28bILOXj/fXsNUvb5feonP2cfDwB/YGVOHQoBAAA=
+        PublicBukkitValues:
+          holysfers:speed: 3i
+          holysfers:armor: 1i
+          holysfers:holysfers: 1i
+          holysfers:rarity: CUSTOM
+  '16':
+    rarity: MYTHIC
+    value: 200.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: SPAWNER
+  '17':
+    rarity: LEGENDARY
+    value: 309.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: TOTEM_OF_UNDYING
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#CA0076","text":"-
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D4007C","text":"Т"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D9007F","text":"а"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DE0082","text":"л"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E30085","text":"и"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E80087","text":"с"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#ED008A","text":"м"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F2008D","text":"а"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F70090","text":"н
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F70090","text":"ᴇ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F2008D","text":"ᴛ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#ED008A","text":"ᴇ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E80087","text":"ʀ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E30085","text":"ɴ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DE0082","text":"ɪ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D9007F","text":"ᴛ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D4007C","text":"ʏ
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#CA0076","text":"-"}],"text":""}'
+        lore:
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Урон
+          II"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Скорость
+          II"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+          II"}],"text":""}'
+          - '{"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+          предмет в левую руку,"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+          активировать магию."}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+          о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+        enchants:
+          DURABILITY: 1
+        attribute-modifiers:
+          GENERIC_ARMOR:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 2.0
+              name: GENERIC_ARMOR
+              slot: OFF_HAND
+              uuid: 7bb9192d-4767-4b6d-8af3-7abec82f6764
+              operation: 0
+          GENERIC_ARMOR_TOUGHNESS:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 2.0
+              name: GENERIC_ARMOR_TOUGHNESS
+              slot: OFF_HAND
+              uuid: 3ed802f0-4316-4508-bd9b-5d5adab1d0e7
+              operation: 0
+          GENERIC_MOVEMENT_SPEED:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 0.019999999552965164
+              name: GENERIC_MOVEMENT_SPEED
+              slot: OFF_HAND
+              uuid: bc7ad5d0-2024-4cf0-ba8f-27661787214a
+              operation: 0
+          GENERIC_ATTACK_DAMAGE:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 2.0
+              name: GENERIC_ATTACK_DAMAGE
+              slot: OFF_HAND
+              uuid: ac802f11-2270-45ca-b959-a38aa81d7592
+              operation: 0
+        ItemFlags:
+          - HIDE_ENCHANTS
+          - HIDE_ATTRIBUTES
+        PublicBukkitValues:
+          holysfers:speed: 2i
+          holysfers:armor: 2i
+          holysfers:damage: 2i
+          holysfers:holysfers: 1i
+          holysfers:rarity: CUSTOM
+  '18':
+    rarity: LEGENDARY
+    value: 699.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: NETHERITE_SWORD
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#05FB00","text":"Меч
+          «Выгодный фарм»"}],"text":""}'
+        lore:
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"green","text":"Фармер
+          II"}],"text":""}'
+        enchants:
+          LOOT_BONUS_BLOCKS: 5
+        PublicBukkitValues:
+          holyenchantments:holyenchantments-farmer: 2i
+  '19':
+    rarity: MYTHIC
+    value: 199.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: TOTEM_OF_UNDYING
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#FF0000","text":"-
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0000","text":"Т"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0300","text":"а"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0600","text":"л"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0900","text":"и"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0C00","text":"с"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0F00","text":"м"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF1200","text":"а"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF1500","text":"н
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF1500","text":"s"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF1100","text":"ᴛ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0E00","text":"ɪ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0A00","text":"ɴ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0700","text":"ɢ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0300","text":"ᴇ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0000","text":"ʀ
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#FF0000","text":"-"}],"text":""}'
+        lore:
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Урон
+          II"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Броня
+          II"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"Скорость
+          I"}],"text":""}'
+          - '{"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+          предмет в левую руку,"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+          активировать магию."}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+          о сферах - "},{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"/itemhelp"}],"text":""}'
+        enchants:
+          DURABILITY: 1
+        attribute-modifiers:
+          GENERIC_MOVEMENT_SPEED:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 0.009999999776482582
+              name: GENERIC_MOVEMENT_SPEED
+              slot: OFF_HAND
+              uuid: 2a0c0453-46cd-48e4-bd0b-76623e75e3c1
+              operation: 0
+          GENERIC_ARMOR:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 2.0
+              name: GENERIC_ARMOR
+              slot: OFF_HAND
+              uuid: 909266f8-4644-4be0-b218-9ae712ff18f4
+              operation: 0
+          GENERIC_ARMOR_TOUGHNESS:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 2.0
+              name: GENERIC_ARMOR_TOUGHNESS
+              slot: OFF_HAND
+              uuid: 67af8d71-d9ff-4e83-ab8f-76105f4e58ff
+              operation: 0
+          GENERIC_ATTACK_DAMAGE:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 2.0
+              name: GENERIC_ATTACK_DAMAGE
+              slot: OFF_HAND
+              uuid: 84cf5754-3402-4334-99f3-925664e802d6
+              operation: 0
+        ItemFlags:
+          - HIDE_ENCHANTS
+          - HIDE_ATTRIBUTES
+        PublicBukkitValues:
+          holysfers:speed: 1i
+          holysfers:armor: 2i
+          holysfers:damage: 2i
+          holysfers:holysfers: 1i
+          holysfers:rarity: CUSTOM
+  '20':
+    rarity: LEGENDARY
+    value: 749.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: NETHERITE_CHESTPLATE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#24B500","text":"-"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"text":"
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#24B500","text":"Н"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#26BE00","text":"а"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#28C700","text":"г"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#29CF00","text":"р"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#2BD800","text":"у"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#2DE100","text":"д"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#2FEA00","text":"н"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#30F200","text":"и"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#32FB00","text":"к
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#30F200","text":"I"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#2FEA00","text":"ɴ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#2DE100","text":"ғ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#2BD800","text":"ɪ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#29CF00","text":"ɴ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#28C700","text":"ɪ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#26BE00","text":"ᴛ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#24B500","text":"ʏ
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#24B500","text":"-"}],"text":""}'
+        lore:
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Непробиваемый
+          I"}],"text":""}'
+        enchants:
+          PROTECTION_EXPLOSIONS: 5
+          PROTECTION_FIRE: 5
+          MENDING: 2
+          PROTECTION_PROJECTILE: 5
+          PROTECTION_ENVIRONMENTAL: 5
+          DURABILITY: 5
+  '21':
+    rarity: LEGENDARY
+    value: 356.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: TRIDENT
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00D8FF","text":"Громовержец"}],"text":""}'
+        enchants:
+          IMPALING: 5
+          LOOT_BONUS_MOBS: 5
+          LOYALTY: 3
+          MENDING: 1
+          DURABILITY: 5
+  '22':
+    rarity: MYTHIC
+    value: 154.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        lore:
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Бур
+          II"}],"text":""}'
+        PublicBukkitValues:
+          lksenchantments:lksenchantments-book-name: boor
+          lksenchantments:lksenchantments-book-lvl: 2i
+  '23':
+    rarity: RARE
+    value: 19.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: EXPERIENCE_BOTTLE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FFC900","text":"Бутылек
+          с 30 ур. опыта (1395)"}],"text":""}'
+        lore:
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+          В пузырьке "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FFC900","text":"1395
+          опыта (30)"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+          Киньте пузырек, чтобы получить опыт"}],"text":""}'
+        PublicBukkitValues:
+          mantiexpbottle:exp: 1395i
+          mantiexpbottle:level: 30i
+  '24':
+    rarity: RARE
+    value: 49.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: EXPERIENCE_BOTTLE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF7000","text":"Бутылек
+          с 50 ур. опыта (5345)"}],"text":""}'
+        lore:
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+          В пузырьке "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF7000","text":"5345
+          опыта (50)"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"white","text":"
+          Киньте пузырек, чтобы получить опыт"}],"text":""}'
+        PublicBukkitValues:
+          mantiexpbottle:exp: 5345i
+          mantiexpbottle:level: 50i
+  '25':
+    rarity: DEFAULT
+    value: 42.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: TNT
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#BD00FD","text":"Д"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#C400FC","text":"и"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#CB00FA","text":"н"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D200F9","text":"а"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D900F8","text":"м"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E100F6","text":"и"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E800F5","text":"т
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F600F2","text":"B"}],"text":""}'
+        lore:
+          - '{"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_gray","text":"Особенности:"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"
+          • "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"имеет
+          в "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#BD00FD","text":"10
+          раз "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"больший
+          радус взрыва."}],"text":""}'
+          - '{"text":""}'
+        PublicBukkitValues:
+          stickhwtnt:tnt: b
+  '26':
+    rarity: RARE
+    value: 78.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: TNT
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#ED4AFB","text":"C"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DE59FA","text":"4"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D068FA","text":"
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#C177F9","text":"В"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B386F8","text":"з"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#A495F8","text":"Р"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#96A5F7","text":"ы"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#87B4F6","text":"В"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#78C3F6","text":"ч"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#6AD2F5","text":"А"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#5BE1F4","text":"т"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#4DF0F4","text":"К"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#3EFFF3","text":"а"}],"text":""}'
+        lore:
+          - '{"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"dark_gray","text":"Особенности:"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"
+          • "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"разрушает
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#3EFFF3","text":"блоки
+          незеритового привата;"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"
+          • "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E7E7E7","text":"взрывает
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#3EFFF3","text":"блоки
+          обсидиана."}],"text":""}'
+          - '{"text":""}'
+        PublicBukkitValues:
+          stickhwtnt:tnt: c4
+  '27':
+    rarity: DEFAULT
+    value: 57.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: BOW
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#CA0076","text":"-
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D7007E","text":"Л"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DE0082","text":"у"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E50086","text":"к
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F2008D","text":"ᴇ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F80091","text":"ᴛ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0095","text":"ᴇ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F70091","text":"ʀ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F0008C","text":"ɴ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E80088","text":"ɪ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E10083","text":"ᴛ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D9007F","text":"ʏ
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#CA0076","text":"-"}],"text":""}'
+        enchants:
+          ARROW_FIRE: 1
+          ARROW_INFINITE: 1
+          ARROW_DAMAGE: 5
+          ARROW_KNOCKBACK: 2
+          DURABILITY: 3
+  '28':
+    rarity: DEFAULT
+    value: 79.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: CROSSBOW
+      meta:
+        ==: ItemMeta
+        meta-type: CROSSBOW
+        display-name: '{"extra":[{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#CA0076","text":"-
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D5007C","text":"А"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DA007F","text":"р"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DF0082","text":"б"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E50086","text":"а"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#EA0089","text":"л"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#EF008C","text":"е"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F4008F","text":"т
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0095","text":"ᴇ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F90092","text":"ᴛ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F3008E","text":"ᴇ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#ED008B","text":"ʀ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E70087","text":"ɴ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E20084","text":"ɪ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DC0080","text":"ᴛ"},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D6007D","text":"ʏ
+          "},{"bold":true,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":true,"color":"#CA0076","text":"-"}],"text":""}'
+        enchants:
+          MENDING: 1
+          MULTISHOT: 1
+          PIERCING: 5
+          QUICK_CHARGE: 3
+          DURABILITY: 3
+        charged: false
+  '29':
+    rarity: DEFAULT
+    value: 121.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: TOTEM_OF_UNDYING
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"text":" "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0094FF","text":"Легендарный
+          талисман"}],"text":""}'
+        lore:
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+          "},{"italic":false,"color":"white","text":"Броня II"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+          "},{"italic":false,"color":"white","text":"Урон II"}],"text":""}'
+          - '{"text":""}'
+          - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+          предмет в левую руку,"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+          активировать магию."}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+          о сферах - "},{"italic":true,"color":"white","text":"/itemhelp"}],"text":""}'
+        attribute-modifiers:
+          GENERIC_ARMOR:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 2.0
+              name: generic.armor
+              slot: OFF_HAND
+              uuid: af2e426e-a87e-40c9-b03f-313abb560bae
+              operation: 0
+          GENERIC_ATTACK_DAMAGE:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 2.0
+              name: generic.attack_damage
+              slot: OFF_HAND
+              uuid: 8ff7fdec-5209-4899-9010-4a67b371ce51
+              operation: 0
+        ItemFlags:
+          - HIDE_ENCHANTS
+          - HIDE_ATTRIBUTES
+  '30':
+    rarity: DEFAULT
+    value: 189.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: TOTEM_OF_UNDYING
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"text":" "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0094FF","text":"Легендарный
+          талисман"}],"text":""}'
+        lore:
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+          "},{"italic":false,"color":"white","text":"Урон III"}],"text":""}'
+          - '{"text":""}'
+          - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+          предмет в левую руку,"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+          активировать магию."}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+          о сферах - "},{"italic":true,"color":"white","text":"/itemhelp"}],"text":""}'
+        attribute-modifiers:
+          GENERIC_ATTACK_DAMAGE:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 3.0
+              name: generic.attack_damage
+              slot: OFF_HAND
+              uuid: 0f5525d9-2983-41bb-9e3e-97b853d0b2db
+              operation: 0
+        ItemFlags:
+          - HIDE_ENCHANTS
+          - HIDE_ATTRIBUTES
+  '31':
+    rarity: DEFAULT
+    value: 85.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: TOTEM_OF_UNDYING
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DB00FF","text":"Эпический
+          талисман"}],"text":""}'
+        lore:
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"•
+          "},{"italic":false,"color":"white","text":"Скорость II"}],"text":""}'
+          - '{"text":""}'
+          - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Возьмите
+          предмет в левую руку,"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"чтобы
+          активировать магию."}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Подробнее
+          о сферах - "},{"italic":true,"color":"white","text":"/itemhelp"}],"text":""}'
+        attribute-modifiers:
+          GENERIC_MOVEMENT_SPEED:
+            - ==: org.bukkit.attribute.AttributeModifier
+              amount: 0.05
+              name: generic.movement_speed
+              slot: OFF_HAND
+              uuid: 95a08a96-9700-4467-8f02-ffe77e0040e5
+              operation: 0
+        ItemFlags:
+          - HIDE_ENCHANTS
+          - HIDE_ATTRIBUTES
+  '32':
+    rarity: DEFAULT
+    value: 99.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FF0101","text":"У"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#FA0101","text":"л"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F60101","text":"у"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#F10101","text":"ч"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#ED0101","text":"ш"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E80101","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#E30101","text":"н"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DF0101","text":"н"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#DA0101","text":"о"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D60101","text":"е
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#D10000","text":"з"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#CC0000","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#C80000","text":"л"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#C30000","text":"ь"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#BE0000","text":"е
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#BA0000","text":"с"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B50000","text":"и"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#B10000","text":"л"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#AC0000","text":"ы"}],"text":""}'
+        PublicBukkitValues:
+          mantipotion:type: strenght
+        custom-effects:
+          - ==: PotionEffect
+            effect: 5
+            duration: 3600
+            amplifier: 2
+            ambient: true
+            has-particles: true
+            has-icon: true
+  '33':
+    rarity: DEFAULT
+    value: 79.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00F0FF","text":"У"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00EBFB","text":"л"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00E5F7","text":"у"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00E0F4","text":"ч"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00DAF0","text":"ш"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00D5EC","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00D0E8","text":"н"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00CAE5","text":"н"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00C5E1","text":"о"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00BFDD","text":"е
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00BAD9","text":"з"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00B5D6","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00AFD2","text":"л"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00AACE","text":"ь"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00A4CA","text":"е
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#009FC6","text":"с"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0099C3","text":"к"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0094BF","text":"о"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#008FBB","text":"р"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0089B7","text":"о"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0084B4","text":"с"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#007EB0","text":"т"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0079AC","text":"и"}],"text":""}'
+        PublicBukkitValues:
+          mantipotion:type: speed
+        custom-effects:
+          - ==: PotionEffect
+            effect: 1
+            duration: 3600
+            amplifier: 2
+            ambient: true
+            has-particles: true
+            has-icon: true
+  '34':
+    rarity: DEFAULT
+    value: 59.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:long_fire_resistance
+  '35':
+    rarity: DEFAULT
+    value: 12.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: GOLDEN_CARROT
+      amount: 16
+  '36':
+    rarity: DEFAULT
+    value: 8.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: ENDER_PEARL
+      amount: 6
+  '37':
+    rarity: RARE
+    value: 139.0
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2586
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        display-name: '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0082B5","text":"З"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#008AC0","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0091CA","text":"л"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0099D5","text":"ь"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00A0DF","text":"е
+          "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00A8EA","text":"п"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00AFF4","text":"о"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00B7FF","text":"б"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00AFF4","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00A8EA","text":"д"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00A0DF","text":"и"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0099D5","text":"т"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0091CA","text":"е"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#008AC0","text":"л"},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#0082B5","text":"я"}],"text":""}'
+        lore:
+          - '{"text":""}'
+          - '{"extra":[{"text":" "},{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"gray","text":"Эффекты:"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00B7FF","text":"
+          - Сила III (8:00)"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00B7FF","text":"
+          - Скорость III (8:00)"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00B7FF","text":"
+          - Невидимость (8:00)"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00B7FF","text":"
+          - Спешка II (1:30)"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00B7FF","text":"
+          - Регенерация II (0:30)"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00B7FF","text":"
+          - Сопротивление II (0:30)"}],"text":""}'
+          - '{"extra":[{"bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"color":"#00B7FF","text":"
+          - Исцеление II"}],"text":""}'
+          - '{"text":""}'
+        ItemFlags:
+          - HIDE_ATTRIBUTES
+          - HIDE_POTION_EFFECTS
+        internal: H4sIAAAAAAAA/+NiYOBi4M4uysxLT/UsSc0t5mBgKaksSGXgKs/M0y3IL8nMz2NgAADGfO/oJgAAAA==
+        potion-type: minecraft:healing
+        custom-color:
+          ==: Color
+          RED: 0
+          BLUE: 181
+          GREEN: 130
+        custom-effects:
+          - ==: PotionEffect
+            effect: 5
+            duration: 9600
+            amplifier: 2
+            ambient: true
+            has-particles: true
+            has-icon: true
+          - ==: PotionEffect
+            effect: 1
+            duration: 9600
+            amplifier: 2
+            ambient: true
+            has-particles: true
+            has-icon: true
+          - ==: PotionEffect
+            effect: 14
+            duration: 9600
+            amplifier: 0
+            ambient: true
+            has-particles: true
+            has-icon: true
+          - ==: PotionEffect
+            effect: 3
+            duration: 1800
+            amplifier: 1
+            ambient: true
+            has-particles: true
+            has-icon: true
+          - ==: PotionEffect
+            effect: 10
+            duration: 600
+            amplifier: 1
+            ambient: true
+            has-particles: true
+            has-icon: true
+          - ==: PotionEffect
+            effect: 11
+            duration: 600
+            amplifier: 1
+            ambient: true
+            has-particles: true
+            has-icon: true
+          - ==: PotionEffect
+            effect: 6
+            duration: 1
+            amplifier: 1
+            ambient: true
+            has-particles: true
+            has-icon: true

@@ -1,0 +1,5 @@
+name: HolyPotions
+version: '1.0'
+main: frozenpon.frozenpotionstacker.Main
+api-version: '1.16'
+author: [Frozenpon]

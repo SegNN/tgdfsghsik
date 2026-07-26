@@ -1,0 +1,14 @@
+name: LiteStaffChat
+version: '1.0'
+main: org.nezxenka.litestaffchat.LiteStaffChat
+api-version: '1.16'
+authors: [nezxenka, "Dimasik201O (aka sh4dowgirl)"]
+depend:
+  - PlaceholderAPI
+commands:
+  sc:
+    aliases: [staffchat]
+    permission: litestaffchat.use
+  sct:
+    aliases: [staffchattoggle]
+    permission: litestaffchat.use

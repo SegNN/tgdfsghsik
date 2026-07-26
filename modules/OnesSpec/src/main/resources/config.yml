@@ -1,0 +1,25 @@
+# Настройки базы данных
+database:
+  host: localhost
+  port: 3306
+  name: minecraft
+  user: root
+  password: ''
+
+# Заблокированные команды в режиме слежки
+blocked-commands:
+  - /sethome
+settings:
+  use-vanish: true  # Включать ли vanish при слежке
+  use-papi: true    # Использовать ли PlaceholderAPI
+# Сообщения
+messages:
+  no-permission: '&cУ вас нет прав на использование этой команды!'
+  only-players: '&cЭту команду могут использовать только игроки!'
+  usage: '&cИспользование: /spec <игрок>'
+  player-not-found: '&cИгрок не найден или не в сети!'
+  cant-spec-yourself: '&cВы не можете следить за самим собой!'
+  spec-start: '&aВы начали слежку за игроком %target%. Используйте /unspec чтобы прекратить.'
+  spec-stopped: '&aРежим слежки отключен. Вы возвращены на исходную позицию.'
+  command-blocked: '&cЭта команда заблокирована в режиме слежки!'
+  chest-blocked: '&cВы не можете взаимодействовать с сундуками в режиме слежки!'

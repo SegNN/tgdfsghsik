@@ -1,0 +1,225 @@
+#
+#        » Leaked by @FichaDev «
+#        Telegram: t.me/FichaDev
+#
+permission-multipliers:
+  fichamobmoney.default: 1.0
+  fichamobmoney.ghast: 1.5
+  fichamobmoney.wither: 1.5
+  fichamobmoney.kraken: 1.5
+  fichamobmoney.dragon: 1.75
+  fichamobmoney.stinger: 1.75
+  fichamobmoney.eternity: 2.0
+  fichamobmoney.infinity: 2.0
+  fichamobmoney.booster: 2.5
+mobs:
+  PANDA:
+    display-name: "Панду"
+    min: 1.60
+    max: 2.80
+  BEE:
+    display-name: "Пчёлку"
+    min: 1.60
+    max: 2.80
+  BAT:
+    display-name: "Летучую-мышь"
+    min: 1.60
+    max: 2.80
+  WOLF:
+    display-name: "Волка"
+    min: 1.60
+    max: 2.80
+  HORSE:
+    display-name: "Лошадь"
+    min: 1.60
+    max: 2.80
+  TURTLE:
+    display-name: "Черепаху"
+    min: 1.60
+    max: 2.80
+  FISHING_HOOK:
+    display-name: "Рыбу"
+    min: 1.60
+    max: 2.80
+  SILVERFISH:
+    display-name: "Рыбу"
+    min: 1.60
+    max: 2.80
+  PUFFERFISH:
+    display-name: "Рыбу"
+    min: 1.60
+    max: 2.80
+  TROPICAL_FISH:
+    display-name: "Рыбу"
+    min: 1.60
+    max: 2.80
+  FOX:
+    display-name: "Лису"
+    min: 1.60
+    max: 2.80
+  SALMON:
+    display-name: "Рыбу"
+    min: 1.60
+    max: 2.80
+  RABBIT:
+    display-name: "Кролика"
+    min: 1.60
+    max: 2.80
+  IRON_GOLEM:
+    display-name: "Голема"
+    min: 1.60
+    max: 2.80
+  SHEEP:
+    display-name: "Овцу"
+    min: 1.60
+    max: 2.80
+  VILLAGER:
+    display-name: "Жителя"
+    min: 1.60
+    max: 2.80
+  ENDERMAN:
+    display-name: "Эндермена"
+    min: 1.60
+    max: 2.80
+  PARROT:
+    display-name: "Попугая"
+    min: 1.60
+    max: 2.80
+  POLAR_BEAR:
+    display-name: "Полярного-медведя"
+    min: 1.60
+    max: 2.80
+  COW:
+    display-name: "Корову"
+    min: 1.60
+    max: 2.80
+  CHICKEN:
+    display-name: "Курицу"
+    min: 1.60
+    max: 2.80
+  CAT:
+    display-name: "Кошку"
+    min: 1.60
+    max: 2.80
+  MULE:
+    display-name: "Мула"
+    min: 1.60
+    max: 2.80
+  DONKEY:
+    display-name: "Ослика"
+    min: 1.60
+    max: 2.80
+  LLAMA:
+    display-name: "Ламу"
+    min: 1.60
+    max: 2.80
+  STRAY:
+    display-name: "Зимогора"
+    min: 1.60
+    max: 2.80
+  DROWNED:
+    display-name: "Утопленника"
+    min: 1.60
+    max: 2.80
+  ZOMBIE_HORSE:
+    display-name: "Зомби-лошадь"
+    min: 1.60
+    max: 2.80
+  SKELETON_HORSE:
+    display-name: "Лошадь-скелета"
+    min: 1.60
+    max: 2.80
+  WITHER_SKELETON:
+    display-name: "Скелета-иссушителя"
+    min: 1.60
+    max: 2.80
+  PIG:
+    display-name: "Свинью"
+    min: 1.60
+    max: 2.80
+  ZOMBIE:
+    display-name: "Зомби"
+    min: 1.60
+    max: 2.80
+  SKELETON:
+    display-name: "Скелета"
+    min: 1.60
+    max: 2.80
+  CREEPER:
+    display-name: "Крипера"
+    min: 1.60
+    max: 2.80
+  SPIDER:
+    display-name: "Паука"
+    min: 1.60
+    max: 2.80
+  SLIME:
+    display-name: "Слизеня"
+    min: 1.60
+    max: 2.80
+  MAGMA_CUBE:
+    display-name: "Магмового куба"
+    min: 1.60
+    max: 2.80
+  GHAST:
+    display-name: "Гаста"
+    min: 1.60
+    max: 2.80
+  BLAZE:
+    display-name: "Ифрита"
+    min: 1.60
+    max: 2.80
+  WITCH:
+    display-name: "Ведьму"
+    min: 1.60
+    max: 2.80
+  ENDERMITE:
+    display-name: "Эндермита"
+    min: 1.60
+    max: 2.80
+  SHULKER:
+    display-name: "Шалкера"
+    min: 1.60
+    max: 2.80
+  ILLUSIONER:
+    display-name: "Иллюзиониста"
+    min: 1.60
+    max: 2.80
+  EVOKER:
+    display-name: "Заклинателя"
+    min: 1.60
+    max: 2.80
+  VINDICATOR:
+    display-name: "Поборника"
+    min: 1.60
+    max: 2.80
+  HUSK:
+    display-name: "Кадавра"
+    min: 1.60
+    max: 2.80
+  PHANTOM:
+    display-name: "Фантома"
+    min: 1.60
+    max: 2.80
+  STRIDER:
+    display-name: "Страйдера"
+    min: 1.60
+    max: 2.80
+  PILLAGER:
+    display-name: "Жителя"
+    min: 1.60
+    max: 2.80
+  RAVAGER:
+    display-name: "Разорителя"
+    min: 1.60
+    max: 2.80
+  ZOMBIFIED_PIGLIN:
+    display-name: "Зомби-пиглина"
+    min: 1.60
+    max: 2.80
+  CAVE_SPIDER:
+    display-name: "Пещерный паука"
+    min: 1.60
+    max: 2.80
+
+actionbar-message: "&6▶ &fВы убили %mob% и получили &6¤%money%"

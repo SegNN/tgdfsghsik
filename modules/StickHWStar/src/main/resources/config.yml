@@ -1,0 +1,38 @@
+stars:
+  1:
+    name: "&x&F&B&7&7&7&7★"
+    price: 1000
+  2:
+    name: "&x&E&E&B&E&0&0★"
+    price: 2000
+  3:
+    name: "&x&2&A&F&B&F&F★"
+    price: 3500
+  4:
+    name: "&x&F&B&4&F&0&0★"
+    price: 7500
+  5:
+    name: "&x&0&0&F&F&3&D★"
+    price: 12500
+  6:
+    name: "&x&E&0&0&0&F&F★"
+    price: 20000
+  7:
+    name: "&x&F&0&0&0&0&0★"
+    price: 35000
+  8:
+    name: "&x&F&F&0&0&9&5★"
+    price: 50000 
+  9:
+    name: "&F★"
+    price: 75000
+  10:
+    name: "&x&F&F&F&F&F&F★"
+    price: 125000
+    rainbow: true
+database:
+  host: 
+  port: 3306
+  name: 
+  username: 
+  password: 

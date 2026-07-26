@@ -1,0 +1,7 @@
+MySQL:
+  host: "localhost:3306"
+  user: ""
+  password: ""
+  database: ""
+
+show-promo-panel: true #true - значит в /buyer будет панелька с рекламой, false - пропадет панелька

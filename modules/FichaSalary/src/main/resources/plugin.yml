@@ -1,0 +1,12 @@
+name: FichaSalary
+version: 1.0
+main: ua.fichadev.fichasalary.FichaSalary
+api-version: 1.16
+depend:
+  - LuckPerms
+authors:
+  - Smail
+  - Mantiyt
+  - FichaDev
+commands:
+  salary: {}

@@ -1,0 +1,10 @@
+name: HolyLiteItems
+version: 1.0-SNAPSHOT
+main: org.dimasik.mantiitems.MantiItems
+api-version: 1.16
+depend: [WorldGuard, PlaceholderAPI]
+commands:
+  holyliteitems:
+    description: Выдача предметов.
+    usage: /holyliteitems give [ник] [stan/trap/explosive] [количество]
+    permission: holyliteitems.use

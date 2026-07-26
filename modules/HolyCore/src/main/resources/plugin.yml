@@ -1,0 +1,16 @@
+name: HolyCore
+version: '0.1'
+main: org.impldev.holycore.HolyCore
+api-version: '1.16'
+commands:
+  afk:
+    description: Включить/выключить режим AFK
+    usage: /afk
+    permission: holycore.afk.use
+  broadcast:
+    aliases: [bc]
+    permission: holycore.bc.use
+  suicide:
+    permission: holycore.suicide.use
+  links:
+    aliases: [сообщества, тгк, дискорд, сайт]

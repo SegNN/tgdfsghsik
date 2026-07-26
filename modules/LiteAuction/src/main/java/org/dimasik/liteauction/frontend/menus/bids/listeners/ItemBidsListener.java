@@ -1,0 +1,158 @@
+package org.dimasik.liteauction.frontend.menus.bids.listeners;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import org.bukkit.Bukkit;
+import org.bukkit.Sound;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.dimasik.liteauction.LiteAuction;
+import org.dimasik.liteauction.backend.storage.models.Bid;
+import org.dimasik.liteauction.backend.storage.models.BidItem;
+import org.dimasik.liteauction.backend.utils.format.Parser;
+import org.dimasik.liteauction.backend.utils.tags.ItemHoverUtil;
+import org.dimasik.liteauction.frontend.menus.abst.AbstractListener;
+import org.dimasik.liteauction.frontend.menus.bids.menus.ItemBids;
+import org.dimasik.liteauction.frontend.menus.bids.menus.Main;
+
+public class ItemBidsListener extends AbstractListener {
+   public ItemBidsListener() {
+   }
+
+   @EventHandler
+   @Override
+   public void onClick(InventoryClickEvent event) {
+      Inventory inventory = event.getView().getTopInventory();
+      if (inventory.getHolder() instanceof ItemBids itemBids) {
+         event.setCancelled(true);
+         if (event.getClickedInventory() == null || event.getClickedInventory() != inventory) {
+            return;
+         }
+
+         Player player = (Player)event.getWhoClicked();
+         int slot = event.getSlot();
+         CompletableFuture.runAsync(
+            () -> {
+               try {
+                  if (slot == 45) {
+                     Main main = itemBids.getBack();
+                     main.compile().open();
+                  } else if (itemBids.getAvailableBids().containsKey(slot) && !itemBids.getBidItem().getPlayer().equalsIgnoreCase(player.getName())) {
+                     Optional<BidItem> bidItemOptional = LiteAuction.getInstance()
+                        .getDatabaseManager()
+                        .getBidItemsManager()
+                        .getItem(itemBids.getBidItem().getId())
+                        .get();
+                     if (bidItemOptional.isEmpty()) {
+                        player.sendMessage(Parser.color("&x&F&F&2&2&2&2▶ &fНевозможно забрать предмет, так как его уже купили."));
+                        return;
+                     }
+
+                     ItemStack itemStack = itemBids.getBidItem().decodeItemStack();
+                     Optional<Bid> bids = LiteAuction.getInstance()
+                        .getDatabaseManager()
+                        .getBidsManager()
+                        .getHighestBidForItem(itemBids.getBidItem().getId())
+                        .get();
+                     Bid lastBid = null;
+                     if (bids.isPresent()) {
+                        lastBid = bids.get();
+                     }
+
+                     int addPrice = lastBid != null && lastBid.getPlayer().equalsIgnoreCase(player.getName()) ? bids.get().getPrice() : 0;
+                     int finalPrice = itemBids.getAvailableBids().get(slot);
+                     if (finalPrice - addPrice > LiteAuction.getInstance().getEconomyEditor().getBalance(player.getName())) {
+                        player.sendMessage(Parser.color("&#FB2222▶ &fУ вас &#FB2222недостаточно средств &fдля совершения покупки."));
+                        if (LiteAuction.getInstance().getDatabaseManager().getSoundsManager().getSoundToggle(player.getName()).get()) {
+                           player.playSound(player.getLocation(), Sound.ENTITY_VINDICATOR_AMBIENT, 1.0F, 1.0F);
+                        }
+
+                        return;
+                     }
+
+                     player.sendMessage(Parser.color("&#00D4FB▶ &fВы поставили ставку."));
+                     LiteAuction.getInstance().getEconomyEditor().subtractBalance(player.getName(), finalPrice - addPrice);
+                     if (lastBid != null && !lastBid.getPlayer().equalsIgnoreCase(player.getName())) {
+                        LiteAuction.getInstance().getEconomyEditor().addBalance(lastBid.getPlayer(), finalPrice - addPrice);
+                        LiteAuction.getInstance()
+                           .getCommunicationManager()
+                           .publishMessage(
+                              "hover",
+                              lastBid.getPlayer()
+                                 + " "
+                                 + ItemHoverUtil.getHoverItemMessage(
+                                    Parser.color(
+                                       "&#00D4FB▶ &fВаша ставка на предмет &6%item%&6 x"
+                                          + itemStack.getAmount()
+                                          + " &fу &6"
+                                          + itemBids.getBidItem().getPlayer()
+                                          + " &fбыла перебита игроком &6"
+                                          + player.getName()
+                                          + "!"
+                                    ),
+                                    itemStack
+                                 )
+                           );
+                     }
+
+                     List<Integer> slotsList = itemBids.getAvailableBidsSlots();
+
+                     for (int i = 0; i < slotsList.size(); i++) {
+                        if (slotsList.get(i) == slot) {
+                           BidItem bidItem = LiteAuction.getInstance()
+                              .getDatabaseManager()
+                              .getBidItemsManager()
+                              .getItem(itemBids.getBidItem().getId())
+                              .get()
+                              .get();
+                           bidItem.setCurrentPrice(finalPrice);
+                           if (bidItem.getExpiryTime() - System.currentTimeMillis() < 5000L) {
+                              bidItem.setExpiryTime(System.currentTimeMillis() + 30000L);
+                           }
+
+                           LiteAuction.getInstance().getDatabaseManager().getBidItemsManager().updateItem(bidItem);
+                           LiteAuction.getInstance()
+                              .getDatabaseManager()
+                              .getBidsManager()
+                              .addBid(itemBids.getBidItem().getId(), player.getName(), itemBids.getAvailableBids().get(slotsList.get(i)));
+                           LiteAuction.getInstance().getCommunicationManager().publishMessage("update", "bids " + itemBids.getBidItem().getId() + " refresh");
+                           return;
+                        }
+
+                        LiteAuction.getInstance()
+                           .getDatabaseManager()
+                           .getBidsManager()
+                           .addBid(itemBids.getBidItem().getId(), player.getName(), itemBids.getAvailableBids().get(slotsList.get(i)));
+                     }
+                  }
+               } catch (Exception var12) {
+                  itemBids.close();
+                  player.sendMessage(Parser.color("&#FB2222▶ &fПроизошла &#FB2222ошибка &fпри выполнении действия."));
+               }
+            }
+         );
+      }
+   }
+
+   @EventHandler
+   public void on(InventoryCloseEvent event) {
+      Inventory inventory = event.getView().getTopInventory();
+      if (inventory.getHolder() instanceof ItemBids itemBids) {
+         if (itemBids.isForceClose()) {
+            return;
+         }
+
+         Bukkit.getScheduler().runTaskLaterAsynchronously(LiteAuction.getInstance(), () -> {
+            Main main = itemBids.getBack();
+            if (main.getViewer() != null) {
+               main.compile().open();
+            }
+         }, 1L);
+      }
+   }
+}

@@ -1,0 +1,7 @@
+name: Shame
+version: '1.0-SNAPSHOT'
+main: org.dimasik.shame.Shame
+api-version: '1.16'
+commands:
+  shame:
+    permission: shame.use

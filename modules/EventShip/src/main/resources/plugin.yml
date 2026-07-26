@@ -1,0 +1,16 @@
+name: EventShip
+version: '1.0'
+main: ru.kotikstasika.eventship.EventShip
+api-version: '1.16'
+depend:
+  - LootManager
+  - WorldEdit
+  - WorldGuard
+  - EventManager
+softdepend:
+  - LootManager
+  - WorldEdit
+  - WorldGuard
+  - EventManager
+commands:
+  ship:

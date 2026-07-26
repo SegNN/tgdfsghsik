@@ -1,0 +1,61 @@
+#
+#        » Leaked by @FichaDev «
+#        Telegram: t.me/FichaDev
+#
+storage:
+  type: "SQLite"
+MySQL:
+  host:
+  user:
+  password: ""
+  database:
+
+promocode:
+  smail:
+    group: "custom" #можно любое название
+    reward_message:
+      - "&f"
+      - "&6 Вы получили:"
+      - "&f"
+      - "&7 - &e1 ключ к бесплатному кейсу"
+      - "&7 - &eСкидку на плагин в студии FichaDev 1%"
+      - "&f"
+      - "&f * &7Промокод активируеться на время вайпа, если ранее не выдавался"
+      - "&f"
+    reward_message_limit:
+      - "&x&F&F&0&0&0&0▶&f Вы уже активировали этот промокод!"
+    reward_players_message_limit:
+      - "&x&F&F&0&0&0&0▶&f Этот промокод превысил лимит активаций!"
+    IP_message_limit:
+      - "&x&F&F&0&0&0&0▶&f Вы уже активировали этот промокод на этом айпи!"
+    group_message_limit: # лимит для груп
+      - "&x&F&F&0&0&0&0▶&f Вы уже активировали этот промокод!"
+    reward_player: 1 #Лимит использований на одного игрока, false - без лимита
+    reward_all_player: false # Глобальный лимит использований, false - без лимита
+    show_in_commands: true # Показывать ли в списке команд
+    IP: true # Проверять по IP адресу
+    reward_commands:
+      - "case free %player% free 1"
+  absurt:
+    group: "custom"
+    reward_message:
+      - "&f"
+      - "&6 Вы получили:"
+      - "&f"
+      - "&7 - &e2000 монет"
+      - "&7 - &eБатл пасс премиум на 3 дня"
+      - "&f"
+      - "&f * &7Промокод активируеться на время вайпа, если ранее не выдавался"
+      - "&f"
+    reward_message_limit:
+      - "&x&F&F&0&0&0&0▶&f Вы уже активировали этот промокод!"
+    reward_players_message_limit:
+      - "&x&F&F&0&0&0&0▶&f Этот промокод превысил лимит активаций!"
+    IP_message_limit:
+      - "&x&F&F&0&0&0&0▶&f Вы уже активировали этот промокод на этом айпи!"
+    reward_player: 1
+    reward_all_player: false
+    show_in_commands: true
+    IP: false
+    reward_commands:
+      - "case free %player% free 1"

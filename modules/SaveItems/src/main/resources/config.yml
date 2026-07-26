@@ -1,0 +1,6 @@
+database:
+  type: SQLite # MySQL
+  host: ""
+  pass: ""
+  name: ""
+  user: ""
