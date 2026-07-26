@@ -42,6 +42,10 @@ commands:
     description: Меню инвестиций
     usage: /invest
     permission: holycore.invest.use
+  boosters:
+    description: Меню бустеров
+    usage: /boosters
+    permission: holycore.boosters.use
 permissions:
   holycore.wolker.use:
     default: true
@@ -52,4 +56,6 @@ permissions:
   holycore.wextend.use:
     default: true
   holycore.invest.use:
+    default: true
+  holycore.boosters.use:
     default: true

@@ -17,6 +17,9 @@ import org.impldev.holycore.commands.HealthIndicator;
 import org.impldev.holycore.commands.Links;
 import org.impldev.holycore.commands.Suicide;
 import org.impldev.holycore.commands.WExtend;
+import org.impldev.holycore.boosters.BoosterCommand;
+import org.impldev.holycore.boosters.BoosterData;
+import org.impldev.holycore.boosters.BoosterMenu;
 import org.impldev.holycore.invest.InvestCommand;
 import org.impldev.holycore.invest.InvestData;
 import org.impldev.holycore.invest.InvestEffects;
@@ -95,6 +98,11 @@ public final class HolyCore extends JavaPlugin {
       this.getCommand("invest").setExecutor(new InvestCommand(investMenu));
       // границы выставляем после загрузки миров, иначе мир ещё не готов принять размер
       this.getServer().getScheduler().runTask(this, investEffects::apply);
+
+      BoosterData boosterData = new BoosterData(this);
+      BoosterMenu boosterMenu = new BoosterMenu(this, boosterData);
+      this.getServer().getPluginManager().registerEvents(boosterMenu, this);
+      this.getCommand("boosters").setExecutor(new BoosterCommand(boosterMenu));
 
       BalTop balTop = new BalTop(this);
       this.getCommand("baltop").setExecutor(balTop);
