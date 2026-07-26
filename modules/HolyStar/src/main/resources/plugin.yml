@@ -1,0 +1,14 @@
+#k
+#z      t.me/ExampleTG_by
+#i
+
+name: HolyStar
+version: '1.0'
+main: ru.holydev.holystar.HolyStar
+api-version: '1.16'
+depend: [PlaceholderAPI]
+commands:
+  star:
+permissions:
+  holystar.admin:
+    default: op

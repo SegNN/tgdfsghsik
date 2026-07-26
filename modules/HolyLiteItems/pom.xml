@@ -30,7 +30,7 @@
     </dependency>
     <dependency>
       <groupId>world.example</groupId>
-      <artifactId>StickHWCustom</artifactId>
+      <artifactId>HolyCustom</artifactId>
       <version>1.1</version>
       <scope>provided</scope>
     </dependency>

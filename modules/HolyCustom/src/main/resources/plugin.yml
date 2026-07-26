@@ -1,0 +1,10 @@
+name: HolyCustom
+version: '1.1'
+main: ru.holydev.holycustom.HolyCustom
+api-version: '1.16'
+commands:
+  custom:
+softdepend: [HolyStar, PlaceholderAPI, HolyTraps]
+permissions:
+  holycustom.prem:
+    default: op

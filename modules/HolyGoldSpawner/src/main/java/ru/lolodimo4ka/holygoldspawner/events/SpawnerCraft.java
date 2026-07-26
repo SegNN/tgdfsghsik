@@ -122,7 +122,7 @@ public class SpawnerCraft implements Listener {
                   for (ItemStack itemx : matrix) {
                      if (itemx != null && itemx.getType() == Material.TNT && itemx.hasItemMeta()) {
                         try {
-                           NamespacedKey tntKey = new NamespacedKey("stickhwtnt", "tnt");
+                           NamespacedKey tntKey = new NamespacedKey("holytnt", "tnt");
                            if (itemx.getItemMeta().getPersistentDataContainer().has(tntKey, PersistentDataType.STRING)) {
                               String tntType = (String)itemx.getItemMeta().getPersistentDataContainer().get(tntKey, PersistentDataType.STRING);
                               if ("stealer".equals(tntType)) {

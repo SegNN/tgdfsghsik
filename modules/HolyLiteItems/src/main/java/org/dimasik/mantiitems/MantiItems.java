@@ -59,7 +59,7 @@ import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.util.Vector;
 import org.dimasik.mantiitems.particles.Particles;
 import org.dimasik.mantiitems.particles.UtilParticles;
-import stickdev.siynes.stickhwcustom.api.CustomAPI;
+import ru.holydev.holycustom.api.CustomAPI;
 
 public final class MantiItems extends JavaPlugin implements Listener {
    private static MantiItems main;
@@ -327,7 +327,7 @@ public final class MantiItems extends JavaPlugin implements Listener {
          )
       );
       itemMeta.getPersistentDataContainer()
-         .set(new NamespacedKey((JavaPlugin)Bukkit.getPluginManager().getPlugin("StickHWTnT"), "tnt-item"), PersistentDataType.STRING, "explosive");
+         .set(new NamespacedKey((JavaPlugin)Bukkit.getPluginManager().getPlugin("HolyTnT"), "tnt-item"), PersistentDataType.STRING, "explosive");
       lore.add("");
       lore.add(ChatColor.translateAlternateColorCodes('&', "&8 Особенности:"));
       lore.add(ChatColor.translateAlternateColorCodes('&', "&7 • &fиспользуется только для крафта"));

@@ -4,7 +4,7 @@ main: org.dimasik.holyenchantments.HolyEnchantments
 api-version: '1.16'
 authors: [dimasik]
 loadbefore:
-  - StickHWTnT
+  - HolyTnT
 depend:
   - WorldEdit
   - WorldGuard

@@ -8,7 +8,7 @@ STUBS = "_api-stubs"
 STUBS_VERSION = "1.0.0"
 
 OWN = ("org.dimasik", "ru.kotikstasika", "ua.holydev", "ua.holymine", "ua.holytime",
-       "ru.nezxenka", "org.nezxenka", "ru.lolodimo4ka", "stickdev", "ru.holybackpack",
+       "ru.nezxenka", "org.nezxenka", "ru.lolodimo4ka", "ru.holydev", "ru.holybackpack",
        "ru.litechat", "org.impldev", "ru.extas7y", "me.ones", "frozenpon")
 
 # versions of the third-party plugin APIs actually shipped in the 1.21.4 server
@@ -68,7 +68,7 @@ CYCLE_BREAK = {("HolyGoldSpawner", "HolyCustomEgg")}
 ORIG_JAR_GAV = ("local.holy", "{name}", "1.16.5")
 
 STUB_CLASSES = {"StickEcoAPI": "org.dimasik.stickeco", "AntiCheatStatus": "org.dimasik.anticheatstatus",
-                "SyncAPI": "ru.nezxenka.syncservice", "PremiumAPI": "stickdev.siynes.stickhwpremium"}
+                "SyncAPI": "ru.nezxenka.syncservice", "PremiumAPI": "ru.holydev.holypremium"}
 
 
 def java_dir(mod):

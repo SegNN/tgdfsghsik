@@ -37,6 +37,7 @@
     <module>modules/HolyCases</module>
     <module>modules/HolyCommandWhitelist</module>
     <module>modules/HolyCore</module>
+    <module>modules/HolyCustom</module>
     <module>modules/HolyCustomEgg</module>
     <module>modules/HolyCustomPlaceholder</module>
     <module>modules/HolyCustomPriv</module>
@@ -64,6 +65,8 @@
     <module>modules/HolySfers</module>
     <module>modules/HolySpawneroved</module>
     <module>modules/HolySpawners</module>
+    <module>modules/HolyStar</module>
+    <module>modules/HolyTnT</module>
     <module>modules/KotikDang</module>
     <module>modules/KotikTotemRune</module>
     <module>modules/LiteAuction</module>
@@ -77,9 +80,6 @@
     <module>modules/PlayTimeAPI</module>
     <module>modules/SaveItems</module>
     <module>modules/Shame</module>
-    <module>modules/StickHWCustom</module>
-    <module>modules/StickHWStar</module>
-    <module>modules/StickHWTnT</module>
   </modules>
 
   <repositories>
