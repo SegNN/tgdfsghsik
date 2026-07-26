@@ -35,7 +35,7 @@ public class Add extends SubCommand {
 
                   Shame.getInstance().getDatabaseManager().deleteNickname(playerName);
                   String reason = Config.getString(
-                     "ban.reason", "30d &cОбнаружено сторонние ПО. &7&o(Ошибка? - свяжитесь с разработчиком &f&l@stickshield_ac_bot &7&o) --sender=&c&lАнтиЧит"
+                     "ban.reason", "30d &cОбнаружено сторонние ПО. &7&o(Ошибка? - свяжитесь с разработчиком &f&l@HolyDev_ac_bot &7&o) --sender=&c&lАнтиЧит"
                   );
                   String broadcastCmd = Config.replace(
                      Config.getString("ban.broadcast", "litebans broadcast &7[&x&F&B&0&8&0&8&lАЧ&7]&r &f%player% &fбыл наказан античитом."),

@@ -175,7 +175,7 @@ public class SaveItemsObject implements Listener {
             } else {
                player.sendMessage(
                   ChatColor.translateAlternateColorCodes(
-                     '&', "&6▶ &fУ вас &6недостаточно &fсапфиров&f. Приобрести сапфиры можно на сайте - &x&0&0&D&9&F&FHolyWorld.ru"
+                     '&', "&6▶ &fУ вас &6недостаточно &fсапфиров&f. Приобрести сапфиры можно на сайте - &x&0&0&D&9&F&FExampleWorld.su"
                   )
                );
                Bukkit.dispatchCommand(

@@ -34,7 +34,7 @@ messages:
   input-cancelled: "&#00ff00▶ &fВвод отменен."
   info-message: |-
     &#00D8FF&l&n▍&f Информация и правила создания кастомной привилегии:
-    &#00D8FF&l&n▍&f       &6&nhttps://holyworld.ru/custom-privilege&f
+    &#00D8FF&l&n▍&f       &6&nhttps://ExampleWorld.su/custom-privilege&f
     &#00D8FF&l▍&f           &7(на ссылку можно нажать)
   hover: "&#00ff00▶ &fНажмите чтобы открыть инструкцию"
   title_on_moderation: " &x&F&F&2&7&0&0▶ &fЭтот титул еще на модерации!"

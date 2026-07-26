@@ -32,7 +32,7 @@ public class AddModule extends Module {
                               () -> {
                                  String reason = Config.getString(
                                     "ban.reason",
-                                    "30d &cОбнаружено сторонние ПО. &7&o(Ошибка? - свяжитесь с разработчиком &f&l@stickshield_ac_bot &7&o) --sender=&c&lАнтиЧит"
+                                    "30d &cОбнаружено сторонние ПО. &7&o(Ошибка? - свяжитесь с разработчиком &f&l@HolyDev_ac_bot &7&o) --sender=&c&lАнтиЧит"
                                  );
                                  BanModule.instant.put(player, false);
                                  boolean random = new Random().nextBoolean();

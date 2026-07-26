@@ -3,7 +3,7 @@ version: '1.0'
 main: ru.kotikstasika.holysfers.HolySfers
 api-version: '1.16'
 authors: [dimasik, kotikstasika]
-website: https://stickshield.ru
+website: https://ExampleWorld.su
 commands:
   sferomant:
     aliases:

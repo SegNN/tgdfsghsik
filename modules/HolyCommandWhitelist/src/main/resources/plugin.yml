@@ -5,7 +5,7 @@ version: '2.0'
 main: ua.holymine.holycommandwhitelist.HolyCommandWhitelist
 api-version: 1.13
 depend: [CommandWhitelist, ProtocolLib]
-website: https://t.me/ExampleTG
+website: ExampleWorld.su
 authors:
   - Smail
   - HolyZako
