@@ -1,0 +1,12 @@
+name: HolyCombatBypass
+version: '1.0'
+main: ru.holydev.holycombatbypass.HolyCombatBypass
+api-version: '1.21'
+author: HolyZako
+description: Lets staff use commands while in PvP, which AntiRelog otherwise blocks unconditionally.
+softdepend: [AntiRelog]
+
+permissions:
+  holycombat.commands:
+    description: Разрешает вводить команды в режиме боя
+    default: op

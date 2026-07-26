@@ -35,6 +35,7 @@
     <module>modules/HolyBackPack</module>
     <module>modules/HolyBambuk</module>
     <module>modules/HolyCases</module>
+    <module>modules/HolyCombatBypass</module>
     <module>modules/HolyCommandWhitelist</module>
     <module>modules/HolyCore</module>
     <module>modules/HolyCustom</module>
