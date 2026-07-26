@@ -116,12 +116,21 @@ public class InventoryListener implements Listener {
       }
 
       this.stacker.getServer().getScheduler().runTask(this.stacker, () -> {
-         if (player.isOnline()) {
+         if (player.isOnline() && cursorEmpty(player)) {
             this.sweep(player.getInventory());
             this.sweep(player.getEnderChest());
-            player.updateInventory();
          }
       });
+   }
+
+   /**
+    * Пока предмет лежит на курсоре, инвентарь находится в середине транзакции: правка стаков
+    * или переотправка окна в этот момент рассинхронизирует клиент с сервером, и предмет с
+    * курсора пропадает. Именно поэтому зелья исчезали при взятии мышкой.
+    */
+   public static boolean cursorEmpty(Player player) {
+      ItemStack cursor = player.getItemOnCursor();
+      return cursor == null || cursor.getType() == Material.AIR;
    }
 
    @EventHandler
@@ -171,9 +180,8 @@ public class InventoryListener implements Listener {
 
       if (cur != null && this.potions.contains(cur.getType())) {
          // НЕ трогаем stack/alt здесь: их правка посреди клика и рушила предметы.
-         // Компонент проставится отложенно, когда транзакция уже завершится.
+         // Компонент проставится отложенно, когда транзакция уже завершится и курсор опустеет.
          this.sweepLater((Player)event.getWhoClicked());
-         this.stacker.getServer().getScheduler().runTask(this.stacker, () -> ReflectionUtils.updateInventory((Player)event.getWhoClicked()));
       }
    }
 }

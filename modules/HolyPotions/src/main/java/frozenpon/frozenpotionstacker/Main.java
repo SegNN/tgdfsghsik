@@ -1,6 +1,7 @@
 package frozenpon.frozenpotionstacker;
 
 import frozenpon.frozenpotionstacker.Utils.InventoryListener;
+import frozenpon.frozenpotionstacker.Utils.EventSpy;
 import frozenpon.frozenpotionstacker.Utils.StackDebugger;
 import frozenpon.frozenpotionstacker.Utils.ReflectionUtils;
 import org.bukkit.event.HandlerList;
@@ -10,6 +11,7 @@ public class Main extends JavaPlugin {
    private int stackPotion;
    private int stackSplash;
    private InventoryListener listener;
+   public EventSpy spy;
    private int sweeperId = -1;
 
    public Main() {
@@ -19,7 +21,8 @@ public class Main extends JavaPlugin {
       this.loadConfiguration();
       this.changePotionStackSizes();
       if (this.getConfig().getBoolean("debug", false)) {
-         new StackDebugger(this).runTaskTimer(this, 20L, 20L);
+         this.getServer().getPluginManager().registerEvents(this.spy = new EventSpy(), this);
+         new StackDebugger(this, this.spy).runTaskTimer(this, 1L, 1L);
          this.getLogger().warning("DEBUG включён: слежу за слотами с зельями раз в секунду");
       }
    }
@@ -63,8 +66,9 @@ public class Main extends JavaPlugin {
          }
 
          for (org.bukkit.entity.Player player : this.getServer().getOnlinePlayers()) {
-            if (this.listener.sweep(player.getInventory()) > 0) {
-               player.updateInventory();
+            // с непустым курсором игрок посреди транзакции - не вмешиваемся
+            if (InventoryListener.cursorEmpty(player)) {
+               this.listener.sweep(player.getInventory());
             }
          }
       }, 20L, 20L).getTaskId();

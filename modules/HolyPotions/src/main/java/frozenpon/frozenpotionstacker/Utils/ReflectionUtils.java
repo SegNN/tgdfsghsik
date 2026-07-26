@@ -212,7 +212,10 @@ public final class ReflectionUtils {
    public static void updateInventory(Player bukkitPlayer) {
       detectVersion();
       if (modern) {
-         bukkitPlayer.updateInventory();
+         // Оригинал на 1.17+ здесь не делал НИЧЕГО: ветка ниже закрыта !post1dot17.
+         // Подставленный при переносе updateInventory() - это лишний вызов, которого на
+         // 1.16.5 не было. Он переотправляет содержимое окна посреди транзакции, и предмет,
+         // лежащий в этот момент на курсоре, теряется. Возвращаем исходное поведение.
          return;
       }
 
