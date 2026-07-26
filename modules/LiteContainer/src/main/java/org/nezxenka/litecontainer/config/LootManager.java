@@ -55,8 +55,6 @@ public class LootManager {
       // профиль -> текстура пропадает. Чиним при загрузке, файл на диске не трогаем.
       Map<String, String> legacyBlobs = LegacyBlobReader.read(this.configFile);
       int repairedSkulls = 0;
-      int headsTotal = 0;
-      int headsWithTexture = 0;
       ConfigurationSection itemsSection = this.config.getConfigurationSection("items");
       if (itemsSection != null) {
          for (String key : itemsSection.getKeys(false)) {
@@ -67,16 +65,6 @@ public class LootManager {
                   double value = itemSection.getDouble("value", 0.0);
                   ItemStack itemStack = itemSection.getItemStack("item");
                   if (itemStack != null) {
-                     if (itemStack.getType() == org.bukkit.Material.PLAYER_HEAD) {
-                        headsTotal++;
-                        org.bukkit.inventory.meta.SkullMeta sm =
-                              itemStack.getItemMeta() instanceof org.bukkit.inventory.meta.SkullMeta m ? m : null;
-                        com.destroystokyo.paper.profile.PlayerProfile pp = sm != null ? sm.getPlayerProfile() : null;
-                        if (pp != null && pp.hasTextures()) {
-                           headsWithTexture++;
-                        }
-                     }
-
                      if (LegacySkullFix.repair(itemStack, legacyBlobs.get("items." + key + ".item"))) {
                         repairedSkulls++;
                      }
@@ -93,9 +81,6 @@ public class LootManager {
 
          if (repairedSkulls > 0) {
             this.plugin.getLogger().info("Restored legacy (1.16.5) skull textures for " + repairedSkulls + " item(s) in items.yml");
-         } else if (headsTotal > headsWithTexture) {
-            this.plugin.getLogger().warning("Голов без текстуры: " + (headsTotal - headsWithTexture)
-                  + " - legacy-блоб их не содержит, нужен отдельный разбор");
          }
 
          this.initialized = true;

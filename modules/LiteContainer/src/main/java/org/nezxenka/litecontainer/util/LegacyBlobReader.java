@@ -24,7 +24,12 @@ public final class LegacyBlobReader {
    private LegacyBlobReader() {
    }
 
-   /** Ключи-числа YAML пишет как '12' - кавычки в путь попадать не должны. */
+   /**
+    * YAML берёт в кавычки и числовые ключи ('12'), и сам блоб ('H4sI...='), если тот может быть
+    * прочитан неоднозначно. Ключ с кавычками не совпадёт с путём, а значение с кавычками роняет
+    * строгий Base64.getDecoder(): он, в отличие от питоновского, не выбрасывает посторонние
+    * символы, а кидает исключение. Именно на этом молча разваливался разбор голов LiteContainer.
+    */
    private static String unquote(String key) {
       if (key.length() >= 2
             && ((key.charAt(0) == '\'' && key.charAt(key.length() - 1) == '\'')
@@ -87,7 +92,7 @@ public final class LegacyBlobReader {
                   path.append(parts[i]);
                }
 
-               out.put(path.toString(), value);
+               out.put(path.toString(), unquote(value));
             } else if (value.isEmpty()) {
                indents.push(new int[]{indent});
                names.push(key);
