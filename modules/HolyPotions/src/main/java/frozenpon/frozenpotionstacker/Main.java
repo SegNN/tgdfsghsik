@@ -1,6 +1,7 @@
 package frozenpon.frozenpotionstacker;
 
 import frozenpon.frozenpotionstacker.Utils.InventoryListener;
+import frozenpon.frozenpotionstacker.Utils.StackDebugger;
 import frozenpon.frozenpotionstacker.Utils.ReflectionUtils;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,6 +17,10 @@ public class Main extends JavaPlugin {
    public void onEnable() {
       this.loadConfiguration();
       this.changePotionStackSizes();
+      if (this.getConfig().getBoolean("debug", false)) {
+         new StackDebugger(this).runTaskTimer(this, 20L, 20L);
+         this.getLogger().warning("DEBUG включён: слежу за слотами с зельями раз в секунду");
+      }
    }
 
    public void loadConfiguration() {

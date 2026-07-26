@@ -1,5 +1,8 @@
 package ru.nezxenka.holykits.managers;
 
+import java.util.Map;
+import ru.nezxenka.holykits.util.LegacyBlobReader;
+import ru.nezxenka.holykits.util.LegacySkullFix;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +26,10 @@ public class KitManager {
 
    private void loadKits() {
       FileConfiguration config = this.plugin.getConfig();
+      // головы из 1.16.5 хранят профиль в старом формате, 1.21.4 разбирает его в пустой
+      // профиль -> текстура теряется. Чиним прямо при загрузке, файл на диске не трогаем.
+      Map<String, String> legacyBlobs = LegacyBlobReader.read(new java.io.File(this.plugin.getDataFolder(), "config.yml"));
+      int repairedSkulls = 0;
 
       for (String kitName : config.getKeys(false)) {
          if (config.isConfigurationSection(kitName)) {
@@ -36,6 +43,10 @@ public class KitManager {
                      int slot = Integer.parseInt(slotStr);
                      ItemStack item = itemsSection.getItemStack(slotStr);
                      if (item != null) {
+                        if (LegacySkullFix.repair(item, legacyBlobs.get(kitName + ".items." + slotStr))) {
+                           repairedSkulls++;
+                        }
+
                         kit.addItem(slot, item);
                      }
                   } catch (NumberFormatException var111) {
@@ -46,6 +57,10 @@ public class KitManager {
 
             this.kits.put(kitName, kit);
          }
+      }
+
+      if (repairedSkulls > 0) {
+         this.plugin.getLogger().info("Restored legacy (1.16.5) skull textures for " + repairedSkulls + " item(s) in kits");
       }
    }
 

@@ -13,7 +13,7 @@ import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.event.inventory.InventoryInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.entity.EntityPickupItemEvent;
-import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -105,24 +105,42 @@ public class InventoryListener implements Listener {
       return fixed;
    }
 
+   /**
+    * Всегда откладываем правку на следующий тик. Если менять ItemStack прямо внутри
+    * InventoryClickEvent/InventoryOpenEvent, клиент и сервер расходятся посреди транзакции
+    * инвентаря, и предмет пропадает - именно так зелья и исчезали.
+    */
+   private void sweepLater(Player player) {
+      if (player == null || !ReflectionUtils.isModern()) {
+         return;
+      }
+
+      this.stacker.getServer().getScheduler().runTask(this.stacker, () -> {
+         if (player.isOnline()) {
+            this.sweep(player.getInventory());
+            this.sweep(player.getEnderChest());
+            player.updateInventory();
+         }
+      });
+   }
+
    @EventHandler
    public void onJoin(PlayerJoinEvent event) {
-      Player player = event.getPlayer();
-      this.sweep(player.getInventory());
-      this.sweep(player.getEnderChest());
-      player.updateInventory();
+      this.sweepLater(event.getPlayer());
    }
 
    @EventHandler(ignoreCancelled = true)
    public void onPickup(EntityPickupItemEvent event) {
-      if (event.getEntity() instanceof Player) {
-         this.applyStackSize(event.getItem().getItemStack());
+      if (event.getEntity() instanceof Player player) {
+         this.sweepLater(player);
       }
    }
 
    @EventHandler
-   public void onInventoryOpen(InventoryOpenEvent event) {
-      this.sweep(event.getInventory());
+   public void onInventoryClose(InventoryCloseEvent event) {
+      if (event.getPlayer() instanceof Player player) {
+         this.sweepLater(player);
+      }
    }
 
    @EventHandler
@@ -152,8 +170,9 @@ public class InventoryListener implements Listener {
       }
 
       if (cur != null && this.potions.contains(cur.getType())) {
-         this.applyStackSize(stack);
-         this.applyStackSize(alt);
+         // НЕ трогаем stack/alt здесь: их правка посреди клика и рушила предметы.
+         // Компонент проставится отложенно, когда транзакция уже завершится.
+         this.sweepLater((Player)event.getWhoClicked());
          this.stacker.getServer().getScheduler().runTask(this.stacker, () -> ReflectionUtils.updateInventory((Player)event.getWhoClicked()));
       }
    }
