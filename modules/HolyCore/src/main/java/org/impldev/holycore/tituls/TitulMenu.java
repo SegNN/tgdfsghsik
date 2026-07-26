@@ -162,6 +162,32 @@ public final class TitulMenu implements Listener {
       return stack;
    }
 
+
+   /**
+    * Снимает надетый титул.
+    *
+    * <p>Контекст {@code server=lite} обязателен: суффикс ставится именно с ним, а LuckPerms при
+    * удалении сверяет контексты узла - команда без контекста просто не находит, что удалять.
+    */
+   private static void clearSuffix(Player player) {
+      Bukkit.dispatchCommand(Bukkit.getConsoleSender(),
+            "lp user " + player.getName() + " meta clear suffix server=lite");
+   }
+
+   /** Надет ли сейчас именно этот титул - сравниваем по тексту без цветов. */
+   private static boolean isWearing(Player player, Titul titul) {
+      try {
+         String current = me.clip.placeholderapi.PlaceholderAPI.setPlaceholders(player, "%luckperms_suffix%");
+         return plain(current).equals(plain(titul.text())) && !plain(current).isEmpty();
+      } catch (Throwable ignored) {
+         return false;
+      }
+   }
+
+   private static String plain(String text) {
+      return org.bukkit.ChatColor.stripColor(Parser.color(text == null ? "" : text)).trim();
+   }
+
    @EventHandler
    public void onClick(InventoryClickEvent event) {
       if (!(event.getWhoClicked() instanceof Player viewer)) {
@@ -212,8 +238,7 @@ public final class TitulMenu implements Listener {
             return;
          }
 
-         Bukkit.dispatchCommand(Bukkit.getConsoleSender(),
-               "lp user " + viewer.getName() + " meta removesuffix 1");
+         clearSuffix(viewer);
          viewer.sendMessage(Parser.color("&r&x&0&0&d&8&f&f▶ &r&fТитул снят."));
          return;
       }
@@ -235,8 +260,27 @@ public final class TitulMenu implements Listener {
       }
 
       if (event.isRightClick()) {
+         if (viewer.getInventory().firstEmpty() == -1) {
+            viewer.sendMessage(Parser.color("&r&x&f&f&2&2&2&2▶ &r&fВ инвентаре нет места."));
+            return;
+         }
+
+         // Титул уходит из списка вместе с предметом: иначе предмет был бы копией, и один титул
+         // размножался бы бесконечно. Если он в этот момент надет - снимаем, чтобы не остался
+         // висеть суффикс от титула, которого у игрока больше нет.
+         if (isWearing(viewer, titul)) {
+            clearSuffix(viewer);
+         }
+
+         Bukkit.dispatchCommand(Bukkit.getConsoleSender(),
+               "lp user " + viewer.getName() + " permission unset " + titul.permission());
          viewer.getInventory().addItem(asItem(titul));
-         viewer.sendMessage(Parser.color("&r&x&f&f&7&0&0&0▶ &r&fТитул выдан предметом."));
+         viewer.sendMessage(Parser.color("&r&x&f&f&7&0&0&0▶ &r&fТитул забран предметом и убран из списка."));
+
+         // права применяются не мгновенно - перерисовываем на следующий тик, иначе титул
+         // остался бы в меню до следующего открытия
+         Bukkit.getScheduler().runTaskLater(this.plugin,
+               () -> this.render(event.getView().getTopInventory(), viewer, owner), 10L);
          return;
       }
 
