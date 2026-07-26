@@ -123,8 +123,8 @@ public class EventListener implements Listener {
             }
             break;
          case JAKE:
-            Plugin plugin = Bukkit.getPluginManager().getPlugin("HolyLiteItems");
-            if (plugin == null) {
+            Plugin plugin2 = Bukkit.getPluginManager().getPlugin("HolyLiteItems");
+            if (plugin2 == null) {
                return;
             }
 
@@ -135,7 +135,7 @@ public class EventListener implements Listener {
                   && itemStackxxxxx.hasItemMeta()
                   && ((String)itemStackxxxxx.getItemMeta()
                         .getPersistentDataContainer()
-                        .getOrDefault(new NamespacedKey(plugin, "item-type"), PersistentDataType.STRING, "none"))
+                        .getOrDefault(new NamespacedKey(plugin2, "item-type"), PersistentDataType.STRING, "none"))
                      .equalsIgnoreCase("jake")) {
                   Bukkit.getServer()
                      .getPluginManager()
@@ -145,8 +145,8 @@ public class EventListener implements Listener {
             }
             break;
          case ALTERNATIVE_TRAP:
-            Plugin plugin = Bukkit.getPluginManager().getPlugin("HolyLiteItems");
-            if (plugin == null) {
+            Plugin plugin3 = Bukkit.getPluginManager().getPlugin("HolyLiteItems");
+            if (plugin3 == null) {
                return;
             }
 
@@ -157,7 +157,7 @@ public class EventListener implements Listener {
                   && itemStackxxxx.hasItemMeta()
                   && ((String)itemStackxxxx.getItemMeta()
                         .getPersistentDataContainer()
-                        .getOrDefault(new NamespacedKey(plugin, "item-type"), PersistentDataType.STRING, "none"))
+                        .getOrDefault(new NamespacedKey(plugin3, "item-type"), PersistentDataType.STRING, "none"))
                      .equalsIgnoreCase("alternative_trap")) {
                   Bukkit.getServer().getPluginManager().callEvent(new PlayerInteractEvent(player, Action.RIGHT_CLICK_AIR, itemStackxxxx, null, BlockFace.DOWN));
                   return;
@@ -165,8 +165,8 @@ public class EventListener implements Listener {
             }
             break;
          case STAN:
-            Plugin plugin = Bukkit.getPluginManager().getPlugin("HolyLiteItems");
-            if (plugin == null) {
+            Plugin plugin4 = Bukkit.getPluginManager().getPlugin("HolyLiteItems");
+            if (plugin4 == null) {
                return;
             }
 
@@ -177,7 +177,7 @@ public class EventListener implements Listener {
                   && itemStackxxx.hasItemMeta()
                   && ((String)itemStackxxx.getItemMeta()
                         .getPersistentDataContainer()
-                        .getOrDefault(new NamespacedKey(plugin, "item-type"), PersistentDataType.STRING, "none"))
+                        .getOrDefault(new NamespacedKey(plugin4, "item-type"), PersistentDataType.STRING, "none"))
                      .equalsIgnoreCase("stan")) {
                   Bukkit.getServer().getPluginManager().callEvent(new PlayerInteractEvent(player, Action.RIGHT_CLICK_AIR, itemStackxxx, null, BlockFace.DOWN));
                   return;
@@ -185,8 +185,8 @@ public class EventListener implements Listener {
             }
             break;
          case TRAP:
-            Plugin plugin = Bukkit.getPluginManager().getPlugin("HolyLiteItems");
-            if (plugin == null) {
+            Plugin plugin5 = Bukkit.getPluginManager().getPlugin("HolyLiteItems");
+            if (plugin5 == null) {
                return;
             }
 
@@ -197,7 +197,7 @@ public class EventListener implements Listener {
                   && itemStackxx.hasItemMeta()
                   && ((String)itemStackxx.getItemMeta()
                         .getPersistentDataContainer()
-                        .getOrDefault(new NamespacedKey(plugin, "item-type"), PersistentDataType.STRING, "none"))
+                        .getOrDefault(new NamespacedKey(plugin5, "item-type"), PersistentDataType.STRING, "none"))
                      .equalsIgnoreCase("explosive_trap")) {
                   Bukkit.getServer().getPluginManager().callEvent(new PlayerInteractEvent(player, Action.RIGHT_CLICK_AIR, itemStackxx, null, BlockFace.DOWN));
                   return;
@@ -205,8 +205,8 @@ public class EventListener implements Listener {
             }
             break;
          case EXPLOSIVE:
-            Plugin plugin = Bukkit.getPluginManager().getPlugin("HolyLiteItems");
-            if (plugin == null) {
+            Plugin plugin6 = Bukkit.getPluginManager().getPlugin("HolyLiteItems");
+            if (plugin6 == null) {
                return;
             }
 
@@ -217,7 +217,7 @@ public class EventListener implements Listener {
                   && itemStackx.hasItemMeta()
                   && ((String)itemStackx.getItemMeta()
                         .getPersistentDataContainer()
-                        .getOrDefault(new NamespacedKey(plugin, "item-type"), PersistentDataType.STRING, "none"))
+                        .getOrDefault(new NamespacedKey(plugin6, "item-type"), PersistentDataType.STRING, "none"))
                      .equalsIgnoreCase("explosive_stuff")) {
                   Bukkit.getServer().getPluginManager().callEvent(new PlayerInteractEvent(player, Action.RIGHT_CLICK_AIR, itemStackx, null, BlockFace.DOWN));
                   return;
@@ -225,8 +225,8 @@ public class EventListener implements Listener {
             }
             break;
          case BACKPACK:
-            Plugin plugin = Bukkit.getPluginManager().getPlugin("HolyBackPack");
-            if (plugin == null) {
+            Plugin plugin7 = Bukkit.getPluginManager().getPlugin("HolyBackPack");
+            if (plugin7 == null) {
                return;
             }
 
@@ -237,7 +237,7 @@ public class EventListener implements Listener {
                   && itemStack.hasItemMeta()
                   && (Integer)itemStack.getItemMeta()
                         .getPersistentDataContainer()
-                        .getOrDefault(new NamespacedKey(plugin, "backpack-level"), PersistentDataType.INTEGER, -1)
+                        .getOrDefault(new NamespacedKey(plugin7, "backpack-level"), PersistentDataType.INTEGER, -1)
                      == 4) {
                   Bukkit.getServer().getPluginManager().callEvent(new PlayerInteractEvent(player, Action.RIGHT_CLICK_AIR, itemStack, null, BlockFace.DOWN));
                   return;

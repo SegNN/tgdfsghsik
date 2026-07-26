@@ -1,38 +1,37 @@
 #!/usr/bin/env python3
 """Generate parent + per-module pom.xml for the decompiled FichaWorld plugins."""
-import os, re, subprocess, zipfile, sys, json
+import os, re, sys
 
 WS = "/home/fluge/Загрузки/AyuGram Desktop/FichaWorld-src"
-PLUGINS = "/home/fluge/Загрузки/AyuGram Desktop/FichaWorld v6.0 Free/plugins"
 MODS = os.path.join(WS, "modules")
-MC = sys.argv[1] if len(sys.argv) > 1 else "1.16.5"
+STUBS = "_api-stubs"
+STUBS_VERSION = "1.0.0"
 
 OWN = ("org.dimasik", "ru.kotikstasika", "ua.fichadev", "ua.fichamine", "ua.fichatime",
        "ru.nezxenka", "org.nezxenka", "ru.lolodimo4ka", "stickdev", "ru.holybackpack",
        "ru.litechat", "org.impldev", "ru.extas7y", "me.ones", "frozenpon")
 
-# import-prefix -> (groupId, artifactId, version, scope)
 PROVIDED = {
-    "com.sk89q.worldguard":        ("local.plugins", "worldguard", "7.0.5", "provided"),
-    "com.sk89q.worldedit":         ("local.plugins", "worldedit", "7.2.16", "provided"),
-    "me.clip.placeholderapi":      ("local.plugins", "placeholderapi", "2.11.6", "provided"),
-    "eu.decentsoftware.holograms": ("local.plugins", "decentholograms", "2.9.7", "provided"),
-    "net.luckperms.api":           ("local.plugins", "luckperms", "5.4.166", "provided"),
-    "net.milkbowl.vault":          ("local.plugins", "vault", "1.7.3", "provided"),
-    "org.black_ixx.playerpoints":  ("local.plugins", "playerpoints", "3.3.2", "provided"),
-    "dev.espi.protectionstones":   ("local.plugins", "protectionstones", "2.8.5", "provided"),
-    "com.comphenix.protocol":      ("local.plugins", "protocollib", "5.3.0", "provided"),
-    "com.github.retrooper":        ("local.plugins", "packetevents", "2.9.5", "provided"),
-    "io.github.retrooper":         ("local.plugins", "packetevents", "2.9.5", "provided"),
-    "com.earth2me.essentials":     ("local.plugins", "essentialsx", "2.22.0", "provided"),
-    "net.minecraft.server":        ("local.plugins", "craftbukkit", "1.16.5", "provided"),
-    "org.bukkit.craftbukkit":      ("local.plugins", "craftbukkit", "1.16.5", "provided"),
-    "com.mojang.authlib":          ("local.plugins", "craftbukkit", "1.16.5", "provided"),
-    "com.mojang.datafixers":       ("local.plugins", "craftbukkit", "1.16.5", "provided"),
+    "com.sk89q.worldguard":        ("local.plugins", "worldguard", "7.0.5"),
+    "com.sk89q.worldedit":         ("local.plugins", "worldedit", "7.2.16"),
+    "me.clip.placeholderapi":      ("local.plugins", "placeholderapi", "2.11.6"),
+    "eu.decentsoftware.holograms": ("local.plugins", "decentholograms", "2.9.7"),
+    "net.luckperms.api":           ("local.plugins", "luckperms", "5.4.166"),
+    "net.milkbowl.vault":          ("local.plugins", "vault", "1.7.3"),
+    "org.black_ixx.playerpoints":  ("local.plugins", "playerpoints", "3.3.2"),
+    "dev.espi.protectionstones":   ("local.plugins", "protectionstones", "2.8.5"),
+    "com.comphenix.protocol":      ("local.plugins", "protocollib", "5.3.0"),
+    "com.github.retrooper":        ("local.plugins", "packetevents", "2.9.5"),
+    "io.github.retrooper":         ("local.plugins", "packetevents", "2.9.5"),
+    "com.earth2me.essentials":     ("local.plugins", "essentialsx", "2.22.0"),
+    "net.minecraft.server":        ("local.plugins", "craftbukkit", "1.16.5"),
+    "org.bukkit.craftbukkit":      ("local.plugins", "craftbukkit", "1.16.5"),
+    "com.mojang.authlib":          ("local.plugins", "craftbukkit", "1.16.5"),
+    "com.mojang.datafixers":       ("local.plugins", "craftbukkit", "1.16.5"),
 }
-# libraries the original jar shaded in -> bundled again
 SHADED = {
     "com.zaxxer.hikari":     ("com.zaxxer", "HikariCP", "4.0.3"),
+    "com.google.gson":       ("com.google.code.gson", "gson", "2.10.1"),
     "redis.clients.jedis":   ("redis.clients", "jedis", "4.4.6"),
     "com.rabbitmq.client":   ("com.rabbitmq", "amqp-client", "5.20.0"),
     "io.nats.client":        ("io.nats", "jnats", "2.17.2"),
@@ -46,10 +45,42 @@ SHADED = {
     "shaded.org.jdbi":       ("org.jdbi", "jdbi3-core", "3.45.1"),
     "org.slf4j":             ("org.slf4j", "slf4j-api", "2.0.12"),
 }
+EXTRA = {  # module -> extra deps maven can't infer
+    "HolyExpKeeper": [("io.dropwizard.metrics", "metrics-healthchecks", "4.2.25", "compile")],
+    # ProtectionStones exposes WorldGuard/WorldEdit types in its public API signatures
+    "FichaPSAddon": [("local.plugins", "worldguard", "7.0.5", "provided"),
+                     ("local.plugins", "worldedit", "7.2.16", "provided")],
+    # jdbi was shaded into `shaded.org.jdbi`; imports rewritten, relocated back at package time
+    "FichaCases": [("org.jdbi", "jdbi3-core", "3.45.1", "compile"),
+                   ("org.jdbi", "jdbi3-sqlobject", "3.45.1", "compile"),
+                   ("org.jdbi", "jdbi3-caffeine-cache", "3.45.1", "compile")],
+}
+# original jars shaded these under a plugin-private package; reproduce at package time
+RELOCATE = {
+    "FichaServerNotify": [("com.google.gson", "ru.kotikstasika.fichaservernotify.libs.gson")],
+    "HolyExpKeeper":     [("com.zaxxer.hikari", "org.dimasik.mantiexpkeeper.libs.hikari")],
+    "FichaCases":        [("org.jdbi", "shaded.org.jdbi")],
+}
+# dependency cycles are broken by compiling against the ORIGINAL jar for one direction
+CYCLE_BREAK = {("HolyGoldSpawner", "HolyCustomEgg")}
+ORIG_JAR_GAV = ("local.ficha", "{name}", "1.16.5")
 
-def imports(mod):
+STUB_CLASSES = {"StickEcoAPI": "org.dimasik.stickeco", "AntiCheatStatus": "org.dimasik.anticheatstatus",
+                "SyncAPI": "ru.nezxenka.syncservice", "PremiumAPI": "stickdev.siynes.stickhwpremium"}
+
+
+def java_dir(mod):
+    return os.path.join(MODS, mod, "src/main/java")
+
+
+def module_list():
+    return sorted(d for d in os.listdir(MODS)
+                  if os.path.isdir(os.path.join(MODS, d)) and os.path.isdir(java_dir(d)))
+
+
+def imports_of(mod):
     out = set()
-    for root, _, files in os.walk(os.path.join(MODS, mod, "src/main/java")):
+    for root, _, files in os.walk(java_dir(mod)):
         for f in files:
             if not f.endswith(".java"):
                 continue
@@ -60,68 +91,125 @@ def imports(mod):
                         out.add(m.group(1))
     return out
 
+
 def plugin_meta(mod):
     p = os.path.join(MODS, mod, "src/main/resources/plugin.yml")
+    if not os.path.isfile(p):
+        return mod, "1.0", ""
     txt = open(p, encoding="utf-8", errors="ignore").read()
+
     def g(k):
         m = re.search(rf"^{k}:\s*(.+)$", txt, re.M)
         return m.group(1).strip().strip("'\"") if m else ""
-    return g("name"), g("version"), g("main")
+    return g("name") or mod, g("version") or "1.0", g("main")
 
-modules = sorted(d for d in os.listdir(MODS) if os.path.isdir(os.path.join(MODS, d)))
-summary = {}
 
-for mod in modules:
-    name, ver, main = plugin_meta(mod)
-    imps = imports(mod)
-    deps, needs_lombok, needs_annot = [], False, False
-    seen = set()
-    for i in sorted(imps):
-        if i.startswith(OWN) or i.startswith(("java.", "javax.")):
-            continue
-        if i.startswith("lombok"):
-            needs_lombok = True; continue
-        if i.startswith("org.jetbrains.annotations"):
-            needs_annot = True; continue
-        if i.startswith(("org.bukkit", "org.spigotmc", "net.md_5.bungee",
-                         "com.destroystokyo.paper", "io.papermc.paper",
-                         "net.kyori.adventure", "com.google.common",
-                         "com.google.gson", "org.yaml.snakeyaml", "org.apache.commons")):
-            if not i.startswith("org.bukkit.craftbukkit"):
-                continue
-        for pref, d in PROVIDED.items():
-            if i.startswith(pref) and d[:2] not in seen:
-                seen.add(d[:2]); deps.append(d + (False,)); break
-        else:
-            for pref, d in SHADED.items():
-                if i.startswith(pref) and d[:2] not in seen:
-                    seen.add(d[:2]); deps.append(d + ("compile", True)); break
+mods = module_list()
+# package -> owning module
+owner = {}
+for m in mods:
+    jd = java_dir(m)
+    for root, _, fs in os.walk(jd):
+        if any(x.endswith(".java") for x in fs):
+            owner[os.path.relpath(root, jd).replace(os.sep, ".")] = m
 
-    dep_xml = []
-    for d in deps:
-        g, a, v, scope = d[0], d[1], d[2], d[3]
-        dep_xml.append(f"""    <dependency>
+IMPS = {m: imports_of(m) for m in mods}
+
+
+def dep(g, a, v, scope):
+    return f"""    <dependency>
       <groupId>{g}</groupId>
       <artifactId>{a}</artifactId>
       <version>{v}</version>
       <scope>{scope}</scope>
-    </dependency>""")
-    if needs_lombok:
-        dep_xml.append("""    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.32</version>
-      <scope>provided</scope>
-    </dependency>""")
-    if needs_annot:
-        dep_xml.append("""    <dependency>
-      <groupId>org.jetbrains</groupId>
-      <artifactId>annotations</artifactId>
-      <version>24.1.0</version>
-      <scope>provided</scope>
-    </dependency>""")
+    </dependency>"""
 
-    shade = any(len(d) > 4 and d[4] for d in deps)
+
+summary = {}
+for mod in mods:
+    if mod == STUBS:
+        continue
+    name, ver, main = plugin_meta(mod)
+    imps = IMPS[mod]
+    dep_xml, seen = [], set()
+    lombok = annot = False
+
+    for i in sorted(imps):
+        if i.startswith(("java.", "javax.")):
+            continue
+        if i.startswith("lombok"):
+            lombok = True; continue
+        if i.startswith("org.jetbrains.annotations"):
+            annot = True; continue
+        # inter-module / stub references
+        if i.startswith(OWN):
+            pkg = i.rsplit(".", 1)[0]
+            o = owner.get(pkg) or owner.get(i.rsplit(".", 2)[0] if i.count(".") > 1 else pkg)
+            if o and o != mod:
+                if (mod, o) in CYCLE_BREAK:
+                    g, a, v = ORIG_JAR_GAV[0], o, ORIG_JAR_GAV[2]
+                else:
+                    g, a, v = "world.ficha", o, (STUBS_VERSION if o == STUBS else plugin_meta(o)[1])
+                if (g, a) not in seen:
+                    seen.add((g, a)); dep_xml.append(dep(g, a, v, "provided"))
+            elif o is None and any(i.startswith(p) for p in STUB_CLASSES.values()):
+                if ("world.ficha", STUBS) not in seen:
+                    seen.add(("world.ficha", STUBS))
+                    dep_xml.append(dep("world.ficha", STUBS, STUBS_VERSION, "provided"))
+            continue
+        if i.startswith(("org.bukkit", "org.spigotmc", "net.md_5.bungee", "com.destroystokyo.paper",
+                         "io.papermc.paper", "net.kyori.adventure", "com.google.common",
+                         "org.yaml.snakeyaml", "org.apache.commons")) and not i.startswith("org.bukkit.craftbukkit"):
+            continue
+        for pref, d in PROVIDED.items():
+            if i.startswith(pref):
+                if d[:2] not in seen:
+                    seen.add(d[:2]); dep_xml.append(dep(*d, "provided"))
+                break
+        else:
+            for pref, d in SHADED.items():
+                if i.startswith(pref):
+                    if d[:2] not in seen:
+                        seen.add(d[:2]); dep_xml.append(dep(*d, "compile"))
+                    break
+
+    for g, a, v, s in EXTRA.get(mod, []):
+        if (g, a) not in seen:
+            seen.add((g, a)); dep_xml.append(dep(g, a, v, s))
+    if lombok:
+        dep_xml.append(dep("org.projectlombok", "lombok", "1.18.32", "provided"))
+    if annot:
+        dep_xml.append(dep("org.jetbrains", "annotations", "24.1.0", "provided"))
+
+    build = ""
+    if mod in RELOCATE:
+        rel = "\n".join(f"""                <relocation>
+                  <pattern>{a}</pattern>
+                  <shadedPattern>{b}</shadedPattern>
+                </relocation>""" for a, b in RELOCATE[mod])
+        build = f"""
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals><goal>shade</goal></goals>
+            <configuration>
+              <createDependencyReducedPom>false</createDependencyReducedPom>
+              <relocations>
+{rel}
+              </relocations>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+"""
+
     pom = f"""<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -134,22 +222,41 @@ for mod in modules:
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
-  <artifactId>{name}</artifactId>
-  <version>{ver or '1.0'}</version>
+  <artifactId>{mod}</artifactId>
+  <version>{ver}</version>
   <name>{name}</name>
   <description>main: {main}</description>
 
   <dependencies>
 {chr(10).join(dep_xml)}
   </dependencies>
-</project>
+{build}</project>
 """
     open(os.path.join(MODS, mod, "pom.xml"), "w", encoding="utf-8").write(pom)
-    summary[name] = {"deps": [f"{d[1]}" for d in deps], "lombok": needs_lombok, "shade": shade}
+    summary[mod] = [d[1] for d in ()] or dep_xml
 
-# ---------- parent ----------
-mods_xml = "\n".join(f"    <module>modules/{m}</module>" for m in modules)
-parent = f"""<?xml version="1.0" encoding="UTF-8"?>
+# ---- stubs module ----
+open(os.path.join(MODS, STUBS, "pom.xml"), "w", encoding="utf-8").write(f"""<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>world.ficha</groupId>
+    <artifactId>fichaworld-parent</artifactId>
+    <version>1.0.0</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+  <artifactId>{STUBS}</artifactId>
+  <version>{STUBS_VERSION}</version>
+  <name>API stubs for plugins absent from this build</name>
+</project>
+""")
+
+# ---- parent ----
+ordered = [STUBS] + [m for m in mods if m != STUBS]
+mods_xml = "\n".join(f"    <module>modules/{m}</module>" for m in ordered)
+open(os.path.join(WS, "pom.xml"), "w", encoding="utf-8").write(f"""<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -162,8 +269,7 @@ parent = f"""<?xml version="1.0" encoding="UTF-8"?>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>16</maven.compiler.source>
-    <maven.compiler.target>16</maven.compiler.target>
+    <maven.compiler.release>16</maven.compiler.release>
   </properties>
 
   <modules>
@@ -193,8 +299,7 @@ parent = f"""<?xml version="1.0" encoding="UTF-8"?>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.13.0</version>
         <configuration>
-          <release>16</release>
-          <compilerArgs><arg>-nowarn</arg><arg>-Xlint:none</arg></compilerArgs>
+          <compilerArgs><arg>-nowarn</arg></compilerArgs>
           <showWarnings>false</showWarnings>
         </configuration>
       </plugin>
@@ -210,27 +315,15 @@ parent = f"""<?xml version="1.0" encoding="UTF-8"?>
               <createDependencyReducedPom>false</createDependencyReducedPom>
               <filters>
                 <filter><artifact>*:*</artifact>
-                  <excludes><exclude>META-INF/*.SF</exclude><exclude>META-INF/*.DSA</exclude><exclude>META-INF/*.RSA</exclude></excludes>
+                  <excludes><exclude>META-INF/*.SF</exclude><exclude>META-INF/*.DSA</exclude><exclude>META-INF/*.RSA</exclude><exclude>module-info.class</exclude></excludes>
                 </filter>
               </filters>
             </configuration>
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>3.3.1</version>
-      </plugin>
     </plugins>
-    <resources>
-      <resource><directory>src/main/resources</directory><filtering>false</filtering></resource>
-    </resources>
   </build>
 </project>
-"""
-open(os.path.join(WS, "pom.xml"), "w", encoding="utf-8").write(parent)
-print(f"generated parent + {len(modules)} module poms")
-for k, v in sorted(summary.items()):
-    if v["deps"] or v["lombok"]:
-        print(f"  {k:24s} lombok={str(v['lombok']):5s} shade={str(v['shade']):5s} {','.join(v['deps'])}")
+""")
+print(f"generated parent + {len(ordered)} module poms (incl. {STUBS})")

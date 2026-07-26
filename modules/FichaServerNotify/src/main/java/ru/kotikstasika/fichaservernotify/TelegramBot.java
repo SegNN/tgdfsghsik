@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.bukkit.Bukkit;
-import ru.kotikstasika.fichaservernotify.libs.gson.JsonElement;
-import ru.kotikstasika.fichaservernotify.libs.gson.JsonObject;
-import ru.kotikstasika.fichaservernotify.libs.gson.JsonParser;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class TelegramBot {
    private final String token;

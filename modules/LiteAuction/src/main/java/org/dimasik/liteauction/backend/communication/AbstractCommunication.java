@@ -107,7 +107,7 @@ public abstract class AbstractCommunication {
                         for (Entry<Integer, BidItem> entryx : guixx.getItems().entrySet()) {
                            if (entryx.getValue().getId() == id) {
                               Bukkit.getScheduler()
-                                 .runTask(LiteAuction.getInstance(), () -> inventory.setItem(entry.getKey(), LiteAuction.getInstance().getBoughtItem().clone()));
+                                 .runTask(LiteAuction.getInstance(), () -> inventory.setItem(entryx.getKey(), LiteAuction.getInstance().getBoughtItem().clone()));
                            }
                         }
                      }

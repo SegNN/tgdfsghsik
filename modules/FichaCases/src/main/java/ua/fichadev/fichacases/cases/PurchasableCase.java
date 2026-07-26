@@ -9,7 +9,7 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
-import shaded.org.jdbi.v3.core.async.JdbiExecutor;
+import org.jdbi.v3.core.async.JdbiExecutor;
 import ua.fichadev.fichacases.FichaCases;
 import ua.fichadev.fichacases.animation.Animation;
 import ua.fichadev.fichacases.lucks.Luck;

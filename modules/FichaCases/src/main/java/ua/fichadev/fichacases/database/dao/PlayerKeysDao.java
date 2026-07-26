@@ -1,10 +1,10 @@
 package ua.fichadev.fichacases.database.dao;
 
 import java.util.UUID;
-import shaded.org.jdbi.v3.sqlobject.config.RegisterArgumentFactory;
-import shaded.org.jdbi.v3.sqlobject.customizer.Bind;
-import shaded.org.jdbi.v3.sqlobject.statement.SqlQuery;
-import shaded.org.jdbi.v3.sqlobject.statement.SqlUpdate;
+import org.jdbi.v3.sqlobject.config.RegisterArgumentFactory;
+import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.statement.SqlQuery;
+import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import ua.fichadev.fichacases.database.dao.argument.UUIDArgumentFactory;
 
 @RegisterArgumentFactory(UUIDArgumentFactory.class)

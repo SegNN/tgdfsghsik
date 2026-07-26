@@ -11,8 +11,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.logging.Logger;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.dimasik.mantiexpkeeper.libs.hikari.HikariConfig;
-import org.dimasik.mantiexpkeeper.libs.hikari.HikariDataSource;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 
 public class MySQLDatabaseManager implements DatabaseManager {
    private HikariDataSource dataSource;

@@ -545,15 +545,18 @@ public class Commands implements CommandExecutor, TabCompleter {
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', " \n&6▶ &cНеверный &fтип предмета! &bДоступно: unic, compass&f!\n "));
             return true;
          } else {
+            Player target;
             if (args.length >= 3) {
                target = Bukkit.getPlayer(args[2]);
                if (target == null) {
                   sender.sendMessage(ChatColor.translateAlternateColorCodes('&', " \n&6▶ &cИгрок не найден&f!\n "));
                   return true;
                }
-            } else if (!(sender instanceof Player target)) {
+            } else if (!(sender instanceof Player)) {
                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', " \n&6▶ &cУкажите игрока&f!\n "));
                return true;
+            } else {
+               target = (Player)sender;
             }
 
             if ("unic".equals(itemType)) {

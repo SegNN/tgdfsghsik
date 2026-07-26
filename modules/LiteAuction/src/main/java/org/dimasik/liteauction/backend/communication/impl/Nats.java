@@ -47,7 +47,7 @@ public class Nats extends AbstractCommunication {
          String subject = msg.getSubject();
          String channelType = this.extractChannelType(subject);
          String message = new String(msg.getData());
-         access$001(this, channelType, message);
+         super.onMessage(channelType, message);
       });
       this.dispatcher.subscribe(this.channel + "_msg.*");
       this.dispatcher.subscribe(this.channel + "_hover.*");

@@ -23,6 +23,12 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
+      <groupId>world.ficha</groupId>
+      <artifactId>_api-stubs</artifactId>
+      <version>1.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.32</version>

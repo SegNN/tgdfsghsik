@@ -215,7 +215,7 @@ public class CircleAnimation implements Animation {
       (new BukkitRunnable() {
             int counter = 0;
             double anglePerTick = CircleAnimation.this.showSpinStartAnglePerTick;
-            double slowdownPerTick = (CircleAnimation.super.anglePerTick - CircleAnimation.this.showSpinMinimalAnglePerTick) / slowdownTicks;
+            double slowdownPerTick = (this.anglePerTick - CircleAnimation.this.showSpinMinimalAnglePerTick) / slowdownTicks;
             Vector circleDirection = direction.getDirection().multiply(1.0E-6).setY(0);
             double ticksRotate = (double)(slowdownTicks + idleTicks);
 

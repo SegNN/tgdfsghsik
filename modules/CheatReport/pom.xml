@@ -22,5 +22,11 @@
       <version>4.0.3</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>world.ficha</groupId>
+      <artifactId>_api-stubs</artifactId>
+      <version>1.0.0</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 </project>

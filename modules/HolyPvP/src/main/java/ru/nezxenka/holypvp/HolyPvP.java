@@ -92,37 +92,6 @@ public final class HolyPvP extends JavaPlugin {
 
       @Override
       public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-         if (sender == null) {
-            $$$reportNull$$$1(0);
-         }
-
-         if (command == null) {
-            $$$reportNull$$$1(1);
-         }
-
-         if (label == null) {
-            $$$reportNull$$$1(2);
-         }
-
-         if (args == null) {
-            $$$reportNull$$$1(3);
-         }
-
-         if (sender == null) {
-            $$$reportNull$$$0(0);
-         }
-
-         if (command == null) {
-            $$$reportNull$$$0(1);
-         }
-
-         if (label == null) {
-            $$$reportNull$$$0(2);
-         }
-
-         if (args == null) {
-            $$$reportNull$$$0(3);
-         }
 
          if (sender instanceof Player) {
             HolyPvP plugin = JavaPlugin.getPlugin(HolyPvP.class);
@@ -151,37 +120,6 @@ public final class HolyPvP extends JavaPlugin {
       @Nullable
       @Override
       public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
-         if (sender == null) {
-            $$$reportNull$$$1(4);
-         }
-
-         if (command == null) {
-            $$$reportNull$$$1(5);
-         }
-
-         if (alias == null) {
-            $$$reportNull$$$1(6);
-         }
-
-         if (args == null) {
-            $$$reportNull$$$1(7);
-         }
-
-         if (sender == null) {
-            $$$reportNull$$$0(4);
-         }
-
-         if (command == null) {
-            $$$reportNull$$$0(5);
-         }
-
-         if (alias == null) {
-            $$$reportNull$$$0(6);
-         }
-
-         if (args == null) {
-            $$$reportNull$$$0(7);
-         }
 
          List<String> list = new ArrayList<>();
          if (args.length == 1) {
@@ -191,46 +129,5 @@ public final class HolyPvP extends JavaPlugin {
          return list;
       }
 
-      private static void $$$reportNull$$$0(int var0) {
-         Object[] var10001 = new Object[3];
-         switch (var0) {
-            case 0:
-            case 4:
-            default:
-               var10001[0] = "sender";
-               break;
-            case 1:
-            case 5:
-               var10001[0] = "command";
-               break;
-            case 2:
-               var10001[0] = "label";
-               break;
-            case 3:
-            case 7:
-               var10001[0] = "args";
-               break;
-            case 6:
-               var10001[0] = "alias";
-         }
-
-         var10001[1] = "ru/nezxenka/holypvp/HolyPvP$PvpCommand";
-         switch (var0) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            default:
-               var10001[2] = "onCommand";
-               break;
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-               var10001[2] = "onTabComplete";
-         }
-
-         throw new IllegalArgumentException(String.format("Argument for @NotNull parameter '%s' of %s.%s must not be null", var10001));
-      }
    }
 }

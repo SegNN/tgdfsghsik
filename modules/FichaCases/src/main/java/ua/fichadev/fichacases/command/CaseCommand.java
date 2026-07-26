@@ -15,7 +15,7 @@ import org.bukkit.craftbukkit.libs.org.apache.commons.lang3.math.NumberUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.StringUtil;
-import shaded.org.jdbi.v3.core.async.JdbiExecutor;
+import org.jdbi.v3.core.async.JdbiExecutor;
 import ua.fichadev.fichacases.FichaCases;
 import ua.fichadev.fichacases.cases.CaseManager;
 import ua.fichadev.fichacases.database.dao.PlayerKeysDao;
@@ -161,7 +161,7 @@ public class CaseCommand implements CommandExecutor {
 
                   UUID uuid = offlinePlayerx.getUniqueId();
                   if (this.holyCases.isSQL()) {
-                     this.executor.useExtension(PlayerLuckDao.class, dao -> dao.addLuck(uuid, args[1], count));
+                     this.executor.useExtension(PlayerLuckDao.class, dao -> dao.addLuck(uuid, args[1], countx));
                   } else {
                      this.holyCases.addLuck(offlinePlayerx, args[1], countx);
                   }

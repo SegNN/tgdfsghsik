@@ -1,10 +1,10 @@
 package ua.fichadev.fichacases.database.dao;
 
 import java.util.Collection;
-import shaded.org.jdbi.v3.sqlobject.config.RegisterConstructorMapper;
-import shaded.org.jdbi.v3.sqlobject.customizer.Bind;
-import shaded.org.jdbi.v3.sqlobject.statement.SqlQuery;
-import shaded.org.jdbi.v3.sqlobject.statement.SqlUpdate;
+import org.jdbi.v3.sqlobject.config.RegisterConstructorMapper;
+import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.statement.SqlQuery;
+import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import ua.fichadev.fichacases.database.dao.entity.PrizeHistoryEntry;
 
 public interface PrizeHistoryDao {

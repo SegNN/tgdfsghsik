@@ -122,9 +122,9 @@ public class Commands implements TabExecutor {
                   return true;
                }
 
-               String player2 = args[1].toLowerCase();
+               String var25 = args[1].toLowerCase();
                Utils.SphereType sphereType;
-               switch (player2) {
+               switch (var25) {
                   case "default":
                      sphereType = Utils.SphereType.DEFAULT;
                      break;

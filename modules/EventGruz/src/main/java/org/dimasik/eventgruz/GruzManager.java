@@ -654,7 +654,7 @@ public class GruzManager implements Listener {
       }
 
       for (Inventory inventory : this.gruzInventories.values()) {
-         for (HumanEntity humanEntity : new ArrayList(inventory.getViewers())) {
+         for (HumanEntity humanEntity : new ArrayList<>(inventory.getViewers())) {
             humanEntity.closeInventory();
          }
       }

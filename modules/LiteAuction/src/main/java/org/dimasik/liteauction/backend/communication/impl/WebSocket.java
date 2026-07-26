@@ -82,7 +82,7 @@ public class WebSocket extends AbstractCommunication {
                   this.authenticated = false;
                }
             } else if ("MESSAGE".equals(command)) {
-               access$001(this, channel, content);
+               WebSocket.super.onMessage(channel, content);
             } else if ("ERROR".equals(command)) {
                throw new RuntimeException("Ошибка в WebSocket: " + content);
             }

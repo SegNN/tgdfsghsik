@@ -156,7 +156,7 @@ public class EventVote implements Listener, CommandExecutor {
          }
 
          if (this.voteMenu != null) {
-            for (HumanEntity player : new ArrayList(this.voteMenu.getViewers())) {
+            for (HumanEntity player : new ArrayList<HumanEntity>(this.voteMenu.getViewers())) {
                player.closeInventory();
             }
          }

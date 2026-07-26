@@ -27,18 +27,8 @@ public class MColor {
       }
 
       String var10000 = ChatColor.translateAlternateColorCodes('&', from);
-      if (var10000 == null) {
-         $$$reportNull$$$0(0);
-      }
-
-      if (var10000 == null) {
-         $$$reportNull$$$1(0);
-      }
 
       return var10000;
    }
 
-   private static void $$$reportNull$$$0(int var0) {
-      throw new IllegalStateException(String.format("@NotNull method %s.%s must not return null", "org/dimasik/holyenchantments/utils/MColor", "prefix"));
-   }
 }

@@ -252,7 +252,7 @@ public class EndEvent {
    private void spawnNewDragon() {
       World endWorld = Bukkit.getWorld("world_the_end");
 
-      for (EnderDragon dragon : new ArrayList(endWorld.getEntitiesByClass(EnderDragon.class))) {
+      for (EnderDragon dragon : new ArrayList<EnderDragon>(endWorld.getEntitiesByClass(EnderDragon.class))) {
          if (dragon != null && !dragon.isDead()) {
             dragon.remove();
          }

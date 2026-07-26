@@ -29,8 +29,8 @@ public class RegionBarrierCleaner {
             private int maxX = centerX + Math.max(radius, 100);
             private int minZ = centerZ - Math.max(radius, 100);
             private int maxZ = centerZ + Math.max(radius, 100);
-            private int currentX = RegionBarrierCleaner.super.minX;
-            private int currentZ = RegionBarrierCleaner.super.minZ;
+            private int currentX = this.minX;
+            private int currentZ = this.minZ;
             private int currentY = 0;
 
             public void run() {
@@ -60,14 +60,12 @@ public class RegionBarrierCleaner {
 
                      this.currentY = 0;
                      this.currentZ++;
-                     continue;
-
-                     if (this.currentZ > this.maxZ) {
-                        this.currentZ = this.minZ;
-                        this.currentX++;
-                     }
                   }
-                  break;
+
+                  if (this.currentZ > this.maxZ) {
+                     this.currentZ = this.minZ;
+                     this.currentX++;
+                  }
                }
 
                if (this.currentX > this.maxX) {

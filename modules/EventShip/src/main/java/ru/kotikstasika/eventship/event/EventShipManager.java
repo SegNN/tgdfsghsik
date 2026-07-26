@@ -144,14 +144,12 @@ public class EventShipManager {
 
                      this.y = worldMinY;
                      this.z++;
-                     continue;
-
-                     if (this.z > maxZ) {
-                        this.z = minZ;
-                        this.x++;
-                     }
                   }
-                  break;
+
+                  if (this.z > maxZ) {
+                     this.z = minZ;
+                     this.x++;
+                  }
                }
 
                if (this.x > maxX) {

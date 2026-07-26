@@ -34,5 +34,11 @@
       <version>2.8.5</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>world.ficha</groupId>
+      <artifactId>KotikDang</artifactId>
+      <version>1.0</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 </project>

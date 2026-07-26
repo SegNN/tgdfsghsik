@@ -297,45 +297,4 @@ public class CoinsCommand implements TabExecutor {
       return returnList;
    }
 
-   private static void $$$reportNull$$$0(int var0) {
-      Object[] var10001 = new Object[3];
-      switch (var0) {
-         case 0:
-         case 4:
-         default:
-            var10001[0] = "sender";
-            break;
-         case 1:
-         case 5:
-            var10001[0] = "command";
-            break;
-         case 2:
-            var10001[0] = "label";
-            break;
-         case 3:
-         case 7:
-            var10001[0] = "args";
-            break;
-         case 6:
-            var10001[0] = "alias";
-      }
-
-      var10001[1] = "org/dimasik/liteexchange/commands/CoinsCommand";
-      switch (var0) {
-         case 0:
-         case 1:
-         case 2:
-         case 3:
-         default:
-            var10001[2] = "onCommand";
-            break;
-         case 4:
-         case 5:
-         case 6:
-         case 7:
-            var10001[2] = "onTabComplete";
-      }
-
-      throw new IllegalArgumentException(String.format("Argument for @NotNull parameter '%s' of %s.%s must not be null", var10001));
-   }
 }

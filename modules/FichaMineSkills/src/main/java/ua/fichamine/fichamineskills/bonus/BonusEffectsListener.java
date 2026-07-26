@@ -117,7 +117,7 @@ public class BonusEffectsListener implements Listener {
                      restorePercent = 1;
                   }
 
-                  var meta = (Damageable & ItemMeta)tool.getItemMeta();
+                  Damageable meta = (Damageable)tool.getItemMeta();
                   int currentDamage = meta.getDamage();
                   int maxDurability = tool.getType().getMaxDurability();
                   int restoreAmount = (int)(maxDurability * restorePercent / 100.0);

@@ -11,11 +11,11 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>16</maven.compiler.source>
-    <maven.compiler.target>16</maven.compiler.target>
+    <maven.compiler.release>16</maven.compiler.release>
   </properties>
 
   <modules>
+    <module>modules/_api-stubs</module>
     <module>modules/AntiLagMachine</module>
     <module>modules/Buyer</module>
     <module>modules/ChatBrackets</module>
@@ -104,8 +104,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.13.0</version>
         <configuration>
-          <release>16</release>
-          <compilerArgs><arg>-nowarn</arg><arg>-Xlint:none</arg></compilerArgs>
+          <compilerArgs><arg>-nowarn</arg></compilerArgs>
           <showWarnings>false</showWarnings>
         </configuration>
       </plugin>
@@ -121,21 +120,13 @@
               <createDependencyReducedPom>false</createDependencyReducedPom>
               <filters>
                 <filter><artifact>*:*</artifact>
-                  <excludes><exclude>META-INF/*.SF</exclude><exclude>META-INF/*.DSA</exclude><exclude>META-INF/*.RSA</exclude></excludes>
+                  <excludes><exclude>META-INF/*.SF</exclude><exclude>META-INF/*.DSA</exclude><exclude>META-INF/*.RSA</exclude><exclude>module-info.class</exclude></excludes>
                 </filter>
               </filters>
             </configuration>
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>3.3.1</version>
-      </plugin>
     </plugins>
-    <resources>
-      <resource><directory>src/main/resources</directory><filtering>false</filtering></resource>
-    </resources>
   </build>
 </project>

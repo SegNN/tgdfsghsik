@@ -215,7 +215,7 @@ public class ReportGUI implements Listener {
 
                   try {
                      int itemsPerPage = 45;
-                     final int reportsCount = 0;
+                     int reportsCount = 0;
                      PreparedStatement stmt = conn.prepareStatement(
                         "SELECT COUNT(*) AS total FROM reports WHERE target = ? AND type = 'EXPECT' AND admin IS NULL"
                      );
@@ -293,12 +293,13 @@ public class ReportGUI implements Listener {
                      Map<String, BatchDataHelper.PlayerReputationData> reputationData = ReportGUI.this.batchHelper.getBatchReputation(allPlayers);
                      Map<String, String> onlineStatuses = ReportGUI.this.batchHelper.getBatchOnlineStatus(allPlayers);
                      final int finalTotalPages = (int)Math.ceil((double)reportsCount / itemsPerPage);
+                     final int finalReportsCount = reportsCount;
                      final Map<String, BatchDataHelper.PlayerReputationData> finalReputationData = reputationData;
                      final Map<String, String> finalOnlineStatuses = onlineStatuses;
                      (new BukkitRunnable() {
                            public void run() {
                               String newTitle = ChatColor.translateAlternateColorCodes(
-                                 '&', "Репорты на " + target + " (" + reportsCount + " шт.) [" + page + "/" + finalTotalPages + "]"
+                                 '&', "Репорты на " + target + " (" + finalReportsCount + " шт.) [" + page + "/" + finalTotalPages + "]"
                               );
                               Inventory newInventory = Bukkit.createInventory((InventoryHolder)null, 54, newTitle);
 
@@ -308,7 +309,7 @@ public class ReportGUI implements Listener {
 
                               for (Report report : reports) {
                                  ItemStack item = ReportGUI.this.createReportItemWithCache(
-                                    report, player, finalReputationData, finalOnlineStatuses, reportsCount
+                                    report, player, finalReputationData, finalOnlineStatuses, finalReportsCount
                                  );
                                  newInventory.addItem(new ItemStack[]{item});
                               }

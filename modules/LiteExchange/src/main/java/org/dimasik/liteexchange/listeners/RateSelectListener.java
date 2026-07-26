@@ -138,7 +138,9 @@ public class RateSelectListener implements Listener {
                   rateData.forceClose = true;
                   player.closeInventory();
                   player.sendMessage(Parser.color("&x&F&B&2&2&2&2 ▶ &x&E&7&E&7&E&7ИДИ НАХУЙ ПО СОСИ У МЕНЧИКА ЭТО НЕ ДКОД ЫЫЫЫЫ"));
-                  Bukkit.getScheduler().runTaskLater(LiteExchange.getInstance(), () -> new Create(player, rate, coins), 1L);
+                  int finalRate = rate;
+                  int finalCoins = coins;
+                  Bukkit.getScheduler().runTaskLater(LiteExchange.getInstance(), () -> new Create(player, finalRate, finalCoins), 1L);
                   return;
                }
 
@@ -147,13 +149,17 @@ public class RateSelectListener implements Listener {
                   rate = rateData.sourceRate;
                   rateData.forceClose = true;
                   player.closeInventory();
-                  Bukkit.getScheduler().runTaskLater(LiteExchange.getInstance(), () -> new Create(player, rate, coins), 1L);
+                  int finalRate = rate;
+                  int finalCoins = coins;
+                  Bukkit.getScheduler().runTaskLater(LiteExchange.getInstance(), () -> new Create(player, finalRate, finalCoins), 1L);
                   return;
                }
 
                rateData.forceClose = true;
                player.closeInventory();
-               Bukkit.getScheduler().runTaskLater(LiteExchange.getInstance(), () -> new Create(player, rate, coins), 1L);
+               int finalRate = rate;
+               int finalCoins = coins;
+               Bukkit.getScheduler().runTaskLater(LiteExchange.getInstance(), () -> new Create(player, finalRate, finalCoins), 1L);
             }
          } else if (event.isShiftClick()) {
             event.setCancelled(true);

@@ -22,5 +22,11 @@
       <version>1.7.3</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>world.ficha</groupId>
+      <artifactId>LootManager</artifactId>
+      <version>1.0</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 </project>

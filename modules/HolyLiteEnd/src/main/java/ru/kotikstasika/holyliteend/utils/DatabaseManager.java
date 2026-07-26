@@ -830,7 +830,7 @@ public class DatabaseManager {
                ResultSet rs = stmt.executeQuery(sql);
 
                try {
-                  HashMap eggsByLocation = new HashMap();
+                  HashMap<Location, List<DatabaseManager.EggData>> eggsByLocation = new HashMap<>();
 
                   while (rs.next()) {
                      int x = rs.getInt("x");
@@ -857,7 +857,7 @@ public class DatabaseManager {
 
                   for (Entry<Location, List<DatabaseManager.EggData>> entry : eggsByLocation.entrySet()) {
                      Location loc = entry.getKey();
-                     List eggsData = entry.getValue();
+                     List<DatabaseManager.EggData> eggsData = entry.getValue();
                      if (loc.getWorld() != null && loc.getWorld().isChunkLoaded(loc.getBlockX() >> 4, loc.getBlockZ() >> 4)) {
                         Block block = loc.getBlock();
                         if (block.getType() == Material.CHEST) {

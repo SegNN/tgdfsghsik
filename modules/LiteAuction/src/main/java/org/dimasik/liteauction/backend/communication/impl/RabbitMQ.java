@@ -68,7 +68,7 @@ public class RabbitMQ extends AbstractCommunication {
             public void handleDelivery(String consumerTag, Envelope envelope, BasicProperties properties, byte[] body) {
                String message = new String(body);
                String routingKey = envelope.getExchange();
-               String channelName = routingKey.replace(RabbitMQ.access$001(RabbitMQ.this) + "_", "");
+               String channelName = routingKey.replace(RabbitMQ.this.channel + "_", "");
                RabbitMQ.super.onMessage(channelName, message);
             }
          };

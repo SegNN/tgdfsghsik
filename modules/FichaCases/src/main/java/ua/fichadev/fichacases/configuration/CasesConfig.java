@@ -35,7 +35,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.MetadataValue;
-import shaded.org.jdbi.v3.core.async.JdbiExecutor;
+import org.jdbi.v3.core.async.JdbiExecutor;
 import ua.fichadev.fichacases.FichaCases;
 import ua.fichadev.fichacases.animation.Animation;
 import ua.fichadev.fichacases.animation.CircleAnimation;
@@ -319,8 +319,10 @@ public class CasesConfig {
                      Pair<String, Pair<Supplier<Location>, BlockFace>> position = Pair.of(args[0], Pair.of(location, blockFace));
                      Object finalOpen = open;
                      Object finalOpen1 = open;
+                     ConfigurationSection finalCaseSection = caseSection;
+                     String finalCaseName = caseName;
                      Function<Player, Menu> menuCreator = player -> {
-                        ConfigurationSection menuSection = caseSection.getConfigurationSection("menu");
+                        ConfigurationSection menuSection = finalCaseSection.getConfigurationSection("menu");
                         if (menuSection == null) {
                            return null;
                         } else {
@@ -343,7 +345,7 @@ public class CasesConfig {
 
                                           for (String typeKeyx : itemTypesSectionx.getKeys(false)) {
                                              UUID playerUUID = player.getUniqueId();
-                                             CompletableFuture<Integer> keysFuture = CompletableFuture.supplyAsync(() -> dao.getKeys(playerUUID, caseName));
+                                             CompletableFuture<Integer> keysFuture = CompletableFuture.supplyAsync(() -> dao.getKeys(playerUUID, finalCaseName));
                                              CompletableFuture<String> luckFuture = CompletableFuture.supplyAsync(() -> this.luckManager.getLuckLines(player));
                                              CompletableFuture<Void> combinedFuture = keysFuture.thenCombine(
                                                 luckFuture,
@@ -367,12 +369,12 @@ public class CasesConfig {
                                        }
                                     }
                                  )
-                                 .whenComplete((v, ex) -> this.setupMenuInventory(menuSection, caseMenu, itemTypes, position, finalOpen, caseName));
+                                 .whenComplete((v, ex) -> this.setupMenuInventory(menuSection, caseMenu, itemTypes, position, finalOpen, finalCaseName));
                            } else {
                               ConfigurationSection itemTypesSection = menuSection.getConfigurationSection("item-types");
                               if (itemTypesSection != null) {
                                  for (String typeKey : itemTypesSection.getKeys(false)) {
-                                    String keys = String.valueOf(this.plugin.getKeys(player, caseName));
+                                    String keys = String.valueOf(this.plugin.getKeys(player, finalCaseName));
                                     String lucks = this.luckManager.getLuckLines(player);
                                     ItemStack itemStack = ItemBuilder.fromConfig(
                                           itemTypesSection.getConfigurationSection(typeKey),
@@ -385,7 +387,7 @@ public class CasesConfig {
                                  }
                               }
 
-                              this.setupMenuInventory(menuSection, caseMenu, itemTypes, position, finalOpen1, caseName);
+                              this.setupMenuInventory(menuSection, caseMenu, itemTypes, position, finalOpen1, finalCaseName);
                            }
 
                            return caseMenu;
@@ -396,7 +398,7 @@ public class CasesConfig {
                         configurableCase = () -> new PurchasableCase(
                            this.plugin,
                            this.executor,
-                           caseName,
+                           finalCaseName,
                            titleAboveCase,
                            titleAboveCaseYOffset,
                            luckWork,
@@ -418,7 +420,7 @@ public class CasesConfig {
                         configurableCase = () -> new ConfigurableCase(
                            this.plugin,
                            this.executor,
-                           caseName,
+                           finalCaseName,
                            titleAboveCase,
                            titleAboveCaseYOffset,
                            luckWork,

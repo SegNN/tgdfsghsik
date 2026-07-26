@@ -23,6 +23,18 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+      <groupId>world.ficha</groupId>
+      <artifactId>_api-stubs</artifactId>
+      <version>1.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>world.ficha</groupId>
+      <artifactId>StickHWStar</artifactId>
+      <version>1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>org.jetbrains</groupId>
       <artifactId>annotations</artifactId>
       <version>24.1.0</version>

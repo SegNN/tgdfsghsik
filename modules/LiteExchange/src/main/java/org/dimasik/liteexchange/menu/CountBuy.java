@@ -130,11 +130,7 @@ public class CountBuy implements InventoryHolder {
 
    @NotNull
    public Inventory getInventory() {
-      $$$reportNull$$$0(0);
       return null;
    }
 
-   private static void $$$reportNull$$$0(int var0) {
-      throw new IllegalStateException(String.format("@NotNull method %s.%s must not return null", "org/dimasik/liteexchange/menu/CountBuy", "getInventory"));
-   }
 }
