@@ -1,5 +1,5 @@
-# Провайдер экономики. StickEco или Vault.
-economy-editor: StickEco
+# Провайдер экономики. HolyEco или Vault.
+economy-editor: HolyEco
 
 # Кастомные теги для /ah search
 # Сначала то что в поиске, потом тег на который это заменится

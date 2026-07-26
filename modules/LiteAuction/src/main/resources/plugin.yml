@@ -3,7 +3,7 @@ version: '1.0'
 main: org.dimasik.liteauction.LiteAuction
 api-version: '1.16'
 softdepend:
-  - StickEco
+  - HolyEco
   - Vault
   - PlaceholderAPI
 commands:

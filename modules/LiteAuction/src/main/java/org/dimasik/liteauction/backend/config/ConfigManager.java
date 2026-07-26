@@ -26,8 +26,8 @@ public class ConfigManager {
    }
 
    public static void loadConfig() {
-      ECONOMY_EDITOR = getString("config.yml", "economy-editor", "StickEco");
-      if (!ECONOMY_EDITOR.equalsIgnoreCase("StickEco") && !ECONOMY_EDITOR.equalsIgnoreCase("Vault")) {
+      ECONOMY_EDITOR = getString("config.yml", "economy-editor", "HolyEco");
+      if (!ECONOMY_EDITOR.equalsIgnoreCase("HolyEco") && !ECONOMY_EDITOR.equalsIgnoreCase("Vault")) {
          throw new UnsupportedConfigurationException("Тип экономики не существует!");
       } else {
          CUSTOM_TAGS.clear();

@@ -67,7 +67,7 @@ RELOCATE = {
 CYCLE_BREAK = {("HolyGoldSpawner", "HolyCustomEgg")}
 ORIG_JAR_GAV = ("local.holy", "{name}", "1.16.5")
 
-STUB_CLASSES = {"StickEcoAPI": "org.dimasik.stickeco", "AntiCheatStatus": "org.dimasik.anticheatstatus",
+STUB_CLASSES = {"HolyEcoAPI": "ru.holydev.holyeco", "AntiCheatStatus": "org.dimasik.anticheatstatus",
                 "SyncAPI": "ru.nezxenka.syncservice", "PremiumAPI": "ru.holydev.holypremium"}
 
 

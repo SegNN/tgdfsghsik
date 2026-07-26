@@ -53,12 +53,6 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>world.example</groupId>
-      <artifactId>_api-stubs</artifactId>
-      <version>1.0.0</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>org.java-websocket</groupId>
       <artifactId>Java-WebSocket</artifactId>
       <version>1.5.6</version>
@@ -75,6 +69,12 @@
       <artifactId>jedis</artifactId>
       <version>4.4.6</version>
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>world.example</groupId>
+      <artifactId>_api-stubs</artifactId>
+      <version>1.0.0</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>

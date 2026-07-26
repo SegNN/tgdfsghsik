@@ -28,7 +28,7 @@ import org.dimasik.liteauction.backend.storage.databases.impl.SQLite;
 import org.dimasik.liteauction.backend.utils.format.Parser;
 import org.dimasik.liteauction.backend.utils.nms.ContainerUtil;
 import org.dimasik.liteauction.economy.EconomyEditor;
-import org.dimasik.liteauction.economy.impl.StickEco;
+import org.dimasik.liteauction.economy.impl.HolyEco;
 import org.dimasik.liteauction.economy.impl.VaultEco;
 import org.dimasik.liteauction.frontend.commands.CommandExecutor;
 import org.dimasik.liteauction.frontend.commands.impl.Admin;
@@ -182,8 +182,8 @@ public final class LiteAuction extends JavaPlugin {
    }
 
    private void setupEconomy() {
-      if (ConfigManager.getECONOMY_EDITOR().equalsIgnoreCase("StickEco")) {
-         this.economyEditor = new StickEco();
+      if (ConfigManager.getECONOMY_EDITOR().equalsIgnoreCase("HolyEco")) {
+         this.economyEditor = new HolyEco();
       } else {
          this.economyEditor = new VaultEco();
       }

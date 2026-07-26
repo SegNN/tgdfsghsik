@@ -2,18 +2,18 @@ package org.dimasik.liteauction.economy.impl;
 
 import org.bukkit.Bukkit;
 import org.dimasik.liteauction.economy.EconomyEditor;
-import org.dimasik.stickeco.StickEcoAPI;
+import ru.holydev.holyeco.HolyEcoAPI;
 
-public class StickEco extends EconomyEditor {
-   private StickEcoAPI economy;
+public class HolyEco extends EconomyEditor {
+   private HolyEcoAPI economy;
 
-   public StickEco() {
+   public HolyEco() {
       this.setupEconomy();
    }
 
    private void setupEconomy() {
-      if (Bukkit.getServer().getPluginManager().getPlugin("StickEco") != null) {
-         this.economy = new StickEcoAPI();
+      if (Bukkit.getServer().getPluginManager().getPlugin("HolyEco") != null) {
+         this.economy = new HolyEcoAPI();
       }
    }
 
