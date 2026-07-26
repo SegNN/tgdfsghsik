@@ -20,6 +20,7 @@
     <module>modules/Buyer</module>
     <module>modules/ChatBrackets</module>
     <module>modules/CheatReport</module>
+    <module>modules/EnchantControlReforged</module>
     <module>modules/EventContainer</module>
     <module>modules/EventDeathMine</module>
     <module>modules/EventGruz</module>

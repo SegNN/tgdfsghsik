@@ -1,0 +1,43 @@
+#####################################
+#    General Plugin Informations    #
+#####################################
+
+name: EnchantControl_Reforged
+
+author: Dzious
+
+version: 1.2.5
+
+website: github.com/Dzious
+
+description: >
+    This plugin allow you to control which enchants are available on your server
+
+api-version: 1.21
+prefix: EnchantControl_Reforged
+
+main: com.dzious.bukkit.enchantcontrol.EnchantControl
+depend: []
+softdepend: []
+
+
+######################################
+#    Commands Related Information    #
+######################################
+
+commands:
+    EnchantControl:
+        aliases: [enchantcontrol]
+        description:
+        usage: "use /enchantcontrol reload to reload enchants levels from config"
+
+#########################################
+#    Permissions Related Information    #
+#########################################
+
+permissions:
+    enchantcontrol.admin:
+        description: User is able to use all staff-related commands
+        default: false
+        children:
+            template.children.*: true
