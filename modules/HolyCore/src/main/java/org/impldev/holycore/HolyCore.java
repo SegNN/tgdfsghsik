@@ -11,6 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.impldev.holycore.checker.ShulkerTotemChecker;
+import org.impldev.holycore.commands.BalTop;
 import org.impldev.holycore.commands.Bc;
 import org.impldev.holycore.commands.HealthIndicator;
 import org.impldev.holycore.commands.Links;
@@ -74,6 +75,13 @@ public final class HolyCore extends JavaPlugin {
       this.getCommand("broadcast").setExecutor(new Bc(this));
       this.getCommand("links").setExecutor(new Links(this));
       this.getCommand("wolker").setExecutor(new Wolker());
+
+      // одна и та же реализация на все три страницы - иначе каждая держала бы свой кэш
+      // и пересчитывала топ заново
+      BalTop balTop = new BalTop(this);
+      this.getCommand("baltop").setExecutor(balTop);
+      this.getCommand("baltop2").setExecutor(balTop);
+      this.getCommand("baltop3").setExecutor(balTop);
 
       HealthIndicator healthIndicator = new HealthIndicator(this);
       this.getCommand("healthindicator").setExecutor(healthIndicator);

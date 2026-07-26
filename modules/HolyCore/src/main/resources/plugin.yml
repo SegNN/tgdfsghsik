@@ -21,10 +21,23 @@ commands:
   healthindicator:
     description: Включить/выключить показ здоровья над игроками
     usage: /healthindicator
-    aliases: [hi, хп]
     permission: holycore.healthindicator.use
+  baltop:
+    description: Топ богачей, места 1-10
+    usage: /baltop
+    permission: holycore.baltop.use
+  baltop2:
+    description: Топ богачей, места 11-20
+    usage: /baltop2
+    permission: holycore.baltop.use
+  baltop3:
+    description: Топ богачей, места 21-30
+    usage: /baltop3
+    permission: holycore.baltop.use
 permissions:
   holycore.wolker.use:
     default: true
   holycore.healthindicator.use:
+    default: true
+  holycore.baltop.use:
     default: true

@@ -14,7 +14,6 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.impldev.holycore.utils.Parser;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -79,18 +78,13 @@ public class HealthIndicator extends PlaceholderExpansion implements CommandExec
 
       Player player = (Player)sender;
       UUID uuid = player.getUniqueId();
-      boolean nowEnabled;
-      if (this.disabled.remove(uuid)) {
-         nowEnabled = true;
-      } else {
+      if (!this.disabled.remove(uuid)) {
          this.disabled.add(uuid);
-         nowEnabled = false;
       }
 
       this.save();
-      player.sendMessage(Parser.color(nowEnabled
-            ? "&#00a700❤ &fПоказ здоровья над игроками &#00a700включён&f."
-            : "&#a70000❤ &fПоказ здоровья над игроками &#a70000выключен&f."));
+      // Владелец просил переключать молча: индикатор просто появляется или пропадает,
+      // никаких сообщений в чат.
       return true;
    }
 
