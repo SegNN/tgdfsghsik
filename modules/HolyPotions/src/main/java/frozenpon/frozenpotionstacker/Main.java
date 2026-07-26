@@ -10,6 +10,7 @@ public class Main extends JavaPlugin {
    private int stackPotion;
    private int stackSplash;
    private InventoryListener listener;
+   private int sweeperId = -1;
 
    public Main() {
    }
@@ -35,9 +36,38 @@ public class Main extends JavaPlugin {
          }
       } else if (this.listener == null) {
          this.getServer().getPluginManager().registerEvents(this.listener = new InventoryListener(this, this.stackPotion, this.stackSplash), this);
+         this.startSweeper();
       } else {
          this.listener.setStacks(this.stackPotion, this.stackSplash);
       }
+   }
+
+
+   /**
+    * Раз в секунду проставляет компонент max_stack_size всем зельям в инвентарях онлайна.
+    *
+    * <p>Событий (вход, подбор, закрытие инвентаря) недостаточно: зелья приходят и другими
+    * путями - из китов, магазинов, наковальни HolyPotion, команд, - и такое зелье остаётся
+    * без компонента, то есть с реальным лимитом 1. Стак из 1.16.5 в слоте с лимитом 1
+    * сервер считает нелегальным и уничтожает - именно так зелья и пропадали через пару секунд.
+    * Периодическое подметание делает инвариант безусловным, каким бы плагином зелье ни выдали.
+    */
+   private void startSweeper() {
+      if (this.sweeperId != -1 || !ReflectionUtils.isModern()) {
+         return;
+      }
+
+      this.sweeperId = this.getServer().getScheduler().runTaskTimer(this, () -> {
+         if (this.listener == null) {
+            return;
+         }
+
+         for (org.bukkit.entity.Player player : this.getServer().getOnlinePlayers()) {
+            if (this.listener.sweep(player.getInventory()) > 0) {
+               player.updateInventory();
+            }
+         }
+      }, 20L, 20L).getTaskId();
    }
 
    private void changePotionStackSizes() {
