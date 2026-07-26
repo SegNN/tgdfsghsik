@@ -63,7 +63,7 @@ public class AnvilListener implements Listener {
          }
       }
 
-      if (first.getType() == PotionType.SPEED && second.getType() == PotionType.SPEED) {
+      if (first.getType() == PotionType.SWIFTNESS && second.getType() == PotionType.SWIFTNESS) {
          if (!first.isExtended() && !second.isExtended() && first.isUpgraded() && second.isUpgraded()) {
             return "speed";
          }
@@ -73,8 +73,8 @@ public class AnvilListener implements Listener {
          }
       }
 
-      if (first.getType() == PotionType.INSTANT_HEAL
-         && second.getType() == PotionType.INSTANT_HEAL
+      if (first.getType() == PotionType.HEALING
+         && second.getType() == PotionType.HEALING
          && !first.isExtended()
          && !second.isExtended()
          && first.isUpgraded()

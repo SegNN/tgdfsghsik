@@ -29,7 +29,7 @@ public final class BambukItem {
       ItemMeta meta = bow.getItemMeta();
       meta.setDisplayName(ColorUtils.colorize("&#13C600Л&#12BB00у&#12B101К &#109B02Б&#12B101а&#0F8603М&#0E7B03Б&#0E7104У&#0D6604к"));
       meta.setLore(Collections.singletonList(ColorUtils.colorize("&fМемное оружие ЗАКО")));
-      meta.addEnchant(Enchantment.ARROW_INFINITE, 1, true);
+      meta.addEnchant(Enchantment.INFINITY, 1, true);
       meta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_UNBREAKABLE});
       meta.setUnbreakable(true);
       meta.getPersistentDataContainer().set(this.key, PersistentDataType.BYTE, (byte)1);

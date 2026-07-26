@@ -122,7 +122,7 @@ public class CircleAnimation implements Animation {
          int counter = showOpenDurationTicks;
 
          public void run() {
-            caseLocation.getWorld().spawnParticle(Particle.SPELL_WITCH, pivot.clone().add(0.0, 0.2, 0.0), 5);
+            caseLocation.getWorld().spawnParticle(Particle.WITCH, pivot.clone().add(0.0, 0.2, 0.0), 5);
             this.counter--;
             if (this.counter < 0) {
                this.cancel();

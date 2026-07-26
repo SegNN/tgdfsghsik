@@ -202,7 +202,7 @@ public class MantiExpItemUtil implements Listener {
                && itemStack.hasItemMeta()
                && itemStack.getItemMeta().getPersistentDataContainer().has(new NamespacedKey(this.plugin, "expkeeper-justice"), PersistentDataType.INTEGER)) {
                player.removePotionEffect(PotionEffectType.BLINDNESS);
-               player.removePotionEffect(PotionEffectType.JUMP);
+               player.removePotionEffect(PotionEffectType.JUMP_BOOST);
                player.removePotionEffect(PotionEffectType.POISON);
                player.removePotionEffect(PotionEffectType.WITHER);
                player.removePotionEffect(PotionEffectType.WEAKNESS);
@@ -240,7 +240,7 @@ public class MantiExpItemUtil implements Listener {
          }
 
          if (hasSnowman && ThreadLocalRandom.current().nextInt(100) < 2) {
-            target.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 0, false, false, true));
+            target.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 100, 0, false, false, true));
          }
 
          if (hasIlluminator && ThreadLocalRandom.current().nextInt(100) < 5) {
@@ -322,7 +322,7 @@ public class MantiExpItemUtil implements Listener {
       itemMeta.setLore(lore);
       itemMeta.getPersistentDataContainer().set(new NamespacedKey(this.plugin, "expkeeper-snowman"), PersistentDataType.INTEGER, 1);
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-      itemMeta.addEnchant(Enchantment.LUCK, 1, false);
+      itemMeta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, false);
       itemStack.setItemMeta(itemMeta);
       return itemStack;
    }
@@ -357,7 +357,7 @@ public class MantiExpItemUtil implements Listener {
       itemMeta.setLore(lore);
       itemMeta.getPersistentDataContainer().set(new NamespacedKey(this.plugin, "expkeeper-enderman"), PersistentDataType.INTEGER, 1);
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-      itemMeta.addEnchant(Enchantment.LUCK, 1, false);
+      itemMeta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, false);
       itemStack.setItemMeta(itemMeta);
       return itemStack;
    }
@@ -432,7 +432,7 @@ public class MantiExpItemUtil implements Listener {
       ItemStack itemStack = new ItemStack(Material.POTION);
       ItemMeta itemMeta = itemStack.getItemMeta();
       itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&x&F&F&7&0&0&0 Справедливость"));
-      itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_POTION_EFFECTS});
+      itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ADDITIONAL_TOOLTIP});
       List<String> lore = new ArrayList<>();
       lore.add(ChatColor.translateAlternateColorCodes('&', ""));
       lore.add(ChatColor.translateAlternateColorCodes('&', "&7 Особенность и применение:"));
@@ -514,7 +514,7 @@ public class MantiExpItemUtil implements Listener {
       lore.add(ChatColor.translateAlternateColorCodes('&', "&x&6&E&E&E&6&5   надетую броню с зачарованием починка."));
       lore.add("");
       itemMeta.setLore(lore);
-      itemMeta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 1, true);
+      itemMeta.addEnchant(Enchantment.LOOTING, 1, true);
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       item.setItemMeta(itemMeta);
       return item;
@@ -534,7 +534,7 @@ public class MantiExpItemUtil implements Listener {
       lore.add(ChatColor.translateAlternateColorCodes('&', "&x&F&B&C&4&5&2   который нельзя снять, на протяжении 15 секунд."));
       lore.add("");
       itemMeta.setLore(lore);
-      itemMeta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 1, true);
+      itemMeta.addEnchant(Enchantment.LOOTING, 1, true);
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       item.setItemMeta(itemMeta);
       return item;
@@ -554,7 +554,7 @@ public class MantiExpItemUtil implements Listener {
       lore.add(ChatColor.translateAlternateColorCodes('&', "&x&F&B&6&2&4&A - урон наносится, в том числе игроку, который"));
       lore.add(ChatColor.translateAlternateColorCodes('&', "&x&F&B&6&2&4&A   активировал Взрывную Штучку."));
       lore.add("");
-      itemMeta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 1, true);
+      itemMeta.addEnchant(Enchantment.LOOTING, 1, true);
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       itemMeta.setLore(lore);
       item.setItemMeta(itemMeta);
@@ -573,7 +573,7 @@ public class MantiExpItemUtil implements Listener {
       lore.add(ChatColor.translateAlternateColorCodes('&', "&x&4&9&F&F&F&7   игроку он получает эффект"));
       lore.add(ChatColor.translateAlternateColorCodes('&', "&x&4&9&F&F&F&7   Медлительности VI и слепоту на 10 секунд."));
       lore.add(ChatColor.translateAlternateColorCodes('&', ""));
-      stanMeta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 1, true);
+      stanMeta.addEnchant(Enchantment.LOOTING, 1, true);
       stanMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       stanMeta.setLore(lore);
       stan.setItemMeta(stanMeta);
@@ -585,7 +585,7 @@ public class MantiExpItemUtil implements Listener {
       stan.setAmount(count);
       ItemMeta stanMeta = stan.getItemMeta();
       PotionMeta potionMeta = (PotionMeta)stanMeta;
-      potionMeta.setBasePotionData(new PotionData(PotionType.JUMP, false, false));
+      potionMeta.setBasePotionData(new PotionData(PotionType.LEAPING, false, false));
       stanMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&x&8&6&f&f&9&2 Прыгучесть III &8&o(предмет)"));
       ArrayList<String> lore = new ArrayList<>();
       lore.add(ChatColor.translateAlternateColorCodes('&', ""));
@@ -594,7 +594,7 @@ public class MantiExpItemUtil implements Listener {
       lore.add(ChatColor.translateAlternateColorCodes('&', ""));
       stanMeta.setLore(lore);
       stanMeta.getPersistentDataContainer().set(new NamespacedKey(this.plugin, "expkeeper"), PersistentDataType.STRING, "jump_three");
-      stanMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_POTION_EFFECTS});
+      stanMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ADDITIONAL_TOOLTIP});
       stan.setItemMeta(stanMeta);
       return stan;
    }

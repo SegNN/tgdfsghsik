@@ -21,7 +21,7 @@ public class PlayerExtension implements Listener {
    public void on(PlayerQuitEvent event) {
       Player player = event.getPlayer();
       Location loc = player.getLocation();
-      loc.getWorld().spawnParticle(Particle.SMOKE_LARGE, loc.getX(), loc.getY() + 1.0, loc.getZ(), 50, 0.2, 0.7, 0.2, 0.02);
+      loc.getWorld().spawnParticle(Particle.LARGE_SMOKE, loc.getX(), loc.getY() + 1.0, loc.getZ(), 50, 0.2, 0.7, 0.2, 0.02);
    }
 
    @EventHandler

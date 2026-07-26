@@ -121,7 +121,7 @@ public class ItemBuilder {
       if (meta == null) {
          return this;
       } else {
-         meta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_DYE, ItemFlag.HIDE_POTION_EFFECTS});
+         meta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_DYE, ItemFlag.HIDE_ADDITIONAL_TOOLTIP});
          this.meta(meta);
          return this;
       }
@@ -139,7 +139,7 @@ public class ItemBuilder {
    public ItemBuilder glow(boolean isGlow) {
       ItemMeta meta = this.meta();
       if (meta != null && isGlow) {
-         meta.addEnchant(Enchantment.DURABILITY, 1, true);
+         meta.addEnchant(Enchantment.UNBREAKING, 1, true);
          meta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
          this.meta(meta);
          return this;

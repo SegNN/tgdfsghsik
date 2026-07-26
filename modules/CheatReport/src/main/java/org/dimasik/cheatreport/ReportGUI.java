@@ -200,7 +200,7 @@ public class ReportGUI implements Listener {
       backMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&x&f&f&7&3&0&0[⟲] Вернуться.."));
       PotionMeta potionMeta = (PotionMeta)backMeta;
       potionMeta.setColor(Color.ORANGE);
-      backMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_POTION_EFFECTS});
+      backMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ADDITIONAL_TOOLTIP});
       backButton.setItemMeta(backMeta);
       inventory.setItem(49, backButton);
       player.openInventory(inventory);
@@ -789,7 +789,7 @@ public class ReportGUI implements Listener {
       );
       if (onlyOnline) {
          meta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-         meta.addEnchant(Enchantment.LUCK, 1, true);
+         meta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, true);
       }
 
       enderPearl.setItemMeta(meta);

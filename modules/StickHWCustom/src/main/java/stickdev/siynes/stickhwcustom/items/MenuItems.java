@@ -127,7 +127,7 @@ public class MenuItems {
             double playerVolume = Double.parseDouble(pitchValue);
             if (Math.abs(playerVolume - volume) < 1.0E-4) {
                itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-               itemMeta.addEnchant(Enchantment.LUCK, 1, true);
+               itemMeta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, true);
             }
          } catch (NumberFormatException var10) {
          }
@@ -176,7 +176,7 @@ public class MenuItems {
          }
 
          meta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-         meta.addEnchant(Enchantment.LUCK, 1, true);
+         meta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, true);
       } else {
          for (String line : configManager.getStringList("items.sound.lore2")) {
             translatedLore.add(HexUtil.translate(line));
@@ -405,7 +405,7 @@ public class MenuItems {
       itemMeta.getPersistentDataContainer().set(new NamespacedKey(StickHWCustom.getInstance(), "premium"), PersistentDataType.STRING, premium.toString());
       if (StickHWCustom.playerData.get(player).getOrDefault("trap_skin", "none").equalsIgnoreCase(tag)) {
          itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-         itemMeta.addEnchant(Enchantment.LUCK, 1, false);
+         itemMeta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, false);
       }
 
       dye.setItemMeta(itemMeta);
@@ -427,7 +427,7 @@ public class MenuItems {
       itemMeta.getPersistentDataContainer().set(new NamespacedKey(StickHWCustom.getInstance(), "premium"), PersistentDataType.STRING, premium.toString());
       if (StickHWCustom.playerData.get(player).getOrDefault("stan_skin", "none").equalsIgnoreCase(tag)) {
          itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-         itemMeta.addEnchant(Enchantment.LUCK, 1, false);
+         itemMeta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, false);
       }
 
       dye.setItemMeta(itemMeta);

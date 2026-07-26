@@ -79,7 +79,7 @@ public class Items implements Listener {
       );
       lore.add(ChatColor.translateAlternateColorCodes('&', "&5&o"));
       meta.setLore(lore);
-      meta.addEnchant(Enchantment.LUCK, 1, true);
+      meta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, true);
       meta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       meta.getPersistentDataContainer().set(compassKey, PersistentDataType.STRING, "1");
       item.setItemMeta(meta);
@@ -89,7 +89,7 @@ public class Items implements Listener {
    public void giveUnick(Player player) {
       ItemStack item = new ItemStack(Material.TRIPWIRE_HOOK);
       ItemMeta meta = item.getItemMeta();
-      meta.addEnchant(Enchantment.LUCK, 1, true);
+      meta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, true);
       meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&6Универсальный ключ"));
       List<String> lore = new ArrayList<>();
       lore.add(ChatColor.translateAlternateColorCodes('&', "&5&o&f"));

@@ -534,7 +534,7 @@ public class TnTListener implements Listener {
             BlockFace face = directional.getFacing();
             Location spawnLocation = location.clone().add(0.5, 0.0, 0.5).add(face.getDirection());
             block.getLocation().getWorld().playSound(block.getLocation(), Sound.ENTITY_TNT_PRIMED, 1.0F, 1.0F);
-            TNTPrimed primedTnt = (TNTPrimed)location.getWorld().spawnEntity(spawnLocation, EntityType.PRIMED_TNT);
+            TNTPrimed primedTnt = (TNTPrimed)location.getWorld().spawnEntity(spawnLocation, EntityType.TNT);
             primedTnt.setFuseTicks(100);
             if (item.getItemMeta() != null) {
                PersistentDataContainer pdc = item.getItemMeta().getPersistentDataContainer();
@@ -633,7 +633,7 @@ public class TnTListener implements Listener {
       (new BukkitRunnable() {
          public void run() {
             for (Entity entity : event.getBlock().getWorld().getEntities()) {
-               if (entity.getType() == EntityType.DROPPED_ITEM) {
+               if (entity.getType() == EntityType.ITEM) {
                   double distance = entity.getLocation().toVector().distance(event.getBlock().getLocation().clone().add(0.5, 0.5, 0.5).toVector());
                   if (distance <= 0.1) {
                      Item item = (Item)entity;
@@ -668,7 +668,7 @@ public class TnTListener implements Listener {
 
    @EventHandler
    public void onDamage(EntityDamageEvent event) {
-      if (event.getEntity().getType() == EntityType.DROPPED_ITEM
+      if (event.getEntity().getType() == EntityType.ITEM
          && (event.getCause() == DamageCause.ENTITY_EXPLOSION || event.getCause() == DamageCause.BLOCK_EXPLOSION)) {
          event.setCancelled(true);
       }
@@ -880,7 +880,7 @@ public class TnTListener implements Listener {
    }
 
    private void spawnParticleSquare(World world, double x, double y, double z, Color color) {
-      world.spawnParticle(Particle.REDSTONE, new Location(world, x, y, z), 1, 0.0, 0.0, 0.0, 0.0, new DustOptions(color, 1.0F), true);
+      world.spawnParticle(Particle.DUST, new Location(world, x, y, z), 1, 0.0, 0.0, 0.0, 0.0, new DustOptions(color, 1.0F), true);
    }
 
    private void createExplosion(Entity entity, Location location, TnTType tntType, UUID ownerUUID) {
@@ -958,7 +958,7 @@ public class TnTListener implements Listener {
       }
 
       location.getWorld().playSound(location, Sound.ENTITY_GENERIC_EXPLODE, 1.0F, 0.7F);
-      location.getWorld().spawnParticle(Particle.EXPLOSION_HUGE, location, 1, 0.0, 0.0, 0.0, 0.0);
+      location.getWorld().spawnParticle(Particle.EXPLOSION_EMITTER, location, 1, 0.0, 0.0, 0.0, 0.0);
    }
 
    private boolean canB2BreakInRegion(Location blockLoc, UUID ownerUUID) {
@@ -1131,7 +1131,7 @@ public class TnTListener implements Listener {
          state.setType(Material.AIR);
          state.update(true, true);
          block.getWorld().playSound(block.getLocation(), Sound.BLOCK_STONE_BREAK, 1.0F, 1.0F);
-         block.getWorld().spawnParticle(Particle.BLOCK_CRACK, block.getLocation().add(0.5, 0.5, 0.5), 20, 0.5, 0.5, 0.5, 0.05, block.getBlockData());
+         block.getWorld().spawnParticle(Particle.BLOCK, block.getLocation().add(0.5, 0.5, 0.5), 20, 0.5, 0.5, 0.5, 0.05, block.getBlockData());
       }
    }
 
@@ -1185,7 +1185,7 @@ public class TnTListener implements Listener {
    }
 
    public TNTPrimed createCustomTnt(Location location, TnTType tntType) {
-      TNTPrimed primedTnt = (TNTPrimed)location.getWorld().spawnEntity(location.add(0.5, 0.0, 0.5), EntityType.PRIMED_TNT);
+      TNTPrimed primedTnt = (TNTPrimed)location.getWorld().spawnEntity(location.add(0.5, 0.0, 0.5), EntityType.TNT);
       primedTnt.setFuseTicks(100);
       String displayName = this.plugin.getHandler().getTnt(1, tntType).getItemMeta().getDisplayName();
       primedTnt.setCustomName(ChatColor.translateAlternateColorCodes('&', displayName));
@@ -1238,7 +1238,7 @@ public class TnTListener implements Listener {
                      tnt = this.createCustomTnt(spawnLocation, TnTType.valueOf(tntType.toUpperCase()));
                      this.ignitedTntMap.put(tnt, TnTType.valueOf(tntType.toUpperCase()));
                   } else {
-                     tnt = (TNTPrimed)block.getWorld().spawnEntity(spawnLocation, EntityType.PRIMED_TNT);
+                     tnt = (TNTPrimed)block.getWorld().spawnEntity(spawnLocation, EntityType.TNT);
                      tnt.setCustomName(ChatColor.translateAlternateColorCodes('&', "&7Динамит"));
                      tnt.setCustomNameVisible(true);
                   }

@@ -148,7 +148,7 @@ public class Main extends AbstractMenu {
 
          itemMetax.setLore(lorex);
          if (ConfigManager.getBoolean("design/menus/bids/main.yml", "sorting.glow", false)) {
-            itemMetax.addEnchant(Enchantment.DURABILITY, 1, true);
+            itemMetax.addEnchant(Enchantment.UNBREAKING, 1, true);
             itemMetax.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
          }
 
@@ -182,7 +182,7 @@ public class Main extends AbstractMenu {
 
          itemMetax.setLore(lorex);
          if (ConfigManager.getBoolean("design/menus/bids/main.yml", "category.glow", false)) {
-            itemMetax.addEnchant(Enchantment.DURABILITY, 1, true);
+            itemMetax.addEnchant(Enchantment.UNBREAKING, 1, true);
             itemMetax.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
          }
 

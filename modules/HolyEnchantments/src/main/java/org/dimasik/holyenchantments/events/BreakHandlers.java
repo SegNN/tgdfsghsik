@@ -362,7 +362,7 @@ public class BreakHandlers implements Listener {
 
    private void applyToolDamage(ItemStack tool, int brokenBlocks, PersistentDataContainer data) {
       if (!tool.getItemMeta().isUnbreakable()) {
-         int unbreakingLevel = tool.getEnchantmentLevel(Enchantment.DURABILITY);
+         int unbreakingLevel = tool.getEnchantmentLevel(Enchantment.UNBREAKING);
          int durabilityLoss = this.calculateDurabilityLoss(unbreakingLevel, brokenBlocks);
          tool.setDurability((short)(tool.getDurability() + durabilityLoss));
          if (tool.getDurability() >= tool.getType().getMaxDurability() && data.has(this.enchantsMap.boor.getNamespacedKey(), PersistentDataType.INTEGER)) {

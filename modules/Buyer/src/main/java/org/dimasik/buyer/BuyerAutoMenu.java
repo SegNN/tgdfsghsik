@@ -54,7 +54,7 @@ public class BuyerAutoMenu implements Listener {
                lore.add("");
                lore.add(this.colorize("&x&F&F&7&0&0&0▶ &fКатегория выбрана"));
                itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-               itemMeta.addEnchant(Enchantment.DURABILITY, 1, true);
+               itemMeta.addEnchant(Enchantment.UNBREAKING, 1, true);
             } else {
                itemMeta.setDisplayName(this.colorize("&x&0&0&D&8&F&F❏ &fКатегория: &x&0&0&D&8&F&FРесурсы из шахты &x&0&0&D&8&F&F❏"));
                lore.add("");
@@ -68,7 +68,7 @@ public class BuyerAutoMenu implements Listener {
                lore.add("");
                lore.add(this.colorize("&x&F&F&7&0&0&0▶ &fКатегория выбрана"));
                itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-               itemMeta.addEnchant(Enchantment.DURABILITY, 1, true);
+               itemMeta.addEnchant(Enchantment.UNBREAKING, 1, true);
             } else {
                itemMeta.setDisplayName(this.colorize("&x&0&0&D&8&F&F❏ &fКатегория: &x&0&0&D&8&F&FРесурсы с мобов &x&0&0&D&8&F&F❏"));
                lore.add("");
@@ -82,7 +82,7 @@ public class BuyerAutoMenu implements Listener {
                lore.add("");
                lore.add(this.colorize("&x&F&F&7&0&0&0▶ &fКатегория выбрана"));
                itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-               itemMeta.addEnchant(Enchantment.DURABILITY, 1, true);
+               itemMeta.addEnchant(Enchantment.UNBREAKING, 1, true);
             } else {
                itemMeta.setDisplayName(this.colorize("&x&0&0&D&8&F&F❏ &fКатегория: &x&0&0&D&8&F&FДревесина &x&0&0&D&8&F&F❏"));
                lore.add("");
@@ -96,7 +96,7 @@ public class BuyerAutoMenu implements Listener {
                lore.add("");
                lore.add(this.colorize("&x&F&F&7&0&0&0▶ &fКатегория выбрана"));
                itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-               itemMeta.addEnchant(Enchantment.DURABILITY, 1, true);
+               itemMeta.addEnchant(Enchantment.UNBREAKING, 1, true);
             } else {
                itemMeta.setDisplayName(this.colorize("&x&0&0&D&8&F&F❏ &fКатегория: &x&0&0&D&8&F&FКультуры &x&0&0&D&8&F&F❏"));
                lore.add("");
@@ -212,7 +212,7 @@ public class BuyerAutoMenu implements Listener {
                itemLore.add(this.colorize("&x&F&F&7&0&0&0 ▍&f Статус: &x&F&F&C&9&0&0Сдаётся автоматически"));
                itemMeta.getPersistentDataContainer().set(new NamespacedKey(this.plugin, "enabled"), PersistentDataType.STRING, "true");
                itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-               itemMeta.addEnchant(Enchantment.DURABILITY, 1, true);
+               itemMeta.addEnchant(Enchantment.UNBREAKING, 1, true);
             } else {
                itemLore.add(this.colorize("&x&F&F&7&0&0&0 ▍&f Статус: &x&F&F&C&9&0&0Не сдаётся автоматически"));
                itemMeta.getPersistentDataContainer().set(new NamespacedKey(this.plugin, "enabled"), PersistentDataType.STRING, "false");

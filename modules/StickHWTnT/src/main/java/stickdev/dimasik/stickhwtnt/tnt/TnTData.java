@@ -9,6 +9,7 @@ import java.util.Map;
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.yaml.snakeyaml.DumperOptions;
+import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.DumperOptions.FlowStyle;
 import org.yaml.snakeyaml.constructor.Constructor;
@@ -28,9 +29,10 @@ public class TnTData {
 
       DumperOptions options = new DumperOptions();
       options.setDefaultFlowStyle(FlowStyle.BLOCK);
-      Representer representer = new Representer();
+      // snakeyaml 2.x (bundled with Paper 1.21.4) dropped the no-arg Representer/Constructor
+      Representer representer = new Representer(options);
       representer.getPropertyUtils().setSkipMissingProperties(true);
-      this.yaml = new Yaml(new Constructor(), representer, options);
+      this.yaml = new Yaml(new Constructor(new LoaderOptions()), representer, options);
    }
 
    public void addData(Location location, TnTType type) throws IOException {

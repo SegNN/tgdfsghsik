@@ -407,7 +407,7 @@ public class EventVote implements Listener, CommandExecutor {
             ItemMeta meta = item.getItemMeta();
             if (event.glow) {
                meta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-               meta.addEnchant(Enchantment.LUCK, 1, false);
+               meta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, false);
             }
 
             meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', event.getDisplayName()));

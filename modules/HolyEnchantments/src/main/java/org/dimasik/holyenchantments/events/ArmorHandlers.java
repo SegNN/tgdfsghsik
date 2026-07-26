@@ -77,7 +77,7 @@ public class ArmorHandlers implements Listener {
             if (itemStack == null) {
                return;
             }
-            byte var9 = switch (itemStack.getEnchantmentLevel(Enchantment.DURABILITY)) {
+            byte var9 = switch (itemStack.getEnchantmentLevel(Enchantment.UNBREAKING)) {
                case 0 -> 0;
                case 1 -> 25;
                case 2 -> 36;

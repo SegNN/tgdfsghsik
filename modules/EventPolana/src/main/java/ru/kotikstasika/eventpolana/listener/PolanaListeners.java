@@ -136,7 +136,7 @@ public class PolanaListeners implements Listener {
                               this.cfg.getParticleFlowerBreakOffsetZ()
                            );
                      } catch (IllegalArgumentException var9) {
-                        blockLoc.getWorld().spawnParticle(Particle.VILLAGER_HAPPY, blockLoc.clone().add(0.5, 0.5, 0.5), 10, 0.3, 0.3, 0.3);
+                        blockLoc.getWorld().spawnParticle(Particle.HAPPY_VILLAGER, blockLoc.clone().add(0.5, 0.5, 0.5), 10, 0.3, 0.3, 0.3);
                      }
 
                      try {

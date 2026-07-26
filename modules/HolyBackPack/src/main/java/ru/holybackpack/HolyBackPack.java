@@ -514,7 +514,7 @@ public final class HolyBackPack extends JavaPlugin implements Listener {
       itemMeta.setLore(lore);
       itemMeta.getPersistentDataContainer().set(this.backpackLevelKey, PersistentDataType.INTEGER, level);
       itemMeta.getPersistentDataContainer().set(this.backpackUuidKey, PersistentDataType.STRING, UUID.randomUUID().toString());
-      itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_POTION_EFFECTS});
+      itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ADDITIONAL_TOOLTIP});
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ATTRIBUTES});
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_DESTROYS});
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_PLACED_ON});

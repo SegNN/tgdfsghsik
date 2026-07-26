@@ -599,7 +599,7 @@ public class HolyCustomEgg extends JavaPlugin implements Listener, TabCompleter 
          case MAGMA_CUBE_SPAWN_EGG:
             return EntityType.MAGMA_CUBE;
          case MOOSHROOM_SPAWN_EGG:
-            return EntityType.MUSHROOM_COW;
+            return EntityType.MOOSHROOM;
          case MULE_SPAWN_EGG:
             return EntityType.MULE;
          case OCELOT_SPAWN_EGG:

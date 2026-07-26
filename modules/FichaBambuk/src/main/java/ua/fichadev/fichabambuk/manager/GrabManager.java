@@ -253,7 +253,7 @@ public final class GrabManager {
       if (world != null) {
          Location c = loc.clone().add(0.0, 0.2, 0.0);
          world.playSound(c, Sound.ENTITY_GENERIC_EXPLODE, 0.6F, 1.2F);
-         world.spawnParticle(Particle.EXPLOSION_NORMAL, c, 8, 0.4, 0.1, 0.4, 0.05);
+         world.spawnParticle(Particle.POOF, c, 8, 0.4, 0.1, 0.4, 0.05);
       }
    }
 

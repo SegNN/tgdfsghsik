@@ -25,7 +25,7 @@ public class KeyItem {
       String nbtTag = plugin.getConfig().getString("keys." + configKey + ".nbtTag");
       meta.setDisplayName(displayName.replace("&", "§"));
       meta.setLore(lore.stream().map(line -> line.replace("&", "§")).collect(Collectors.toList()));
-      meta.addEnchant(Enchantment.DURABILITY, 1, true);
+      meta.addEnchant(Enchantment.UNBREAKING, 1, true);
       meta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_PLACED_ON});
       NamespacedKey key = new NamespacedKey(plugin, "key_type");
       meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, nbtTag);

@@ -300,7 +300,7 @@ public class GrindstoneMenu implements InventoryHolder {
       ItemStack itemStack = new ItemStack(material, cnt);
       ItemMeta itemMeta = itemStack.getItemMeta();
       if (glow) {
-         itemMeta.addEnchant(Enchantment.DURABILITY, 1, true);
+         itemMeta.addEnchant(Enchantment.UNBREAKING, 1, true);
          itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       }
 

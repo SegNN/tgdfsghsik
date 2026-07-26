@@ -27,7 +27,7 @@ public class BreakListener implements Listener {
       if (itemStack.getType() != Material.AIR && !event.isCancelled() && event.getBlock().getWorld().getName().equalsIgnoreCase("spawn")) {
          int cnt = 1;
          if (itemStack.hasItemMeta()) {
-            int luck = itemStack.getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS);
+            int luck = itemStack.getEnchantmentLevel(Enchantment.FORTUNE);
             if (luck > 0) {
                cnt = new Random().nextInt(luck) + 2;
             }

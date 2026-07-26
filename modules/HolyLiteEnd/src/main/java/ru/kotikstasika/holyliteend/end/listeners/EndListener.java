@@ -271,7 +271,7 @@ public class EndListener implements Listener {
 
    @EventHandler
    public void onEntitySpawn(EntitySpawnEvent event) {
-      if (event.getEntity().getWorld().getName().equals("world_the_end") && event.getEntity().getType() == EntityType.ENDER_CRYSTAL) {
+      if (event.getEntity().getWorld().getName().equals("world_the_end") && event.getEntity().getType() == EntityType.END_CRYSTAL) {
          event.setCancelled(true);
       }
    }

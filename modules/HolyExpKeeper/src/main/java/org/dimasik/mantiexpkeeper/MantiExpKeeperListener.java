@@ -289,14 +289,14 @@ public class MantiExpKeeperListener implements Listener {
 
    public void checkEffects(Player player) {
       Bukkit.getScheduler().runTaskLater(this.plugin, () -> {
-         this.checkAndApplyEffect(player, "haste", PotionEffectType.FAST_DIGGING, 0, true);
+         this.checkAndApplyEffect(player, "haste", PotionEffectType.HASTE, 0, true);
          this.checkAndApplyEffect(player, "fire_resistance", PotionEffectType.FIRE_RESISTANCE, 0, false);
          this.checkAndApplyEffect(player, "water_breath", PotionEffectType.WATER_BREATHING, 0, false);
          this.checkAndApplyEffect(player, "night_vision", PotionEffectType.NIGHT_VISION, 0, false);
          this.checkAndApplyEffect(player, "saturation", PotionEffectType.SATURATION, 0, true);
          this.checkAndApplyEffect(player, "speed3", PotionEffectType.SPEED, 2, false);
          this.checkAndApplyEffect(player, "regeneration", PotionEffectType.REGENERATION, 0, false);
-         this.checkAndApplyEffect(player, "resistance", PotionEffectType.DAMAGE_RESISTANCE, 0, false);
+         this.checkAndApplyEffect(player, "resistance", PotionEffectType.RESISTANCE, 0, false);
          this.checkHealthBoostEffect(player);
       }, 1L);
    }

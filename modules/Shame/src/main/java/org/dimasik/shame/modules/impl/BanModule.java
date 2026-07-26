@@ -105,10 +105,10 @@ public class BanModule extends Module {
                         double offsetZ = (random.nextDouble() - 0.5) * 0.5;
                         Location spawnLoc = particleLoc.clone().add(offsetX, 0.0, offsetZ);
                         spawnLoc.setY(spawnLoc.getY() + 0.6);
-                        this.world.spawnParticle(Particle.SPELL_WITCH, spawnLoc, 1, 0.0, 0.0, 0.0, 0.0, null, true);
-                        this.world.spawnParticle(Particle.SPELL_WITCH, spawnLoc, 1, 0.0, 0.0, 0.0, 0.0, null, true);
-                        this.world.spawnParticle(Particle.SPELL_WITCH, spawnLoc, 1, 0.0, 0.0, 0.0, 0.0, null, true);
-                        this.world.spawnParticle(Particle.SPELL_WITCH, spawnLoc, 1, 0.0, 0.0, 0.0, 0.0, null, true);
+                        this.world.spawnParticle(Particle.WITCH, spawnLoc, 1, 0.0, 0.0, 0.0, 0.0, null, true);
+                        this.world.spawnParticle(Particle.WITCH, spawnLoc, 1, 0.0, 0.0, 0.0, 0.0, null, true);
+                        this.world.spawnParticle(Particle.WITCH, spawnLoc, 1, 0.0, 0.0, 0.0, 0.0, null, true);
+                        this.world.spawnParticle(Particle.WITCH, spawnLoc, 1, 0.0, 0.0, 0.0, 0.0, null, true);
                      }
 
                      this.ticks++;
@@ -144,10 +144,10 @@ public class BanModule extends Module {
                               for (ParticleDataStorage.P p : frame.particles) {
                                  Location spawnLoc = this.origin.clone().add(p.x, p.y, p.z);
                                  if (p.color == -1) {
-                                    player.getWorld().spawnParticle(Particle.FIREWORKS_SPARK, spawnLoc, 1, 0.0, 0.0, 0.0, 0.0, null, true);
+                                    player.getWorld().spawnParticle(Particle.FIREWORK, spawnLoc, 1, 0.0, 0.0, 0.0, 0.0, null, true);
                                  } else {
                                     player.getWorld()
-                                       .spawnParticle(Particle.REDSTONE, spawnLoc, 1, 0.0, 0.0, 0.0, 0.0, new DustOptions(Color.fromRGB(p.color), 1.0F), true);
+                                       .spawnParticle(Particle.DUST, spawnLoc, 1, 0.0, 0.0, 0.0, 0.0, new DustOptions(Color.fromRGB(p.color), 1.0F), true);
                                  }
                               }
 

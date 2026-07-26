@@ -115,7 +115,7 @@ public class EntityExtension implements Listener {
    @EventHandler
    public void onExplode(EntityExplodeEvent event) {
       switch (event.getEntityType()) {
-         case ENDER_CRYSTAL:
+         case END_CRYSTAL:
          case CREEPER:
             event.blockList().clear();
       }

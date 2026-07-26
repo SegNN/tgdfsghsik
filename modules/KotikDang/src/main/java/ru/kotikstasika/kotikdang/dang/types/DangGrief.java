@@ -460,7 +460,7 @@ public class DangGrief implements Listener {
    }
 
    private void spawnFirework(Location loc) {
-      Firework firework = (Firework)loc.getWorld().spawnEntity(loc, EntityType.FIREWORK);
+      Firework firework = (Firework)loc.getWorld().spawnEntity(loc, EntityType.FIREWORK_ROCKET);
       firework.setSilent(true);
       FireworkMeta meta = firework.getFireworkMeta();
       List<Color> rainbowColors = Arrays.asList(

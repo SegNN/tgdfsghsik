@@ -121,7 +121,7 @@ public class MantiExpEffects {
       ItemMeta potionsMeta = potionsItem.getItemMeta();
       PotionMeta potionMeta = (PotionMeta)potionsMeta;
       potionMeta.setBasePotionData(new PotionData(PotionType.FIRE_RESISTANCE, false, false));
-      potionsMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_POTION_EFFECTS});
+      potionsMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ADDITIONAL_TOOLTIP});
       potionsMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&d▶ Зелья хранителя"));
       potionsMeta.getPersistentDataContainer().set(new NamespacedKey(this.plugin, "update"), PersistentDataType.STRING, "cathegory_effects");
       List<String> potionsLore = new ArrayList<>();
@@ -130,7 +130,7 @@ public class MantiExpEffects {
       potionsLore.add(ChatColor.translateAlternateColorCodes('&', "&d ▪&f возможно получить у Хранителя Опыта."));
       potionsMeta.setLore(potionsLore);
       potionsMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-      potionsMeta.addEnchant(Enchantment.LUCK, 1, false);
+      potionsMeta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, false);
       potionsItem.setItemMeta(potionsMeta);
       this.inventory.setItem(5, potionsItem);
    }
@@ -141,10 +141,10 @@ public class MantiExpEffects {
       this.addEffect("water_breath", "Водное дыхание", 100, 100, PotionType.WATER_BREATHING, 20, false);
       this.addEffect("night_vision", "Ночное зрение", 100, 100, PotionType.WATER_BREATHING, 21, false);
       this.addEffect("saturation", "Сытость", 100, 100, PotionType.FIRE_RESISTANCE, 22, true);
-      this.addEffect("speed3", "Скорость III", 225, 150, PotionType.SPEED, 23, false);
-      this.addEffect("regeneration", "Регенерация I", 300, 175, PotionType.REGEN, 24, false);
+      this.addEffect("speed3", "Скорость III", 225, 150, PotionType.SWIFTNESS, 23, false);
+      this.addEffect("regeneration", "Регенерация I", 300, 175, PotionType.REGENERATION, 24, false);
       this.addEffect("resistance", "Сопротивление I", 300, 175, PotionType.TURTLE_MASTER, 25, false);
-      this.addEffect("health_boost", "Прилив здоровья I", 400, 200, PotionType.INSTANT_HEAL, 26, false);
+      this.addEffect("health_boost", "Прилив здоровья I", 400, 200, PotionType.HEALING, 26, false);
    }
 
    private void addEffect(String type, String name, int pricet, int pricee, PotionType potion, int slot, boolean noPvp) {
@@ -152,7 +152,7 @@ public class MantiExpEffects {
       ItemMeta itemMeta = itemStack.getItemMeta();
       PotionMeta potionMeta = (PotionMeta)itemMeta;
       potionMeta.setBasePotionData(new PotionData(potion, false, false));
-      itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_POTION_EFFECTS});
+      itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ADDITIONAL_TOOLTIP});
       itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&x&F&0&0&0&F&F " + name));
       itemMeta.getPersistentDataContainer().set(new NamespacedKey(this.plugin, "update"), PersistentDataType.STRING, type);
       ArrayList<String> lore = new ArrayList<>();

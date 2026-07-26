@@ -385,29 +385,29 @@ public class GruzManager implements Listener {
                         && location.getY() <= maxY
                         && location.getZ() >= minZ
                         && location.getZ() <= maxZ) {
-                        player1.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 30, 0, false, false, true));
+                        player1.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 30, 0, false, false, true));
                      }
                   }
 
                   for (double x = minX; x <= maxX; x += step) {
-                     world.spawnParticle(Particle.REDSTONE, x, minY, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
-                     world.spawnParticle(Particle.REDSTONE, x, minY, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
-                     world.spawnParticle(Particle.REDSTONE, x, maxY, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
-                     world.spawnParticle(Particle.REDSTONE, x, maxY, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
+                     world.spawnParticle(Particle.DUST, x, minY, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
+                     world.spawnParticle(Particle.DUST, x, minY, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
+                     world.spawnParticle(Particle.DUST, x, maxY, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
+                     world.spawnParticle(Particle.DUST, x, maxY, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
                   }
 
                   for (double y = minY; y <= maxY; y += step) {
-                     world.spawnParticle(Particle.REDSTONE, minX, y, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
-                     world.spawnParticle(Particle.REDSTONE, minX, y, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
-                     world.spawnParticle(Particle.REDSTONE, maxX, y, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
-                     world.spawnParticle(Particle.REDSTONE, maxX, y, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
+                     world.spawnParticle(Particle.DUST, minX, y, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
+                     world.spawnParticle(Particle.DUST, minX, y, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
+                     world.spawnParticle(Particle.DUST, maxX, y, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
+                     world.spawnParticle(Particle.DUST, maxX, y, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
                   }
 
                   for (double z = minZ; z <= maxZ; z += step) {
-                     world.spawnParticle(Particle.REDSTONE, minX, minY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
-                     world.spawnParticle(Particle.REDSTONE, minX, maxY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
-                     world.spawnParticle(Particle.REDSTONE, maxX, minY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
-                     world.spawnParticle(Particle.REDSTONE, maxX, maxY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
+                     world.spawnParticle(Particle.DUST, minX, minY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
+                     world.spawnParticle(Particle.DUST, minX, maxY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
+                     world.spawnParticle(Particle.DUST, maxX, minY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
+                     world.spawnParticle(Particle.DUST, maxX, maxY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptions, true);
                   }
                }
             }
@@ -622,7 +622,7 @@ public class GruzManager implements Listener {
          double angle = (Math.PI * 2) * i / particleCountBottom;
          double x = location.getX() + radiusBottom * Math.cos(angle);
          double z = location.getZ() + radiusBottom * Math.sin(angle);
-         location.getWorld().spawnParticle(Particle.SMOKE_LARGE, x, location.getY(), z, 1, 0.0, 0.0, 0.0, 0.0);
+         location.getWorld().spawnParticle(Particle.LARGE_SMOKE, x, location.getY(), z, 1, 0.0, 0.0, 0.0, 0.0);
       }
 
       double radiusTop = 0.5;

@@ -85,9 +85,9 @@ public class Utils implements Listener {
                            .getPersistentDataContainer()
                            .has(new NamespacedKey(Utils.this.plugin, "HASTE"), PersistentDataType.INTEGER)) {
                            if (PlaceholderAPI.setPlaceholders(player, "%antirelog_isinpvp%").equalsIgnoreCase("yes")) {
-                              if (player.hasPotionEffect(PotionEffectType.FAST_DIGGING)
-                                 && !player.getPotionEffect(PotionEffectType.FAST_DIGGING).hasParticles()) {
-                                 player.removePotionEffect(PotionEffectType.FAST_DIGGING);
+                              if (player.hasPotionEffect(PotionEffectType.HASTE)
+                                 && !player.getPotionEffect(PotionEffectType.HASTE).hasParticles()) {
+                                 player.removePotionEffect(PotionEffectType.HASTE);
                               }
 
                               return;
@@ -95,7 +95,7 @@ public class Utils implements Listener {
 
                            player.addPotionEffect(
                               new PotionEffect(
-                                 PotionEffectType.FAST_DIGGING,
+                                 PotionEffectType.HASTE,
                                  100,
                                  (Integer)player.getInventory()
                                        .getItemInOffHand()
@@ -108,18 +108,18 @@ public class Utils implements Listener {
                                  true
                               )
                            );
-                        } else if (player.hasPotionEffect(PotionEffectType.FAST_DIGGING)
-                           && !player.getPotionEffect(PotionEffectType.FAST_DIGGING).hasParticles()) {
-                           player.removePotionEffect(PotionEffectType.FAST_DIGGING);
+                        } else if (player.hasPotionEffect(PotionEffectType.HASTE)
+                           && !player.getPotionEffect(PotionEffectType.HASTE).hasParticles()) {
+                           player.removePotionEffect(PotionEffectType.HASTE);
                         }
-                     } else if (player.hasPotionEffect(PotionEffectType.FAST_DIGGING) && !player.getPotionEffect(PotionEffectType.FAST_DIGGING).hasParticles()) {
-                        player.removePotionEffect(PotionEffectType.FAST_DIGGING);
+                     } else if (player.hasPotionEffect(PotionEffectType.HASTE) && !player.getPotionEffect(PotionEffectType.HASTE).hasParticles()) {
+                        player.removePotionEffect(PotionEffectType.HASTE);
                      }
-                  } else if (player.hasPotionEffect(PotionEffectType.FAST_DIGGING) && !player.getPotionEffect(PotionEffectType.FAST_DIGGING).hasParticles()) {
-                     player.removePotionEffect(PotionEffectType.FAST_DIGGING);
+                  } else if (player.hasPotionEffect(PotionEffectType.HASTE) && !player.getPotionEffect(PotionEffectType.HASTE).hasParticles()) {
+                     player.removePotionEffect(PotionEffectType.HASTE);
                   }
-               } else if (player.hasPotionEffect(PotionEffectType.FAST_DIGGING) && !player.getPotionEffect(PotionEffectType.FAST_DIGGING).hasParticles()) {
-                  player.removePotionEffect(PotionEffectType.FAST_DIGGING);
+               } else if (player.hasPotionEffect(PotionEffectType.HASTE) && !player.getPotionEffect(PotionEffectType.HASTE).hasParticles()) {
+                  player.removePotionEffect(PotionEffectType.HASTE);
                }
             }
          })
@@ -250,7 +250,7 @@ public class Utils implements Listener {
                   }
                }
 
-               resultMeta.addEnchant(Enchantment.DURABILITY, 1, true);
+               resultMeta.addEnchant(Enchantment.UNBREAKING, 1, true);
                resultMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
                result.setItemMeta(resultMeta);
                inventory.setRepairCost(60);
@@ -271,12 +271,12 @@ public class Utils implements Listener {
          int sourceLevel = (Integer)source.getItemMeta().getPersistentDataContainer().get(damageKey, PersistentDataType.INTEGER);
          int targetLevel = (Integer)targetMeta.getPersistentDataContainer().getOrDefault(damageKey, PersistentDataType.INTEGER, 0);
          int newLevel = sourceLevel == targetLevel ? sourceLevel + 1 : Math.max(sourceLevel, targetLevel);
-         targetMeta.removeAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE);
+         targetMeta.removeAttributeModifier(Attribute.ATTACK_DAMAGE);
          targetMeta.getPersistentDataContainer().remove(damageKey);
          String damageLore = ChatColor.translateAlternateColorCodes('&', "&7• &x&e&7&e&7&e&7Урон " + convertInt(newLevel));
          this.updateLore(lore, "&7• &x&e&7&e&7&e&7Урон", damageLore);
          targetMeta.addAttributeModifier(
-            Attribute.GENERIC_ATTACK_DAMAGE,
+            Attribute.ATTACK_DAMAGE,
             new AttributeModifier(UUID.randomUUID(), "GENERIC_ATTACK_DAMAGE", newLevel, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
          );
          targetMeta.getPersistentDataContainer().set(damageKey, PersistentDataType.INTEGER, newLevel);
@@ -286,16 +286,16 @@ public class Utils implements Listener {
          int sourceLevel = (Integer)source.getItemMeta().getPersistentDataContainer().get(armorKey, PersistentDataType.INTEGER);
          int targetLevel = (Integer)targetMeta.getPersistentDataContainer().getOrDefault(armorKey, PersistentDataType.INTEGER, 0);
          int newLevel = sourceLevel == targetLevel ? sourceLevel + 1 : Math.max(sourceLevel, targetLevel);
-         targetMeta.removeAttributeModifier(Attribute.GENERIC_ARMOR);
-         targetMeta.removeAttributeModifier(Attribute.GENERIC_ARMOR_TOUGHNESS);
+         targetMeta.removeAttributeModifier(Attribute.ARMOR);
+         targetMeta.removeAttributeModifier(Attribute.ARMOR_TOUGHNESS);
          targetMeta.getPersistentDataContainer().remove(armorKey);
          String armorLore = ChatColor.translateAlternateColorCodes('&', "&7• &x&e&7&e&7&e&7Броня " + convertInt(newLevel));
          this.updateLore(lore, "&7• &x&e&7&e&7&e&7Броня", armorLore);
          targetMeta.addAttributeModifier(
-            Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "GENERIC_ARMOR", newLevel, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
+            Attribute.ARMOR, new AttributeModifier(UUID.randomUUID(), "GENERIC_ARMOR", newLevel, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
          );
          targetMeta.addAttributeModifier(
-            Attribute.GENERIC_ARMOR_TOUGHNESS,
+            Attribute.ARMOR_TOUGHNESS,
             new AttributeModifier(UUID.randomUUID(), "GENERIC_ARMOR_TOUGHNESS", newLevel, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
          );
          targetMeta.getPersistentDataContainer().set(armorKey, PersistentDataType.INTEGER, newLevel);
@@ -305,12 +305,12 @@ public class Utils implements Listener {
          int sourceLevel = (Integer)source.getItemMeta().getPersistentDataContainer().get(speedKey, PersistentDataType.INTEGER);
          int targetLevel = (Integer)targetMeta.getPersistentDataContainer().getOrDefault(speedKey, PersistentDataType.INTEGER, 0);
          int newLevel = sourceLevel == targetLevel ? sourceLevel + 1 : Math.max(sourceLevel, targetLevel);
-         targetMeta.removeAttributeModifier(Attribute.GENERIC_MOVEMENT_SPEED);
+         targetMeta.removeAttributeModifier(Attribute.MOVEMENT_SPEED);
          targetMeta.getPersistentDataContainer().remove(speedKey);
          String speedLore = ChatColor.translateAlternateColorCodes('&', "&7• &x&e&7&e&7&e&7Скорость " + convertInt(newLevel));
          this.updateLore(lore, "&7• &x&e&7&e&7&e&7Скорость", speedLore);
          targetMeta.addAttributeModifier(
-            Attribute.GENERIC_MOVEMENT_SPEED,
+            Attribute.MOVEMENT_SPEED,
             new AttributeModifier(UUID.randomUUID(), "GENERIC_MOVEMENT_SPEED", newLevel / 100.0F, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
          );
          targetMeta.getPersistentDataContainer().set(speedKey, PersistentDataType.INTEGER, newLevel);
@@ -320,12 +320,12 @@ public class Utils implements Listener {
          int sourceLevel = (Integer)source.getItemMeta().getPersistentDataContainer().get(attackSpeedKey, PersistentDataType.INTEGER);
          int targetLevel = (Integer)targetMeta.getPersistentDataContainer().getOrDefault(attackSpeedKey, PersistentDataType.INTEGER, 0);
          int newLevel = sourceLevel == targetLevel ? sourceLevel + 1 : Math.max(sourceLevel, targetLevel);
-         targetMeta.removeAttributeModifier(Attribute.GENERIC_ATTACK_SPEED);
+         targetMeta.removeAttributeModifier(Attribute.ATTACK_SPEED);
          targetMeta.getPersistentDataContainer().remove(attackSpeedKey);
          String speedLore = ChatColor.translateAlternateColorCodes('&', "&7• &x&e&7&e&7&e&7Скорость атаки " + convertInt(newLevel));
          this.updateLore(lore, "&7• &x&e&7&e&7&e&7Скорость атаки", speedLore);
          targetMeta.addAttributeModifier(
-            Attribute.GENERIC_ATTACK_SPEED,
+            Attribute.ATTACK_SPEED,
             new AttributeModifier(UUID.randomUUID(), "GENERIC_ATTACK_SPEED", newLevel / 100.0F, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
          );
          targetMeta.getPersistentDataContainer().set(attackSpeedKey, PersistentDataType.INTEGER, newLevel);
@@ -345,12 +345,12 @@ public class Utils implements Listener {
          int sourceLevel = (Integer)source.getItemMeta().getPersistentDataContainer().get(healthKey, PersistentDataType.INTEGER);
          int targetLevel = (Integer)targetMeta.getPersistentDataContainer().getOrDefault(healthKey, PersistentDataType.INTEGER, 0);
          int newLevel = sourceLevel == targetLevel ? sourceLevel + 1 : Math.max(sourceLevel, targetLevel);
-         targetMeta.removeAttributeModifier(Attribute.GENERIC_MAX_HEALTH);
+         targetMeta.removeAttributeModifier(Attribute.MAX_HEALTH);
          targetMeta.getPersistentDataContainer().remove(healthKey);
          String healthLore = ChatColor.translateAlternateColorCodes('&', "&7• &x&e&7&e&7&e&7Макс. здоровье " + convertInt(newLevel));
          this.updateLore(lore, "&7• &x&e&7&e&7&e&7Макс. здоровье", healthLore);
          targetMeta.addAttributeModifier(
-            Attribute.GENERIC_MAX_HEALTH,
+            Attribute.MAX_HEALTH,
             new AttributeModifier(UUID.randomUUID(), "GENERIC_MAX_HEALTH", newLevel * 2.0F, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
          );
          targetMeta.getPersistentDataContainer().set(healthKey, PersistentDataType.INTEGER, newLevel);
@@ -401,7 +401,7 @@ public class Utils implements Listener {
                   case DAMAGE:
                      lore.add(0, ChatColor.translateAlternateColorCodes('&', "&7• &x&e&7&e&7&e&7Урон " + convertInt(level)));
                      itemMeta.addAttributeModifier(
-                        Attribute.GENERIC_ATTACK_DAMAGE,
+                        Attribute.ATTACK_DAMAGE,
                         new AttributeModifier(UUID.randomUUID(), "GENERIC_ATTACK_DAMAGE", level, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
                      );
                      itemMeta.getPersistentDataContainer().set(key, PersistentDataType.INTEGER, 1);
@@ -410,10 +410,10 @@ public class Utils implements Listener {
                   case ARMOR:
                      lore.add(0, ChatColor.translateAlternateColorCodes('&', "&7• &x&e&7&e&7&e&7Броня " + convertInt(level)));
                      itemMeta.addAttributeModifier(
-                        Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "GENERIC_ARMOR", level, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
+                        Attribute.ARMOR, new AttributeModifier(UUID.randomUUID(), "GENERIC_ARMOR", level, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
                      );
                      itemMeta.addAttributeModifier(
-                        Attribute.GENERIC_ARMOR_TOUGHNESS,
+                        Attribute.ARMOR_TOUGHNESS,
                         new AttributeModifier(UUID.randomUUID(), "GENERIC_ARMOR_TOUGHNESS", level, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
                      );
                      itemMeta.getPersistentDataContainer().set(key, PersistentDataType.INTEGER, 1);
@@ -422,7 +422,7 @@ public class Utils implements Listener {
                   case SPEED:
                      lore.add(0, ChatColor.translateAlternateColorCodes('&', "&7• &x&e&7&e&7&e&7Скорость " + convertInt(level)));
                      itemMeta.addAttributeModifier(
-                        Attribute.GENERIC_MOVEMENT_SPEED,
+                        Attribute.MOVEMENT_SPEED,
                         new AttributeModifier(UUID.randomUUID(), "GENERIC_MOVEMENT_SPEED", level / 100.0F, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
                      );
                      itemMeta.getPersistentDataContainer().set(key, PersistentDataType.INTEGER, 1);
@@ -431,7 +431,7 @@ public class Utils implements Listener {
                   case HEALTH:
                      lore.add(0, ChatColor.translateAlternateColorCodes('&', "&7• &x&e&7&e&7&e&7Макс. здоровье " + convertInt(level)));
                      itemMeta.addAttributeModifier(
-                        Attribute.GENERIC_MAX_HEALTH,
+                        Attribute.MAX_HEALTH,
                         new AttributeModifier(UUID.randomUUID(), "GENERIC_MAX_HEALTH", level * 2.0F, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
                      );
                      itemMeta.getPersistentDataContainer().set(key, PersistentDataType.INTEGER, 1);
@@ -440,7 +440,7 @@ public class Utils implements Listener {
                   case ATTACK_SPEED:
                      lore.add(0, ChatColor.translateAlternateColorCodes('&', "&7• &x&e&7&e&7&e&7Скорость атаки " + convertInt(level)));
                      itemMeta.addAttributeModifier(
-                        Attribute.GENERIC_ATTACK_SPEED,
+                        Attribute.ATTACK_SPEED,
                         new AttributeModifier(UUID.randomUUID(), "GENERIC_ATTACK_SPEED", level / 100.0F, Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND)
                      );
                      itemMeta.getPersistentDataContainer().set(key, PersistentDataType.INTEGER, 1);
@@ -574,7 +574,7 @@ public class Utils implements Listener {
       NamespacedKey key = new NamespacedKey(this.plugin, "holysfers");
       item.getPersistentDataContainer().set(key, PersistentDataType.INTEGER, 1);
       if (itemStack.getType() == Material.TOTEM_OF_UNDYING) {
-         item.addEnchant(Enchantment.DURABILITY, 1, true);
+         item.addEnchant(Enchantment.UNBREAKING, 1, true);
          item.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       }
 

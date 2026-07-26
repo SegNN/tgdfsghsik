@@ -69,7 +69,7 @@ public final class ConfigUtils {
       lore.addAll(ConfigManager.getStringList(filePath, path + ".lore").stream().map(s -> PlaceholderUtils.replace(s, true, replaces)).toList());
       itemMeta.setLore(lore);
       if (ConfigManager.getBoolean(filePath, path + ".glow", false)) {
-         itemMeta.addEnchant(Enchantment.DURABILITY, 1, true);
+         itemMeta.addEnchant(Enchantment.UNBREAKING, 1, true);
          itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       }
 

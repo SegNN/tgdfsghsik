@@ -849,7 +849,7 @@ public final class FichaPSAddon extends JavaPlugin implements Listener {
 
       for (double x = center.getX() - size; x <= center.getX() + size; x += 0.5) {
          world.spawnParticle(
-            Particle.REDSTONE,
+            Particle.DUST,
             new Location(world, x, center.getY() - size, center.getZ() - size),
             1,
             0.0,
@@ -860,7 +860,7 @@ public final class FichaPSAddon extends JavaPlugin implements Listener {
             true
          );
          world.spawnParticle(
-            Particle.REDSTONE,
+            Particle.DUST,
             new Location(world, x, center.getY() - size, center.getZ() + size),
             1,
             0.0,
@@ -871,7 +871,7 @@ public final class FichaPSAddon extends JavaPlugin implements Listener {
             true
          );
          world.spawnParticle(
-            Particle.REDSTONE,
+            Particle.DUST,
             new Location(world, x, center.getY() + size, center.getZ() + size),
             1,
             0.0,
@@ -882,7 +882,7 @@ public final class FichaPSAddon extends JavaPlugin implements Listener {
             true
          );
          world.spawnParticle(
-            Particle.REDSTONE,
+            Particle.DUST,
             new Location(world, x, center.getY() + size, center.getZ() - size),
             1,
             0.0,
@@ -897,7 +897,7 @@ public final class FichaPSAddon extends JavaPlugin implements Listener {
 
       for (double z = center.getZ() - size; z <= center.getZ() + size; z += 0.5) {
          world.spawnParticle(
-            Particle.REDSTONE,
+            Particle.DUST,
             new Location(world, center.getX() - size, center.getY() - size, z),
             1,
             0.0,
@@ -908,7 +908,7 @@ public final class FichaPSAddon extends JavaPlugin implements Listener {
             true
          );
          world.spawnParticle(
-            Particle.REDSTONE,
+            Particle.DUST,
             new Location(world, center.getX() - size, center.getY() + size, z),
             1,
             0.0,
@@ -919,7 +919,7 @@ public final class FichaPSAddon extends JavaPlugin implements Listener {
             true
          );
          world.spawnParticle(
-            Particle.REDSTONE,
+            Particle.DUST,
             new Location(world, center.getX() + size, center.getY() - size, z),
             1,
             0.0,
@@ -930,7 +930,7 @@ public final class FichaPSAddon extends JavaPlugin implements Listener {
             true
          );
          world.spawnParticle(
-            Particle.REDSTONE,
+            Particle.DUST,
             new Location(world, center.getX() + size, center.getY() + size, z),
             1,
             0.0,
@@ -945,7 +945,7 @@ public final class FichaPSAddon extends JavaPlugin implements Listener {
 
       for (double y = center.getY() - size; y <= center.getY() + size; y += 0.5) {
          world.spawnParticle(
-            Particle.REDSTONE,
+            Particle.DUST,
             new Location(world, center.getX() - size, y, center.getZ() - size),
             1,
             0.0,
@@ -956,7 +956,7 @@ public final class FichaPSAddon extends JavaPlugin implements Listener {
             true
          );
          world.spawnParticle(
-            Particle.REDSTONE,
+            Particle.DUST,
             new Location(world, center.getX() - size, y, center.getZ() + size),
             1,
             0.0,
@@ -967,7 +967,7 @@ public final class FichaPSAddon extends JavaPlugin implements Listener {
             true
          );
          world.spawnParticle(
-            Particle.REDSTONE,
+            Particle.DUST,
             new Location(world, center.getX() + size, y, center.getZ() - size),
             1,
             0.0,
@@ -978,7 +978,7 @@ public final class FichaPSAddon extends JavaPlugin implements Listener {
             true
          );
          world.spawnParticle(
-            Particle.REDSTONE,
+            Particle.DUST,
             new Location(world, center.getX() + size, y, center.getZ() + size),
             1,
             0.0,

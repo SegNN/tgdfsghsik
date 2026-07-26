@@ -230,7 +230,7 @@ public final class MantiItems extends JavaPlugin implements Listener {
    public void onProjectileAttack(ProjectileHitEvent event) {
       if (this.snowballs.contains(event.getEntity()) && event.getEntity() != null && event.getHitEntity() instanceof Player) {
          Player player = (Player)event.getHitEntity();
-         player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 200, 5, false, false, true));
+         player.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 200, 5, false, false, true));
          player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 40, 5, false, false, true));
       }
    }
@@ -248,7 +248,7 @@ public final class MantiItems extends JavaPlugin implements Listener {
       lore.add("");
       itemMeta.setLore(lore);
       itemMeta.getPersistentDataContainer().set(new NamespacedKey(this, "item-type"), PersistentDataType.STRING, "bottle");
-      itemMeta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 1, true);
+      itemMeta.addEnchant(Enchantment.LOOTING, 1, true);
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       item.setItemMeta(itemMeta);
       return item;
@@ -269,7 +269,7 @@ public final class MantiItems extends JavaPlugin implements Listener {
       lore.add("");
       itemMeta.setLore(lore);
       itemMeta.getPersistentDataContainer().set(new NamespacedKey(this, "item-type"), PersistentDataType.STRING, "jake");
-      itemMeta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 1, true);
+      itemMeta.addEnchant(Enchantment.LOOTING, 1, true);
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       item.setItemMeta(itemMeta);
       return item;
@@ -358,7 +358,7 @@ public final class MantiItems extends JavaPlugin implements Listener {
       lore.add(ChatColor.translateAlternateColorCodes('&', "&x&F&B&6&2&4&A   активировал Взрывную Штучку."));
       lore.add("");
       itemMeta.getPersistentDataContainer().set(new NamespacedKey(this, "item-type"), PersistentDataType.STRING, "explosive_stuff");
-      itemMeta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 1, true);
+      itemMeta.addEnchant(Enchantment.LOOTING, 1, true);
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       itemMeta.setLore(lore);
       item.setItemMeta(itemMeta);
@@ -380,7 +380,7 @@ public final class MantiItems extends JavaPlugin implements Listener {
       lore.add(ChatColor.translateAlternateColorCodes('&', "&7   &fактиватора."));
       lore.add(ChatColor.translateAlternateColorCodes('&', ""));
       stanMeta.getPersistentDataContainer().set(new NamespacedKey(this, "item-type"), PersistentDataType.STRING, "stan");
-      stanMeta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 1, true);
+      stanMeta.addEnchant(Enchantment.LOOTING, 1, true);
       stanMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       stanMeta.setLore(lore);
       stan.setItemMeta(stanMeta);
@@ -400,7 +400,7 @@ public final class MantiItems extends JavaPlugin implements Listener {
       lore.add(ChatColor.translateAlternateColorCodes('&', "&x&4&9&F&F&F&7   Медлительности VI и слепоту на 10 секунд."));
       lore.add(ChatColor.translateAlternateColorCodes('&', ""));
       stanMeta.getPersistentDataContainer().set(new NamespacedKey(this, "item-type"), PersistentDataType.STRING, "snowball");
-      stanMeta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 1, true);
+      stanMeta.addEnchant(Enchantment.LOOTING, 1, true);
       stanMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       stanMeta.setLore(lore);
       stan.setItemMeta(stanMeta);
@@ -703,8 +703,8 @@ public final class MantiItems extends JavaPlugin implements Listener {
                      player1.setFireTicks(10);
                      int distance = (int)(15.0 - player1.getLocation().distance(player.getLocation()));
                      player1.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, distance * 2, 0, false, false, true));
-                     player1.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, distance * 4, distance / 5, false, false, true));
-                     player1.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, distance * 4, distance / 3 + 1, false, false, true));
+                     player1.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, distance * 4, distance / 5, false, false, true));
+                     player1.addPotionEffect(new PotionEffect(PotionEffectType.MINING_FATIGUE, distance * 4, distance / 3 + 1, false, false, true));
                      player1.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, distance * 4, 0, false, false, true));
                      player1.setCooldown(Material.NETHER_STAR, player.getCooldown(Material.NETHER_STAR) + distance * 4);
                   }
@@ -907,7 +907,7 @@ public final class MantiItems extends JavaPlugin implements Listener {
                            && location.getY() <= maxY
                            && location.getZ() >= minZ
                            && location.getZ() <= maxZ) {
-                           player1xx.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20, 0, false, false, true));
+                           player1xx.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 20, 0, false, false, true));
                         }
                      }
                   } else {
@@ -920,7 +920,7 @@ public final class MantiItems extends JavaPlugin implements Listener {
                               && location.getY() <= maxY
                               && location.getZ() >= minZ
                               && location.getZ() <= maxZ) {
-                              player1x.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20, 0, false, false, true));
+                              player1x.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 20, 0, false, false, true));
                            }
                         }
                      }
@@ -949,24 +949,24 @@ public final class MantiItems extends JavaPlugin implements Listener {
                   }
 
                   for (double x = minX; x <= maxX; x += step) {
-                     world.spawnParticle(Particle.REDSTONE, x, minY, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
-                     world.spawnParticle(Particle.REDSTONE, x, minY, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
-                     world.spawnParticle(Particle.REDSTONE, x, maxY, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
-                     world.spawnParticle(Particle.REDSTONE, x, maxY, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
+                     world.spawnParticle(Particle.DUST, x, minY, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
+                     world.spawnParticle(Particle.DUST, x, minY, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
+                     world.spawnParticle(Particle.DUST, x, maxY, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
+                     world.spawnParticle(Particle.DUST, x, maxY, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
                   }
 
                   for (double y = minY; y <= maxY; y += step) {
-                     world.spawnParticle(Particle.REDSTONE, minX, y, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
-                     world.spawnParticle(Particle.REDSTONE, minX, y, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
-                     world.spawnParticle(Particle.REDSTONE, maxX, y, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
-                     world.spawnParticle(Particle.REDSTONE, maxX, y, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
+                     world.spawnParticle(Particle.DUST, minX, y, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
+                     world.spawnParticle(Particle.DUST, minX, y, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
+                     world.spawnParticle(Particle.DUST, maxX, y, minZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
+                     world.spawnParticle(Particle.DUST, maxX, y, maxZ, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
                   }
 
                   for (double z = minZ; z <= maxZ; z += step) {
-                     world.spawnParticle(Particle.REDSTONE, minX, minY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
-                     world.spawnParticle(Particle.REDSTONE, minX, maxY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
-                     world.spawnParticle(Particle.REDSTONE, maxX, minY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
-                     world.spawnParticle(Particle.REDSTONE, maxX, maxY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
+                     world.spawnParticle(Particle.DUST, minX, minY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
+                     world.spawnParticle(Particle.DUST, minX, maxY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
+                     world.spawnParticle(Particle.DUST, maxX, minY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
+                     world.spawnParticle(Particle.DUST, maxX, maxY, z, 1, 0.0, 0.0, 0.0, 0.0, dustOptionsx, true);
                   }
                }
             }

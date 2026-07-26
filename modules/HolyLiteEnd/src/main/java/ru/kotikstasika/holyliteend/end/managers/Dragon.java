@@ -43,7 +43,7 @@ public class Dragon {
       double maxHealth = 6000.0;
 
       try {
-         dragon.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(maxHealth);
+         dragon.getAttribute(Attribute.MAX_HEALTH).setBaseValue(maxHealth);
       } catch (Throwable var6) {
          dragon.setMaxHealth(maxHealth);
       }

@@ -64,7 +64,7 @@ public class MantiExpAbilities {
       abilitiesLore.add(ChatColor.translateAlternateColorCodes('&', "&a ▪&f возможно получить у Хранителя Опыта."));
       abilitiesMeta.setLore(abilitiesLore);
       abilitiesMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
-      abilitiesMeta.addEnchant(Enchantment.LUCK, 1, false);
+      abilitiesMeta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, false);
       abilitiesItem.setItemMeta(abilitiesMeta);
       this.inventory.setItem(3, abilitiesItem);
       ItemStack itemsItem = new ItemStack(Material.JACK_O_LANTERN);
@@ -82,7 +82,7 @@ public class MantiExpAbilities {
       ItemMeta potionsMeta = potionsItem.getItemMeta();
       PotionMeta potionMeta = (PotionMeta)potionsMeta;
       potionMeta.setBasePotionData(new PotionData(PotionType.FIRE_RESISTANCE, false, false));
-      potionsMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_POTION_EFFECTS});
+      potionsMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ADDITIONAL_TOOLTIP});
       potionsMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&d▶ Зелья хранителя"));
       potionsMeta.getPersistentDataContainer().set(new NamespacedKey(this.plugin, "update"), PersistentDataType.STRING, "cathegory_effects");
       List<String> potionsLore = new ArrayList<>();

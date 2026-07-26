@@ -49,7 +49,7 @@ public class ParticleListener implements Listener {
                      try {
                         Particle particle = Particle.valueOf(this.plugin.getConfig().getString(path + ".particle"));
                         StickHWCustom.playerData.get(player).put("particle_type", particle.name());
-                        if (particle == Particle.REDSTONE) {
+                        if (particle == Particle.DUST) {
                            String color = this.plugin.getConfig().getString(path + ".color", "RED");
                            StickHWCustom.playerData.get(player).put("particle_color", color);
                         }
@@ -76,7 +76,7 @@ public class ParticleListener implements Listener {
 
    private void spawnDemoParticles(Player player, Particle particle) {
       Location loc = player.getLocation().add(0.0, 2.0, 0.0);
-      if (particle == Particle.REDSTONE) {
+      if (particle == Particle.DUST) {
          Color color = this.getColorFromConfig(player);
          DustOptions dustOptions = new DustOptions(color, 1.0F);
          player.spawnParticle(particle, loc, 20, 0.5, 0.5, 0.5, 0.0, dustOptions);
@@ -98,7 +98,7 @@ public class ParticleListener implements Listener {
                Particle particle = Particle.valueOf(StickHWCustom.playerData.get(damager).get("particle_type"));
                Location loc = target.getLocation().add(0.0, 1.0, 0.0);
                int count = this.random.nextInt(3) + 3;
-               if (particle == Particle.REDSTONE) {
+               if (particle == Particle.DUST) {
                   Color color = this.getColorFromConfig(damager);
                   DustOptions dustOptions = new DustOptions(color, 1.0F);
                   damager.spawnParticle(particle, loc, count, 0.5, 0.5, 0.5, 0.0, dustOptions);

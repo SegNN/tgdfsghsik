@@ -440,13 +440,13 @@ public class PosilkaManager implements Listener {
       PotionEffectType potionEffectType = null;
       switch (damage) {
          case 0:
-            potionEffectType = PotionEffectType.INCREASE_DAMAGE;
+            potionEffectType = PotionEffectType.STRENGTH;
             break;
          case 1:
-            potionEffectType = PotionEffectType.DAMAGE_RESISTANCE;
+            potionEffectType = PotionEffectType.RESISTANCE;
             break;
          case 2:
-            potionEffectType = PotionEffectType.FAST_DIGGING;
+            potionEffectType = PotionEffectType.HASTE;
             break;
          case 3:
             potionEffectType = PotionEffectType.HEALTH_BOOST;

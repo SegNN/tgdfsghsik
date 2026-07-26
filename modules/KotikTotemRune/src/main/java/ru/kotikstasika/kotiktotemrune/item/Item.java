@@ -26,7 +26,7 @@ public class Item {
             "&x&A&2&6&9&0&0Р&x&A&E&6&F&0&0у&x&B&9&7&6&0&0н&x&C&5&7&C&0&0а &x&D&C&8&8&0&0«&x&E&8&8&F&0&0Б&x&F&3&9&5&0&0е&x&F&F&9&B&0&0с&x&F&3&9&5&0&0с&x&E&8&8&F&0&0м&x&D&C&8&8&0&0е&x&D&1&8&2&0&0р&x&C&5&7&C&0&0т&x&B&9&7&6&0&0и&x&A&E&6&F&0&0е&x&A&2&6&9&0&0»"
          )
       );
-      itemMeta.addEnchant(Enchantment.LUCK, 1, true);
+      itemMeta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, true);
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       itemMeta.getPersistentDataContainer().set(new NamespacedKey(KotikTotemRune.getInstance(), "bessmertie"), PersistentDataType.INTEGER, 1);
       List<String> lore = new ArrayList<>();
@@ -48,7 +48,7 @@ public class Item {
       ItemStack item = new ItemStack(Material.RED_DYE, amount);
       ItemMeta itemMeta = item.getItemMeta();
       itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&x&F&F&0&0&5&3«Восстановление»"));
-      itemMeta.addEnchant(Enchantment.LUCK, 1, true);
+      itemMeta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, true);
       itemMeta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ENCHANTS});
       itemMeta.getPersistentDataContainer().set(new NamespacedKey(KotikTotemRune.getInstance(), "vosstanovlenie"), PersistentDataType.INTEGER, 1);
       List<String> lore = new ArrayList<>();

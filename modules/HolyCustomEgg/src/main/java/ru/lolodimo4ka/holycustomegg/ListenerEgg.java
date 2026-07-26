@@ -216,7 +216,7 @@ public class ListenerEgg implements Listener {
       } else {
          String entityName = name.substring(0, name.length() - "_SPAWN_EGG".length());
          if (entityName.equals("MOOSHROOM")) {
-            return EntityType.MUSHROOM_COW;
+            return EntityType.MOOSHROOM;
          } else {
             try {
                return EntityType.valueOf(entityName);
