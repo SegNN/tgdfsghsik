@@ -16,6 +16,12 @@ import org.impldev.holycore.commands.Bc;
 import org.impldev.holycore.commands.HealthIndicator;
 import org.impldev.holycore.commands.Links;
 import org.impldev.holycore.commands.Suicide;
+import org.impldev.holycore.commands.WExtend;
+import org.impldev.holycore.invest.InvestCommand;
+import org.impldev.holycore.invest.InvestData;
+import org.impldev.holycore.invest.InvestEffects;
+import org.impldev.holycore.invest.InvestMenu;
+import org.impldev.holycore.invest.InvestPlaceholders;
 import org.impldev.holycore.commands.Wolker;
 import org.impldev.holycore.database.DatabaseManager;
 import org.impldev.holycore.extensions.AfkExtension;
@@ -78,6 +84,18 @@ public final class HolyCore extends JavaPlugin {
 
       // одна и та же реализация на все три страницы - иначе каждая держала бы свой кэш
       // и пересчитывала топ заново
+      this.getCommand("wextend").setExecutor(new WExtend());
+
+      InvestData investData = new InvestData(this);
+      investData.resetWeekIfNeeded();
+      InvestEffects investEffects = new InvestEffects(this, investData);
+      InvestMenu investMenu = new InvestMenu(this, investData, investEffects);
+      this.getServer().getPluginManager().registerEvents(investEffects, this);
+      this.getServer().getPluginManager().registerEvents(investMenu, this);
+      this.getCommand("invest").setExecutor(new InvestCommand(investMenu));
+      // границы выставляем после загрузки миров, иначе мир ещё не готов принять размер
+      this.getServer().getScheduler().runTask(this, investEffects::apply);
+
       BalTop balTop = new BalTop(this);
       this.getCommand("baltop").setExecutor(balTop);
       this.getCommand("baltop2").setExecutor(balTop);
@@ -88,6 +106,7 @@ public final class HolyCore extends JavaPlugin {
       // без PlaceholderAPI переключатель просто не на что повесить - TAB гасит объектив по плейсхолдеру
       if (this.getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")) {
          healthIndicator.register();
+         new InvestPlaceholders(investData, investEffects).register();
       } else {
          this.getLogger().warning("PlaceholderAPI не найден: /healthindicator не сможет управлять индикатором TAB");
       }

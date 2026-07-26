@@ -34,10 +34,22 @@ commands:
     description: Топ богачей, места 21-30
     usage: /baltop3
     permission: holycore.baltop.use
+  wextend:
+    description: Куда переехало расширение миров
+    usage: /wextend
+    permission: holycore.wextend.use
+  invest:
+    description: Меню инвестиций
+    usage: /invest
+    permission: holycore.invest.use
 permissions:
   holycore.wolker.use:
     default: true
   holycore.healthindicator.use:
     default: true
   holycore.baltop.use:
+    default: true
+  holycore.wextend.use:
+    default: true
+  holycore.invest.use:
     default: true
