@@ -74,6 +74,15 @@ public class MantiExpKeeperListener implements Listener {
          }
 
          String updateType = (String)pdc.get(new NamespacedKey(this.plugin, "update"), PersistentDataType.STRING);
+
+         // Отклик на нажатие звучит здесь, а не в конце асинхронной записи в хранилище.
+         // Раньше звук стоял только внутри thenRun: пока запись шла (или падала), игрок не
+         // слышал ничего и не понимал, засчиталось нажатие или нет. "null" - это заполнители
+         // и уже купленные позиции, по ним нажимать не на что.
+         if (updateType != null && !updateType.equalsIgnoreCase("null")) {
+            player.playSound(player.getLocation(), Sound.BLOCK_BEACON_POWER_SELECT, 1.0F, 1.0F);
+         }
+
          if (event.getView().getTitle().equalsIgnoreCase(this.plugin.effectsTitle)) {
             this.handleEffectsMenu(event, player, updateType, pdc);
          } else if (event.getView().getTitle().equalsIgnoreCase(this.plugin.effectsAbilities)) {
