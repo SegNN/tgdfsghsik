@@ -174,13 +174,23 @@ public final class TitulMenu implements Listener {
             "lp user " + player.getName() + " meta clear suffix server=lite");
    }
 
-   /** Надет ли сейчас именно этот титул - сравниваем по тексту без цветов. */
+   /**
+    * Надет ли сейчас именно этот титул.
+    *
+    * <p>Если плейсхолдер LuckPerms недоступен (он не разрешился и вернулся сам себе), узнать
+    * надетый титул нечем. В этом случае отвечаем "да": лучше снять чужой суффикс, который игрок
+    * тут же вернёт одним кликом, чем оставить висеть суффикс от титула, которого у него уже нет.
+    */
    private static boolean isWearing(Player player, Titul titul) {
       try {
          String current = me.clip.placeholderapi.PlaceholderAPI.setPlaceholders(player, "%luckperms_suffix%");
-         return plain(current).equals(plain(titul.text())) && !plain(current).isEmpty();
+         if (current == null || current.contains("%")) {
+            return true;
+         }
+
+         return !plain(current).isEmpty() && plain(current).equals(plain(titul.text()));
       } catch (Throwable ignored) {
-         return false;
+         return true;
       }
    }
 
