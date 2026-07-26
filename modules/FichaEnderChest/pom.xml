@@ -19,7 +19,7 @@
     <dependency>
       <groupId>local.plugins</groupId>
       <artifactId>playerpoints</artifactId>
-      <version>3.3.2</version>
+      <version>3.3.5</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>

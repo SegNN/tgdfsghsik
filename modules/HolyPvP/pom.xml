@@ -17,12 +17,6 @@
 
   <dependencies>
     <dependency>
-      <groupId>local.plugins</groupId>
-      <artifactId>craftbukkit</artifactId>
-      <version>1.16.5</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>org.jetbrains</groupId>
       <artifactId>annotations</artifactId>
       <version>24.1.0</version>

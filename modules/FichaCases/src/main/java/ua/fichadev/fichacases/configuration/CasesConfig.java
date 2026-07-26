@@ -1,6 +1,5 @@
 package ua.fichadev.fichacases.configuration;
 
-import com.mojang.datafixers.util.Pair;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -13,6 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TimeZone;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -316,7 +316,7 @@ public class CasesConfig {
                      int z = Integer.parseInt(args[3]);
                      Supplier<Location> location = () -> new Location(world.get(), x, y, z);
                      BlockFace blockFace = BlockFace.valueOf(args[4]);
-                     Pair<String, Pair<Supplier<Location>, BlockFace>> position = Pair.of(args[0], Pair.of(location, blockFace));
+                     Entry<String, Entry<Supplier<Location>, BlockFace>> position = Map.entry(args[0], Map.entry(location, blockFace));
                      Object finalOpen = open;
                      Object finalOpen1 = open;
                      ConfigurationSection finalCaseSection = caseSection;
@@ -450,7 +450,7 @@ public class CasesConfig {
       ConfigurationSection menuSection,
       Menu caseMenu,
       Map<String, ItemStack> itemTypes,
-      Pair<String, Pair<Supplier<Location>, BlockFace>> position,
+      Entry<String, Entry<Supplier<Location>, BlockFace>> position,
       Object open,
       String caseName
    ) {
@@ -469,7 +469,7 @@ public class CasesConfig {
                   .createItem(
                      icon,
                      (whoClick, clickType) -> {
-                        GameCase gameCase = (GameCase)((MetadataValue)((Location)((Supplier)((Pair)position.getSecond()).getFirst()).get())
+                        GameCase gameCase = (GameCase)((MetadataValue)((Location)((Supplier)((Entry)position.getValue()).getKey()).get())
                               .getBlock()
                               .getMetadata("case")
                               .get(0))

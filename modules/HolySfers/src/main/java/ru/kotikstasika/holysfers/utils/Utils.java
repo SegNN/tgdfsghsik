@@ -2,9 +2,6 @@ package ru.kotikstasika.holysfers.utils;
 
 import com.destroystokyo.paper.profile.PlayerProfile;
 import com.destroystokyo.paper.profile.ProfileProperty;
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -618,26 +615,9 @@ public class Utils implements Listener {
          return head;
       } else {
          SkullMeta headMeta = (SkullMeta)head.getItemMeta();
-         GameProfile profile = new GameProfile(uuid, (String)null);
-         profile.getProperties().put("textures", new Property("textures", base64));
-
-         try {
-            Field profileField = headMeta.getClass().getDeclaredField("profile");
-            profileField.setAccessible(true);
-            profileField.set(headMeta, profile);
-
-            try {
-               Class<?> nbtClass = Class.forName("net.minecraft.server.v1_16_R3.NBTTagCompound");
-               Object nbtInstance = nbtClass.getDeclaredConstructor().newInstance();
-               Field serializedField = headMeta.getClass().getDeclaredField("serializedProfile");
-               serializedField.setAccessible(true);
-               serializedField.set(headMeta, nbtInstance);
-            } catch (Throwable var10) {
-            }
-         } catch (NoSuchFieldException | IllegalAccessException var111) {
-            var111.printStackTrace();
-         }
-
+         PlayerProfile profile = Bukkit.createProfile(uuid, (String)null);
+         profile.setProperty(new ProfileProperty("textures", base64));
+         headMeta.setPlayerProfile(profile);
          head.setItemMeta(headMeta);
          return head;
       }

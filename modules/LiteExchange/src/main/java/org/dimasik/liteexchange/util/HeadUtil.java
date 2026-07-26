@@ -1,9 +1,9 @@
 package org.dimasik.liteexchange.util;
 
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
-import java.lang.reflect.Field;
+import com.destroystokyo.paper.profile.PlayerProfile;
+import com.destroystokyo.paper.profile.ProfileProperty;
 import java.util.UUID;
+import org.bukkit.Bukkit;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.dimasik.Native;
@@ -18,15 +18,15 @@ public class HeadUtil {
          return head;
       } else {
          SkullMeta headMeta = (SkullMeta)head.getItemMeta();
-         GameProfile profile = new GameProfile(UUID.randomUUID(), (String)null);
-         profile.getProperties().put("textures", new Property("textures", base64));
 
          try {
-            Field profileField = headMeta.getClass().getDeclaredField("profile");
-            profileField.setAccessible(true);
-            profileField.set(headMeta, profile);
-         } catch (NoSuchFieldException | IllegalAccessException var51) {
-            var51.printStackTrace();
+            PlayerProfile profile = Bukkit.createProfile(UUID.randomUUID(), (String)null);
+            profile.setProperty(new ProfileProperty("textures", base64));
+            headMeta.setPlayerProfile(profile);
+         } catch (RuntimeException var4) {
+            // the 1.16 original swallowed reflection failures here; keep the head untextured
+            // rather than letting a profile failure break the calling menu
+            var4.printStackTrace();
          }
 
          head.setItemMeta(headMeta);

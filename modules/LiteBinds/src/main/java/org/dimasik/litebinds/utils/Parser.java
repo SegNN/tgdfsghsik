@@ -177,8 +177,15 @@ public final class Parser {
    }
 
    static {
-      String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
-      int subVersion = Integer.parseInt(version.replace("v", "").replace("1_", "").replaceAll("_R\\d", ""));
+      int subVersion;
+      try {
+         // Paper is unmapped since 1.20.5: org.bukkit.craftbukkit no longer carries a vX_Y_RZ
+         // element, so indexing [3] threw ArrayIndexOutOfBounds and killed this class initializer.
+         subVersion = Integer.parseInt(Bukkit.getBukkitVersion().split("-")[0].split("\\.")[1]);
+      } catch (RuntimeException var2) {
+         subVersion = 16;
+      }
+
       SUPPORTS_RGB = subVersion >= 16;
    }
 }

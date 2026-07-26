@@ -12,6 +12,7 @@ import org.bukkit.event.inventory.InventoryCreativeEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.event.inventory.InventoryInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class InventoryListener implements Listener {
    private final Main stacker;
@@ -54,6 +55,28 @@ public class InventoryListener implements Listener {
       this.setupLook();
    }
 
+   /**
+    * On 1.20.5+ the stack limit comes from the item's own max_stack_size data component, not from a
+    * global NMS field, so it has to be stamped onto the item itself. Patching Material.maxStack the
+    * way the 1.16.5 build did no longer affects how the server stacks anything.
+    */
+   private void applyStackSize(ItemStack item) {
+      if (item == null || !ReflectionUtils.isModern() || !this.potions.contains(item.getType())) {
+         return;
+      }
+
+      int size = item.getType() == this.POTION ? this.stackPotion : this.stackSplash;
+      if (size <= 1) {
+         return;
+      }
+
+      ItemMeta meta = item.getItemMeta();
+      if (meta != null && (!meta.hasMaxStackSize() || meta.getMaxStackSize() != size)) {
+         meta.setMaxStackSize(size);
+         item.setItemMeta(meta);
+      }
+   }
+
    @EventHandler
    public void onInventoryClick(InventoryClickEvent event) {
       InventoryAction action = event.getAction();
@@ -81,6 +104,8 @@ public class InventoryListener implements Listener {
       }
 
       if (cur != null && this.potions.contains(cur.getType())) {
+         this.applyStackSize(stack);
+         this.applyStackSize(alt);
          this.stacker.getServer().getScheduler().runTask(this.stacker, () -> ReflectionUtils.updateInventory((Player)event.getWhoClicked()));
       }
    }

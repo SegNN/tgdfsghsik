@@ -2,7 +2,7 @@ name: FichaCases
 version: 1.0
 main: ua.fichadev.fichacases.FichaCases
 api-version: 1.16
-softdepend: [PlaceholderAPI, PlayerPoints]
+softdepend: [PlaceholderAPI, PlayerPoints, packetevents]
 authors:
   - Smail
   - FichaDev

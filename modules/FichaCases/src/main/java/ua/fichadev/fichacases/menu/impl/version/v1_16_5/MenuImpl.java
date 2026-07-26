@@ -7,7 +7,6 @@ import java.util.Optional;
 import java.util.Map.Entry;
 import java.util.function.Consumer;
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_16_R3.inventory.CraftInventory;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
@@ -16,10 +15,10 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import ua.fichadev.fichacases.menu.Menu;
 import ua.fichadev.fichacases.menu.MenuItem;
-import ua.fichadev.fichacases.menu.reflection.ReflectionUtil;
 
 public class MenuImpl implements Menu {
    private Inventory inventory;
+   private String name;
    private Map<Integer, MenuItem> items = new HashMap<>();
    private String cooldownType = "LOCAL";
    private int cooldownTime = 10;
@@ -30,18 +29,22 @@ public class MenuImpl implements Menu {
    private Map<String, Object> data = new HashMap<>();
 
    public MenuImpl() {
+      this.name = InventoryType.CHEST.getDefaultTitle();
       this.inventory = Bukkit.createInventory(null, 9);
    }
 
    public MenuImpl(int size) {
+      this.name = InventoryType.CHEST.getDefaultTitle();
       this.inventory = Bukkit.createInventory(null, size);
    }
 
    public MenuImpl(String name) {
+      this.name = name;
       this.inventory = Bukkit.createInventory(null, 9, name);
    }
 
    public MenuImpl(InventoryType type) {
+      this.name = type.getDefaultTitle();
       this.inventory = Bukkit.createInventory(null, type);
    }
 
@@ -52,10 +55,12 @@ public class MenuImpl implements Menu {
    }
 
    public MenuImpl(int size, String name) {
+      this.name = name;
       this.inventory = Bukkit.createInventory(null, size, name);
    }
 
    public MenuImpl(InventoryType type, String name) {
+      this.name = name;
       this.inventory = Bukkit.createInventory(null, type, name);
    }
 
@@ -66,7 +71,7 @@ public class MenuImpl implements Menu {
 
    @Override
    public String getName() {
-      return String.valueOf(ReflectionUtil.getFieldValue("title", ((CraftInventory)this.inventory).getInventory()));
+      return this.name;
    }
 
    @Override

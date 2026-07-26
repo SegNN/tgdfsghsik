@@ -11,19 +11,21 @@ OWN = ("org.dimasik", "ru.kotikstasika", "ua.fichadev", "ua.fichamine", "ua.fich
        "ru.nezxenka", "org.nezxenka", "ru.lolodimo4ka", "stickdev", "ru.holybackpack",
        "ru.litechat", "org.impldev", "ru.extas7y", "me.ones", "frozenpon")
 
+# versions of the third-party plugin APIs actually shipped in the 1.21.4 server
 PROVIDED = {
-    "com.sk89q.worldguard":        ("local.plugins", "worldguard", "7.0.5"),
-    "com.sk89q.worldedit":         ("local.plugins", "worldedit", "7.2.16"),
-    "me.clip.placeholderapi":      ("local.plugins", "placeholderapi", "2.11.6"),
-    "eu.decentsoftware.holograms": ("local.plugins", "decentholograms", "2.9.7"),
-    "net.luckperms.api":           ("local.plugins", "luckperms", "5.4.166"),
+    "com.sk89q.worldguard":        ("local.plugins", "worldguard", "7.0.13"),
+    "com.sk89q.worldedit":         ("local.plugins", "worldedit", "7.3.16"),
+    "me.clip.placeholderapi":      ("local.plugins", "placeholderapi", "2.12.3"),
+    "eu.decentsoftware.holograms": ("local.plugins", "decentholograms", "2.10.1"),
+    "net.luckperms.api":           ("local.plugins", "luckperms", "5.5.53"),
     "net.milkbowl.vault":          ("local.plugins", "vault", "1.7.3"),
-    "org.black_ixx.playerpoints":  ("local.plugins", "playerpoints", "3.3.2"),
-    "dev.espi.protectionstones":   ("local.plugins", "protectionstones", "2.8.5"),
-    "com.comphenix.protocol":      ("local.plugins", "protocollib", "5.3.0"),
-    "com.github.retrooper":        ("local.plugins", "packetevents", "2.9.5"),
-    "io.github.retrooper":         ("local.plugins", "packetevents", "2.9.5"),
+    "org.black_ixx.playerpoints":  ("local.plugins", "playerpoints", "3.3.5"),
+    "dev.espi.protectionstones":   ("local.plugins", "protectionstones", "2.10.5"),
+    "com.comphenix.protocol":      ("local.plugins", "protocollib", "5.4.0"),
+    "com.github.retrooper":        ("local.plugins", "packetevents", "2.13.0"),
+    "io.github.retrooper":         ("local.plugins", "packetevents", "2.13.0"),
     "com.earth2me.essentials":     ("local.plugins", "essentialsx", "2.22.0"),
+    # only reachable if some module still binds versioned NMS - it must not on 1.21.4
     "net.minecraft.server":        ("local.plugins", "craftbukkit", "1.16.5"),
     "org.bukkit.craftbukkit":      ("local.plugins", "craftbukkit", "1.16.5"),
     "com.mojang.authlib":          ("local.plugins", "craftbukkit", "1.16.5"),
@@ -48,8 +50,8 @@ SHADED = {
 EXTRA = {  # module -> extra deps maven can't infer
     "HolyExpKeeper": [("io.dropwizard.metrics", "metrics-healthchecks", "4.2.25", "compile")],
     # ProtectionStones exposes WorldGuard/WorldEdit types in its public API signatures
-    "FichaPSAddon": [("local.plugins", "worldguard", "7.0.5", "provided"),
-                     ("local.plugins", "worldedit", "7.2.16", "provided")],
+    "FichaPSAddon": [("local.plugins", "worldguard", "7.0.13", "provided"),
+                     ("local.plugins", "worldedit", "7.3.16", "provided")],
     # jdbi was shaded into `shaded.org.jdbi`; imports rewritten, relocated back at package time
     "FichaCases": [("org.jdbi", "jdbi3-core", "3.45.1", "compile"),
                    ("org.jdbi", "jdbi3-sqlobject", "3.45.1", "compile"),
@@ -269,7 +271,7 @@ open(os.path.join(WS, "pom.xml"), "w", encoding="utf-8").write(f"""<?xml version
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>16</maven.compiler.release>
+    <maven.compiler.release>21</maven.compiler.release>
   </properties>
 
   <modules>
@@ -285,9 +287,9 @@ open(os.path.join(WS, "pom.xml"), "w", encoding="utf-8").write(f"""<?xml version
 
   <dependencies>
     <dependency>
-      <groupId>com.destroystokyo.paper</groupId>
+      <groupId>io.papermc.paper</groupId>
       <artifactId>paper-api</artifactId>
-      <version>1.16.5-R0.1-SNAPSHOT</version>
+      <version>1.21.4-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>

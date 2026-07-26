@@ -1,23 +1,17 @@
 package ru.nezxenka.holypvp;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import net.minecraft.server.v1_16_R3.EntityPlayer;
-import net.minecraft.server.v1_16_R3.PacketPlayOutWorldBorder;
-import net.minecraft.server.v1_16_R3.WorldBorder;
-import net.minecraft.server.v1_16_R3.WorldServer;
-import net.minecraft.server.v1_16_R3.PacketPlayOutWorldBorder.EnumWorldBorderAction;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.WorldBorder;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
-import org.bukkit.craftbukkit.v1_16_R3.CraftWorld;
-import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
@@ -70,19 +64,27 @@ public final class HolyPvP extends JavaPlugin {
 
    public void sendWorldBorder(Player player, Location center, int radius) {
       try {
-         CraftPlayer craftPlayer = (CraftPlayer)player;
-         EntityPlayer nmsPlayer = craftPlayer.getHandle();
-         WorldBorder worldBorder = new WorldBorder();
-         WorldServer worldServer = ((CraftWorld)player.getWorld()).getHandle();
-         Field worldField = WorldBorder.class.getDeclaredField("world");
-         worldField.setAccessible(true);
-         worldField.set(worldBorder, worldServer);
+         WorldBorder worldBorder = Bukkit.createWorldBorder();
          worldBorder.setCenter(center.getX(), center.getZ());
          worldBorder.setSize(radius * 2);
-         PacketPlayOutWorldBorder packet = new PacketPlayOutWorldBorder(worldBorder, EnumWorldBorderAction.INITIALIZE);
-         nmsPlayer.playerConnection.sendPacket(packet);
+         worldBorder.setWarningDistance(5);
+         worldBorder.setWarningTime(15);
+         player.setWorldBorder(worldBorder);
       } catch (Exception var101) {
          var101.printStackTrace();
+      }
+   }
+
+   /**
+    * On 1.16.5 the border was a raw PacketPlayOutWorldBorder, so the client threw it away by itself on
+    * teleport/relog and it never had to be cleared. A per-player API border persists until removed, so
+    * the fight-end paths clear it explicitly to keep the observable behaviour identical.
+    */
+   public void clearWorldBorder(Player player) {
+      try {
+         player.setWorldBorder(null);
+      } catch (Exception var2) {
+         var2.printStackTrace();
       }
    }
 

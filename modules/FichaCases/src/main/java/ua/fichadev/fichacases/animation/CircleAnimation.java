@@ -1,24 +1,25 @@
 package ua.fichadev.fichacases.animation;
 
+import com.github.retrooper.packetevents.PacketEvents;
+import com.github.retrooper.packetevents.PacketEventsAPI;
+import com.github.retrooper.packetevents.protocol.player.ClientVersion;
+import com.github.retrooper.packetevents.protocol.player.User;
+import com.github.retrooper.packetevents.protocol.world.states.type.StateType;
+import com.github.retrooper.packetevents.protocol.world.states.type.StateTypes;
+import com.github.retrooper.packetevents.util.Vector3i;
+import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerBlockAction;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
-import net.minecraft.server.v1_16_R3.BlockPosition;
-import net.minecraft.server.v1_16_R3.IBlockData;
-import net.minecraft.server.v1_16_R3.PacketPlayOutBlockAction;
-import net.minecraft.server.v1_16_R3.PlayerConnection;
-import net.minecraft.server.v1_16_R3.World;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.craftbukkit.v1_16_R3.CraftWorld;
-import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
@@ -402,17 +403,43 @@ public class CircleAnimation implements Animation {
 
    private void sendChestAnimation(Block block, boolean open) {
       if (block.getType().name().contains("CHEST")) {
-         World nmsWorld = ((CraftWorld)block.getWorld()).getHandle();
-         BlockPosition blockPosition = new BlockPosition(block.getX(), block.getY(), block.getZ());
-         IBlockData iBlockData = nmsWorld.getType(blockPosition);
-         net.minecraft.server.v1_16_R3.Block nmsBlock = iBlockData.getBlock();
-         PacketPlayOutBlockAction animationPacket = new PacketPlayOutBlockAction(blockPosition, nmsBlock, 1, open ? 1 : 0);
+         PacketEventsAPI<?> packetEvents = PacketEvents.getAPI();
+         if (packetEvents == null) {
+            return;
+         }
+
+         Vector3i blockPosition = new Vector3i(block.getX(), block.getY(), block.getZ());
+         StateType stateType = StateTypes.getByName(block.getType().getKey().toString());
+         int actionData = open ? 1 : 0;
          block.getWorld().getPlayers().forEach(player -> {
-            PlayerConnection connection = ((CraftPlayer)player).getHandle().playerConnection;
-            if (connection != null) {
-               connection.sendPacket(animationPacket);
+            User user = packetEvents.getPlayerManager().getUser(player);
+            if (user != null) {
+               WrapperPlayServerBlockAction animationPacket = new WrapperPlayServerBlockAction(
+                  blockPosition, 1, actionData, blockTypeId(stateType, user.getClientVersion())
+               );
+               packetEvents.getPlayerManager().sendPacket(player, animationPacket);
             }
          });
+      }
+   }
+
+   /**
+    * Numeric block registry id of {@code stateType} for the given client, as the vanilla
+    * {@code ClientboundBlockEventPacket} expects it. The client ignores the value (it looks the
+    * block up by position), but it still has to decode, so an unknown block falls back to 0
+    * (minecraft:air), which is valid in every version.
+    */
+   private static int blockTypeId(StateType stateType, ClientVersion clientVersion) {
+      if (stateType == null) {
+         return 0;
+      } else {
+         StateType.Mapped mapped = stateType.getMapped();
+         if (mapped != null && mapped.isRegistered()) {
+            int id = mapped.getId(clientVersion);
+            return id < 0 ? 0 : id;
+         } else {
+            return 0;
+         }
       }
    }
 

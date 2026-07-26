@@ -48,7 +48,7 @@ public class RateSelectListener implements Listener {
       Player player = (Player)event.getView().getPlayer();
       if (LiteExchange.rateDatas.containsKey(player)) {
          AnvilInventory anvilInventory = event.getInventory();
-         String text = event.getInventory().getRenameText();
+         String text = event.getView().getRenameText();
 
          try {
             int rate = Integer.parseInt(text);

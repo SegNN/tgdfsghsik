@@ -1,10 +1,8 @@
 package org.dimasik.liteexchange.util;
 
-import net.minecraft.server.v1_16_R3.EntityPlayer;
-import net.minecraft.server.v1_16_R3.PacketPlayOutSetSlot;
-import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
-import org.bukkit.craftbukkit.v1_16_R3.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.AnvilInventory;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.dimasik.Native;
 
@@ -14,9 +12,10 @@ public class PacketSender {
    }
 
    public static void sendAnvilSlotUpdate(Player player, int slot, ItemStack itemStack) {
-      net.minecraft.server.v1_16_R3.ItemStack nmsItem = CraftItemStack.asNMSCopy(itemStack);
-      EntityPlayer nmsPlayer = ((CraftPlayer)player).getHandle();
-      PacketPlayOutSetSlot packet = new PacketPlayOutSetSlot(nmsPlayer.activeContainer.windowId, slot, nmsItem);
-      nmsPlayer.playerConnection.sendPacket(packet);
+      Inventory top = player.getOpenInventory().getTopInventory();
+      if (top instanceof AnvilInventory && slot >= 0 && slot < top.getSize()) {
+         top.setItem(slot, itemStack);
+         player.updateInventory();
+      }
    }
 }

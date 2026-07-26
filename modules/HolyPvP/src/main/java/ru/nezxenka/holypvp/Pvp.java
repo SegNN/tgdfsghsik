@@ -148,6 +148,8 @@ public class Pvp {
       }
 
       if (this.death) {
+         this.plugin.clearWorldBorder(this.player1);
+         this.plugin.clearWorldBorder(this.player2);
          Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "updatepvp " + this.player1.getName() + " 0");
          Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "updatepvp " + this.player2.getName() + " 0");
          Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "spawn " + this.player1.getName() + " -s");
@@ -165,6 +167,8 @@ public class Pvp {
 
       this.plugin.pvpHashMap.remove(this.player1);
       this.plugin.pvpHashMap.remove(this.player2);
+      this.plugin.clearWorldBorder(this.player1);
+      this.plugin.clearWorldBorder(this.player2);
       Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "updatepvp " + this.player1.getName() + " 0");
       Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "updatepvp " + this.player2.getName() + " 0");
       final BossBar bossBar = Bukkit.createBossBar(

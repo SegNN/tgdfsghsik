@@ -14,6 +14,7 @@ public final class ReflectionUtils {
    private static boolean post1dot18 = false;
    private static boolean post1dot18dot2 = false;
    private static boolean post1dot19 = false;
+   private static boolean modern = false;
    private static Class<?> itemClass = null;
    private static Class<?> itemsClass = null;
    private static Method itemGetNameMethod = null;
@@ -70,13 +71,41 @@ public final class ReflectionUtils {
       }
    }
 
+   /**
+    * Since 1.20.5 Paper ships unmapped, so the server package is plain
+    * {@code org.bukkit.craftbukkit} with no {@code vX_Y_RZ} element. Detect that instead of
+    * indexing blindly, which is what used to throw ArrayIndexOutOfBounds on 1.21.4.
+    */
+   private static void detectVersion() {
+      if (version != null || modern) {
+         return;
+      }
+
+      String[] parts = Bukkit.getServer().getClass().getPackage().getName().split("\\.");
+      if (parts.length < 4) {
+         modern = true;
+         return;
+      }
+
+      version = parts[3];
+      post1dot17 = version.startsWith("v1_17") || version.startsWith("v1_18") || version.startsWith("v1_19");
+      post1dot18 = version.startsWith("v1_18") || version.startsWith("v1_19");
+      post1dot18dot2 = version.startsWith("v1_18_R2") || version.startsWith("v1_19");
+      post1dot19 = version.startsWith("v1_19");
+   }
+
+   public static boolean isModern() {
+      detectVersion();
+      return modern;
+   }
+
    public static boolean setForNMS(String materialName, int stack) {
-      if (version == null) {
-         version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
-         post1dot17 = version.startsWith("v1_17") || version.startsWith("v1_18") || version.startsWith("v1_19");
-         post1dot18 = version.startsWith("v1_18") || version.startsWith("v1_19");
-         post1dot18dot2 = version.startsWith("v1_18_R2") || version.startsWith("v1_19");
-         post1dot19 = version.startsWith("v1_19");
+      detectVersion();
+      if (modern) {
+         // 1.20.5+ drives the stack limit from the item's max_stack_size data component, so there
+         // is no static NMS field to patch. Material.maxStack (setFor) plus the per item component
+         // applied in InventoryListener cover it.
+         return true;
       }
 
       if (itemClass == null) {
@@ -172,9 +201,10 @@ public final class ReflectionUtils {
    }
 
    public static void updateInventory(Player bukkitPlayer) {
-      if (version == null) {
-         version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
-         post1dot17 = version.startsWith("v1_17") || version.startsWith("v1_18") || version.startsWith("v1_19");
+      detectVersion();
+      if (modern) {
+         bukkitPlayer.updateInventory();
+         return;
       }
 
       if (!post1dot17) {

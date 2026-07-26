@@ -6,9 +6,13 @@ import org.bukkit.Bukkit;
 public final class VersionUtil {
    public static Class<?> getCraftItemStackClass() throws ClassNotFoundException {
       try {
-         String packageName = Bukkit.getServer().getClass().getPackage().getName();
-         String version = packageName.split("\\.")[3];
-         return Class.forName("org.bukkit.craftbukkit." + version + ".inventory.CraftItemStack");
+         String[] parts = Bukkit.getServer().getClass().getPackage().getName().split("\\.");
+         if (parts.length < 4) {
+            // unmapped Paper (1.20.5+): the relocated package is the only one that exists
+            return Class.forName("org.bukkit.craftbukkit.inventory.CraftItemStack");
+         }
+
+         return Class.forName("org.bukkit.craftbukkit." + parts[3] + ".inventory.CraftItemStack");
       } catch (ClassNotFoundException var2) {
          return Class.forName("org.bukkit.craftbukkit.inventory.CraftItemStack");
       }

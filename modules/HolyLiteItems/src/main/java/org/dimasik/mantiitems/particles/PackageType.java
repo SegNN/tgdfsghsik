@@ -48,6 +48,16 @@ public enum PackageType {
    }
 
    public static String getServerVersion() {
-      return Bukkit.getServer().getClass().getPackage().getName().substring(23);
+      // Paper is unmapped since 1.20.5, so org.bukkit.craftbukkit has no vX_Y_RZ suffix and the
+      // old substring(23) threw StringIndexOutOfBounds. Rebuild the legacy shape from the API
+      // version so callers that parse it (Particles reads split("_")[1]) keep working.
+      String pkg = Bukkit.getServer().getClass().getPackage().getName();
+      int idx = pkg.lastIndexOf(".v1_");
+      if (idx >= 0) {
+         return pkg.substring(idx + 1);
+      } else {
+         String[] parts = Bukkit.getBukkitVersion().split("-")[0].split("\\.");
+         return "v" + parts[0] + "_" + (parts.length > 1 ? parts[1] : "0") + "_R1";
+      }
    }
 }

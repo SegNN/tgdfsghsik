@@ -2,21 +2,16 @@ package org.dimasik.liteexchange.menu;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.server.v1_16_R3.BlockPosition;
-import net.minecraft.server.v1_16_R3.ChatMessage;
-import net.minecraft.server.v1_16_R3.ContainerAccess;
-import net.minecraft.server.v1_16_R3.ContainerAnvil;
-import net.minecraft.server.v1_16_R3.Containers;
-import net.minecraft.server.v1_16_R3.EntityPlayer;
-import net.minecraft.server.v1_16_R3.PacketPlayOutOpenWindow;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.AnvilInventory;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.MenuType;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.view.AnvilView;
 import org.dimasik.Native;
 import org.dimasik.liteexchange.LiteExchange;
 import org.dimasik.liteexchange.lot.RateData;
@@ -24,6 +19,7 @@ import org.dimasik.liteexchange.util.Parser;
 
 @Native
 public class RateSelect implements InventoryHolder {
+   public static final String TITLE = "Введите курс обмена";
    public final Player player;
    public int rate;
    public int sourceRate;
@@ -40,15 +36,12 @@ public class RateSelect implements InventoryHolder {
    }
 
    private void openAnvil() {
-      EntityPlayer nmsPlayer = ((CraftPlayer)this.player).getHandle();
-      ContainerAnvil container = new RateSelect.CustomAnvilContainer(nmsPlayer, this);
-      this.anvilInventory = (AnvilInventory)container.getBukkitView().getTopInventory();
+      AnvilView view = MenuType.ANVIL.builder().title(Component.text(TITLE)).checkReachable(false).build(this.player);
+      this.anvilInventory = view.getTopInventory();
       this.anvilInventory.setItem(0, this.createBlackPane());
       this.anvilInventory.setItem(1, this.createRedPane());
       this.anvilInventory.setItem(2, this.createLimePane());
-      nmsPlayer.playerConnection.sendPacket(new PacketPlayOutOpenWindow(container.windowId, Containers.ANVIL, new ChatMessage("Введите курс обмена")));
-      nmsPlayer.activeContainer = container;
-      nmsPlayer.activeContainer.addSlotListener(nmsPlayer);
+      this.player.openInventory(view);
    }
 
    private ItemStack createBlackPane() {
@@ -89,19 +82,5 @@ public class RateSelect implements InventoryHolder {
 
    public Inventory getInventory() {
       return this.anvilInventory;
-   }
-
-   private static class CustomAnvilContainer extends ContainerAnvil {
-      private final RateSelect holder;
-
-      public CustomAnvilContainer(EntityPlayer player, RateSelect holder) {
-         super(player.nextContainerCounter(), player.inventory, ContainerAccess.at(player.world, new BlockPosition(0, 0, 0)));
-         this.holder = holder;
-         this.checkReachable = false;
-      }
-
-      public InventoryHolder getOwner() {
-         return this.holder;
-      }
    }
 }

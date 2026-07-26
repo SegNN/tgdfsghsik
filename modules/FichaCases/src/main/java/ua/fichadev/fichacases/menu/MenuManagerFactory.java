@@ -9,20 +9,12 @@ public class MenuManagerFactory {
    }
 
    public MenuManager createMenuManager(FichaCases plugin) {
-      String var2 = Bukkit.getServer().getBukkitVersion().split("-")[0];
-      byte var3 = -1;
-      switch (var2.hashCode()) {
-         case 1446823497:
-            if (var2.equals("1.16.5")) {
-               var3 = 0;
-            }
-         default:
-            switch (var3) {
-               case 0:
-                  return new MenuManagerImpl(plugin);
-               default:
-                  return null;
-            }
-      }
+      String version = Bukkit.getServer().getBukkitVersion().split("-")[0];
+      // MenuManagerImpl no longer touches any CraftBukkit internals, so the same implementation
+      // serves both the legacy 1.16.5 server and the current 1.21.4 one.
+      return switch (version) {
+         case "1.16.5", "1.21.4" -> new MenuManagerImpl(plugin);
+         default -> null;
+      };
    }
 }

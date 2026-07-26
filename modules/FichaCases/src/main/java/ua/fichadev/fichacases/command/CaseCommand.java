@@ -11,7 +11,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
-import org.bukkit.craftbukkit.libs.org.apache.commons.lang3.math.NumberUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.StringUtil;
@@ -84,7 +83,7 @@ public class CaseCommand implements CommandExecutor {
                      offlinePlayer = Bukkit.getOfflinePlayer(args[3]);
                   }
 
-                  if (!NumberUtils.isDigits(args[4])) {
+                  if (!isDigits(args[4])) {
                      sender.sendMessage("§6" + args[4] + " §7- §cне число");
                      return true;
                   }
@@ -96,7 +95,7 @@ public class CaseCommand implements CommandExecutor {
 
                   int count = args[2].equalsIgnoreCase("withdraw") ? -Integer.parseInt(args[4]) : Integer.parseInt(args[4]);
                   if (args.length == 7) {
-                     if (!NumberUtils.isDigits(args[6])) {
+                     if (!isDigits(args[6])) {
                         sender.sendMessage("§6" + args[6] + " §7- §cне число");
                         return true;
                      }
@@ -136,7 +135,7 @@ public class CaseCommand implements CommandExecutor {
                      offlinePlayerx = Bukkit.getOfflinePlayer(args[3]);
                   }
 
-                  if (!NumberUtils.isDigits(args[4])) {
+                  if (!isDigits(args[4])) {
                      sender.sendMessage("§6" + args[4] + " §7- §cне число");
                      return true;
                   }
@@ -148,7 +147,7 @@ public class CaseCommand implements CommandExecutor {
 
                   int countx = args[2].equalsIgnoreCase("withdraw") ? -Integer.parseInt(args[4]) : Integer.parseInt(args[4]);
                   if (args.length == 7) {
-                     if (!NumberUtils.isDigits(args[6])) {
+                     if (!isDigits(args[6])) {
                         sender.sendMessage("§6" + args[6] + " §7- §cне число");
                         return true;
                      }
@@ -355,6 +354,24 @@ public class CaseCommand implements CommandExecutor {
          } else {
             return null;
          }
+      }
+   }
+
+   /**
+    * Replacement for {@code org.apache.commons.lang3.math.NumberUtils#isDigits(String)}, which is
+    * no longer reachable through the server API. Same contract: null/empty is not a digit string.
+    */
+   private static boolean isDigits(String str) {
+      if (str == null || str.isEmpty()) {
+         return false;
+      } else {
+         for (int i = 0; i < str.length(); i++) {
+            if (!Character.isDigit(str.charAt(i))) {
+               return false;
+            }
+         }
+
+         return true;
       }
    }
 }

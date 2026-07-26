@@ -19,7 +19,7 @@
     <dependency>
       <groupId>local.plugins</groupId>
       <artifactId>luckperms</artifactId>
-      <version>5.4.166</version>
+      <version>5.5.53</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
