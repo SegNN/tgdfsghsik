@@ -36,8 +36,8 @@ import ru.kotikstasika.holyliteend.HolyLiteEnd;
 import ru.kotikstasika.holyliteend.end.EggItem;
 import ru.kotikstasika.holyliteend.end.managers.EndEvent;
 import ru.kotikstasika.holyliteend.utils.ColorUtils;
-import ua.fichatime.fichaspawneroved.item.EggType;
-import ua.fichatime.fichaspawneroved.item.Item;
+import ua.holytime.holyspawneroved.item.EggType;
+import ua.holytime.holyspawneroved.item.Item;
 
 public class EndListener implements Listener {
    private final HolyLiteEnd plugin;
@@ -283,7 +283,7 @@ public class EndListener implements Listener {
          event.setCancelled(true);
          event.getBlock().setType(Material.AIR);
          int amount = (int)(Math.random() * 5.0) + 1;
-         Item itemCreator = new Item(this.plugin.getFichaSpawneroved());
+         Item itemCreator = new Item(this.plugin.getHolySpawneroved());
          ItemStack endSplinterEgg = itemCreator.createEgg(EggType.END_SPLINTER_EGG);
          endSplinterEgg.setAmount(amount);
          event.getBlock().getWorld().dropItemNaturally(event.getBlock().getLocation(), endSplinterEgg);

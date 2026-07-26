@@ -7,7 +7,7 @@ MODS = os.path.join(WS, "modules")
 STUBS = "_api-stubs"
 STUBS_VERSION = "1.0.0"
 
-OWN = ("org.dimasik", "ru.kotikstasika", "ua.fichadev", "ua.fichamine", "ua.fichatime",
+OWN = ("org.dimasik", "ru.kotikstasika", "ua.holydev", "ua.holymine", "ua.holytime",
        "ru.nezxenka", "org.nezxenka", "ru.lolodimo4ka", "stickdev", "ru.holybackpack",
        "ru.litechat", "org.impldev", "ru.extas7y", "me.ones", "frozenpon")
 
@@ -50,18 +50,18 @@ SHADED = {
 EXTRA = {  # module -> extra deps maven can't infer
     "HolyExpKeeper": [("io.dropwizard.metrics", "metrics-healthchecks", "4.2.25", "compile")],
     # ProtectionStones exposes WorldGuard/WorldEdit types in its public API signatures
-    "FichaPSAddon": [("local.plugins", "worldguard", "7.0.13", "provided"),
+    "HolyPSAddon": [("local.plugins", "worldguard", "7.0.13", "provided"),
                      ("local.plugins", "worldedit", "7.3.16", "provided")],
     # jdbi was shaded into `shaded.org.jdbi`; imports rewritten, relocated back at package time
-    "FichaCases": [("org.jdbi", "jdbi3-core", "3.45.1", "compile"),
+    "HolyCases": [("org.jdbi", "jdbi3-core", "3.45.1", "compile"),
                    ("org.jdbi", "jdbi3-sqlobject", "3.45.1", "compile"),
                    ("org.jdbi", "jdbi3-caffeine-cache", "3.45.1", "compile")],
 }
 # original jars shaded these under a plugin-private package; reproduce at package time
 RELOCATE = {
-    "FichaServerNotify": [("com.google.gson", "ru.kotikstasika.fichaservernotify.libs.gson")],
+    "HolyServerNotify": [("com.google.gson", "ru.kotikstasika.holyservernotify.libs.gson")],
     "HolyExpKeeper":     [("com.zaxxer.hikari", "org.dimasik.mantiexpkeeper.libs.hikari")],
-    "FichaCases":        [("org.jdbi", "shaded.org.jdbi")],
+    "HolyCases":        [("org.jdbi", "shaded.org.jdbi")],
 }
 # dependency cycles are broken by compiling against the ORIGINAL jar for one direction
 CYCLE_BREAK = {("HolyGoldSpawner", "HolyCustomEgg")}

@@ -1,0 +1,13 @@
+name: HolyAutoMine
+version: '1.0'
+main: ua.holymine.holyautomine.HolyAutoMine
+api-version: '1.16'
+authors:
+  - gdxdwave
+  - smail
+  - holydev
+commands:
+  holyautomine:
+    aliases:
+      - am
+      - automine

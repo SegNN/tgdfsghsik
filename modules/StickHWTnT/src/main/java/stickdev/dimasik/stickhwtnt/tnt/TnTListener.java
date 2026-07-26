@@ -612,11 +612,11 @@ public class TnTListener implements Listener {
 
    private void activateRaidTax(Location location) {
       try {
-         Plugin fichaPSAddonPlugin = Bukkit.getPluginManager().getPlugin("FichaPSAddon");
-         if (fichaPSAddonPlugin != null) {
-            Class<?> fichaClass = fichaPSAddonPlugin.getClass();
-            Method activateRaidTaxMethod = fichaClass.getMethod("activateRaidTax", Location.class);
-            activateRaidTaxMethod.invoke(fichaPSAddonPlugin, location);
+         Plugin holyPSAddonPlugin = Bukkit.getPluginManager().getPlugin("HolyPSAddon");
+         if (holyPSAddonPlugin != null) {
+            Class<?> holyClass = holyPSAddonPlugin.getClass();
+            Method activateRaidTaxMethod = holyClass.getMethod("activateRaidTax", Location.class);
+            activateRaidTaxMethod.invoke(holyPSAddonPlugin, location);
          }
       } catch (Exception var51) {
          this.plugin.getLogger().warning("Failed to activate raid tax: " + var51.getMessage());
@@ -755,14 +755,14 @@ public class TnTListener implements Listener {
             boolean mobDropped = randomValue < chance;
             ItemStack spawnerItem = new ItemStack(Material.SPAWNER);
             if (mobDropped) {
-               Plugin fichaSpawnersPlugin = Bukkit.getPluginManager().getPlugin("FichaSpawners");
-               if (fichaSpawnersPlugin != null) {
+               Plugin holySpawnersPlugin = Bukkit.getPluginManager().getPlugin("HolySpawners");
+               if (holySpawnersPlugin != null) {
                   try {
-                     Class<?> fichaSpawnersClass = fichaSpawnersPlugin.getClass();
-                     Method getInstanceMethod = fichaSpawnersClass.getMethod("getInstance");
-                     Object fichaSpawnersInstance = getInstanceMethod.invoke(null);
-                     Method getConfigManagerMethod = fichaSpawnersClass.getMethod("getConfigManager");
-                     Object configManager = getConfigManagerMethod.invoke(fichaSpawnersInstance);
+                     Class<?> holySpawnersClass = holySpawnersPlugin.getClass();
+                     Method getInstanceMethod = holySpawnersClass.getMethod("getInstance");
+                     Object holySpawnersInstance = getInstanceMethod.invoke(null);
+                     Method getConfigManagerMethod = holySpawnersClass.getMethod("getConfigManager");
+                     Object configManager = getConfigManagerMethod.invoke(holySpawnersInstance);
                      Class<?> configManagerClass = configManager.getClass();
                      Method getSpawnerNameMethod = configManagerClass.getMethod("getSpawnerName", String.class);
                      Method getSpawnerLoreMethod = configManagerClass.getMethod("getSpawnerLore", String.class);
@@ -771,7 +771,7 @@ public class TnTListener implements Listener {
                      List<String> lore = (List<String>)getSpawnerLoreMethod.invoke(configManager, entityName);
                      spawnerItem = this.createSpawnerItemWithCustomData(mobType, name, lore);
                   } catch (Exception var27) {
-                     this.plugin.getLogger().warning("Failed to use FichaSpawners for stealer spawner: " + var27.getMessage());
+                     this.plugin.getLogger().warning("Failed to use HolySpawners for stealer spawner: " + var27.getMessage());
                      ItemMeta meta = spawnerItem.getItemMeta();
                      if (meta != null) {
                         meta.setDisplayName(ChatColor.RESET + mobType.name());
@@ -1162,16 +1162,16 @@ public class TnTListener implements Listener {
             )
           {
             try {
-               Plugin fichaPlugin = Bukkit.getPluginManager().getPlugin("FichaPSAddon");
-               if (fichaPlugin != null) {
-                  Class<?> fichaClass = fichaPlugin.getClass();
-                  Method breakRegionMethod = fichaClass.getMethod("breakRegionWithDurability", Location.class, int.class);
+               Plugin holyPlugin = Bukkit.getPluginManager().getPlugin("HolyPSAddon");
+               if (holyPlugin != null) {
+                  Class<?> holyClass = holyPlugin.getClass();
+                  Method breakRegionMethod = holyClass.getMethod("breakRegionWithDurability", Location.class, int.class);
                   this.plugin.getLogger().info("Calling breakRegionWithDurability with durability: " + durabilityToRemove);
-                  Boolean result = (Boolean)breakRegionMethod.invoke(fichaPlugin, location, durabilityToRemove);
+                  Boolean result = (Boolean)breakRegionMethod.invoke(holyPlugin, location, durabilityToRemove);
                   return result != null && result;
                }
             } catch (Exception var91) {
-               this.plugin.getLogger().warning("Failed to call FichaPSAddon method: " + var91.getMessage());
+               this.plugin.getLogger().warning("Failed to call HolyPSAddon method: " + var91.getMessage());
                region.deleteRegion(true);
                return false;
             }

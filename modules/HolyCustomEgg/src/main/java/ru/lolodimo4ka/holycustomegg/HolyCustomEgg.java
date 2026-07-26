@@ -388,7 +388,7 @@ public class HolyCustomEgg extends JavaPlugin implements Listener, TabCompleter 
          this.activeSpawners.remove(location);
          this.database.removeActiveSpawner(location);
       } else {
-         dropSpawner = this.createSpawnerWithFichaSpawnersData(spawner.getSpawnedType());
+         dropSpawner = this.createSpawnerWithHolySpawnersData(spawner.getSpawnedType());
       }
 
       spawnerBlock.setType(Material.AIR);
@@ -396,15 +396,15 @@ public class HolyCustomEgg extends JavaPlugin implements Listener, TabCompleter 
       this.breakJakePickaxe(player);
    }
 
-   private ItemStack createSpawnerWithFichaSpawnersData(EntityType entityType) {
-      Plugin fichaSpawnersPlugin = this.getServer().getPluginManager().getPlugin("FichaSpawners");
-      if (fichaSpawnersPlugin != null) {
+   private ItemStack createSpawnerWithHolySpawnersData(EntityType entityType) {
+      Plugin holySpawnersPlugin = this.getServer().getPluginManager().getPlugin("HolySpawners");
+      if (holySpawnersPlugin != null) {
          try {
-            Class<?> fichaSpawnersClass = fichaSpawnersPlugin.getClass();
-            Method getInstanceMethod = fichaSpawnersClass.getMethod("getInstance");
-            Object fichaSpawnersInstance = getInstanceMethod.invoke(null);
-            Method getConfigManagerMethod = fichaSpawnersClass.getMethod("getConfigManager");
-            Object configManager = getConfigManagerMethod.invoke(fichaSpawnersInstance);
+            Class<?> holySpawnersClass = holySpawnersPlugin.getClass();
+            Method getInstanceMethod = holySpawnersClass.getMethod("getInstance");
+            Object holySpawnersInstance = getInstanceMethod.invoke(null);
+            Method getConfigManagerMethod = holySpawnersClass.getMethod("getConfigManager");
+            Object configManager = getConfigManagerMethod.invoke(holySpawnersInstance);
             Class<?> configManagerClass = configManager.getClass();
             Method getSpawnerNameMethod = configManagerClass.getMethod("getSpawnerName", String.class);
             Method getSpawnerLoreMethod = configManagerClass.getMethod("getSpawnerLore", String.class);
@@ -413,7 +413,7 @@ public class HolyCustomEgg extends JavaPlugin implements Listener, TabCompleter 
             List<String> lore = (List<String>)getSpawnerLoreMethod.invoke(configManager, entityName);
             return this.createSpawnerItemWithCustomData(entityType, name, lore);
          } catch (Exception var14) {
-            this.getLogger().warning("Failed to use FichaSpawners: " + var14.getMessage());
+            this.getLogger().warning("Failed to use HolySpawners: " + var14.getMessage());
          }
       }
 

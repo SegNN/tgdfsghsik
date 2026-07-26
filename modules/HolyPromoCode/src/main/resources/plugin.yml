@@ -1,0 +1,17 @@
+#
+#        » Leaked by @FichaDev «
+#        Telegram: t.me/FichaDev
+#
+name: HolyPromoCode
+version: '1.0'
+main: ua.holytime.holypromocode.HolyPromoCode
+api-version: '1.16'
+commands:
+  promostats:
+    description: Показать статистику промокодов
+    usage: /promostats
+    permission: holypromocode.stats
+permissions:
+  holypromocode.stats:
+    description: Позволяет просматривать статистику промокодов
+    default: op

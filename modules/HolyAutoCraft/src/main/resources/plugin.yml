@@ -1,0 +1,7 @@
+name: HolyAutoCraft
+version: '1.0'
+main: ua.holydev.holyautocraft.HolyAutoCraft
+api-version: '1.16'
+authors:
+  - FichaDev
+  - Smail

@@ -1,0 +1,10 @@
+name: HolyEventSun
+version: 1.0
+main: ua.holydev.holyeventsun.HolyEventSun
+api-version: '1.16'
+depend:
+  - Vault
+softdepend:
+  - LootManager
+commands:
+  holysun:

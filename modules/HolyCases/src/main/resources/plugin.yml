@@ -1,0 +1,17 @@
+name: HolyCases
+version: 1.0
+main: ua.holydev.holycases.HolyCases
+api-version: 1.16
+softdepend: [PlaceholderAPI, PlayerPoints, packetevents]
+authors:
+  - Smail
+  - FichaDev
+  - NBK
+  - itzHiti
+  - KoroLKotov
+commands:
+  holycases:
+    aliases:
+      - fc
+      - holycases
+      - hc

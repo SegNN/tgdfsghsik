@@ -1,0 +1,14 @@
+name: HolyBambuk
+version: 1.0
+main: ua.holydev.holybambuk.HolyBambuk
+api-version: 1.16
+author:
+  - Smail
+  - FichaDev
+depend: [packetevents]
+commands:
+  bambuk:
+
+permissions:
+  holybambuk.use:
+    default: op

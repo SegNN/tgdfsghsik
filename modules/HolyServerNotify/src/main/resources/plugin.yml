@@ -1,0 +1,7 @@
+name: HolyServerNotify
+version: '1.0'
+main: ru.kotikstasika.holyservernotify.HolyServerNotify
+api-version: '1.16'
+author:
+  - kotikstasika
+  - Smail

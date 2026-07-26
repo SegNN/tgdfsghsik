@@ -1,7 +1,0 @@
-name: FichaExpBottle
-version: 1.0
-main: ua.fichadev.fichaexpbottle.FichaExpBottle
-api-version: 1.16
-commands:
-  exp:
-  expbottle:

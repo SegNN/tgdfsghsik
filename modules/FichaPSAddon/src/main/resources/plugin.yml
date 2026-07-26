@@ -1,5 +1,0 @@
-name: FichaPSAddon
-version: '1.0'
-main: ua.fichadev.fichapsaddon.FichaPSAddon
-api-version: '1.16'
-depend: [DecentHolograms, ProtectionStones, WorldGuard, WorldEdit]

@@ -1,0 +1,9 @@
+name: HolyPotion
+version: '1.0'
+main: ua.holydev.holypotion.HolyPotion
+api-version: '1.16'
+commands:
+  holypotion:
+    description: "Команда для управления зельями."
+    usage: /holypotion <save|give> [тип] [ник] [количество]
+    permission: holypotion.use

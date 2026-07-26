@@ -1,0 +1,9 @@
+name: HolySpawneroved
+version: '1.0'
+main: ua.holytime.holyspawneroved.HolySpawneroved
+api-version: '1.16'
+author:
+  - Smail
+  - FichaDev
+commands:
+  eggkeeper:

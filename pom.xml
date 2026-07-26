@@ -30,40 +30,40 @@
     <module>modules/EventShip</module>
     <module>modules/EventZamok</module>
     <module>modules/Expirytime</module>
-    <module>modules/FichaAutoCraft</module>
-    <module>modules/FichaAutoMine</module>
-    <module>modules/FichaBambuk</module>
-    <module>modules/FichaCases</module>
-    <module>modules/FichaCommandWhitelist</module>
-    <module>modules/FichaCustomPlaceholder</module>
-    <module>modules/FichaCustomPriv</module>
-    <module>modules/FichaEnderChest</module>
-    <module>modules/FichaEventSun</module>
-    <module>modules/FichaExpBottle</module>
-    <module>modules/FichaLiteShop</module>
-    <module>modules/FichaMineSkills</module>
-    <module>modules/FichaMobMoney</module>
-    <module>modules/FichaPSAddon</module>
-    <module>modules/FichaPotion</module>
-    <module>modules/FichaPromoCode</module>
-    <module>modules/FichaRTP</module>
-    <module>modules/FichaSalary</module>
-    <module>modules/FichaServerNotify</module>
-    <module>modules/FichaSpawneroved</module>
-    <module>modules/FichaSpawners</module>
+    <module>modules/HolyAutoCraft</module>
+    <module>modules/HolyAutoMine</module>
     <module>modules/HolyBackPack</module>
+    <module>modules/HolyBambuk</module>
+    <module>modules/HolyCases</module>
+    <module>modules/HolyCommandWhitelist</module>
     <module>modules/HolyCore</module>
     <module>modules/HolyCustomEgg</module>
+    <module>modules/HolyCustomPlaceholder</module>
+    <module>modules/HolyCustomPriv</module>
     <module>modules/HolyEnchantments</module>
+    <module>modules/HolyEnderChest</module>
+    <module>modules/HolyEventSun</module>
+    <module>modules/HolyExpBottle</module>
     <module>modules/HolyExpKeeper</module>
     <module>modules/HolyFreeze</module>
     <module>modules/HolyGoldSpawner</module>
     <module>modules/HolyKits</module>
     <module>modules/HolyLiteEnd</module>
     <module>modules/HolyLiteItems</module>
+    <module>modules/HolyLiteShop</module>
+    <module>modules/HolyMineSkills</module>
+    <module>modules/HolyMobMoney</module>
+    <module>modules/HolyPSAddon</module>
+    <module>modules/HolyPotion</module>
     <module>modules/HolyPotions</module>
+    <module>modules/HolyPromoCode</module>
     <module>modules/HolyPvP</module>
+    <module>modules/HolyRTP</module>
+    <module>modules/HolySalary</module>
+    <module>modules/HolyServerNotify</module>
     <module>modules/HolySfers</module>
+    <module>modules/HolySpawneroved</module>
+    <module>modules/HolySpawners</module>
     <module>modules/KotikDang</module>
     <module>modules/KotikTotemRune</module>
     <module>modules/LiteAuction</module>

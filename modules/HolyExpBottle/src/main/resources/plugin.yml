@@ -1,0 +1,7 @@
+name: HolyExpBottle
+version: 1.0
+main: ua.holydev.holyexpbottle.HolyExpBottle
+api-version: 1.16
+commands:
+  exp:
+  expbottle:

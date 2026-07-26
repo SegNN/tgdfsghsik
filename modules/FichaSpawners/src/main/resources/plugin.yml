@@ -1,7 +1,0 @@
-name: FichaSpawners
-version: 1.0
-main: ua.fichadev.fichaspawners.FichaSpawners
-api-version: 1.16
-author:
-  - FichaDev
-  - Smail

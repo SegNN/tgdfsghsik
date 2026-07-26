@@ -1,0 +1,10 @@
+#
+#        » Leaked by @FichaDev «
+#        Telegram: t.me/FichaDev
+#
+#плейсхолдеры создаються в формате %holyplaceholder_название%, пример ниже
+#%holyplaceholder_holydev%
+placeholders:
+  telegram: '&#00C8EDt.me/fichadev'
+  holydev: '&#FB6108&lF&#FB5808&li&#FB5008&lc&#FB4708&lh&#FB3F08&la&#FB3608&lD&#FB2D08&le&#FB2508&lv'
+  telegram-holy-bot: '&#00C8EDскоро...'

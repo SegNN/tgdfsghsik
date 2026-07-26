@@ -20,7 +20,7 @@ import ru.kotikstasika.holyliteend.end.managers.EndEvent;
 import ru.kotikstasika.holyliteend.end.managers.bossbar.EggBossBar;
 import ru.kotikstasika.holyliteend.end.managers.bossbar.EndBossBar;
 import ru.kotikstasika.holyliteend.utils.DatabaseManager;
-import ua.fichatime.fichaspawneroved.FichaSpawneroved;
+import ua.holytime.holyspawneroved.HolySpawneroved;
 
 public class HolyLiteEnd extends JavaPlugin {
    private static HolyLiteEnd instance;
@@ -32,7 +32,7 @@ public class HolyLiteEnd extends JavaPlugin {
    private EndBossBar endBossBarManager;
    private Dragon dragonManager;
    private Location endSpawnLocation;
-   private FichaSpawneroved fichaSpawneroved;
+   private HolySpawneroved holySpawneroved;
 
    public HolyLiteEnd() {
    }
@@ -40,7 +40,7 @@ public class HolyLiteEnd extends JavaPlugin {
    public void onEnable() {
       instance = this;
       this.saveDefaultConfig();
-      this.fichaSpawneroved = (FichaSpawneroved)Bukkit.getPluginManager().getPlugin("FichaSpawneroved");
+      this.holySpawneroved = (HolySpawneroved)Bukkit.getPluginManager().getPlugin("HolySpawneroved");
       this.initializeDatabase();
       this.databaseManager = new DatabaseManager(this);
       this.endEventManager = new EndEvent(this);
@@ -237,7 +237,7 @@ public class HolyLiteEnd extends JavaPlugin {
    }
 
    @Generated
-   public FichaSpawneroved getFichaSpawneroved() {
-      return this.fichaSpawneroved;
+   public HolySpawneroved getHolySpawneroved() {
+      return this.holySpawneroved;
    }
 }

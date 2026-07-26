@@ -1,0 +1,5 @@
+name: HolyPSAddon
+version: '1.0'
+main: ua.holydev.holypsaddon.HolyPSAddon
+api-version: '1.16'
+depend: [DecentHolograms, ProtectionStones, WorldGuard, WorldEdit]

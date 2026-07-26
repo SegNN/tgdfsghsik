@@ -54,7 +54,7 @@
     </dependency>
     <dependency>
       <groupId>world.ficha</groupId>
-      <artifactId>FichaSpawneroved</artifactId>
+      <artifactId>HolySpawneroved</artifactId>
       <version>1.0</version>
       <scope>provided</scope>
     </dependency>

@@ -1,0 +1,34 @@
+name: HolyMineSkills
+version: 1.0
+main: ua.holymine.holymineskills.HolyMineSkills
+api-version: 1.16
+authors:
+  - KotikStasika
+  - FichaDev
+  - Smail
+description: 'Современный плагин для системы бонусов и очков в автошахте с интеграцией WorldGuard, PlaceholderAPI и DecentHolograms'
+
+depend:
+  - WorldEdit
+  - WorldGuard
+  - PlaceholderAPI
+  - DecentHolograms
+
+softdepend:
+  - WorldEdit
+  - WorldGuard
+  - PlaceholderAPI
+  - DecentHolograms
+
+commands:
+  mineskills:
+    permission: 'holymineskills.use'
+    permission-message: 'У вас нет прав для использования этой команды!'
+
+permissions:
+  holymineskills.use:
+    default: true
+  holymineskills.admin:
+    default: op
+  holymineskills.reload:
+    default: op
