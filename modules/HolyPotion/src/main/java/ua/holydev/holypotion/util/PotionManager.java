@@ -13,10 +13,17 @@ import ua.holydev.holypotion.HolyPotion;
 public class PotionManager {
    private final HolyPotion plugin;
    private final NamespacedKey typeKey;
+   /**
+    * The plugin used to be called FichaPotion, so items handed out before the rename carry
+    * `fichapotion:type` instead of `holypotion:type`. NBT strings are length prefixed, so those
+    * items cannot be rewritten in place - they are read through this legacy key instead.
+    */
+   private final NamespacedKey legacyTypeKey;
 
    public PotionManager(HolyPotion plugin) {
       this.plugin = plugin;
       this.typeKey = new NamespacedKey(plugin, "type");
+      this.legacyTypeKey = NamespacedKey.fromString("fichapotion:type");
    }
 
    public NamespacedKey getTypeKey() {
@@ -46,9 +53,17 @@ public class PotionManager {
    }
 
    public String getPotionType(ItemStack item) {
-      return item != null && item.hasItemMeta()
-         ? (String)item.getItemMeta().getPersistentDataContainer().getOrDefault(this.typeKey, PersistentDataType.STRING, "none")
-         : "none";
+      if (item == null || !item.hasItemMeta()) {
+         return "none";
+      } else {
+         var container = item.getItemMeta().getPersistentDataContainer();
+         String type = container.get(this.typeKey, PersistentDataType.STRING);
+         if (type == null && this.legacyTypeKey != null) {
+            type = container.get(this.legacyTypeKey, PersistentDataType.STRING);
+         }
+
+         return type == null ? "none" : type;
+      }
    }
 
    public List<String> getPotionTypes() {
