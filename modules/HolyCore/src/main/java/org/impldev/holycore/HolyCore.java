@@ -12,8 +12,10 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.impldev.holycore.checker.ShulkerTotemChecker;
 import org.impldev.holycore.commands.Bc;
+import org.impldev.holycore.commands.HealthIndicator;
 import org.impldev.holycore.commands.Links;
 import org.impldev.holycore.commands.Suicide;
+import org.impldev.holycore.commands.Wolker;
 import org.impldev.holycore.database.DatabaseManager;
 import org.impldev.holycore.extensions.AfkExtension;
 import org.impldev.holycore.extensions.CommandExtension;
@@ -71,6 +73,16 @@ public final class HolyCore extends JavaPlugin {
       this.getCommand("suicide").setExecutor(new Suicide(this));
       this.getCommand("broadcast").setExecutor(new Bc(this));
       this.getCommand("links").setExecutor(new Links(this));
+      this.getCommand("wolker").setExecutor(new Wolker());
+
+      HealthIndicator healthIndicator = new HealthIndicator(this);
+      this.getCommand("healthindicator").setExecutor(healthIndicator);
+      // без PlaceholderAPI переключатель просто не на что повесить - TAB гасит объектив по плейсхолдеру
+      if (this.getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+         healthIndicator.register();
+      } else {
+         this.getLogger().warning("PlaceholderAPI не найден: /healthindicator не сможет управлять индикатором TAB");
+      }
    }
 
    private void setupRecipes() {

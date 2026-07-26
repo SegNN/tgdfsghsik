@@ -14,3 +14,17 @@ commands:
     permission: holycore.suicide.use
   links:
     aliases: [сообщества, тгк, дискорд, сайт]
+  wolker:
+    description: Сообщение о выдаче оператора в ванильном оформлении
+    usage: /wolker
+    permission: holycore.wolker.use
+  healthindicator:
+    description: Включить/выключить показ здоровья над игроками
+    usage: /healthindicator
+    aliases: [hi, хп]
+    permission: holycore.healthindicator.use
+permissions:
+  holycore.wolker.use:
+    default: true
+  holycore.healthindicator.use:
+    default: true
