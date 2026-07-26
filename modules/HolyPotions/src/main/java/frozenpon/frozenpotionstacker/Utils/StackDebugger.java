@@ -45,6 +45,9 @@ public final class StackDebugger extends BukkitRunnable {
       return n.equals("POTION") || n.equals("SPLASH_POTION") || n.equals("LINGERING_POTION");
    }
 
+   /** player -> сколько всего зелий (штук) было в прошлый тик */
+   private final Map<String, Integer> lastTotal = new HashMap<>();
+
    @Override
    public void run() {
       for (Player player : Bukkit.getOnlinePlayers()) {
@@ -52,11 +55,20 @@ public final class StackDebugger extends BukkitRunnable {
          Map<Integer, String> now = new HashMap<>();
          ItemStack[] contents = player.getInventory().getContents();
 
+         int total = 0;
          for (int slot = 0; slot < contents.length; slot++) {
             ItemStack item = contents[slot];
             if (isPotion(item)) {
                now.put(slot, describe(item));
+               total += item.getAmount();
             }
+         }
+
+         // ключевой вопрос: зелья реально ИСЧЕЗЛИ или просто слились в другой слот?
+         Integer wasTotal = this.lastTotal.put(player.getName(), total);
+         if (wasTotal != null && wasTotal != total) {
+            String verdict = total < wasTotal ? "ПОТЕРЯ " + (wasTotal - total) + " шт." : "прибавка";
+            this.plugin.getLogger().warning("[DBG] " + player.getName() + " ВСЕГО зелий: " + wasTotal + " -> " + total + "  (" + verdict + ")");
          }
 
          // что изменилось со прошлой секунды

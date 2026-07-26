@@ -58,6 +58,15 @@ public final class ReflectionUtils {
          return false;
       }
 
+      // На 1.20.5+ реальный лимит стака берётся из компонента max_stack_size самого предмета.
+      // Патч Material.maxStack тут только ВРЁТ Bukkit: getMaxStackSize() начинает отдавать 64,
+      // и любой плагин, считающий размеры стака (выдача, магазины, addItem), собирает стак,
+      // который сервер считает нелегальным и уничтожает. Именно так и пропадали зелья.
+      // Стакинг обеспечивает компонент, проставляемый в InventoryListener.
+      if (isModern()) {
+         return true;
+      }
+
       return setForClass(Material.class, potion, "maxStack", stack);
    }
 

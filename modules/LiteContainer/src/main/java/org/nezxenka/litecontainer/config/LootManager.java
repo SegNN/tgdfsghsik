@@ -1,5 +1,8 @@
 package org.nezxenka.litecontainer.config;
 
+import java.util.Map;
+import org.nezxenka.litecontainer.util.LegacyBlobReader;
+import org.nezxenka.litecontainer.util.LegacySkullFix;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,6 +51,12 @@ public class LootManager {
          this.itemsByRarity.put(rarity, new ArrayList<>());
       }
 
+      // головы из 1.16.5 хранят профиль в старом формате, 1.21.4 разбирает его в пустой
+      // профиль -> текстура пропадает. Чиним при загрузке, файл на диске не трогаем.
+      Map<String, String> legacyBlobs = LegacyBlobReader.read(this.configFile);
+      int repairedSkulls = 0;
+      int headsTotal = 0;
+      int headsWithTexture = 0;
       ConfigurationSection itemsSection = this.config.getConfigurationSection("items");
       if (itemsSection != null) {
          for (String key : itemsSection.getKeys(false)) {
@@ -58,6 +67,20 @@ public class LootManager {
                   double value = itemSection.getDouble("value", 0.0);
                   ItemStack itemStack = itemSection.getItemStack("item");
                   if (itemStack != null) {
+                     if (itemStack.getType() == org.bukkit.Material.PLAYER_HEAD) {
+                        headsTotal++;
+                        org.bukkit.inventory.meta.SkullMeta sm =
+                              itemStack.getItemMeta() instanceof org.bukkit.inventory.meta.SkullMeta m ? m : null;
+                        com.destroystokyo.paper.profile.PlayerProfile pp = sm != null ? sm.getPlayerProfile() : null;
+                        if (pp != null && pp.hasTextures()) {
+                           headsWithTexture++;
+                        }
+                     }
+
+                     if (LegacySkullFix.repair(itemStack, legacyBlobs.get("items." + key + ".item"))) {
+                        repairedSkulls++;
+                     }
+
                      ContainerItem containerItem = new ContainerItem(key, rarity, value, itemStack);
                      this.itemsByRarity.get(rarity).add(containerItem);
                      this.itemsByName.put(key, containerItem);
@@ -66,6 +89,13 @@ public class LootManager {
                   this.plugin.getLogger().warning("Неизвестная редкость для предмета: " + key);
                }
             }
+         }
+
+         if (repairedSkulls > 0) {
+            this.plugin.getLogger().info("Restored legacy (1.16.5) skull textures for " + repairedSkulls + " item(s) in items.yml");
+         } else if (headsTotal > headsWithTexture) {
+            this.plugin.getLogger().warning("Голов без текстуры: " + (headsTotal - headsWithTexture)
+                  + " - legacy-блоб их не содержит, нужен отдельный разбор");
          }
 
          this.initialized = true;
