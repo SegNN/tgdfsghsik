@@ -18,6 +18,10 @@ import org.impldev.holycore.commands.Links;
 import org.impldev.holycore.commands.Suicide;
 import org.impldev.holycore.commands.WExtend;
 import org.impldev.holycore.boosters.BoosterCommand;
+import org.impldev.holycore.tituls.TitulCommand;
+import org.impldev.holycore.tituls.TitulItemListener;
+import org.impldev.holycore.tituls.TitulMenu;
+import org.impldev.holycore.tituls.TitulRegistry;
 import org.impldev.holycore.boosters.BoosterData;
 import org.impldev.holycore.boosters.BoosterMenu;
 import org.impldev.holycore.invest.InvestCommand;
@@ -103,6 +107,12 @@ public final class HolyCore extends JavaPlugin {
       BoosterMenu boosterMenu = new BoosterMenu(this, boosterData);
       this.getServer().getPluginManager().registerEvents(boosterMenu, this);
       this.getCommand("boosters").setExecutor(new BoosterCommand(boosterMenu));
+
+      TitulRegistry titulRegistry = new TitulRegistry(this);
+      TitulMenu titulMenu = new TitulMenu(this, titulRegistry);
+      this.getServer().getPluginManager().registerEvents(titulMenu, this);
+      this.getServer().getPluginManager().registerEvents(new TitulItemListener(titulRegistry), this);
+      this.getCommand("tituls").setExecutor(new TitulCommand(titulMenu));
 
       BalTop balTop = new BalTop(this);
       this.getCommand("baltop").setExecutor(balTop);

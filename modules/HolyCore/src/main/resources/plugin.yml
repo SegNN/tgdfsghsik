@@ -46,6 +46,10 @@ commands:
     description: Меню бустеров
     usage: /boosters
     permission: holycore.boosters.use
+  tituls:
+    description: Меню титулов
+    usage: /tituls [ник]
+    permission: holycore.tituls.use
 permissions:
   holycore.wolker.use:
     default: true
@@ -58,4 +62,6 @@ permissions:
   holycore.invest.use:
     default: true
   holycore.boosters.use:
+    default: true
+  holycore.tituls.use:
     default: true
