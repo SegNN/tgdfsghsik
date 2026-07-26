@@ -19,7 +19,7 @@ public class HolyPlaceholder extends PlaceholderExpansion {
 
    @NotNull
    public String getAuthor() {
-      return "FichaDev";
+      return "HolyDev";
    }
 
    @NotNull

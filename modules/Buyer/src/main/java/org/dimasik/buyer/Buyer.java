@@ -130,7 +130,7 @@ public class Buyer extends JavaPlugin implements Listener, CommandExecutor {
                }
             }
          }).runTaskTimer(this, 0L, 20L);
-         this.getLogger().info("Купить нового скупщика можно в тгк https://t.me/FichaDev");
+         this.getLogger().info("Купить нового скупщика можно в тгк https://t.me/ExampleTG");
          this.getLogger().info("Скупщик полностью без багов и дюпов!");
          this.getLogger().info("Имеется поддержка к плагину и помощь с плагином");
       }
@@ -145,7 +145,7 @@ public class Buyer extends JavaPlugin implements Listener, CommandExecutor {
          this.databaseConnector.closeConnection();
       }
 
-      this.getLogger().info("Купить нового скупщика можно в тгк https://t.me/FichaDev");
+      this.getLogger().info("Купить нового скупщика можно в тгк https://t.me/ExampleTG");
       this.getLogger().info("Скупщик полностью без багов и дюпов!");
       this.getLogger().info("Имеется поддержка к плагину и помощь с плагином");
    }
@@ -237,7 +237,7 @@ public class Buyer extends JavaPlugin implements Listener, CommandExecutor {
          promoPaneMeta.setDisplayName(" ");
          List<String> promoLore = new ArrayList<>();
          promoLore.add(this.colorize("&x&F&F&0&0&0&0&lХотите нормального нового скупщика с HW?"));
-         promoLore.add(this.colorize("&7Тогда покупайте его в тгк &x&F&F&0&0&E&3@FichaDev"));
+         promoLore.add(this.colorize("&7Тогда покупайте его в тгк &x&F&F&0&0&E&3@HolyDev"));
          promoLore.add(this.colorize("&7С поддержкой обновления"));
          promoPaneMeta.setLore(promoLore);
          promoPane.setItemMeta(promoPaneMeta);

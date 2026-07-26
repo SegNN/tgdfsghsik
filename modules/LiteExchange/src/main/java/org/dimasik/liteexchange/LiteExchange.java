@@ -38,8 +38,8 @@ public final class LiteExchange extends JavaPlugin {
       if (!this.setupEconomy()) {
          this.getServer().getPluginManager().disablePlugin(this);
       } else {
-         this.getLogger().info("§dhttps://t.me/FichaHentai");
-         this.getLogger().info("§dhttps://t.me/FichaDev");
+         this.getLogger().info("§dhttps://t.me/ExampleTG");
+         this.getLogger().info("§dhttps://t.me/ExampleTG");
          this.dbCore = new DBCore(
             this,
             config.getString("database.host", "host"),
@@ -92,8 +92,8 @@ public final class LiteExchange extends JavaPlugin {
    }
 
    public void onDisable() {
-      this.getLogger().info("§dhttps://t.me/FichaHentai");
-      this.getLogger().info("§dhttps://t.me/FichaDev");
+      this.getLogger().info("§dhttps://t.me/ExampleTG");
+      this.getLogger().info("§dhttps://t.me/ExampleTG");
       if (this.coinsPlaceholder != null) {
          try {
             if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null

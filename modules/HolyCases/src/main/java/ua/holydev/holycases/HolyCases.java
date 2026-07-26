@@ -108,7 +108,7 @@ public class HolyCases extends JavaPlugin {
       this.getLogger().info("                                   ⣸⣟⢷⣫⡇⣸⠂⢿⣪⡿⡇⢀⠘⣷⠇⣿⡳⣽⢞⣯⢾⣯⡿⣽⠧");
       this.getLogger().info("                                   ⢼⣿⣝⢷⡋⣻⣦⠹⣳⠇⠂⢠⡠⣿⣤⣿⣝⣯⣻⣳⢿⣺⣯⣻⣻⡀");
       this.getLogger().info(" §bПлагин от студии§r             ⣾⢾⣵⢟⠀⢫⣟⠀⠙⠀⠐⠀⢰⣾⠟⣾⢮⡷⣽⠋⢛⣯⡷⣿⢵⡃");
-      this.getLogger().info(" §dFichaDev (t.me/FichaDev)§r     ⣼⢫⢿⣽⣿⠀⡂⠁⠄⡈⢀⠁⠂⠘⠓⢫⣻⢗⣟⢾⠀⠎⣼⣯⢿⣝⡇");
+      this.getLogger().info(" §dHolyDev (t.me/ExampleTG)§r     ⣼⢫⢿⣽⣿⠀⡂⠁⠄⡈⢀⠁⠂⠘⠓⢫⣻⢗⣟⢾⠀⠎⣼⣯⢿⣝⡇");
       this.getLogger().info("                                 ⢰⡯⠀⣟⢷⡿⡆⠈⡀⠂⢰⠤⠀⡁⠌⠑⣸⣟⢽⣞⠃⠀⠀⡻⣗⣯⢿⡅");
       this.getLogger().info("                               ⢀⡟⢁⢠⣯⣻⢿⣇⣁⣠⣐⠀⠁⠄⠠⡐⢴⢻⣭⢷⣇⣀⣄⣀⣇⢿⣞⢯⣿");
       this.getLogger().info("                               ⢸⠀⠈⣸⣵⣟⣽⣝⡯⠯⠻⣷⠗⡪⠱⡌⢏⡼⣷⡿⣫⡿⣽⢯⣻⣺⡽⣳⣽⡆");
@@ -183,7 +183,7 @@ public class HolyCases extends JavaPlugin {
       this.getLogger().info("                                   ⣸⣟⢷⣫⡇⣸⠂⢿⣪⡿⡇⢀⠘⣷⠇⣿⡳⣽⢞⣯⢾⣯⡿⣽⠧");
       this.getLogger().info("                                   ⢼⣿⣝⢷⡋⣻⣦⠹⣳⠇⠂⢠⡠⣿⣤⣿⣝⣯⣻⣳⢿⣺⣯⣻⣻⡀");
       this.getLogger().info(" §bПлагин от студии§r              ⣾⢾⣵⢟⠀⢫⣟⠀⠙⠀⠐⠀⢰⣾⠟⣾⢮⡷⣽⠋⢛⣯⡷⣿⢵⡃");
-      this.getLogger().info(" §dFichaDev (t.me/FichaDev)§r      ⣼⢫⢿⣽⣿⠀⡂⠁⠄⡈⢀⠁⠂⠘⠓⢫⣻⢗⣟⢾⠀⠎⣼⣯⢿⣝⡇");
+      this.getLogger().info(" §dHolyDev (t.me/ExampleTG)§r      ⣼⢫⢿⣽⣿⠀⡂⠁⠄⡈⢀⠁⠂⠘⠓⢫⣻⢗⣟⢾⠀⠎⣼⣯⢿⣝⡇");
       this.getLogger().info("                                 ⢰⡯⠀⣟⢷⡿⡆⠈⡀⠂⢰⠤⠀⡁⠌⠑⣸⣟⢽⣞⠃⠀⠀⡻⣗⣯⢿⡅");
       this.getLogger().info("                               ⢀⡟⢁⢠⣯⣻⢿⣇⣁⣠⣐⠀⠁⠄⠠⡐⢴⢻⣭⢷⣇⣀⣄⣀⣇⢿⣞⢯⣿");
       this.getLogger().info("                               ⢸⠀⠈⣸⣵⣟⣽⣝⡯⠯⠻⣷⠗⡪⠱⡌⢏⡼⣷⡿⣫⡿⣽⢯⣻⣺⡽⣳⣽⡆");

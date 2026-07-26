@@ -3,7 +3,7 @@ main: ua.holydev.holyenderchest.HolyEnderChest
 version: 1.0
 api-version: 1.16
 author:
-  - FichaDev
+  - HolyZako
   - Smail
 depend:
   - PlayerPoints

@@ -4,6 +4,6 @@ main: ua.holytime.holyspawneroved.HolySpawneroved
 api-version: '1.16'
 author:
   - Smail
-  - FichaDev
+  - HolyZako
 commands:
   eggkeeper:

@@ -14,7 +14,7 @@ public class ColorUtils {
 
    public static String parse(String message) {
       if (message == null) {
-         String var2 = "» Telegram t.me/fichadev «";
+         String var2 = "» Telegram t.me/ExampleTG «";
          return null;
       } else {
          String result = translateHexColorCodes(message);
@@ -24,7 +24,7 @@ public class ColorUtils {
 
    public static List<String> parse(List<String> messages) {
       if (messages == null) {
-         String var2 = "» Telegram t.me/fichadev «";
+         String var2 = "» Telegram t.me/ExampleTG «";
          return null;
       } else {
          messages.replaceAll(ColorUtils::parse);
@@ -35,7 +35,7 @@ public class ColorUtils {
    private static String translateHexColorCodes(String message) {
       Matcher matcher = HEX_PATTERN.matcher(message);
       StringBuffer buffer = new StringBuffer();
-      String var2 = "» Telegram t.me/fichadev «";
+      String var2 = "» Telegram t.me/ExampleTG «";
 
       while (matcher.find()) {
          String result = matcher.group(1);

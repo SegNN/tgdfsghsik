@@ -1,6 +1,5 @@
 #
-#        » Leaked by @FichaDev «
-#        Telegram: t.me/FichaDev
+#        Telegram: t.me/ExampleTG
 #
 name: HolyMobMoney
 version: 1.0
@@ -10,4 +9,4 @@ depend: [Vault]
 softdepend: [HolyBooster]
 author:
   - Smail
-  - FichaDev
+  - HolyZako

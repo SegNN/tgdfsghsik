@@ -1,6 +1,5 @@
 #
-#        » Leaked by @FichaDev «
-#        Telegram: t.me/FichaDev
+#        Telegram: t.me/ExampleTG
 #
 storage:
   type: "SQLite"
@@ -18,7 +17,7 @@ promocode:
       - "&6 Вы получили:"
       - "&f"
       - "&7 - &e1 ключ к бесплатному кейсу"
-      - "&7 - &eСкидку на плагин в студии FichaDev 1%"
+      - "&7 - &eСкидку на плагин в студии HolyDev 1%"
       - "&f"
       - "&f * &7Промокод активируеться на время вайпа, если ранее не выдавался"
       - "&f"

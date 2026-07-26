@@ -5,7 +5,7 @@ api-version: 1.16
 softdepend: [PlaceholderAPI, PlayerPoints, packetevents]
 authors:
   - Smail
-  - FichaDev
+  - HolyZako
   - NBK
   - itzHiti
   - KoroLKotov

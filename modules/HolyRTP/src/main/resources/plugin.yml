@@ -1,6 +1,5 @@
 #
-#        » Leaked by @FichaDev «
-#        Telegram: t.me/FichaDev
+#        Telegram: t.me/ExampleTG
 #
 name: HolyRTP
 version: 1.0
@@ -9,7 +8,7 @@ api-version: 1.16
 soft-depend: [WorldGuard, ProtectionStones]
 authors:
   - Smail
-  - FichaDev
+  - HolyZako
 commands:
   rtp:
 

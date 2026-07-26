@@ -4,7 +4,7 @@ main: ua.holymine.holymineskills.HolyMineSkills
 api-version: 1.16
 authors:
   - KotikStasika
-  - FichaDev
+  - HolyZako
   - Smail
 description: 'Современный плагин для системы бонусов и очков в автошахте с интеграцией WorldGuard, PlaceholderAPI и DecentHolograms'
 

@@ -60,7 +60,7 @@ alwaysjoinmessage:
   - '&x&F&B&C&B&0&0&n▋&f и хочешь помочь нам в борьбе с нарушителями'
   - '&x&F&B&C&B&0&0&n▋&f то оставь свою заявку здесь:'
   - '&x&F&B&C&B&0&0&n▋&f '
-  - '&x&F&B&C&B&0&0▋&x&F&B&C&B&0&0 t.me/FichaDev'
+  - '&x&F&B&C&B&0&0▋&x&F&B&C&B&0&0 t.me/ExampleTG'
 
 region-commands:
   rtp:
@@ -76,11 +76,11 @@ settings:
       - ""
       - "&x&0&0&B&7&F&B&lИнформация о сервере"
       - ""
-      - "&x&2&5&C&E&F&B&l&n▍&r &fТелеграм студии: &x&2&F&D&0&F&Bhttps://t.me/FichaDev"
-      - "&x&2&5&C&E&F&B&l&n▍&r &fТелеграм хенатая: &x&2&F&D&0&F&Bhttps://t.me/FichaHentai"
+      - "&x&2&5&C&E&F&B&l&n▍&r &fТелеграм студии: &x&2&F&D&0&F&Bhttps://t.me/ExampleTG"
+      - "&x&2&5&C&E&F&B&l&n▍&r &fТелеграм хенатая: &x&2&F&D&0&F&Bhttps://t.me/ExampleTG"
       - "&x&2&5&C&E&F&B&l&n▍&r &fВк: &x&2&F&D&0&F&Bvk.com/holyworld"
       - "&x&2&5&C&E&F&B&l&n▍"
-      - "&x&2&5&C&E&F&B&l&n▍&r &fВеб-сайт: &x&2&F&D&0&F&Bhttps://t.me/FichaDev "
+      - "&x&2&5&C&E&F&B&l&n▍&r &fВеб-сайт: &x&2&F&D&0&F&Bhttps://t.me/ExampleTG "
       - "&x&2&5&C&E&F&B&l▍"
       - ""
   join:
@@ -92,7 +92,7 @@ settings:
       - "&r &fнаш сервер от нарушителей. Если ты хочешь стать &6частью "
       - "&r &6команды&f, "
       - "&r &fкоторая делает игру &6честной &fи &6увлекательной для всех, "
-      - "&r &6жми заявку: &x&7&6&D&F&F&B&ndt.me/FichaDev"
+      - "&r &6жми заявку: &x&7&6&D&F&F&B&ndt.me/ExampleTG"
   bc:
     enable: true
     cooldown: 1800

@@ -3,7 +3,7 @@ version: 1.0
 main: ua.holydev.holyliteshop.HolyLiteShop
 api-version: 1.16
 authors:
-  - FichaDev
+  - HolyZako
   - Smail
 depend:
   - Vault

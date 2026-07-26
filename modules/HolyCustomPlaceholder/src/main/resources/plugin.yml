@@ -1,13 +1,12 @@
 #
-#        » Leaked by @FichaDev «
-#        Telegram: t.me/FichaDev
+#        Telegram: t.me/ExampleTG
 #
 name: HolyCustomPlaceholder
 version: '1.0'
 main: ua.holytime.holycustomplaceholder.HolyCustomPlaceholder
 api-version: '1.16'
 author:
-  - FichaDev
+  - HolyZako
   - Smail
 depend:
   - PlaceholderAPI

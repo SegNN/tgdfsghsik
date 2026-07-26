@@ -1,7 +1,4 @@
 #
-#        » Leaked by @FichaDev «
-#        Studio: t.me/FichaDev
-#        Hentai: t.me/FichaHentai
 #
 database:
   type: sqlite #sqlite или mysql
@@ -10,7 +7,7 @@ database:
     port: 3306
     database: HolyLiteShop
     username: Smail
-    password: 't.me/FichaDev'
+    password: 't.me/ExampleTG'
     pool-size: 10
 
 early_wipe_mode: false #включить/выключить режим раннего вайпа
