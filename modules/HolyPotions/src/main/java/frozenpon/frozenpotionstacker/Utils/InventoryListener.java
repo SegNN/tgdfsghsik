@@ -11,6 +11,10 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCreativeEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.event.inventory.InventoryInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.entity.EntityPickupItemEvent;
+import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -75,6 +79,50 @@ public class InventoryListener implements Listener {
          meta.setMaxStackSize(size);
          item.setItemMeta(meta);
       }
+   }
+
+   /**
+    * Stamps every potion in an inventory. Without this a stack carried over from 1.16.5 has no
+    * max_stack_size component at all, so the server still treats its real limit as 1: the moment
+    * the stack is touched it gets clamped and the rest of the potions are destroyed.
+    */
+   public int sweep(Inventory inventory) {
+      if (inventory == null || !ReflectionUtils.isModern()) {
+         return 0;
+      }
+
+      int fixed = 0;
+      for (ItemStack item : inventory.getContents()) {
+         if (item != null && this.potions.contains(item.getType())) {
+            int before = item.hasItemMeta() && item.getItemMeta().hasMaxStackSize() ? item.getItemMeta().getMaxStackSize() : -1;
+            this.applyStackSize(item);
+            if (item.hasItemMeta() && item.getItemMeta().hasMaxStackSize() && item.getItemMeta().getMaxStackSize() != before) {
+               fixed++;
+            }
+         }
+      }
+
+      return fixed;
+   }
+
+   @EventHandler
+   public void onJoin(PlayerJoinEvent event) {
+      Player player = event.getPlayer();
+      this.sweep(player.getInventory());
+      this.sweep(player.getEnderChest());
+      player.updateInventory();
+   }
+
+   @EventHandler(ignoreCancelled = true)
+   public void onPickup(EntityPickupItemEvent event) {
+      if (event.getEntity() instanceof Player) {
+         this.applyStackSize(event.getItem().getItemStack());
+      }
+   }
+
+   @EventHandler
+   public void onInventoryOpen(InventoryOpenEvent event) {
+      this.sweep(event.getInventory());
    }
 
    @EventHandler
