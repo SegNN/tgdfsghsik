@@ -65,7 +65,7 @@ RELOCATE = {
 }
 # dependency cycles are broken by compiling against the ORIGINAL jar for one direction
 CYCLE_BREAK = {("HolyGoldSpawner", "HolyCustomEgg")}
-ORIG_JAR_GAV = ("local.ficha", "{name}", "1.16.5")
+ORIG_JAR_GAV = ("local.holy", "{name}", "1.16.5")
 
 STUB_CLASSES = {"StickEcoAPI": "org.dimasik.stickeco", "AntiCheatStatus": "org.dimasik.anticheatstatus",
                 "SyncAPI": "ru.nezxenka.syncservice", "PremiumAPI": "stickdev.siynes.stickhwpremium"}
@@ -151,13 +151,13 @@ for mod in mods:
                 if (mod, o) in CYCLE_BREAK:
                     g, a, v = ORIG_JAR_GAV[0], o, ORIG_JAR_GAV[2]
                 else:
-                    g, a, v = "world.ficha", o, (STUBS_VERSION if o == STUBS else plugin_meta(o)[1])
+                    g, a, v = "world.example", o, (STUBS_VERSION if o == STUBS else plugin_meta(o)[1])
                 if (g, a) not in seen:
                     seen.add((g, a)); dep_xml.append(dep(g, a, v, "provided"))
             elif o is None and any(i.startswith(p) for p in STUB_CLASSES.values()):
-                if ("world.ficha", STUBS) not in seen:
-                    seen.add(("world.ficha", STUBS))
-                    dep_xml.append(dep("world.ficha", STUBS, STUBS_VERSION, "provided"))
+                if ("world.example", STUBS) not in seen:
+                    seen.add(("world.example", STUBS))
+                    dep_xml.append(dep("world.example", STUBS, STUBS_VERSION, "provided"))
             continue
         if i.startswith(("org.bukkit", "org.spigotmc", "net.md_5.bungee", "com.destroystokyo.paper",
                          "io.papermc.paper", "net.kyori.adventure", "com.google.common",
@@ -218,8 +218,8 @@ for mod in mods:
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>world.ficha</groupId>
-    <artifactId>fichaworld-parent</artifactId>
+    <groupId>world.example</groupId>
+    <artifactId>exampleworld-parent</artifactId>
     <version>1.0.0</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
@@ -244,8 +244,8 @@ open(os.path.join(MODS, STUBS, "pom.xml"), "w", encoding="utf-8").write(f"""<?xm
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>world.ficha</groupId>
-    <artifactId>fichaworld-parent</artifactId>
+    <groupId>world.example</groupId>
+    <artifactId>exampleworld-parent</artifactId>
     <version>1.0.0</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
@@ -263,8 +263,8 @@ open(os.path.join(WS, "pom.xml"), "w", encoding="utf-8").write(f"""<?xml version
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>world.ficha</groupId>
-  <artifactId>fichaworld-parent</artifactId>
+  <groupId>world.example</groupId>
+  <artifactId>exampleworld-parent</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
   <name>FichaWorld plugins</name>
