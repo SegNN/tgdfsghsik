@@ -207,8 +207,7 @@ public final class InvestMenu implements Listener {
       Economy economy = rsp.getProvider();
       double price = category.price();
       if (economy.getBalance(player) < price) {
-         player.sendMessage(Parser.color("&r&x&f&f&2&2&2&2▶&r&f Недостаточно средств: нужно &r&x&f&f&a&2&0&0"
-               + category.price() + " ¤&r&f."));
+         player.sendMessage(Parser.color("&r&x&f&f&2&2&2&2▶&r&f У Вас недостаточно денег для данной инвестиции."));
          inv.setItem(category.slot(), this.icon(category));
          return;
       }
@@ -221,9 +220,7 @@ public final class InvestMenu implements Listener {
       boolean levelUp = this.data.invest(player.getUniqueId(), player.getName(), category);
       if (levelUp) {
          this.effects.apply();
-         Bukkit.broadcastMessage(Parser.color("&r&x&0&5&f&b&0&0▶&r&f Направление &r&x&f&f&a&2&0&0"
-               + category.title() + "&r&f прокачано до &r&x&0&5&f&b&0&0" + this.data.level(category.id())
-               + " ур.&r&f благодаря &r&x&0&0&d&8&f&f" + player.getName()));
+         this.announce(category);
       }
 
       player.sendMessage(Parser.color("&r&x&0&5&f&b&0&0▶&r&f Вы вложили &r&x&0&5&f&b&0&01 Очко Инвестиций&r&f в "
@@ -231,6 +228,67 @@ public final class InvestMenu implements Listener {
 
       // перерисовываем всё меню: прогресс и рейтинг меняются сразу
       this.render(inv, player);
+   }
+
+   /**
+    * Объявление о новом уровне - в том же виде, в каком его показывал исходный сервер:
+    * название направления, новый уровень и одной строкой то, что изменилось в игре.
+    */
+   private void announce(Category category) {
+      int level = this.data.level(category.id());
+      long percent = Math.round(level * category.perLevel());
+
+      String what;
+      String effect;
+      switch (category.id()) {
+         case "gunpowder" -> {
+            what = "порох с криперов";
+            effect = "Теперь криперы приносят &r&x&0&5&f&b&0&0на &r&x&0&5&f&b&0&0" + percent
+                  + "&r&x&0&5&f&b&0&0% больше&r&f пороха";
+         }
+         case "experience" -> {
+            what = "опыт с мобов";
+            effect = "Теперь мобы приносят &r&x&0&5&f&b&0&0на &r&x&0&5&f&b&0&0" + percent
+                  + "&r&x&0&5&f&b&0&0% больше&r&f опыта";
+         }
+         case "voting" -> {
+            what = "ивенты";
+            effect = "Теперь голосования проводятся &r&x&0&5&f&b&0&0чаще на &r&x&0&5&f&b&0&0" + percent
+                  + "&r&x&0&5&f&b&0&0%";
+         }
+         case "automine" -> {
+            what = "автошахты";
+            effect = "Теперь автошахты обновляются &r&x&0&5&f&b&0&0быстрее на &r&x&0&5&f&b&0&0" + percent
+                  + "&r&x&0&5&f&b&0&0%";
+         }
+         case "treasures" -> {
+            what = "сокровища";
+            effect = "Теперь сокровища появляются &r&x&0&5&f&b&0&0чаще на &r&x&0&5&f&b&0&0" + percent
+                  + "&r&x&0&5&f&b&0&0%";
+         }
+         case "buyer" -> {
+            what = "товар скупщика";
+            effect = "Теперь скупщик платит &r&x&0&5&f&b&0&0на &r&x&0&5&f&b&0&0" + level
+                  + "&r&x&0&5&f&b&0&0% больше";
+         }
+         case "borders" -> {
+            what = "границы миров";
+            effect = "Теперь границы миров &r&x&0&5&f&b&0&0шире на &r&x&0&5&f&b&0&0"
+                  + Math.round(level * 10.0) + "&r&x&0&5&f&b&0&0 блоков";
+         }
+         default -> {
+            what = category.title().toLowerCase();
+            effect = "Эффект направления усилен";
+         }
+      }
+
+      Bukkit.broadcastMessage("");
+      Bukkit.broadcastMessage(Parser.color("&r&x&0&0&d&8&f&f&l&n▍&r&f Уровень инвестиций в " + what));
+      Bukkit.broadcastMessage(Parser.color("&r&x&0&0&d&8&f&f&l&n▍&r&f был увеличен до &r&x&0&0&d&8&f&f"
+            + level + "&r&x&0&0&d&8&f&f уровня&r&f!"));
+      Bukkit.broadcastMessage(Parser.color("&r&x&0&0&d&8&f&f&l&n▍"));
+      Bukkit.broadcastMessage(Parser.color("&r&x&0&0&d&8&f&f&l▍&r&f " + effect));
+      Bukkit.broadcastMessage("");
    }
 
    @EventHandler
