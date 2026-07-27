@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import me.clip.placeholderapi.PlaceholderAPI;
+import net.md_5.bungee.api.chat.BaseComponent;
+import net.md_5.bungee.api.chat.HoverEvent;
+import net.md_5.bungee.api.chat.TextComponent;
+import net.md_5.bungee.api.chat.hover.content.Text;
+import org.bukkit.Statistic;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -41,6 +46,71 @@ public class BukkitListener implements Listener {
             this.processRegularMessage(event, player, message, bypassPermission);
          }
       }
+   }
+
+
+   /**
+    * Вешает подсказку со статистикой на ник автора сообщения.
+    *
+    * <p>Сообщение уже собрано в строку с §-кодами, поэтому ник ищется в ней по его отрисованному
+    * значению и оборачивается отдельным компонентом. Хвост после ника получает явный цвет,
+    * унаследованный от предыдущего куска: {@code fromLegacyText} разбирает каждый отрезок
+    * независимо, и без этого текст после ника вернулся бы к белому.
+    *
+    * <p>Если ник в строке не нашёлся (ник переопределён, формат изменён), сообщение уходит как
+    * было - лучше без подсказки, чем сломанное.
+    */
+   private BaseComponent[] withHover(String formatted, Player author) {
+      List<String> lines = LiteChat.getInstance().getConfig().getStringList("hover");
+      if (lines.isEmpty()) {
+         return TextComponent.fromLegacyText(formatted);
+      }
+
+      String nick = HexUtil.color(PlaceholderAPI.setPlaceholders(author, "%player_displayname%"));
+      int at = formatted.indexOf(nick);
+      if (nick.isEmpty() || at < 0) {
+         nick = author.getName();
+         at = formatted.indexOf(nick);
+      }
+
+      if (at < 0) {
+         return TextComponent.fromLegacyText(formatted);
+      }
+
+      int end = at + nick.length();
+      String head = formatted.substring(0, at);
+      String tail = org.bukkit.ChatColor.getLastColors(formatted.substring(0, end)) + formatted.substring(end);
+
+      HoverEvent hover = new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(
+            TextComponent.fromLegacyText(this.hoverText(author))));
+
+      TextComponent out = new TextComponent();
+      for (BaseComponent part : TextComponent.fromLegacyText(head)) {
+         out.addExtra(part);
+      }
+      for (BaseComponent part : TextComponent.fromLegacyText(nick)) {
+         part.setHoverEvent(hover);
+         out.addExtra(part);
+      }
+      for (BaseComponent part : TextComponent.fromLegacyText(tail)) {
+         out.addExtra(part);
+      }
+
+      return new BaseComponent[]{out};
+   }
+
+   private String hoverText(Player author) {
+      String body = String.join("\n", LiteChat.getInstance().getConfig().getStringList("hover"));
+      return HexUtil.color(PlaceholderAPI.setPlaceholders(author, body.replace("{playtime}", playtime(author))));
+   }
+
+   /**
+    * "0ч., 51м." - наигранное берётся из статистики, а не из времени первого входа: последнее
+    * растёт даже когда игрок не заходит, и через месяц показывало бы месяц игры.
+    */
+   private static String playtime(Player player) {
+      long minutes = player.getStatistic(Statistic.PLAY_ONE_MINUTE) / 20L / 60L;
+      return minutes / 60L + "ч., " + minutes % 60L + "м.";
    }
 
    private boolean isNewbie(Player player, AsyncPlayerChatEvent event) {
@@ -218,7 +288,8 @@ public class BukkitListener implements Listener {
             .replace("{color}", HexUtil.color(color))
             .replace("{message}", message.substring(1));
          event.setCancelled(true);
-         Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage(formattedMessage));
+         BaseComponent[] withHover = this.withHover(formattedMessage, player);
+         Bukkit.getOnlinePlayers().forEach(p -> p.spigot().sendMessage(withHover));
          ConsoleMSG.color("&7[Глобальный чат] " + formattedMessage);
       } else {
          String gcFormat = LiteChat.getInstance().getConfig().getString("format.local", "&7{player}: {message}");
@@ -237,7 +308,8 @@ public class BukkitListener implements Listener {
             }
          });
          event.setCancelled(true);
-         event.getRecipients().forEach(p -> p.sendMessage(formattedMessage));
+         BaseComponent[] withHover = this.withHover(formattedMessage, player);
+         event.getRecipients().forEach(p -> p.spigot().sendMessage(withHover));
          ConsoleMSG.color("&7[Локальный чат] " + formattedMessage);
       }
 
