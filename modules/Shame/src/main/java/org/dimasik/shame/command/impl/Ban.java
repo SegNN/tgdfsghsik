@@ -67,7 +67,7 @@ public class Ban extends SubCommand {
             new Pair<>("%player%", playerName)
          );
          if (player == null) {
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "banip " + playerName + " " + reason);
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ban " + playerName + " " + reason);
             if (!broadcastCmd.isEmpty()) {
                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), broadcastCmd);
             }

@@ -18,11 +18,17 @@ import org.bukkit.plugin.java.JavaPlugin;
  * те плагины могут её использовать в своих конфигах.
  */
 public final class InvestEffects implements Listener {
-   /** радиус границы на нулевом уровне и прибавка за уровень */
-   private static final double NETHER_BASE = 1602.0;
-   private static final double NORMAL_BASE = 2884.0;
-   private static final double END_BASE = 4166.0;
-   private static final double BORDER_STEP = 10.0;
+   /**
+    * Радиус границы на нулевом уровне - ровно тот, что записан в вики режима.
+    *
+    * <p>Уровень не прибавляет фиксированное число блоков, а умножает радиус на
+    * {@link #BORDER_GROWTH}: только так сходятся значения, снятые с живого сервера на 11-м
+    * уровне (1710 / 2993 / 4276) - каждое из них равно базе, умноженной на 1.05^11.
+    */
+   private static final double NETHER_BASE = 1000.0;
+   private static final double NORMAL_BASE = 1750.0;
+   private static final double END_BASE = 2500.0;
+   private static final double BORDER_GROWTH = 1.05;
 
    private final JavaPlugin plugin;
    private final InvestData data;
@@ -55,7 +61,7 @@ public final class InvestEffects implements Listener {
          default -> NORMAL_BASE;
       };
 
-      return base + level * BORDER_STEP;
+      return Math.round(base * Math.pow(BORDER_GROWTH, level));
    }
 
    /** Ставит границы мирам по текущему уровню. Вызывается при старте и после каждого уровня. */

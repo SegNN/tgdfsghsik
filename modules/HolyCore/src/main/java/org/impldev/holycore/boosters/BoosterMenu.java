@@ -23,6 +23,8 @@ public final class BoosterMenu implements Listener {
    private static final int BACK_SLOT = 43;
    /** на сколько продлевается бустер при покупке уровня */
    private static final long DURATION_MS = 48L * 60L * 60L * 1000L;
+   /** "до конца вайпа" - срок, который заведомо переживёт любой вайп */
+   private static final long PERMANENT_MS = 3650L * 24L * 60L * 60L * 1000L;
 
    private static final int[] GRAY = {0, 8, 36, 44};
    private static final int[] ORANGE = {9, 17, 18, 26, 27, 35};
@@ -62,7 +64,7 @@ public final class BoosterMenu implements Listener {
       int level = this.data.level(uuid, booster.id());
       int bonus = booster.bonus(level);
       int next = booster.bonus(level + 1);
-      int price = booster.priceFor(level + 1);
+      int price = Boosters.priceFor(booster, level + 1);
 
       String name = "&r " + booster.color() + booster.title()
             + " &r&x&e&7&e&7&e&7(+&r&x&e&7&e&7&e&7" + bonus + "&r&x&e&7&e&7&e&7%)";
@@ -178,14 +180,22 @@ public final class BoosterMenu implements Listener {
       }
 
       int level = this.data.level(player.getUniqueId(), booster.id());
-      int price = booster.priceFor(level + 1);
+      int price = Boosters.priceFor(booster, level + 1);
+      int max = Boosters.maxLevel(booster);
+      if (max > 0 && level >= max) {
+         player.sendMessage(Parser.color(
+               "&r&x&f&f&2&2&2&2▶ &r&fЭтот бустер уже &r&x&f&f&2&2&2&2максимального уровня&r&f."));
+         return;
+      }
+
       if (!Sapphires.take(player, price)) {
          player.sendMessage(Parser.color(
                "&r&x&f&f&2&2&2&2▶ &r&fУ вас &r&x&f&f&2&2&2&2недостаточно сапфиров&r&f для улучшения бустера."));
          return;
       }
 
-      this.data.upgrade(player.getUniqueId(), booster.id(), DURATION_MS, price);
+      this.data.upgrade(player.getUniqueId(), booster.id(),
+            Boosters.permanent(booster) ? PERMANENT_MS : DURATION_MS, price);
       this.render(event.getView().getTopInventory(), player);
       player.sendMessage(Parser.color("&r&x&0&5&f&b&0&0▶&r&f " + booster.color() + booster.title()
             + "&r&f улучшен до &r&x&0&5&f&b&0&0" + this.data.level(player.getUniqueId(), booster.id()) + " ур.&r&f"));

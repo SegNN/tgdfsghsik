@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -15,6 +16,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.impldev.holycore.boosters.Sapphires;
 
 /**
  * Состояние инвестиций: уровни направлений общие для всего сервера, очки - личные.
@@ -24,6 +26,11 @@ import org.bukkit.plugin.java.JavaPlugin;
  * дважды - всего и за неделю, иначе еженедельное обнуление рейтинга стирало бы и общий вклад.
  */
 public final class InvestData {
+   /** сколько сапфиров делится между топом каждые сутки */
+   private static final int DAILY_POOL = 2500;
+   private static final int TOP_SIZE = 10;
+   private static final ZoneId MOSCOW = ZoneId.of("Europe/Moscow");
+
    private final JavaPlugin plugin;
    private final File file;
 
@@ -31,6 +38,7 @@ public final class InvestData {
    private final Map<UUID, long[]> players = new HashMap<>();    // uuid -> {всего, за неделю}
    private final Map<UUID, String> names = new HashMap<>();
    private String weekStart = "";
+   private String lastPayout = "";
 
    public InvestData(JavaPlugin plugin) {
       this.plugin = plugin;
@@ -75,7 +83,7 @@ public final class InvestData {
       return levelUp;
    }
 
-   public record TopEntry(String name, long points) {
+   public record TopEntry(UUID uuid, String name, long points) {
    }
 
    /** Рейтинг строится по недельным очкам - именно он обнуляется каждый понедельник. */
@@ -83,12 +91,54 @@ public final class InvestData {
       List<TopEntry> out = new ArrayList<>();
       this.players.forEach((uuid, values) -> {
          if (values[1] > 0) {
-            out.add(new TopEntry(this.names.getOrDefault(uuid, uuid.toString().substring(0, 8)), values[1]));
+            out.add(new TopEntry(uuid, this.names.getOrDefault(uuid, uuid.toString().substring(0, 8)), values[1]));
          }
       });
 
       out.sort(Comparator.comparingLong(TopEntry::points).reversed());
-      return out.size() > limit ? out.subList(0, limit) : out;
+      return out.size() > limit ? new ArrayList<>(out.subList(0, limit)) : out;
+   }
+
+   /**
+    * Награда топ-10 сапфирами: каждый день в 00:00 по МСК разыгрывается {@link #DAILY_POOL},
+    * доля игрока равна доле его очков в сумме очков топа.
+    *
+    * <p>Сравнивается дата, а не время: если сервер лежал в полночь, выплата пройдёт при первой
+    * же проверке после запуска, а не потеряется. По этой же причине дата запоминается в
+    * invest.yml - иначе рестарт в течение дня выдал бы награду повторно.
+    *
+    * <p>При первом запуске выплаты нет: дата просто запоминается. Иначе установка плагина
+    * сразу же раздала бы сапфиры за очки, набранные до появления этой награды.
+    */
+   public void payoutIfNeeded() {
+      String today = LocalDate.now(MOSCOW).toString();
+      if (today.equals(this.lastPayout)) {
+         return;
+      }
+
+      boolean first = this.lastPayout.isEmpty();
+      this.lastPayout = today;
+
+      if (first) {
+         this.save();
+         return;
+      }
+
+      List<TopEntry> top = this.top(TOP_SIZE);
+      long total = top.stream().mapToLong(TopEntry::points).sum();
+      if (total <= 0L) {
+         this.save();
+         return;
+      }
+
+      for (TopEntry entry : top) {
+         int reward = (int)Math.round(DAILY_POOL * (double)entry.points() / total);
+         if (reward > 0 && Sapphires.give(entry.uuid(), reward)) {
+            this.plugin.getLogger().info("Награда за топ инвестиций: " + entry.name() + " +" + reward + " сапфиров");
+         }
+      }
+
+      this.save();
    }
 
    /**
@@ -96,7 +146,7 @@ public final class InvestData {
     * понедельник, и тогда сброс по таймеру просто не случился бы.
     */
    public void resetWeekIfNeeded() {
-      String current = LocalDate.now().with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY)).toString();
+      String current = LocalDate.now(MOSCOW).with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY)).toString();
       if (current.equals(this.weekStart)) {
          return;
       }
@@ -109,12 +159,13 @@ public final class InvestData {
 
    private void load() {
       if (!this.file.isFile()) {
-         this.weekStart = LocalDate.now().with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY)).toString();
+         this.weekStart = LocalDate.now(MOSCOW).with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY)).toString();
          return;
       }
 
       FileConfiguration cfg = YamlConfiguration.loadConfiguration(this.file);
       this.weekStart = cfg.getString("week-start", "");
+      this.lastPayout = cfg.getString("last-payout", "");
 
       ConfigurationSection cats = cfg.getConfigurationSection("categories");
       if (cats != null) {
@@ -143,6 +194,7 @@ public final class InvestData {
    public void save() {
       FileConfiguration cfg = new YamlConfiguration();
       cfg.set("week-start", this.weekStart);
+      cfg.set("last-payout", this.lastPayout);
       this.state.forEach((id, st) -> {
          cfg.set("categories." + id + ".level", st[0]);
          cfg.set("categories." + id + ".progress", st[1]);

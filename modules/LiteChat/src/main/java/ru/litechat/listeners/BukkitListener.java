@@ -29,7 +29,7 @@ public class BukkitListener implements Listener {
    public BukkitListener() {
    }
 
-   @EventHandler
+   @EventHandler(ignoreCancelled = true)
    public void onChat(AsyncPlayerChatEvent event) {
       String bypassPermission = LiteChat.getInstance().getConfig().getString("settings.bypass-permissions", "litechat.bypass");
       String disablePermission = LiteChat.getInstance().getConfig().getString("settings.disablechat-permissions", "litechat.disable");
@@ -66,7 +66,7 @@ public class BukkitListener implements Listener {
          return TextComponent.fromLegacyText(formatted);
       }
 
-      String nick = HexUtil.color(PlaceholderAPI.setPlaceholders(author, "%player_displayname%"));
+      String nick = HexUtil.color(PlaceholderAPI.setPlaceholders(author, "%holycustom_name%"));
       int at = formatted.indexOf(nick);
       if (nick.isEmpty() || at < 0) {
          nick = author.getName();

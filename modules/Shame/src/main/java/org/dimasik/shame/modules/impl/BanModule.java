@@ -190,7 +190,7 @@ public class BanModule extends Module {
       }
 
       if (ban) {
-         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "banip " + player.getName() + " " + reason);
+         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ban " + player.getName() + " " + reason);
          player.setHealth(0.0);
       }
    }
@@ -219,7 +219,7 @@ public class BanModule extends Module {
             Config.getString("ban.broadcast", "litebans broadcast &7[&x&F&B&0&8&0&8&lАЧ&7]&r &f%player% &fбыл наказан античитом."),
             new Pair<>("%player%", player.getName())
          );
-         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "banip " + player.getName() + " " + reason);
+         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ban " + player.getName() + " " + reason);
          if (!broadcastCmd.isEmpty()) {
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), broadcastCmd);
          }

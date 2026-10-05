@@ -1,13 +1,19 @@
 name: Buyer
-version: '1.0'
-main: org.dimasik.buyer.Buyer
-api-version: '1.16'
+version: '2.0'
+main: org.impldev.holybuyer.HolyBuyer
+api-version: '1.21'
+author: HolyZako
+description: Скупщик - продажа ресурсов за монеты и очки скупщика
 depend: [Vault]
-softdepend: [PlaceholderAPI]
+softdepend: [PlaceholderAPI, HolyCore]
 commands:
-  b:
   buyer:
+    description: Меню Скупщика
+    usage: /buyer [auto|shop|items|settings]
+  b:
+    description: Меню Скупщика
+    usage: /b [auto|shop|items|settings]
 permissions:
-  buyer.items:
-    description: Позволяет добавлять предметы в базу данных
-    default: op
+  buyer.stinger:
+    description: Базовый коэффициент растёт вдвое быстрее
+    default: false

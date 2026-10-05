@@ -1,0 +1,12 @@
+name: HolyClans
+version: '1.0'
+main: org.impldev.holyclans.HolyClans
+api-version: '1.21'
+author: HolyZako
+description: Клановая система
+depend: [Vault]
+softdepend: [WorldGuard, WorldEdit, PlaceholderAPI]
+commands:
+  clan:
+    description: Клановая система
+    usage: /clan [help|top|money|invest|withdraw|take|members|invite|kick|delete|newleader|glow|pvp|sethome|home|list|chat|leave]

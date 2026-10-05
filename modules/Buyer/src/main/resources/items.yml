@@ -1,0 +1,689 @@
+# Каталог Скупщика. Цены - те же, что в вики режима ("Начальная цена").
+#
+# price   - начальная цена за штуку; со временем она гуляет вокруг этого значения:
+#           чем больше сервер сдал товара, тем ниже становится "стандартная цена".
+# points  - очки Скупщика за штуку. Если не задать, берётся price * points-ratio из config.yml.
+# materials - все предметы, которые принимаются по этой цене (варианты дерева, цвета шерсти).
+# potion  - для зелий: тип из PotionType. Обычное зелье и зелье силы стоят по-разному,
+#           поэтому материала POTION мало, нужен ещё тип эффекта.
+
+categories:
+  mine:
+    name: 'Ресурсы с Шахты'
+    icon: DIAMOND
+    top-bonus: 14
+  blocks:
+    name: 'Блоки'
+    icon: DARK_OAK_LOG
+    top-bonus: 50
+  plants:
+    name: 'Растительность'
+    icon: WARPED_ROOTS
+    top-bonus: 25
+  mobs:
+    name: 'Лут с Мобов'
+    icon: FEATHER
+    top-bonus: 25
+  misc:
+    name: 'Разное'
+    icon: PUFFERFISH
+    top-bonus: 50
+
+items:
+  nether_brick:
+    category: mine
+    name: 'Незерский кирпич'
+    price: 4
+    materials:
+    - NETHER_BRICK
+  lapis:
+    category: mine
+    name: 'Лазурит'
+    price: 18
+    materials:
+    - LAPIS_LAZULI
+  redstone:
+    category: mine
+    name: 'Редстоуновая пыль'
+    price: 20
+    materials:
+    - REDSTONE
+  coal:
+    category: mine
+    name: 'Уголь'
+    price: 23
+    materials:
+    - COAL
+  iron:
+    category: mine
+    name: 'Железный слиток'
+    price: 59
+    materials:
+    - IRON_INGOT
+  gold:
+    category: mine
+    name: 'Золотой слиток'
+    price: 67
+    materials:
+    - GOLD_INGOT
+  diamond:
+    category: mine
+    name: 'Алмаз'
+    price: 120
+    materials:
+    - DIAMOND
+  quartz:
+    category: mine
+    name: 'Незер-кварц'
+    price: 133
+    materials:
+    - QUARTZ
+  emerald:
+    category: mine
+    name: 'Изумруд'
+    price: 480
+    materials:
+    - EMERALD
+  netherite_ingot:
+    category: mine
+    name: 'Незеритовый слиток'
+    price: 1731
+    materials:
+    - NETHERITE_INGOT
+  netherite_scrap:
+    category: mine
+    name: 'Незеритовый лом'
+    price: 4211
+    materials:
+    - NETHERITE_SCRAP
+  cobblestone:
+    category: blocks
+    name: 'Булыжник'
+    price: 4
+    materials:
+    - COBBLESTONE
+    - STONE
+    - ANDESITE
+    - DIORITE
+    - GRANITE
+    also:
+    - 'Камень'
+    - 'Андезит'
+    - 'Диорит'
+    - 'Гранит'
+  dirt:
+    category: blocks
+    name: 'Дёрн'
+    price: 12
+    materials:
+    - GRASS_BLOCK
+    - DIRT
+    - COARSE_DIRT
+    - PODZOL
+    - GRAVEL
+    also:
+    - 'Земля'
+    - 'Каменистая земля'
+    - 'Подзол'
+    - 'Гравий'
+  sand:
+    category: blocks
+    name: 'Песок'
+    price: 12
+    materials:
+    - SAND
+    - RED_SAND
+    also:
+    - 'Красный песок'
+  end_stone:
+    category: blocks
+    name: 'Эндерняк'
+    price: 12
+    materials:
+    - END_STONE
+  soul_sand:
+    category: blocks
+    name: 'Песок душ'
+    price: 60
+    materials:
+    - SOUL_SAND
+  ice:
+    category: blocks
+    name: 'Лёд'
+    price: 120
+    materials:
+    - ICE
+    - BLUE_ICE
+    also:
+    - 'Синий лёд'
+  magma:
+    category: blocks
+    name: 'Магма'
+    price: 120
+    materials:
+    - MAGMA_BLOCK
+  obsidian:
+    category: blocks
+    name: 'Обсидиан'
+    price: 160
+    materials:
+    - OBSIDIAN
+  dark_oak:
+    category: blocks
+    name: 'Бревно тёмного дуба'
+    price: 140
+    materials:
+    - DARK_OAK_LOG
+    - DARK_OAK_WOOD
+    - STRIPPED_DARK_OAK_LOG
+    - STRIPPED_DARK_OAK_WOOD
+    also:
+    - 'Тёмный дуб'
+    - 'Обтёсанное бревно тёмного дуба'
+  oak:
+    category: blocks
+    name: 'Дубовое бревно'
+    price: 240
+    materials:
+    - OAK_LOG
+    - OAK_WOOD
+    - STRIPPED_OAK_LOG
+    - STRIPPED_OAK_WOOD
+    also:
+    - 'Дуб'
+    - 'Обтёсанное дубовое бревно'
+  birch:
+    category: blocks
+    name: 'Берёзовое бревно'
+    price: 240
+    materials:
+    - BIRCH_LOG
+    - BIRCH_WOOD
+    - STRIPPED_BIRCH_LOG
+    - STRIPPED_BIRCH_WOOD
+    also:
+    - 'Берёза'
+    - 'Обтёсанное берёзовое бревно'
+  spruce:
+    category: blocks
+    name: 'Еловое бревно'
+    price: 180
+    materials:
+    - SPRUCE_LOG
+    - SPRUCE_WOOD
+    - STRIPPED_SPRUCE_LOG
+    - STRIPPED_SPRUCE_WOOD
+    also:
+    - 'Ель'
+    - 'Обтёсанное еловое бревно'
+  crimson:
+    category: blocks
+    name: 'Багровый стебель'
+    price: 300
+    materials:
+    - CRIMSON_STEM
+    - CRIMSON_HYPHAE
+    - STRIPPED_CRIMSON_STEM
+    - STRIPPED_CRIMSON_HYPHAE
+    also:
+    - 'Багровые гифы'
+    - 'Очищенный багровый стебель'
+  warped:
+    category: blocks
+    name: 'Искажённый стебель'
+    price: 300
+    materials:
+    - WARPED_STEM
+    - WARPED_HYPHAE
+    - STRIPPED_WARPED_STEM
+    - STRIPPED_WARPED_HYPHAE
+    also:
+    - 'Искажённые гифы'
+    - 'Очищенный искажённый стебель'
+  jungle:
+    category: blocks
+    name: 'Бревно тропического дерева'
+    price: 200
+    materials:
+    - JUNGLE_LOG
+    - JUNGLE_WOOD
+    - STRIPPED_JUNGLE_LOG
+    - STRIPPED_JUNGLE_WOOD
+    also:
+    - 'Тропическое дерево'
+    - 'Обтёсанное бревно'
+  acacia:
+    category: blocks
+    name: 'Акациевое бревно'
+    price: 320
+    materials:
+    - ACACIA_LOG
+    - ACACIA_WOOD
+    - STRIPPED_ACACIA_LOG
+    - STRIPPED_ACACIA_WOOD
+    also:
+    - 'Акация'
+    - 'Обтёсанное акациевое бревно'
+  glowstone:
+    category: blocks
+    name: 'Светокамень'
+    price: 938
+    materials:
+    - GLOWSTONE
+  shroomlight:
+    category: blocks
+    name: 'Грибосвет'
+    price: 1072
+    materials:
+    - SHROOMLIGHT
+  purpur:
+    category: blocks
+    name: 'Пурпур'
+    price: 679
+    materials:
+    - PURPUR_BLOCK
+  chorus_flower:
+    category: blocks
+    name: 'Цветок хоруса'
+    price: 938
+    materials:
+    - CHORUS_FLOWER
+  crying_obsidian:
+    category: blocks
+    name: 'Плачущий обсидиан'
+    price: 841
+    materials:
+    - CRYING_OBSIDIAN
+  dried_kelp_block:
+    category: blocks
+    name: 'Блок сушёной ламинарии'
+    price: 1135
+    materials:
+    - DRIED_KELP_BLOCK
+  honey_block:
+    category: blocks
+    name: 'Блок мёда'
+    price: 3734
+    materials:
+    - HONEY_BLOCK
+  ancient_debris:
+    category: blocks
+    name: 'Древние обломки'
+    price: 2208
+    materials:
+    - ANCIENT_DEBRIS
+  nether_wart:
+    category: plants
+    name: 'Незерский нарост'
+    price: 27
+    materials:
+    - NETHER_WART
+  sweet_berries:
+    category: plants
+    name: 'Сладкие ягоды'
+    price: 40
+    materials:
+    - SWEET_BERRIES
+  bamboo:
+    category: plants
+    name: 'Бамбук'
+    price: 40
+    materials:
+    - BAMBOO
+  potato:
+    category: plants
+    name: 'Картофель'
+    price: 48
+    materials:
+    - POTATO
+    - POISONOUS_POTATO
+    also:
+    - 'Ядовитый картофель'
+  carrot:
+    category: plants
+    name: 'Морковь'
+    price: 48
+    materials:
+    - CARROT
+  cocoa:
+    category: plants
+    name: 'Какао-бобы'
+    price: 48
+    materials:
+    - COCOA_BEANS
+  warped_roots:
+    category: plants
+    name: 'Искажённые корни'
+    price: 60
+    materials:
+    - WARPED_ROOTS
+  crimson_roots:
+    category: plants
+    name: 'Багровые корни'
+    price: 60
+    materials:
+    - CRIMSON_ROOTS
+  cactus:
+    category: plants
+    name: 'Кактус'
+    price: 72
+    materials:
+    - CACTUS
+  melon_slice:
+    category: plants
+    name: 'Ломтик арбуза'
+    price: 80
+    materials:
+    - MELON_SLICE
+  sugar_cane:
+    category: plants
+    name: 'Сахарный тростник'
+    price: 100
+    materials:
+    - SUGAR_CANE
+  brown_mushroom:
+    category: plants
+    name: 'Коричневый гриб'
+    price: 107
+    materials:
+    - BROWN_MUSHROOM
+  red_mushroom:
+    category: plants
+    name: 'Красный гриб'
+    price: 107
+    materials:
+    - RED_MUSHROOM
+  kelp:
+    category: plants
+    name: 'Ламинария'
+    price: 108
+    materials:
+    - KELP
+  weeping_vines:
+    category: plants
+    name: 'Плакучая лоза'
+    price: 120
+    materials:
+    - WEEPING_VINES
+  twisting_vines:
+    category: plants
+    name: 'Вьющаяся лоза'
+    price: 180
+    materials:
+    - TWISTING_VINES
+  crimson_fungus:
+    category: plants
+    name: 'Багровый гриб'
+    price: 200
+    materials:
+    - CRIMSON_FUNGUS
+  warped_fungus:
+    category: plants
+    name: 'Искажённый гриб'
+    price: 200
+    materials:
+    - WARPED_FUNGUS
+  beetroot:
+    category: plants
+    name: 'Свёкла'
+    price: 360
+    materials:
+    - BEETROOT
+  wheat:
+    category: plants
+    name: 'Ростки пшеницы'
+    price: 360
+    materials:
+    - WHEAT
+  melon:
+    category: plants
+    name: 'Арбуз'
+    price: 400
+    materials:
+    - MELON
+  pumpkin:
+    category: plants
+    name: 'Тыква'
+    price: 400
+    materials:
+    - PUMPKIN
+  chorus_fruit:
+    category: plants
+    name: 'Плод хоруса'
+    price: 500
+    materials:
+    - CHORUS_FRUIT
+  rotten_flesh:
+    category: mobs
+    name: 'Гнилая плоть'
+    price: 32
+    materials:
+    - ROTTEN_FLESH
+  string:
+    category: mobs
+    name: 'Нить'
+    price: 40
+    materials:
+    - STRING
+  arrow:
+    category: mobs
+    name: 'Стрела'
+    price: 48
+    materials:
+    - ARROW
+  bone:
+    category: mobs
+    name: 'Кость'
+    price: 60
+    materials:
+    - BONE
+  spider_eye:
+    category: mobs
+    name: 'Паучий глаз'
+    price: 90
+    materials:
+    - SPIDER_EYE
+  wool:
+    category: mobs
+    name: 'Белая шерсть'
+    price: 96
+    materials:
+    - WHITE_WOOL
+    - ORANGE_WOOL
+    - MAGENTA_WOOL
+    - LIGHT_BLUE_WOOL
+    - YELLOW_WOOL
+    - LIME_WOOL
+    - PINK_WOOL
+    - GRAY_WOOL
+    - LIGHT_GRAY_WOOL
+    - CYAN_WOOL
+    - PURPLE_WOOL
+    - BLUE_WOOL
+    - BROWN_WOOL
+    - GREEN_WOOL
+    - RED_WOOL
+    - BLACK_WOOL
+    also:
+    - 'Все цвета шерсти'
+  sugar:
+    category: mobs
+    name: 'Сахар'
+    price: 96
+    materials:
+    - SUGAR
+  gunpowder:
+    category: mobs
+    name: 'Порох'
+    price: 100
+    materials:
+    - GUNPOWDER
+  feather:
+    category: mobs
+    name: 'Перо'
+    price: 120
+    materials:
+    - FEATHER
+  ender_pearl:
+    category: mobs
+    name: 'Эндер-жемчуг'
+    price: 140
+    materials:
+    - ENDER_PEARL
+  cooked_porkchop:
+    category: mobs
+    name: 'Жареная свинина'
+    price: 144
+    materials:
+    - COOKED_PORKCHOP
+  cooked_beef:
+    category: mobs
+    name: 'Стейк'
+    price: 144
+    materials:
+    - COOKED_BEEF
+  leather:
+    category: mobs
+    name: 'Кожа'
+    price: 300
+    materials:
+    - LEATHER
+  slime_ball:
+    category: mobs
+    name: 'Сгусток слизи'
+    price: 320
+    materials:
+    - SLIME_BALL
+  magma_cream:
+    category: mobs
+    name: 'Сгусток магмы'
+    price: 400
+    materials:
+    - MAGMA_CREAM
+  blaze_rod:
+    category: mobs
+    name: 'Огненный стержень'
+    price: 600
+    materials:
+    - BLAZE_ROD
+  ghast_tear:
+    category: mobs
+    name: 'Слеза гаста'
+    price: 1274
+    materials:
+    - GHAST_TEAR
+  wither_skull:
+    category: mobs
+    name: 'Череп визер-скелета'
+    price: 2748
+    materials:
+    - WITHER_SKELETON_SKULL
+  dried_kelp:
+    category: misc
+    name: 'Сушёная ламинария'
+    price: 180
+    materials:
+    - DRIED_KELP
+  end_rod:
+    category: misc
+    name: 'Стержень Энда'
+    price: 400
+    materials:
+    - END_ROD
+  potion_fire_res:
+    category: misc
+    name: 'Зелье'
+    price: 690
+    potion: LONG_FIRE_RESISTANCE
+    materials:
+    - POTION
+  potion_slow_fall:
+    category: misc
+    name: 'Зелье'
+    price: 841
+    potion: LONG_SLOW_FALLING
+    materials:
+    - POTION
+  fermented_spider_eye:
+    category: misc
+    name: 'Маринованный паучий глаз'
+    price: 841
+    materials:
+    - FERMENTED_SPIDER_EYE
+  potion_strength:
+    category: misc
+    name: 'Зелье'
+    price: 938
+    potion: STRONG_STRENGTH
+    materials:
+    - POTION
+  potion_invisibility:
+    category: misc
+    name: 'Зелье'
+    price: 938
+    potion: LONG_INVISIBILITY
+    materials:
+    - POTION
+  potion_swiftness:
+    category: misc
+    name: 'Зелье'
+    price: 993
+    potion: STRONG_SWIFTNESS
+    materials:
+    - POTION
+  potion_regeneration:
+    category: misc
+    name: 'Зелье'
+    price: 993
+    potion: STRONG_REGENERATION
+    materials:
+    - POTION
+  honey_bottle:
+    category: misc
+    name: 'Бутылочка мёда'
+    price: 1625
+    materials:
+    - HONEY_BOTTLE
+  cobweb:
+    category: misc
+    name: 'Паутина'
+    price: 1625
+    materials:
+    - COBWEB
+  end_crystal:
+    category: misc
+    name: 'Кристалл Энда'
+    price: 1721
+    materials:
+    - END_CRYSTAL
+  turtle_egg:
+    category: misc
+    name: 'Черепашье яйцо'
+    price: 2463
+    materials:
+    - TURTLE_EGG
+  pufferfish:
+    category: misc
+    name: 'Иглобрюх'
+    price: 3734
+    materials:
+    - PUFFERFISH
+  potion_leaping:
+    category: misc
+    name: 'Зелье'
+    price: 5073
+    potion: STRONG_LEAPING
+    materials:
+    - POTION
+  nautilus_shell:
+    category: misc
+    name: 'Раковина наутилуса'
+    price: 7218
+    materials:
+    - NAUTILUS_SHELL
+  dragon_head:
+    category: misc
+    name: 'Голова дракона'
+    price: 133333
+    materials:
+    - DRAGON_HEAD

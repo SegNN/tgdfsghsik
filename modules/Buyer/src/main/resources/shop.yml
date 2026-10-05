@@ -1,0 +1,260 @@
+# Магазин скупщика (/b shop).
+#
+# Товары бывают двух видов:
+#   fixed: true  - постоянный. Всегда лежит на своём slot и стоит одинаково весь вайп.
+#   fixed: false - сменный. Раз в сутки товары тасуются, и на витрину попадает только
+#                  rotating-visible штук, поэтому купить всё сразу нельзя. Цена растёт
+#                  с каждой покупкой и трижды в сутки сбрасывается обратно.
+#
+# Что делает покупка:
+#   action: EXP            - выдать amount опыта
+#   action: BUYER_BOOSTER  - бустер скупщика +percent% на minutes минут
+#   action: ULTA           - Ульта Скупщика на minutes минут
+#   give: true             - выдать сам предмет с витрины
+#   commands: [...]        - выполнить от консоли, %player% заменяется на ник
+#
+# ВАЖНО: у товаров из чужих плагинов (кирки, ботинки, яйца, контейнер) списки commands
+# пустые - подставьте туда команды выдачи своих плагинов. Пока список пуст и нет ни
+# give, ни action, скупщик откажет в покупке и не спишет очки.
+
+rotating-visible: 9
+rotating-slots: [11, 12, 14, 15, 29, 30, 31, 32, 33]
+
+items:
+
+  # --- постоянные редкие товары ---------------------------------------------------------
+
+  crusher_x:
+    fixed: true
+    slot: 20
+    material: NETHERITE_SWORD
+    name: '&r&x&9&e&0&0&0&0&lКрушитель X'
+    lore:
+      - '&r&7+100% урона по боссам'
+    price: 250000
+    commands: []
+
+  sword_farmer:
+    fixed: true
+    slot: 21
+    material: NETHERITE_SWORD
+    name: '&r&x&0&5&f&b&0&0Меч «Выгодный фарм»'
+    lore:
+      - '&r&aФармер II'
+    price: 100000
+    commands: []
+
+  sun_boots:
+    fixed: true
+    slot: 22
+    material: GOLDEN_BOOTS
+    name: '&r&x&f&f&c&9&0&0Ботинки солнца'
+    lore:
+      - '&r&7Непробиваемый II'
+      - ''
+      - '&r&8Особенности:'
+      - '&r&x&e&7&e&7&e&7 - имеет свойства &r&x&f&f&c&9&0&0незеритовых ботинок&r&x&e&7&e&7&e&7;'
+      - '&r&x&e&7&e&7&e&7 - полностью &r&x&f&f&c&9&0&0неразрушимы&r&x&e&7&e&7&e&7;'
+      - '&r&x&e&7&e&7&e&7 - можно накладывать &r&x&f&f&c&9&0&0зачарования&r&x&e&7&e&7&e&7, кроме Лавахода.'
+    price: 250000
+    commands: []
+
+  tnt_cannon:
+    fixed: true
+    slot: 23
+    material: DISPENSER
+    name: '&r&x&f&b&3&8&3&8Тнт-Пушка'
+    lore:
+      - ''
+      - '&r&8Особенности:'
+      - '&r&x&e&7&e&7&e&7 - запускает &r&x&f&b&3&8&3&8летящий динамит&r&x&e&7&e&7&e&7;'
+      - '&r&x&e&7&e&7&e&7 - сохраняет свойства особых динамитов;'
+      - '&r&x&e&7&e&7&e&7 - можно сломать в &r&x&f&b&3&8&3&8чужом привате&r&x&e&7&e&7&e&7.'
+    price: 125000
+    commands: []
+
+  book_fermer:
+    fixed: true
+    slot: 24
+    material: ENCHANTED_BOOK
+    name: '&r&x&0&5&f&b&0&0Книга на Фермер II'
+    lore:
+      - '&r&aФермер II'
+    price: 100000
+    commands: []
+
+  ulta:
+    fixed: true
+    slot: 13
+    material: BEACON
+    name: '&r&x&f&f&7&0&0&0Ульта Скупщика &r&6(+10% на 60 мин)'
+    lore:
+      - ''
+      - '&r &r&x&f&f&7&0&0&0&l&n▍&r&x&e&7&e&7&e&7 Вы будете получать на &r&610%'
+      - '&r &r&x&f&f&7&0&0&0&l▍&r&x&e&7&e&7&e&7 больше с продажи ресурсов'
+    price: 14999
+    action: ULTA
+    minutes: 60
+
+  # --- сменные товары -------------------------------------------------------------------
+
+  booster_10:
+    material: NETHERITE_INGOT
+    name: '&r&x&0&0&d&8&f&fБустер скупщика &r&6(+10% на 60 мин)'
+    lore:
+      - ''
+      - '&r &r&x&0&0&d&8&f&f&l&n▍&r&x&e&7&e&7&e&7 Увеличивает множитель'
+      - '&r &r&x&0&0&d&8&f&f&l▍&r&x&e&7&e&7&e&7 скупщика на &r&610% &r&x&e&7&e&7&e&7на 60 минут'
+    price: 10000
+    action: BUYER_BOOSTER
+    percent: 10
+    minutes: 60
+
+  booster_15:
+    material: NETHERITE_INGOT
+    name: '&r&x&0&0&d&8&f&fБустер скупщика &r&6(+15% на 60 мин)'
+    lore:
+      - ''
+      - '&r &r&x&0&0&d&8&f&f&l&n▍&r&x&e&7&e&7&e&7 Увеличивает множитель'
+      - '&r &r&x&0&0&d&8&f&f&l▍&r&x&e&7&e&7&e&7 скупщика на &r&615% &r&x&e&7&e&7&e&7на 60 минут'
+    price: 15000
+    action: BUYER_BOOSTER
+    percent: 15
+    minutes: 60
+
+  booster_20:
+    material: NETHERITE_INGOT
+    name: '&r&x&0&0&d&8&f&fБустер скупщика &r&6(+20% на 60 мин)'
+    lore:
+      - ''
+      - '&r &r&x&0&0&d&8&f&f&l&n▍&r&x&e&7&e&7&e&7 Увеличивает множитель'
+      - '&r &r&x&0&0&d&8&f&f&l▍&r&x&e&7&e&7&e&7 скупщика на &r&620% &r&x&e&7&e&7&e&7на 60 минут'
+    price: 20000
+    action: BUYER_BOOSTER
+    percent: 20
+    minutes: 60
+
+  exp_500:
+    material: EXPERIENCE_BOTTLE
+    name: '&r&6Опыт &r&7(500 единиц)'
+    lore:
+      - ''
+      - '&r &r&x&e&7&e&7&e&7Выдает вам &r&a500 единиц&r&x&e&7&e&7&e&7 опыта.'
+    price: 5000
+    action: EXP
+    amount: 500
+
+  exp_1000:
+    material: EXPERIENCE_BOTTLE
+    name: '&r&6Опыт &r&7(1000 единиц)'
+    lore:
+      - ''
+      - '&r &r&x&e&7&e&7&e&7Выдает вам &r&a1000 единиц&r&x&e&7&e&7&e&7 опыта.'
+    price: 10000
+    action: EXP
+    amount: 1000
+
+  exp_2500:
+    material: EXPERIENCE_BOTTLE
+    name: '&r&6Опыт &r&7(2500 единиц)'
+    lore:
+      - ''
+      - '&r &r&x&e&7&e&7&e&7Выдает вам &r&a2500 единиц&r&x&e&7&e&7&e&7 опыта.'
+    price: 25000
+    action: EXP
+    amount: 2500
+
+  fragment:
+    material: PRISMARINE_SHARD
+    name: '&r&x&f&7&4&2&0&0Боевой фрагмент'
+    lore:
+      - ''
+      - '&r &r&x&e&7&e&7&e&7Нужен, чтобы повышать локальный'
+      - '&r &r&x&e&7&e&7&e&7бонус в меню авто-скупщика.'
+    price: 20000
+    give: true
+    amount: 1
+
+  elytra:
+    material: ELYTRA
+    name: '&r&x&0&0&d&8&f&fЭлитры'
+    lore: []
+    price: 50000
+    give: true
+
+  spawner:
+    material: SPAWNER
+    name: '&r&x&0&0&d&8&f&fРассадник'
+    lore: []
+    price: 75000
+    give: true
+
+  book_farmer2:
+    material: ENCHANTED_BOOK
+    name: '&r&aФермер II Книга'
+    lore: []
+    price: 60000
+    commands: []
+
+  pickaxe_stinger:
+    material: NETHERITE_PICKAXE
+    name: '&r&x&f&f&7&0&0&0Кирка Stinger'
+    lore: []
+    price: 40000
+    commands: []
+
+  pickaxe_eternity:
+    material: NETHERITE_PICKAXE
+    name: '&r&x&f&f&0&0&9&5Кирка ᴇᴛᴇʀɴɪᴛʏ'
+    lore: []
+    price: 40000
+    commands: []
+
+  axe_eternity:
+    material: NETHERITE_AXE
+    name: '&r&x&f&f&0&0&9&5Топор ᴇᴛᴇʀɴɪᴛʏ'
+    lore: []
+    price: 40000
+    commands: []
+
+  shovel_eternity:
+    material: NETHERITE_SHOVEL
+    name: '&r&x&f&f&0&0&9&5Лопата ᴇᴛᴇʀɴɪᴛʏ'
+    lore: []
+    price: 40000
+    commands: []
+
+  pickaxe_jake:
+    material: GOLDEN_PICKAXE
+    name: '&r&6Золотая кирка Джейка'
+    lore: []
+    price: 40000
+    commands: []
+
+  egg_witch:
+    material: WITCH_SPAWN_EGG
+    name: '&r&6Загадочное яйцо призыва: ведьма'
+    lore: []
+    price: 100000
+    commands: []
+
+  egg_piglin:
+    material: PIGLIN_SPAWN_EGG
+    name: '&r&6Загадочное яйцо призыва: пиглин'
+    lore: []
+    price: 150000
+    commands: []
+
+  egg_creeper:
+    material: CREEPER_SPAWN_EGG
+    name: '&r&6Загадочное яйцо призыва: крипер'
+    lore: []
+    price: 150000
+    commands: []
+
+  container:
+    material: CHEST
+    name: '&r&x&0&0&d&8&f&fКонтейнер'
+    lore: []
+    price: 50000
+    commands: []

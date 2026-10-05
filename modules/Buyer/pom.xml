@@ -11,9 +11,9 @@
   </parent>
 
   <artifactId>Buyer</artifactId>
-  <version>1.0</version>
+  <version>2.0</version>
   <name>Buyer</name>
-  <description>main: org.dimasik.buyer.Buyer</description>
+  <description>main: org.impldev.holybuyer.HolyBuyer</description>
 
   <dependencies>
     <dependency>

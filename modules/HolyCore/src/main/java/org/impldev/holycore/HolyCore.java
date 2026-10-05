@@ -95,6 +95,13 @@ public final class HolyCore extends JavaPlugin {
 
       InvestData investData = new InvestData(this);
       investData.resetWeekIfNeeded();
+      investData.payoutIfNeeded();
+      // Раз в минуту, а не по таймеру до полуночи: обе проверки сравнивают дату, поэтому
+      // сервер, перезапущенный или лежавший в 00:00, всё равно доведёт сброс и выплату.
+      this.getServer().getScheduler().runTaskTimer(this, () -> {
+         investData.resetWeekIfNeeded();
+         investData.payoutIfNeeded();
+      }, 1200L, 1200L);
       InvestEffects investEffects = new InvestEffects(this, investData);
       InvestMenu investMenu = new InvestMenu(this, investData, investEffects);
       this.getServer().getPluginManager().registerEvents(investEffects, this);

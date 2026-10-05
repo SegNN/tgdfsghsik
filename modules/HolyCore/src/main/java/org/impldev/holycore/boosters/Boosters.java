@@ -19,8 +19,49 @@ public final class Boosters {
    private Boosters() {
    }
 
+   /**
+    * Цены бустера Скупщика по уровням - ровно те, что записаны в вики режима.
+    *
+    * <p>Списком, а не формулой: цены растут почти геометрически (шаг между соседними
+    * уровнями каждый раз умножается примерно на 1.25), но точные значения на середине
+    * лестницы отличаются от любой такой формулы на единицы, и подгонять их незачем.
+    */
+   private static final List<Integer> BUYER_LADDER = List.of(
+         100, 138, 185, 244, 318, 410, 525, 669, 849, 1074,
+         1355, 1707, 2147, 2697, 3384, 4243, 5317, 6659, 8337, 10434);
+
+   private static final Map<String, List<Integer>> LADDERS = Map.of("buyer", BUYER_LADDER);
+
+   /** Бустеры, которые куплены до конца вайпа, а не на срок. */
+   private static final java.util.Set<String> PERMANENT = java.util.Set.of("buyer");
+
    private static void add(Booster b) {
       BY_ID.put(b.id(), b);
+   }
+
+   /**
+    * Цена следующего уровня.
+    *
+    * <p>Если для бустера задана лестница цен, берём её; на последнем уровне возвращаем 0 -
+    * улучшать дальше некуда.
+    */
+   public static int priceFor(Booster booster, int level) {
+      List<Integer> ladder = LADDERS.get(booster.id());
+      if (ladder == null) {
+         return booster.priceFor(level);
+      }
+
+      return level >= 1 && level <= ladder.size() ? ladder.get(level - 1) : 0;
+   }
+
+   /** Потолок уровня; 0 - потолка нет. */
+   public static int maxLevel(Booster booster) {
+      List<Integer> ladder = LADDERS.get(booster.id());
+      return ladder == null ? 0 : ladder.size();
+   }
+
+   public static boolean permanent(Booster booster) {
+      return PERMANENT.contains(booster.id());
    }
 
    static {

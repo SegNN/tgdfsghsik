@@ -47,45 +47,60 @@ public final class ChatBrackets extends JavaPlugin {
       }
 
       public String onPlaceholderRequest(Player player, String identifier) {
-         if (player == null) {
-            return "";
-         } else {
-            LuckPerms luckPerms = LuckPermsProvider.get();
-            User user = luckPerms.getUserManager().getUser(player.getUniqueId());
-            if (user == null) {
-               return "";
-            } else {
-               String prefix = user.getCachedData().getMetaData().getPrefix();
-               String prefix2 = "";
-               if (prefix != null && !prefix.isEmpty()) {
-                  for (int i = 0; i < prefix.length() - 3; i++) {
-                     prefix2 = prefix2 + prefix.charAt(i);
-                  }
+         if (player == null) return "";
+         LuckPerms luckPerms = LuckPermsProvider.get();
+         User user = luckPerms.getUserManager().getUser(player.getUniqueId());
+         if (user == null) return "";
 
-                  if (identifier.equals("begin")) {
-                     return this.getFirstColor(prefix2) + "«";
-                  } else if (identifier.equals("end")) {
-                     return this.getLastColor(prefix2) + "»";
-                  } else if (identifier.equals("full")) {
-                     return this.getFullString(prefix2, this.getFirstColor(prefix2) + "«", this.getLastColor(prefix2) + "»");
-                  } else if (identifier.equals("nobold")) {
-                     return this.getNoBold(prefix);
-                  } else if (!identifier.equals("color")) {
-                     return null;
-                  } else if (!player.hasPermission("holyfreeze.use") && !player.hasPermission("chatbrackets.color")) {
-                     return "";
-                  } else {
-                     try {
-                        return this.getFirstColor(prefix);
-                     } catch (Exception var8) {
-                        return "";
-                     }
-                  }
-               } else {
-                  return "";
-               }
+         String prefix = user.getCachedData().getMetaData().getPrefix();
+         if (prefix == null || prefix.isEmpty()) return "";
+
+         String prefix2 = prefix;
+         boolean changed = true;
+         while (changed) {
+            changed = false;
+            if (prefix2.endsWith(" ")) { prefix2 = prefix2.substring(0, prefix2.length() - 1); changed = true; }
+            if (prefix2.endsWith("&r")) { prefix2 = prefix2.substring(0, prefix2.length() - 2); changed = true; }
+            if (prefix2.endsWith("&f")) { prefix2 = prefix2.substring(0, prefix2.length() - 2); changed = true; }
+         }
+
+         if (identifier.equals("begin")) {
+            return this.getFirstColor(prefix2) + "«";
+         } else if (identifier.equals("end")) {
+            return "» &r&f ";
+         } else if (identifier.equals("full")) {
+            int insertAt = this.firstTextIndex(prefix2);
+            return prefix2.substring(0, insertAt) + "«" + prefix2.substring(insertAt) + "» &r&f ";
+         } else if (identifier.equals("nobold")) {
+            return this.getNoBold(prefix);
+         } else if (identifier.equals("color")) {
+            if (!player.hasPermission("holyfreeze.use") && !player.hasPermission("chatbrackets.color")) {
+               return "";
+            }
+            try {
+               return this.getFirstColor(prefix);
+            } catch (Exception e) {
+               return "";
             }
          }
+         return null;
+      }
+
+      private int firstTextIndex(String s) {
+         int i = 0;
+         while (i < s.length()) {
+            if (s.charAt(i) == '&' && i + 1 < s.length()) {
+               char next = s.charAt(i + 1);
+               if (next == 'x' && i + 14 <= s.length()) {
+                  i += 14;
+               } else {
+                  i += 2;
+               }
+            } else {
+               return i;
+            }
+         }
+         return i;
       }
 
       private String getFirstColor(String prefix) {

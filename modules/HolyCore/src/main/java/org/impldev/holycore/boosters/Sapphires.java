@@ -47,4 +47,13 @@ public final class Sapphires {
       UUID uuid = player.getUniqueId();
       return points.look(uuid) >= amount && points.take(uuid, amount);
    }
+
+   /**
+    * Начисление по UUID: награда за топ инвестиций выдаётся и тем, кого сейчас нет на сервере,
+    * поэтому {@link Player} здесь не подходит.
+    */
+   public static boolean give(UUID uuid, int amount) {
+      PlayerPointsAPI points = api();
+      return points != null && amount > 0 && points.give(uuid, amount);
+   }
 }

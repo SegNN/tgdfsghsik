@@ -37,6 +37,7 @@
     <module>modules/HolyCases</module>
     <module>modules/HolyCombatBypass</module>
     <module>modules/HolyCommandWhitelist</module>
+    <module>modules/HolyClans</module>
     <module>modules/HolyCore</module>
     <module>modules/HolyCustom</module>
     <module>modules/HolyCustomEgg</module>
